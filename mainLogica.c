@@ -6,6 +6,7 @@
 #include <string.h>
 #include "mainLogica.h"
 #include "globals.h"
+#include "modules/coordenada.h"
 
 void print_array (char *a, int dim)
 {
@@ -31,12 +32,15 @@ void executaInstr (char ip[]) {
             "jog",
             "pos"
     };
+    for(i=0;ip[i]==' '; i++);
     //copia a instrução
-    for(i=0; ip[i] != ' '; i++)
-        instr[i]=ip[i];
+    for(i; ip[i] != ' '; i++)
+        instr[c++]=ip[i];
+    instr[c]='\0';
     //elimina os espaços até à instrução
     for(i;ip[i] == ' ';i++);
     //copia o argumento
+    c=0;
     for(i; ip[i] != '\0'; i++)
         arg[c++]=ip[i];
     arg[c]='\0';
@@ -46,6 +50,7 @@ void executaInstr (char ip[]) {
         case 0:
             printf("func coordenada\n");
             print_array(arg,2);
+            adicionaCoordenada ("temp", arg,0);
             break;
         case 1:
             printf("func gravar\n");

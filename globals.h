@@ -5,6 +5,6 @@
 #ifndef RASTROS_GLOBALS_H
 #define RASTROS_GLOBALS_H
 
-#define MAXCHAR 255
+#define MAXCHAR 120
 
 #endif //RASTROS_GLOBALS_H
