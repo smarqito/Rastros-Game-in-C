@@ -31,9 +31,12 @@ void executaInstr (char ip[]) {
             "jog",
             "pos"
     };
+    //copia a instrução
     for(i=0; ip[i] != ' '; i++)
         instr[i]=ip[i];
+    //elimina os espaços até à instrução
     for(i;ip[i] == ' ';i++);
+    //copia o argumento
     for(i; ip[i] != '\0'; i++)
         arg[c++]=ip[i];
     arg[c]='\0';
@@ -71,6 +74,7 @@ void executaInstr (char ip[]) {
     }
 }
 
+//verifica se a string é para sair do jogo @Bool
 int exit (char ip[]){
     int i;
     for (i=0; ip[i] != '\0';i++)
