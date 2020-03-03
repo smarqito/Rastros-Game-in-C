@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/marco/CLionProjects/rastros/main.c" "/home/marco/CLionProjects/rastros/cmake-build-debug/CMakeFiles/rastros.dir/main.c.o"
+  "/home/jose/rastros/main.c" "/home/jose/rastros/cmake-build-debug/CMakeFiles/rastros.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
