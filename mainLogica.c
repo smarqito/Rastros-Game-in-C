@@ -49,6 +49,7 @@ void executaInstr (char ip[]) {
     {
         case 0:
             printf("func coordenada\n");
+            if(!validaCoord(arg)) break;
             print_array(arg,2);
             adicionaCoordenada ("temp", arg,0);
             break;
