@@ -34,3 +34,12 @@ ESTADO *initState() {
 int getPlayer (ESTADO *state) {
     return state->jogadorAtual;
 }
+
+int getHouseState (ESTADO *state, COORDENADA c){
+    return state->tab[c.linha][c.coluna];
+}
+
+int getNumberPlays (ESTADO *state){
+    return state->numJogadas;
+}
+
