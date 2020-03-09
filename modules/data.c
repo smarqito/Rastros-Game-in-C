@@ -23,12 +23,11 @@ void initPlayer (ESTADO *state) {
     state -> jogadorAtual = 1;
 }
 
-ESTADO *initState() {
-    ESTADO newState;
-    initBoard(&newState);
-    initPlay(&newState);
-    initPlayer(&newState);
-    return &newState;
+void initState(ESTADO *newState) {
+    initBoard(newState);
+    initPlay(newState);
+    initPlayer(newState);
+
 }
 
 int getPlayer (ESTADO *state) {

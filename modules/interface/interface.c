@@ -25,7 +25,9 @@ void mostrarTabuleiro (ESTADO *state) {
     int m,n;
     for (m=0; m<MAX_HOUSES;m++) {
         for(n=0;n<MAX_HOUSES;n++) {
-            printf("%c ", converteCasa(state->tab[m][n]));
+            if (!m && n == 7) printf("2");
+            else if (m==7 && !n) printf("1 ");
+            else printf("%c ", converteCasa(state->tab[m][n]));
         }
         printf("\n");
     }

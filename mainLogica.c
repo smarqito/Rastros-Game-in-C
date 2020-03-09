@@ -36,6 +36,7 @@ void executaInstr (char ip[]) {
     };
     ESTADO e;
     initState(&e);
+
     for(i=0;ip[i]==' '; i++);
     //copia a instrução
     for(i; ip[i] != ' '; i++)
