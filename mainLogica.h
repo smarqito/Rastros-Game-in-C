@@ -6,6 +6,6 @@
 #define RASTROS_MAINLOGICA_H
 
 void executaInstr (char ip[]);
-int exit(char ip[]);
+int sair(char ip[]);
 
 #endif //RASTROS_MAINLOGICA_H

@@ -7,7 +7,7 @@
 
 void adicionaCoordenada (char *fileName, char *coord, int player)
 {
-    atualizarTab("temp", 3,4);
+    atualizarTab("temp.txt", 3,4);
 }
 
 int validaCoord (char s[3]){

@@ -81,7 +81,7 @@ void executaInstr (char ip[]) {
 }
 
 //verifica se a string é para sair do jogo @Bool
-int exit (char ip[]){
+int sair (char ip[]){
     int i;
     for (i=0; ip[i] != '\0';i++)
         ;

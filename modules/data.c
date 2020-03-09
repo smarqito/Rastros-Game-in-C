@@ -1,0 +1,36 @@
+//
+// Created by marco on 3/9/20.
+//
+
+#include "data.h"
+
+void initBoard (ESTADO *state)
+{
+    int m,n;
+    for(m=0;m<8;m++)
+        for(n=0;n<8;n++)
+            state->tab[m][n] = VAZIO;
+    state->tab[3][4] = BRANCA;
+}
+
+void initPlay (ESTADO *state) {
+    state->ultimaJogada.linha=3;
+    state->ultimaJogada.coluna=4;
+}
+
+void initPlayer (ESTADO *state) {
+    state -> numJogadas = 0;
+    state -> jogadorAtual = 0;
+}
+
+ESTADO *initState() {
+    ESTADO newState;
+    initBoard(&newState);
+    initPlay(&newState);
+    initPlayer(&newState);
+    return &newState;
+}
+
+int getPlayer (ESTADO *state) {
+    return state->jogadorAtual;
+}
