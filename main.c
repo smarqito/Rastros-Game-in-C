@@ -2,6 +2,7 @@
 #include "globals.h"
 #include "mainLogica.h"
 void readInstr (char ip[]);
+
 int main() {
     int i;
     char ip[MAXCHAR],c;

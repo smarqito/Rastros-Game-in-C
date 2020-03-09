@@ -6,5 +6,6 @@
 #define RASTROS_GLOBALS_H
 
 #define MAXCHAR 120
+#define BUF_SIZE 1024
 
 #endif //RASTROS_GLOBALS_H

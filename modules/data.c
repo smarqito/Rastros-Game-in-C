@@ -20,7 +20,7 @@ void initPlay (ESTADO *state) {
 
 void initPlayer (ESTADO *state) {
     state -> numJogadas = 0;
-    state -> jogadorAtual = 0;
+    state -> jogadorAtual = 1;
 }
 
 ESTADO *initState() {
@@ -35,7 +35,7 @@ int getPlayer (ESTADO *state) {
     return state->jogadorAtual;
 }
 
-int getHouseState (ESTADO *state, COORDENADA c){
+CASA getHouseState (ESTADO *state, COORDENADA c){
     return state->tab[c.linha][c.coluna];
 }
 
