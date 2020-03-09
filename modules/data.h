@@ -5,6 +5,8 @@
 #ifndef RASTROS_DATA_H
 #define RASTROS_DATA_H
 
+#include "../globals.h"
+
 typedef enum {VAZIO, BRANCA, PRETA} CASA;
 
 typedef struct {
@@ -18,7 +20,7 @@ typedef struct {
 typedef JOGADA JOGADAS[32];
 
 typedef struct {
-    CASA tab[8][8];
+    CASA tab[MAX_HOUSES][MAX_HOUSES];
     COORDENADA ultimaJogada;
     JOGADAS jogadas;
     int numJogadas;

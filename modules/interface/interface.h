@@ -5,4 +5,9 @@
 #ifndef RASTROS_INTERFACE_H
 #define RASTROS_INTERFACE_H
 
+#include "../data.h"
+#include "../../globals.h"
+
+void mostrarTabuleiro (ESTADO *state);
+
 #endif //RASTROS_INTERFACE_H

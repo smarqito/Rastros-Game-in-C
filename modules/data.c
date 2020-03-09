@@ -7,8 +7,8 @@
 void initBoard (ESTADO *state)
 {
     int m,n;
-    for(m=0;m<8;m++)
-        for(n=0;n<8;n++)
+    for(m=0;m<MAX_HOUSES;m++)
+        for(n=0;n<MAX_HOUSES;n++)
             state->tab[m][n] = VAZIO;
     state->tab[3][4] = BRANCA;
 }

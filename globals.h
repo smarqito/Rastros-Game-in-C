@@ -7,5 +7,6 @@
 
 #define MAXCHAR 120
 #define BUF_SIZE 1024
+#define MAX_HOUSES 8
 
 #endif //RASTROS_GLOBALS_H

@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "mainLogica.h"
+#include "modules/interface/interface.h"
+#include "modules/data.h"
 #include "globals.h"
 #include "modules/coordenada.h"
 
@@ -32,6 +34,8 @@ void executaInstr (char ip[]) {
             "jog",
             "pos"
     };
+    ESTADO e;
+    initState(&e);
     for(i=0;ip[i]==' '; i++);
     //copia a instrução
     for(i; ip[i] != ' '; i++)
@@ -51,7 +55,7 @@ void executaInstr (char ip[]) {
             printf("func coordenada\n");
             if(!validaCoord(arg)) break;
             print_array(arg,2);
-            adicionaCoordenada ("temp", arg,0);
+            mostrarTabuleiro(&e);
             break;
         case 1:
             printf("func gravar\n");
