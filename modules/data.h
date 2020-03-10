@@ -28,4 +28,11 @@ typedef struct {
 } ESTADO;
 
 ESTADO *initState ();
+
+int getPlayer (ESTADO *state);
+
+CASA getHouseState(ESTADO *state, COORDENADA c);
+
+int getNumberPlays (ESTADO *state);
+
 #endif //RASTROS_DATA_H
