@@ -1,4 +1,4 @@
-# rastros
+# Rastros
 Rastros game built in C
 
 Projeto desenvolvido no âmbito da unidade curricular Laboratórios de Informática II do curso de Engenharia Informática da Universidade do Minho.
