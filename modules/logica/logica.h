@@ -7,5 +7,5 @@
 #include "../data.h"
 int isPossiblePlay (ESTADO *state, COORDENADA c);
 int jogar (ESTADO *state, COORDENADA c);
-
+int verificaFim(ESTADO *state);
 #endif //RASTROS_LOGICA_H

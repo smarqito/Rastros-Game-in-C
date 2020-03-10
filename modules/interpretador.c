@@ -18,6 +18,7 @@ int instrucao (char *instr) {
             "movs",
             "jog",
             "pos",
+            "ajuda",
             "Q"
     };
 
@@ -30,7 +31,10 @@ int interpretador (ESTADO *e) {
     char col[2], lin[2], espaco[2] = " ";
     char *instr, *arg;
     int iinstr;
-
+    if((iinstr=verificaFim(e))) {
+        printf("Venceu o jogador %d.\n",iinstr);
+        return 1;
+    }
     printf("Diga-nos a sua instrucao:\n");
     //lê uma linha do teclado
     if(fgets(linha,BUF_SIZE,stdin) == NULL)
@@ -51,6 +55,8 @@ int interpretador (ESTADO *e) {
                 COORDENADA coord = {*lin - '1', *col - 'a'};
                 jogar(e,coord);
                 mostrarTabuleiro(e);
+            } else {
+                printf("Coordenada inválida. Tente novamente.\n");
             }
             interpretador(e);
             break;
@@ -70,6 +76,16 @@ int interpretador (ESTADO *e) {
             printf("func pos antiga\n");
             break;
         case 7:
+            printf("\n%-25s Descrição","Instruções");
+            printf("\n%-23s permite efetuar uma jogada na coordenada ##. Exemplo: coordenada d4.\n","coordenada ##");
+            printf("%-23s gravar o estado atual do jogo num ficheiro.\n","gr nome_do_ficheiro");
+            printf("%-23s ler o estado de um jogo a partir de um ficheiro.\n","ler nome_do_ficheiro");
+            printf("%-23s imprimir a lista de movimentos do jogo atual.\n","movs");
+            printf("%-23s pedir ajuda ao bot para escolher a jogada atual.\n","jog");
+            printf("%-23s visualizar uma posição anterior através do seu número.\n\n","pos numero_da_jogada");
+            interpretador(e);
+            break;
+        case 8:
             printf("exit");
             break;
         default:

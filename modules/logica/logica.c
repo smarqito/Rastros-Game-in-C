@@ -39,3 +39,12 @@ int jogar (ESTADO *state, COORDENADA c){
         return 0;
     }
 }
+
+int verificaFim (ESTADO *state) {
+    if(state->tab[0][MAX_HOUSES-1] == BRANCA)
+        return 2;
+    else if (state->tab[MAX_HOUSES-1][0]==BRANCA)
+        return 1;
+    else
+        return 0;;
+}
