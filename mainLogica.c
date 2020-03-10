@@ -34,8 +34,8 @@ void executaInstr (char ip[]) {
             "jog",
             "pos"
     };
-    ESTADO e;
-    initState(&e);
+
+    ESTADO *e = initState();
 
     for(i=0;ip[i]==' '; i++);
     //copia a instrução
@@ -56,7 +56,7 @@ void executaInstr (char ip[]) {
             printf("func coordenada\n");
             if(!validaCoord(arg)) break;
             print_array(arg,2);
-            mostrarTabuleiro(&e);
+            mostrarTabuleiro(e);
             break;
         case 1:
             printf("func gravar\n");

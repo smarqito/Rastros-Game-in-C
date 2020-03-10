@@ -27,5 +27,5 @@ typedef struct {
     int jogadorAtual;
 } ESTADO;
 
-void initState (ESTADO *state);
+ESTADO *initState ();
 #endif //RASTROS_DATA_H

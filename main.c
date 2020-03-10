@@ -1,8 +1,12 @@
-#include <stdio.h>
-#include "globals.h"
-#include "mainLogica.h"
-void readInstr (char ip[]);
+#include "modules/data.h"
+#include "modules/interpretador.h"
 
+int main() {
+    ESTADO *e = initState();
+    interpretador(e);
+    return 0;
+}
+/*
 int main() {
     int i;
     char ip[MAXCHAR],c;
@@ -17,4 +21,4 @@ int main() {
     }
 
     return 0;
-}
+}*/

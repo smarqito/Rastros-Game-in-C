@@ -1,7 +1,7 @@
 //
 // Created by marco on 3/9/20.
 //
-
+#include <stdlib.h>
 #include "data.h"
 
 void initBoard (ESTADO *state)
@@ -23,11 +23,12 @@ void initPlayer (ESTADO *state) {
     state -> jogadorAtual = 1;
 }
 
-void initState(ESTADO *newState) {
+ESTADO *initState() {
+    ESTADO *newState = (ESTADO *) malloc(sizeof(ESTADO));
     initBoard(newState);
     initPlay(newState);
     initPlayer(newState);
-
+    return newState;
 }
 
 int getPlayer (ESTADO *state) {
