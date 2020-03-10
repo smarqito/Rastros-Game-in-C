@@ -5,9 +5,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include "interpretador.h"
+#include "logica/logica.h"
+#include "interface/interface.h"
 
 int instrucao (char *instr) {
-    int i;
+    int i=0;
+    while(instr[i++]) if (instr[i] == '\n') instr[i] = '\0';
     char opcoes[MAX_INSTR][11] = {
             "coordenada",
             "gr",
@@ -28,21 +31,28 @@ int interpretador (ESTADO *e) {
     char *instr, *arg;
     int iinstr;
 
+    printf("Diga-nos a sua instrucao:\n");
+    //lê uma linha do teclado
     if(fgets(linha,BUF_SIZE,stdin) == NULL)
         return 0;
+    //divide o input em instrução e argumento
     instr = strtok(linha,espaco);
     arg = strtok(NULL,espaco);
-    instr[strlen(instr) - 1] = '\0';
-
+    //caso a instrução não seja válida, pede nova função
     if (!(iinstr = instrucao(instr))) {
         printf("Opcao invalida!");
+        interpretador(e);
         return 0;
     }
-
     switch (iinstr)
     {
         case 1:
-            printf("func coordenada\n");
+            if(strlen(arg) == 3 && sscanf(arg, "%[a-h]%[1-8]", col, lin) == 2) {
+                COORDENADA coord = {*lin - '1', *col - 'a'};
+                jogar(e,coord);
+                mostrarTabuleiro(e);
+            }
+            interpretador(e);
             break;
         case 2:
             printf("func gravar\n");
@@ -59,15 +69,13 @@ int interpretador (ESTADO *e) {
         case 6:
             printf("func pos antiga\n");
             break;
+        case 7:
+            printf("exit");
+            break;
         default:
             printf("Opção inválida!\n");
             break;
     }
-    if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
-        COORDENADA coord = {*lin - '1', *col - 'a'};
-        printf("%d %d", coord.coluna, coord.linha);
-        //jogar(e,coord);
-        //mostrarTabuleiro(e);
-    }
+
     return 1;
 }

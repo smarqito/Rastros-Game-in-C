@@ -5,7 +5,7 @@
 int main() {
     ESTADO *e = initState();
     interpretador(e);
-    COORDENADA cord = {1,1};
-    jogar(e,cord);
+    //COORDENADA cord = {1,1};
+    //jogar(e,cord);
     return 0;
 }

@@ -4,8 +4,13 @@
 
 #include <stdio.h>
 #include "logica.h"
-#include "../data.h"
 
+void changeCardinal (ESTADO *state) {
+    int m,n;
+    m=state->ultimaJogada.linha;
+    n=state->ultimaJogada.coluna;
+    state->tab[m][n] = PRETA;
+}
 int isPossiblePlay (ESTADO *state, COORDENADA c){
     COORDENADA ultima = state->ultimaJogada;
     int linhaU = ultima.linha, colunaU = ultima.coluna;
@@ -24,9 +29,12 @@ int jogar (ESTADO *state, COORDENADA c){
     int jogadaP = 0;
     if (getHouseState(state,c) == VAZIO && isPossiblePlay(state, c)){
         state-> tab[c.linha][c.coluna] = BRANCA;
-        jogadaP = 1;
-        printf("jogar %d %d\n", c.coluna, c.linha);
+        changeCardinal(state);
+        state->ultimaJogada = c;
+        return 1;
     }
-    else printf("Não é possível efetuar essa jogada! Tente Novamente.");
-    return jogadaP;
+    else {
+        printf("Não é possível efetuar essa jogada! Tente Novamente.\n");
+        return 0;
+    }
 }
