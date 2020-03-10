@@ -6,9 +6,6 @@ Projeto desenvolvido no âmbito da unidade curricular Laboratórios de Informát
 Turno Prático: PL6.
 
 Autores:
-
-62608 Marco António Gonçalves de Sousa
-
-93271 José Alberto Ferreira Malheiro
-
-93198 Mariana Rocha Marques
+62608 Marco António Gonçalves de Sousa\n
+93271 José Alberto Ferreira Malheiro\n
+93198 Mariana Rocha Marques\n
