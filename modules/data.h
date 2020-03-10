@@ -7,7 +7,7 @@
 
 #include "../globals.h"
 
-typedef enum {VAZIO, BRANCA, PRETA} CASA;
+typedef enum {VAZIO, BRANCA, PRETA,JOGADOR1,JOGADOR2} CASA;
 
 typedef struct {
     int linha, coluna;

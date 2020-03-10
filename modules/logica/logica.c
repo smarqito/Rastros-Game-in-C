@@ -11,6 +11,7 @@ void changeCardinal (ESTADO *state) {
     n=state->ultimaJogada.coluna;
     state->tab[m][n] = PRETA;
 }
+
 int isPossiblePlay (ESTADO *state, COORDENADA c){
     COORDENADA ultima = state->ultimaJogada;
     int linhaU = ultima.linha, colunaU = ultima.coluna;
@@ -27,7 +28,7 @@ int isPossiblePlay (ESTADO *state, COORDENADA c){
 
 int jogar (ESTADO *state, COORDENADA c){
     int jogadaP = 0;
-    if (getHouseState(state,c) == VAZIO && isPossiblePlay(state, c)){
+    if ((getHouseState(state,c) == VAZIO || getHouseState(state,c) == JOGADOR1 || getHouseState(state,c) == JOGADOR2) && isPossiblePlay(state, c)){
         state-> tab[c.linha][c.coluna] = BRANCA;
         changeCardinal(state);
         state->ultimaJogada = c;

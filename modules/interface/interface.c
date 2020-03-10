@@ -17,6 +17,12 @@ char converteCasa (CASA house) {
         case PRETA:
             casa = '#';
             break;
+        case JOGADOR1:
+            casa = '1';
+            break;
+        case JOGADOR2:
+            casa ='2';
+            break;
     }
     return casa;
 }
@@ -33,9 +39,7 @@ void mostrarTabuleiro (ESTADO *state) {
     for (m=0; m<MAX_HOUSES;m++) {
         printf("%d | ",m+1);
         for(n=0;n<MAX_HOUSES;n++) {
-            if (!m && n == 7) printf("2 | ");
-            else if (m==7 && !n) printf("1 | ");
-            else printf("%c | ", converteCasa(state->tab[m][n]));
+            printf("%c | ", converteCasa(state->tab[m][n]));
         }
         printf("\n");
         for(n=0; n<2;n++)

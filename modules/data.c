@@ -11,6 +11,8 @@ void initBoard (ESTADO *state)
         for(n=0;n<MAX_HOUSES;n++)
             state->tab[m][n] = VAZIO;
     state->tab[3][4] = BRANCA;
+    state->tab[0][7] = JOGADOR2;
+    state->tab[7][0] = JOGADOR1;
 }
 
 void initPlay (ESTADO *state) {
