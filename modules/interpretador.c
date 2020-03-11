@@ -83,7 +83,8 @@ int interpretador (ESTADO *e) {
             printf("%-23s ler o estado de um jogo a partir de um ficheiro.\n","ler nome_do_ficheiro");
             printf("%-23s imprimir a lista de movimentos do jogo atual.\n","movs");
             printf("%-23s pedir ajuda ao bot para escolher a jogada atual.\n","jog");
-            printf("%-23s visualizar uma posição anterior através do seu número.\n\n","pos numero_da_jogada");
+            printf("%-23s visualizar uma posição anterior através do seu número.\n","pos numero_da_jogada");
+            printf("%-23s Permite sair do Jogo.\n\n", "Q");
             interpretador(e);
             break;
         case 8:
