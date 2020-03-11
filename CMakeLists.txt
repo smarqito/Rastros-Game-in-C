@@ -3,4 +3,4 @@ project(rastros C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(rastros main.c globals.c globals.h ficheiros.c ficheiros.h modules/data.c modules/data.h modules/interpretador.c modules/interpretador.h modules/logica/logica.c modules/logica/logica.h modules/interface/interface.c modules/interface/interface.h)
+add_executable(rastros main.c globals.c globals.h ficheiros.c ficheiros.h modules/data.c modules/data.h modules/interpretador.c modules/interpretador.h modules/logica/logica.c modules/logica/logica.h modules/interface/interface.c modules/interface/interface.h modules/logica/bot.c modules/logica/bot.h)

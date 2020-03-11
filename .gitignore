@@ -1,1 +1,9 @@
 /cmake-build-debug/
+/bot.o
+/data.o
+/globals.o
+/interface.o
+/interpretador.o
+/logica.o
+/main.o
+/rastros.exe

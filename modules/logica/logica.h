@@ -8,4 +8,9 @@
 int isPossiblePlay (ESTADO *state, COORDENADA c);
 int jogar (ESTADO *state, COORDENADA c);
 int verificaFim(ESTADO *state);
+// funções para o interpretador
+int gravarJogo (ESTADO *state, char *nomeFicheiro);
+int lerJogo (ESTADO *e, char *nomeFicheiro);
+int lerMovimentos (ESTADO *e);
+void mostraPos(ESTADO *state, char *pos);
 #endif //RASTROS_LOGICA_H

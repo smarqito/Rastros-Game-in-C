@@ -6,6 +6,7 @@
 #include <string.h>
 #include "interpretador.h"
 #include "logica/logica.h"
+#include "logica/bot.h"
 #include "interface/interface.h"
 
 int instrucao (char *instr) {
@@ -61,19 +62,19 @@ int interpretador (ESTADO *e) {
             interpretador(e);
             break;
         case 2:
-            printf("func gravar\n");
+            gravarJogo(e,arg);
             break;
         case 3:
-            printf("func ler\n");
+            lerJogo(e,arg);
             break;
         case 4:
-            printf("func movs\n");
+            lerMovimentos(e);
             break;
         case 5:
-            printf("func jogada do bot\n");
+            jogaBot(e);
             break;
         case 6:
-            printf("func pos antiga\n");
+            mostraPos(e,arg);
             break;
         case 7:
             printf("\n%-25s Descrição","Instruções");
@@ -86,7 +87,7 @@ int interpretador (ESTADO *e) {
             interpretador(e);
             break;
         case 8:
-            printf("exit");
+            printf("Obrigado por jogar connosco! Até à próxima.\n");
             break;
         default:
             printf("Opção inválida!\n");

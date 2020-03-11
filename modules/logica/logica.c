@@ -65,3 +65,22 @@ int verificaFim (ESTADO *state) {
     else
         return 0;;
 }
+
+int gravarJogo (ESTADO *state, char *nomeFicheiro) {
+    printf("gravar %s", nomeFicheiro);
+    return 0;
+}
+
+int lerJogo (ESTADO *e, char *nomeFicheiro) {
+    printf("ler %s", nomeFicheiro);
+    return 0;
+}
+
+int lerMovimentos (ESTADO *e) {
+    printf("apresentar movimentos do jogo");
+    return 0;
+}
+
+void mostraPos(ESTADO *state, char *pos) {
+    printf("mostra um tabuleiro antigo na pos \"%s\".", pos);
+}

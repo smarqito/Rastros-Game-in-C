@@ -30,6 +30,9 @@ char converteCasa (CASA house) {
 void mostrarTabuleiro (ESTADO *state) {
     int m,n;
     char i;
+    FILE *save;
+    save = fopen("./temp.txt","w+");
+
     for(n=0; n<2;n++)
         putchar(' ');
     putchar(' ');
@@ -40,8 +43,10 @@ void mostrarTabuleiro (ESTADO *state) {
         printf("%d | ",m+1);
         for(n=0;n<MAX_HOUSES;n++) {
             printf("%c | ", converteCasa(state->tab[m][n]));
+            fprintf(save,"%c", converteCasa(state->tab[m][n]));
         }
         printf("\n");
+        fprintf(save,"\n");
         for(n=0; n<2;n++)
             putchar(' ');
         putchar('|');
@@ -54,4 +59,5 @@ void mostrarTabuleiro (ESTADO *state) {
     for(i='a';i<'i';i++)
         printf("%c   ",i);
     putchar('\n');
+    fclose(save);
 }
