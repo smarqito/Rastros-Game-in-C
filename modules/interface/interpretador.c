@@ -5,9 +5,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include "interpretador.h"
-#include "logica/logica.h"
-#include "logica/bot.h"
-#include "interface/interface.h"
+#include "../logica/logica.h"
+#include "../logica/bot.h"
+#include "interface.h"
 
 int instrucao (char *instr) {
     int i=0;
@@ -84,14 +84,14 @@ int interpretador (ESTADO *e) {
             printf("%-23s imprimir a lista de movimentos do jogo atual.\n","movs");
             printf("%-23s pedir ajuda ao bot para escolher a jogada atual.\n","jog");
             printf("%-23s visualizar uma posição anterior através do seu número.\n","pos numero_da_jogada");
-            printf("%-23s Permite sair do Jogo.\n\n", "Q");
+            printf("%-23s sair do jogo.\n\n", "Q");
             interpretador(e);
             break;
         case 8:
             printf("Obrigado por jogar connosco! Até à próxima.\n");
             break;
         default:
-            printf("Opção inválida!\n");
+            printf("Opção inválida! \n");
             break;
     }
 

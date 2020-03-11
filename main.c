@@ -1,5 +1,5 @@
 #include "modules/data.h"
-#include "modules/interpretador.h"
+#include "modules/interface/interpretador.h"
 
 int main() {
     ESTADO *e = initState();

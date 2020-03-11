@@ -46,4 +46,3 @@ CASA getHouseState (ESTADO *state, COORDENADA c){
 int getNumberPlays (ESTADO *state){
     return state->numJogadas;
 }
-
