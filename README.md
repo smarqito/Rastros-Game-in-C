@@ -3,9 +3,14 @@ Rastros game built in C
 
 Projeto desenvolvido no âmbito da unidade curricular Laboratórios de Informática II do curso de Engenharia Informática da Universidade do Minho.
 
-Turno Prático: PL6.
+## Etapas de desenvolvimento:
+- [x] Guião 1
+- [x] Guião 2
 
-Autores:  
-62608 Marco António Gonçalves de Sousa  
-93271 José Alberto Ferreira Malheiro  
-93198 Mariana Rocha Marques  
+
+### Turno Prático: __PL6__.
+
+## Autores:  
+- **_62608_** __Marco António Gonçalves de Sousa__  
+- **_93271_** __José Alberto Ferreira Malheiro__  
+- **_93198_** __Mariana Rocha Marques__
