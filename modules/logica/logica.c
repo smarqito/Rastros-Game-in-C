@@ -12,6 +12,8 @@ void changeCardinal (ESTADO *state) {
     state->tab[m][n] = PRETA;
 }
 
+// Verfica-se a CASA escolhida pelo Jogador (Tem de estar na proximidade)
+
 int isPossiblePlay (ESTADO *state, COORDENADA c){
     COORDENADA ultima = state->ultimaJogada;
     int linhaU = ultima.linha, colunaU = ultima.coluna;
@@ -26,9 +28,24 @@ int isPossiblePlay (ESTADO *state, COORDENADA c){
     return resposta;
 }
 
+// Verifica as condições necessárias para poder efetuar uma jogada -> Utilizada na função 'jogar'
+//A jogada é possível se a CASA escolhida pelo Jogador estiver VAZIA ou for o JOGADOR1/JOGADOR2 (Verficado através da função -> getHouseState)
+//É necessario que a casa esteja na proximidade do Jogador -> isPossiblePlay
+
+int verificaCasa (ESTADO *state, COORDENADA c){
+    int resposta = 0;
+    if ((getHouseState(state,c) == VAZIO || getHouseState(state,c) == JOGADOR1 || getHouseState(state,c) == JOGADOR2) && isPossiblePlay(state, c)) resposta = 1;
+    return resposta;
+}
+
+//Efetua a jogada (Caso seja possível)
+//Após verificar a condição (Função -> verificaCasa) modifica o ESTADO CASA (Para BRANCA)
+//Substitui no Tabuleiro o 'asterisco' por um cardinal (Função -> changeCardinal)
+//Atualiza a última jogada
+//Por fim retorna 1, caso a jogada seja possível, ou 0, caso contrário
+
 int jogar (ESTADO *state, COORDENADA c){
-    int jogadaP = 0;
-    if ((getHouseState(state,c) == VAZIO || getHouseState(state,c) == JOGADOR1 || getHouseState(state,c) == JOGADOR2) && isPossiblePlay(state, c)){
+    if (verificaCasa(state, c)){
         state-> tab[c.linha][c.coluna] = BRANCA;
         changeCardinal(state);
         state->ultimaJogada = c;
