@@ -6,7 +6,12 @@ Projeto desenvolvido no âmbito da unidade curricular Laboratórios de Informát
 ## Etapas de desenvolvimento:
 - [x] Guião 1
 - [x] Guião 2
-
+- [x] Guião 3
+- [x] Guião 4
+- [x] Guião 5
+- [x] Guião 6
+- [ ] Guião 7
+- [ ] Guião 8
 
 ### Turno Prático: __PL6__.
 
