@@ -7,7 +7,7 @@
 
 void atualizarTab (char *fileName, int m, int n)
 {
-        // Declaramos um ponteiro(link para o endereço da memória) para o arquivo de nome: 'pf'
+        // Declaramos um ponteiro para tipo de dados FILE
         FILE *pf;
         char conteudo[100],var2[100];
 

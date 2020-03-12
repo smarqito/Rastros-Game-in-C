@@ -6,7 +6,7 @@
 #define RASTROS_INTERPRETADOR_H
 
 #include "../data.h"
-#include "../../globals.h"
+#include "../../globals/globals.h"
 
 int interpretador (ESTADO *e);
 #endif //RASTROS_INTERPRETADOR_H

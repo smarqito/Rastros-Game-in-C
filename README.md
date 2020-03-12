@@ -1,3 +1,4 @@
+![Rastros Game](http://www.luduscience.com/images/rastros.jpg)
 # Rastros
 Rastros game built in C
 
@@ -11,7 +12,6 @@ Engenharia Informática da Universidade do Minho.
 - [x] Guião 4
 - [x] Guião 5
 ### Relatório Guião 5  
-
 Tendo por base as orientações definidas pelos docentes, a realização do guião 5 consistiu nas seguintes fases:
 #### 1. Estrutura do projeto
    - __Camada de dados;__

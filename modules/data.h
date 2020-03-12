@@ -5,7 +5,7 @@
 #ifndef RASTROS_DATA_H
 #define RASTROS_DATA_H
 
-#include "../globals.h"
+#include "../globals/globals.h"
 
 typedef enum {VAZIO, BRANCA, PRETA,JOGADOR1,JOGADOR2} CASA;
 
