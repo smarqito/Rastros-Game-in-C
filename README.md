@@ -59,6 +59,13 @@ Estes estão em conformidade com a estrutura do projeto apresentada, sendo os se
 A maior dificuldade ocorreu durante esta fase inicial do projeto, 
 em que se procurou definir a melhor hierarquia de ficheiros possível que permitisse criar módulos facilmente reutilizáveis
 e fácil de efetuar *debugging*.
+Para tal, utilizou-se conhecimento adquirido em artigos sobre esta temática.  
+Quanto ao desenvolvimento do código, utilizando as orientações da equipa docente e o conhecimento adquirido nas aulas teóricas
+de Programação Imperativa, foi relativamente simples.  
+Por forma a facilitar a impressão do tabuleiro e a deteção de fim de jogo, optou-se por alterar a tipo de dados ```CASA```,
+acrescentando ```JOGADOR1, JOGADOR2```. Através desta alteração, foi possível definir uma função que imprime o tabuleiro
+com o mínimo de código e fácil leitura humana - novamente com o objetivo de facilitar o *debugging*.  
+Em relação à impressão do tabuleiro, optou-se por desenvolver uma componente gráfica que melhora a utilização do programa.
 
 
 - [x] Guião 6
@@ -68,8 +75,8 @@ e fácil de efetuar *debugging*.
 
 ## Informação sobre os autores
 
-### Turno Prático
-PL6
+#### Turno Prático
+PL6 - Grupo 5
 
 ### Autores:  
 - **_62608_** __Marco António Gonçalves de Sousa__  
