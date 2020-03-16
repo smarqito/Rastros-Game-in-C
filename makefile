@@ -1,5 +1,5 @@
-rastros.exe: main.o globals.o data.o interpretador.o interface.o logica.o bot.o
-	gcc -o rastros.exe main.o globals.o data.o interpretador.o interface.o logica.o bot.o
+rastros.exe: main.o globals.o data.o interpretador.o interface.o logica.o bot.o ficheiros.o
+	gcc -o rastros.exe main.o globals.o data.o interpretador.o interface.o logica.o bot.o ficheiros.o
 
 main.o: main.c
 	gcc -c main.c
@@ -18,6 +18,9 @@ data.o: ./modules/data.c
 
 interface.o: ./modules/interface/interface.c
 	gcc -c ./modules/interface/interface.c
+
+ficheiros.o: ./modules/logica/ficheiros.c
+	gcc -c ./modules/logica/ficheiros.c
 
 logica.o: ./modules/logica/logica.c
 	gcc -c ./modules/logica/logica.c

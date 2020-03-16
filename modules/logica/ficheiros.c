@@ -5,23 +5,15 @@
 #include <stdio.h>
 
 
-void atualizarTab (char *fileName, int m, int n)
+void escreveHistorico (ESTADO *state)
 {
-        // Declaramos um ponteiro para tipo de dados FILE
-        FILE *pf;
-        char conteudo[100],var2[100];
+    FILE *temp;
+    temp=fopen("temp","a");
 
-        //Abre o arquivo novamente para leitura
-        pf = fopen("temp.txt", "r");
-
-        // Le em conteudo o valor da variável armazenada anteriormente pf
-        fread(&conteudo, 2, 4,pf);
-        fread(&var2, 2, 4,pf);
-        // Imprime o conteúdo, se existir, do arquivo informado
-       // for(int i = 0 ;conteudo[i] != '\0' &&i < 100  ; i++)
-           // printf("%c", conteudo[i]);
-        printf("\nO CONTEÚDO DO ARQUIVO É:\n %s \n", conteudo);
-        printf("\nO CONTEÚDO DO ARQUIVO É:\n %s \n", var2);
-
-        fclose(pf);
+    if(state->jogadorAtual) { //se o jogador atual é 1, a última jogada foi do 0!
+        fprintf(temp,"%d: %c%c ",state->numJogadas+1,state->ultimaJogada.coluna + 'a',state->ultimaJogada.linha + '1');
+    } else {
+        fprintf(temp,"%c%c\n",state->ultimaJogada.coluna + 'a',state->ultimaJogada.linha + '1');
+    }
+    fclose(temp);
 }

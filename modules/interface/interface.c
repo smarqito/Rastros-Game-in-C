@@ -4,35 +4,8 @@
 #include <string.h>
 #include <stdio.h>
 #include "interface.h"
-
-/*
- * Utiliza-se esta função para converter uma CASA para o tipo char correspondente:
- * 1. VAZIO: '.'
- * 2. BRANCA: '*'
- * 3. JOGADOR1: '1'
- * 4. JOGADOR2: '2'
- */
-char converteCasa (CASA house) {
-    char casa;
-    switch (house) {
-        case VAZIO:
-            casa = '.';
-            break;
-        case BRANCA:
-            casa = '*';
-            break;
-        case PRETA:
-            casa = '#';
-            break;
-        case JOGADOR1:
-            casa = '1';
-            break;
-        case JOGADOR2:
-            casa ='2';
-            break;
-    }
-    return casa;
-}
+#include "../logica/ficheiros.h"
+#include "../logica/logica.h"
 
 /*
   *  Imprime o tabuleiro em dois locais:
@@ -53,7 +26,7 @@ void mostrarTabuleiro (ESTADO *state) {
     int m,n;
     char i;
     FILE *save;
-    save = fopen("./temp.txt","w+"); //abre o ficheiro temporário
+    save = fopen("temp.txt","r+"); //abre o ficheiro temporário
     for(n=0; n<2;n++)
         putchar(' ');
     putchar(' ');
@@ -80,5 +53,8 @@ void mostrarTabuleiro (ESTADO *state) {
     for(i='a';i<'i';i++)
         printf("%c   ",i);
     putchar('\n');
+    fprintf(save,"\n");
     fclose(save); //fecha o ficheiro temporário
+    escreveHistorico(state);
+
 }

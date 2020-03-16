@@ -22,7 +22,7 @@ void initPlay (ESTADO *state) {
 
 void initPlayer (ESTADO *state) {
     state -> numJogadas = 0;
-    state -> jogadorAtual = 1;
+    state -> jogadorAtual = 0;
     state->bot=NO;
     state->nivel=0;
 }

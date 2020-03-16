@@ -13,4 +13,5 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro);
 int lerJogo (ESTADO *e, char *nomeFicheiro);
 int lerMovimentos (ESTADO *e);
 void mostraPos(ESTADO *state, char *pos);
+char converteCasa (CASA house);
 #endif //RASTROS_LOGICA_H

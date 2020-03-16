@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "logica.h"
+#include "ficheiros.h"
 
 //Esta função, dado um Estado, vai mudar o Estado CASA para PRETA (pois foi efetuada uma jogada).
 //Sendo assim, em termos gráficos, substitui-se o '*' por um '#';
@@ -48,8 +49,54 @@ int verificaVizinhanca (ESTADO *state, COORDENADA c){
 
 int verificaCasa (ESTADO *state, COORDENADA c){
     int resposta = 0;
-    if ((getHouseState(state,c) == VAZIO || getHouseState(state,c) == JOGADOR1 || getHouseState(state,c) == JOGADOR2) && verificaVizinhanca(state, c)) resposta = 1;
+    if ((   getHouseState(state,c) == VAZIO
+         || getHouseState(state,c) == JOGADOR1
+         || getHouseState(state,c) == JOGADOR2)
+        && verificaVizinhanca(state, c))
+            resposta = 1;
     return resposta;
+}
+
+// atualiza o histórico de jogada
+void atualizaJogadas (ESTADO *state, COORDENADA c) {
+    if (!state->jogadorAtual) {
+        state->jogadorAtual=1;
+        state->jogadas[state->numJogadas].jogador1=c;
+    } else {
+        state->jogadorAtual=0;
+        state->jogadas[state->numJogadas].jogador2=c;
+        state->numJogadas++;
+    }
+    state->ultimaJogada=c;
+}
+
+/*
+ * Utiliza-se esta função para converter uma CASA para o tipo char correspondente:
+ * 1. VAZIO: '.'
+ * 2. BRANCA: '*'
+ * 3. JOGADOR1: '1'
+ * 4. JOGADOR2: '2'
+ */
+char converteCasa (CASA house) {
+    char casa;
+    switch (house) {
+        case VAZIO:
+            casa = '.';
+            break;
+        case BRANCA:
+            casa = '*';
+            break;
+        case PRETA:
+            casa = '#';
+            break;
+        case JOGADOR1:
+            casa = '1';
+            break;
+        case JOGADOR2:
+            casa ='2';
+            break;
+    }
+    return casa;
 }
 
 //Esta função tem o intuito de efetuar (se possível) uma jogada, recebendo para tal um Estado e uma coordenada.
@@ -62,7 +109,7 @@ int jogar (ESTADO *state, COORDENADA c){
     if (verificaCasa(state, c)){
         state-> tab[c.linha][c.coluna] = BRANCA;
         changeCardinal(state);
-        state->ultimaJogada = c;
+        atualizaJogadas(state,c);
         return 1;
     }
     else {
@@ -87,7 +134,27 @@ int verificaFim (ESTADO *state) {
 //É imprimida ,também ,uma mensagem para ler um Jogo, caso o Jogador tenha gravado um e queira voltar.
 
 int gravarJogo (ESTADO *state, char *nomeFicheiro) {
-    printf("gravar %s", nomeFicheiro);
+    int m,n,i;
+    FILE *save;
+    i=0;
+    while(nomeFicheiro[i]) {
+        if (nomeFicheiro[i] == '\n') nomeFicheiro[i] = '\0';
+        i++;
+    }
+    save = fopen(nomeFicheiro,"w+"); //abre o ficheiro temporário
+    for (m=0; m<MAX_HOUSES;m++) {
+        for(n=0;n<MAX_HOUSES;n++) {
+            fprintf(save,"%c", converteCasa(state->tab[m][n])); // imprime a casa no ficheiro de texto temporário
+        }
+        fprintf(save,"\n");
+    }
+    fprintf(save,"\n");
+    for(i=0;i<=state->numJogadas;i++) {
+        fprintf(save,"%d: %c%c ", i+1,state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+        fprintf(save,"%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
+    }
+    fclose(save); //fecha o ficheiro temporário
+
     return 0;
 }
 

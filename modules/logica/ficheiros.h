@@ -4,5 +4,7 @@
 
 #ifndef RASTROS_FICHEIROS_H
 #define RASTROS_FICHEIROS_H
-void atualizarTab (char *fileName, int m, int n);
+
+#include "../data.h"
+void escreveHistorico (ESTADO *state);
 #endif //RASTROS_FICHEIROS_H
