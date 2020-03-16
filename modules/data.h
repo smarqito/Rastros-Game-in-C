@@ -38,4 +38,6 @@ int getPlayer (ESTADO *state);
 CASA getHouseState(ESTADO *state, COORDENADA c);
 
 int getNumberPlays (ESTADO *state);
+
+int numero_comandos(ESTADO *state);
 #endif //RASTROS_DATA_H

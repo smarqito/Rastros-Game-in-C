@@ -5,17 +5,19 @@
 #include <stdio.h>
 #include "logica.h"
 #include "ficheiros.h"
+#include "../interface/interface.h"
 
 //Esta função, dado um Estado, vai mudar o Estado CASA para PRETA (pois foi efetuada uma jogada).
 //Sendo assim, em termos gráficos, substitui-se o '*' por um '#';
 //É mudado o Estado CASA nas coordenadas da última Jogada;
 //Passa para PRETA (Com cardinal).
 
-void changeCardinal (ESTADO *state) {
+void changeCardinal (ESTADO *state, COORDENADA c) {
     int m,n;
     m=state->ultimaJogada.linha;
     n=state->ultimaJogada.coluna;
-    state->tab[m][n] = PRETA;
+    state->tab[m][n] = PRETA; //jogada anterior -> '#'
+    state-> tab[c.linha][c.coluna] = BRANCA; //jogada atual -> '*'
 }
 
 //Esta função, dado um Estado e uma coordenada, verifica se é possivel escolher essa CASA (Presente nessas coordenadas).
@@ -107,9 +109,10 @@ char converteCasa (CASA house) {
 
 int jogar (ESTADO *state, COORDENADA c){
     if (verificaCasa(state, c)){
-        state-> tab[c.linha][c.coluna] = BRANCA;
-        changeCardinal(state);
+        changeCardinal(state,c); //muda '*' e '#'
         atualizaJogadas(state,c);
+        mostrarTabuleiro(state);
+        escreveHistorico(state);
         return 1;
     }
     else {

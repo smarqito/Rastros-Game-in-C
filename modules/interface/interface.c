@@ -55,5 +55,6 @@ void mostrarTabuleiro (ESTADO *state) {
     putchar('\n');
     fprintf(save,"\n");
     fclose(save); //fecha o ficheiro temporário
-    escreveHistorico(state);
+
+
 }

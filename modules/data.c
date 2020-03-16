@@ -36,7 +36,7 @@ ESTADO *initState() {
 }
 
 int getPlayer (ESTADO *state) {
-    return state->jogadorAtual;
+    return state->jogadorAtual + 1;
 }
 
 CASA getHouseState (ESTADO *state, COORDENADA c){
@@ -45,4 +45,11 @@ CASA getHouseState (ESTADO *state, COORDENADA c){
 
 int getNumberPlays (ESTADO *state){
     return state->numJogadas;
+}
+
+int numero_comandos (ESTADO *state) {
+    if (!state->jogadorAtual)
+        return (state ->numJogadas*2)+1;
+    else
+        return (state -> numJogadas*2)+2;
 }

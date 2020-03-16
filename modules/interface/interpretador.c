@@ -7,13 +7,21 @@
 #include "interpretador.h"
 #include "../logica/logica.h"
 #include "../logica/bot.h"
-#include "interface.h"
+
+void imprimeComandos (ESTADO *state) {
+    int numeroComandos = numero_comandos(state);
+    if (numeroComandos < 10) {
+        printf("#0%d ",numeroComandos);
+    } else {
+        printf("#%d ",numeroComandos);
+    }
+}
 
 int instrucao (char *instr) {
     int i=0;
     while(instr[i++]) if (instr[i] == '\n') instr[i] = '\0';
     char opcoes[MAX_INSTR][11] = {
-            "coordenada",
+            "jogar",
             "gr",
             "ler",
             "movs",
@@ -25,6 +33,36 @@ int instrucao (char *instr) {
 
     for(i=0; i<MAX_INSTR && strcmp(opcoes[i],instr);i++);
     return (i==MAX_INSTR) ? 0 : (i+1);
+}
+
+int jogarRastros (ESTADO *state) {
+    char *arg, linha[BUF_SIZE];
+    char lin[2], col[2];
+    imprimeComandos(state);
+    printf("PL%d (%d) > ",getPlayer(state),getNumberPlays(state));
+    if(fgets(linha,BUF_SIZE,stdin) == NULL)
+        return 0;
+    if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
+        COORDENADA coord = {*lin - '1', *col - 'a'};
+        jogar(state,coord);
+    } else if (strlen(linha) == 2 && sscanf(linha, "%[Q-Q]",col) == 1 ) {
+        interpretador(state);
+        return 1;
+    } else {
+        printf("Coordenada inválida. Tente novamente.\n");
+    }
+    jogarRastros(state);
+}
+
+void pedeAjuda() {
+    printf("\n%-25s Descrição","Instruções");
+    printf("\n%-23s Permite entrar no modo de jogo.\n","jogar");
+    printf("%-23s gravar o estado atual do jogo num ficheiro.\n","gr nome_do_ficheiro");
+    printf("%-23s ler o estado de um jogo a partir de um ficheiro.\n","ler nome_do_ficheiro");
+    printf("%-23s imprimir a lista de movimentos do jogo atual.\n","movs");
+    printf("%-23s pedir ajuda ao bot para escolher a jogada atual.\n","jog");
+    printf("%-23s visualizar uma posição anterior através do seu número.\n","pos numero_da_jogada");
+    printf("%-23s sair do jogo.\n\n", "Q");
 }
 
 int interpretador (ESTADO *e) {
@@ -45,6 +83,7 @@ int interpretador (ESTADO *e) {
     arg = strtok(NULL,espaco);
     //caso a instrução não seja válida, pede nova função
     if (!(iinstr = instrucao(instr))) {
+        pedeAjuda();
         printf("Opcao invalida!");
         interpretador(e);
         return 0;
@@ -52,14 +91,7 @@ int interpretador (ESTADO *e) {
     switch (iinstr)
     {
         case 1:
-            if(strlen(arg) == 3 && sscanf(arg, "%[a-h]%[1-8]", col, lin) == 2) {
-                COORDENADA coord = {*lin - '1', *col - 'a'};
-                jogar(e,coord);
-                mostrarTabuleiro(e);
-            } else {
-                printf("Coordenada inválida. Tente novamente.\n");
-            }
-            interpretador(e);
+            jogarRastros(e);
             break;
         case 2:
             gravarJogo(e,arg);
@@ -77,21 +109,15 @@ int interpretador (ESTADO *e) {
             mostraPos(e,arg);
             break;
         case 7:
-            printf("\n%-25s Descrição","Instruções");
-            printf("\n%-23s permite efetuar uma jogada na coordenada ##. Exemplo: coordenada d4.\n","coordenada ##");
-            printf("%-23s gravar o estado atual do jogo num ficheiro.\n","gr nome_do_ficheiro");
-            printf("%-23s ler o estado de um jogo a partir de um ficheiro.\n","ler nome_do_ficheiro");
-            printf("%-23s imprimir a lista de movimentos do jogo atual.\n","movs");
-            printf("%-23s pedir ajuda ao bot para escolher a jogada atual.\n","jog");
-            printf("%-23s visualizar uma posição anterior através do seu número.\n","pos numero_da_jogada");
-            printf("%-23s sair do jogo.\n\n", "Q");
+            pedeAjuda();
             interpretador(e);
             break;
         case 8:
             printf("Obrigado por jogar connosco! Até à próxima.\n");
             break;
         default:
-            printf("Opção inválida! \n");
+            pedeAjuda();
+            printf("Opção inválida!\n");
             break;
     }
 
