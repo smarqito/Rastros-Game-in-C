@@ -26,7 +26,7 @@ void mostrarTabuleiro (ESTADO *state) {
     int m,n;
     char i;
     FILE *save;
-    save = fopen("temp.txt","r+"); //abre o ficheiro temporário
+    save = fopen("temp","r+"); //abre o ficheiro temporário
     for(n=0; n<2;n++)
         putchar(' ');
     putchar(' ');
@@ -56,5 +56,4 @@ void mostrarTabuleiro (ESTADO *state) {
     fprintf(save,"\n");
     fclose(save); //fecha o ficheiro temporário
     escreveHistorico(state);
-
 }
