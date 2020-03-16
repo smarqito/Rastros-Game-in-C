@@ -7,6 +7,8 @@
 #include "interpretador.h"
 #include "../logica/logica.h"
 #include "../logica/bot.h"
+#include "interface.h"
+#include "../logica/ficheiros.h"
 
 void imprimeComandos (ESTADO *state) {
     int numeroComandos = numero_comandos(state);
@@ -36,8 +38,10 @@ int instrucao (char *instr) {
 }
 
 int jogarRastros (ESTADO *state) {
-    char *arg, linha[BUF_SIZE];
+    char linha[BUF_SIZE];
     char lin[2], col[2];
+    int chegouFim;
+    verificaHistorico(state);
     imprimeComandos(state);
     printf("PL%d (%d) > ",getPlayer(state),getNumberPlays(state));
     if(fgets(linha,BUF_SIZE,stdin) == NULL)
@@ -51,7 +55,13 @@ int jogarRastros (ESTADO *state) {
     } else {
         printf("Coordenada inválida. Tente novamente.\n");
     }
-    jogarRastros(state);
+    if((chegouFim=verificaFim(state))) {
+        printf("Venceu o jogador %d.\n",chegouFim);
+        interpretador(initState());
+        return 1;
+    } else {
+        jogarRastros(state);
+    }
 }
 
 void pedeAjuda() {
@@ -70,10 +80,6 @@ int interpretador (ESTADO *e) {
     char col[2], lin[2], espaco[2] = " ";
     char *instr, *arg;
     int iinstr;
-    if((iinstr=verificaFim(e))) {
-        printf("Venceu o jogador %d.\n",iinstr);
-        return 1;
-    }
     printf("Diga-nos a sua instrucao:\n");
     //lê uma linha do teclado
     if(fgets(linha,BUF_SIZE,stdin) == NULL)
@@ -91,6 +97,7 @@ int interpretador (ESTADO *e) {
     switch (iinstr)
     {
         case 1:
+            mostrarTabuleiro(e);
             jogarRastros(e);
             break;
         case 2:

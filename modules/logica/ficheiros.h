@@ -7,4 +7,5 @@
 
 #include "../data.h"
 void escreveHistorico (ESTADO *state);
+void verificaHistorico(ESTADO *state);
 #endif //RASTROS_FICHEIROS_H

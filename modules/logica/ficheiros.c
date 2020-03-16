@@ -17,3 +17,10 @@ void escreveHistorico (ESTADO *state)
     }
     fclose(temp);
 }
+
+void verificaHistorico(ESTADO *state) {
+    FILE *temp;
+    if(!state->numJogadas && !state->jogadorAtual) {
+        temp=fopen("temp","w+");
+    }
+}
