@@ -1,16 +1,25 @@
-//
-// Created by marco on 3/9/20.
-//
+/*
+@file data.h
+Definição do estado e das funções que o manipulam
+ */
 
 #ifndef RASTROS_DATA_H
 #define RASTROS_DATA_H
 
 #include "../globals/globals.h"
 
+/*
+\brief Tipo de dados para a casa
+ */
 typedef enum {VAZIO, BRANCA, PRETA,JOGADOR1,JOGADOR2} CASA;
-
+/*
+\brief Tipo de dados para definir se está a jogar contra um bot
+ */
 typedef enum {NO,YES} BOT;
 
+/*
+\brief Tipo de dados para as coordenadas
+ */
 typedef struct {
     int linha, coluna;
 } COORDENADA;

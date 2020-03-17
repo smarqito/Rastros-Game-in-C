@@ -30,6 +30,7 @@ int instrucao (char *instr) {
             "jog",
             "pos",
             "ajuda",
+            "help",
             "Q"
     };
 
@@ -72,6 +73,7 @@ void pedeAjuda() {
     printf("%-23s imprimir a lista de movimentos do jogo atual.\n","movs");
     printf("%-23s pedir ajuda ao bot para escolher a jogada atual.\n","jog");
     printf("%-23s visualizar uma posição anterior através do seu número.\n","pos numero_da_jogada");
+    printf("%-23s mostra este menú.\n","ajuda");
     printf("%-23s sair do jogo.\n\n", "Q");
 }
 
@@ -90,7 +92,7 @@ int interpretador (ESTADO *e) {
     //caso a instrução não seja válida, pede nova função
     if (!(iinstr = instrucao(instr))) {
         pedeAjuda();
-        printf("Opcao invalida!");
+        printf("Opcao invalida!\n\n");
         interpretador(e);
         return 0;
     }
@@ -116,10 +118,11 @@ int interpretador (ESTADO *e) {
             mostraPos(e,arg);
             break;
         case 7:
+        case 8:
             pedeAjuda();
             interpretador(e);
             break;
-        case 8:
+        case 9:
             printf("Obrigado por jogar connosco! Até à próxima.\n");
             break;
         default:

@@ -33,7 +33,7 @@ void mostrarTabuleiro (ESTADO *state) {
     for(i='a';i<'i';i++)
         printf("___ ");
     printf("\n");
-    for (m=0; m<MAX_HOUSES;m++) {
+    for (m=MAX_HOUSES-1; m>=0;m--) {
         printf("%d | ",m+1);
         for(n=0;n<MAX_HOUSES;n++) {
             printf("%c | ", converteCasa(state->tab[m][n])); // imprime a casa na linha de comandos

@@ -1,6 +1,7 @@
-//
-// Created by marco on 3/9/20.
-//
+/**
+@file logica.c
+ *
+ */
 
 #include <stdio.h>
 #include "logica.h"
@@ -124,9 +125,9 @@ int jogar (ESTADO *state, COORDENADA c){
 //Esta função, dado um Estado, verifica se o Jogador chegou ao fim.
 
 int verificaFim (ESTADO *state) {
-    if(state->tab[0][MAX_HOUSES-1] == BRANCA)
+    if(state->tab[MAX_HOUSES-1][MAX_HOUSES-1] == BRANCA)
         return 2;
-    else if (state->tab[MAX_HOUSES-1][0]==BRANCA)
+    else if (state->tab[0][0]==BRANCA)
         return 1;
     else
         return 0;;
