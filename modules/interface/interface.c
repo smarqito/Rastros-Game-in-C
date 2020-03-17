@@ -25,8 +25,6 @@ ficheiro está organizada para facilitar a leitura através de funções IO e cr
 void mostrarTabuleiro (ESTADO *state) {
     int m,n;
     char i;
-    FILE *save;
-    save = fopen("temp","r+"); //abre o ficheiro temporário
     for(n=0; n<2;n++)
         putchar(' ');
     putchar(' ');
@@ -37,10 +35,8 @@ void mostrarTabuleiro (ESTADO *state) {
         printf("%d | ",m+1);
         for(n=0;n<MAX_HOUSES;n++) {
             printf("%c | ", converteCasa(state->tab[m][n])); // imprime a casa na linha de comandos
-            fprintf(save,"%c", converteCasa(state->tab[m][n])); // imprime a casa no ficheiro de texto temporário
         }
         printf("\n");
-        fprintf(save,"\n");
         for(n=0; n<2;n++)
             putchar(' ');
         putchar('|');
@@ -53,8 +49,4 @@ void mostrarTabuleiro (ESTADO *state) {
     for(i='a';i<'i';i++)
         printf("%c   ",i);
     putchar('\n');
-    fprintf(save,"\n");
-    fclose(save); //fecha o ficheiro temporário
-
-
 }

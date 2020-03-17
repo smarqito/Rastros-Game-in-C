@@ -42,8 +42,7 @@ int jogarRastros (ESTADO *state) {
     char linha[BUF_SIZE];
     char lin[2], col[2];
     int chegouFim;
-    verificaHistorico(state);
-    imprimeComandos(state);
+    imprimeComandos(state); // imprime o numero de comandos utilizados
     printf("PL%d (%d) > ",getPlayer(state),getNumberPlays(state));
     if(fgets(linha,BUF_SIZE,stdin) == NULL)
         return 0;

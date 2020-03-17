@@ -113,7 +113,6 @@ int jogar (ESTADO *state, COORDENADA c){
         changeCardinal(state,c); //muda '*' e '#'
         atualizaJogadas(state,c);
         mostrarTabuleiro(state);
-        escreveHistorico(state);
         return 1;
     }
     else {
