@@ -133,6 +133,30 @@ int verificaFim (ESTADO *state) {
         return 0;;
 }
 
+// Usada na função 'imprimirJogadas'.
+// Imprime os números com dois dígitos. (ex : 1 = 01 ou 2 = 02).
+// Números com dois digitos ficam inalterados.
+
+void numeros2Digitos (int i, FILE *save){
+    if (i+1 < 10) fprintf (save,"0%d:", i+1);
+    else fprintf(save, "%d: ", i+1);
+}
+
+// Usada na função 'gravarJogo'.
+// Imprime as Jogadas efetuadas (abaixo do tabuleiro).
+
+void imprimirJogadas (ESTADO *state, int i, FILE *save){
+    if (i < state->numJogadas){
+         numeros2Digitos(i, save);
+         fprintf(save,"%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+         fprintf(save,"%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
+    }
+    else if (i == state->numJogadas && getPlayer(state) == 2){
+         numeros2Digitos (i, save);
+         fprintf(save,"%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+    }
+}
+
 //As funções 'gravarJogo' e 'lerJogo', dados o Estado e o Nome do Ficheiro (String), tem o intuito de imprimir uma mensagem.
 //É imprimido uma mensagem para gravar o Jogo, caso o Jogador queira.
 //É imprimida ,também ,uma mensagem para ler um Jogo, caso o Jogador tenha gravado um e queira voltar.
@@ -146,16 +170,15 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
         i++;
     }
     save = fopen(nomeFicheiro,"w+"); //abre o ficheiro temporário
-    for (m=0; m<MAX_HOUSES;m++) {
+    for (m=MAX_HOUSES-1; m>=0;m--) {
         for(n=0;n<MAX_HOUSES;n++) {
             fprintf(save,"%c", converteCasa(state->tab[m][n])); // imprime a casa no ficheiro de texto temporário
         }
         fprintf(save,"\n");
     }
     fprintf(save,"\n");
-    for(i=0;i<=state->numJogadas;i++) {
-        fprintf(save,"%d: %c%c ", i+1,state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
-        fprintf(save,"%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
+    for(i=0;i<= state->numJogadas;i++) {
+        imprimirJogadas(state,i, save);
     }
     fclose(save); //fecha o ficheiro temporário
 
