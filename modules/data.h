@@ -50,4 +50,5 @@ CASA converteChar (int c);
 int getNumberPlays (ESTADO *state);
 
 int numero_comandos(ESTADO *state);
+int casaJogar(CASA);
 #endif //RASTROS_DATA_H

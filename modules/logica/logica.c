@@ -5,9 +5,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "logica.h"
 #include "ficheiros.h"
 #include "../interface/interface.h"
+#include "../data.h"
 
 //Esta função, dado um Estado, vai mudar o Estado CASA para PRETA (pois foi efetuada uma jogada).
 //Sendo assim, em termos gráficos, substitui-se o '*' por um '#';
@@ -114,6 +116,7 @@ int jogar (ESTADO *state, COORDENADA c){
         changeCardinal(state,c); //muda '*' e '#'
         atualizaJogadas(state,c);
         mostrarTabuleiro(state);
+        printf("%c", converteCasa(state->tab[0][0]));
         return 1;
     }
     else {
@@ -133,30 +136,6 @@ int verificaFim (ESTADO *state) {
         return 0;;
 }
 
-// Usada na função 'imprimirJogadas'.
-// Imprime os números com dois dígitos. (ex : 1 = 01 ou 2 = 02).
-// Números com dois digitos ficam inalterados.
-
-void numeros2Digitos (int i, FILE *save){
-    if (i+1 < 10) fprintf (save,"0%d:", i+1);
-    else fprintf(save, "%d: ", i+1);
-}
-
-// Usada na função 'gravarJogo'.
-// Imprime as Jogadas efetuadas (abaixo do tabuleiro).
-
-void imprimirJogadas (ESTADO *state, int i, FILE *save){
-    if (i < state->numJogadas){
-         numeros2Digitos(i, save);
-         fprintf(save,"%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
-         fprintf(save,"%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
-    }
-    else if (i == state->numJogadas && getPlayer(state) == 2){
-         numeros2Digitos (i, save);
-         fprintf(save,"%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
-    }
-}
-
 //As funções 'gravarJogo' e 'lerJogo', dados o Estado e o Nome do Ficheiro (String), tem o intuito de imprimir uma mensagem.
 //É imprimido uma mensagem para gravar o Jogo, caso o Jogador queira.
 //É imprimida ,também ,uma mensagem para ler um Jogo, caso o Jogador tenha gravado um e queira voltar.
@@ -170,55 +149,59 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
         i++;
     }
     save = fopen(nomeFicheiro,"w+"); //abre o ficheiro temporário
-    for (m=MAX_HOUSES-1; m>=0;m--) {
+    for (m=0; m<MAX_HOUSES;m++) {
         for(n=0;n<MAX_HOUSES;n++) {
             fprintf(save,"%c", converteCasa(state->tab[m][n])); // imprime a casa no ficheiro de texto temporário
         }
         fprintf(save,"\n");
     }
     fprintf(save,"\n");
-    for(i=0;i<= state->numJogadas;i++) {
-        imprimirJogadas(state,i, save);
+    for(i=0;i<state->numJogadas;i++) {  
+
+        fprintf(save,"%d: %c%c ", i+1,state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+        fprintf(save,"%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
     }
     fclose(save); //fecha o ficheiro temporário
 
     return 0;
 }
 
-int lerJogo (ESTADO *e, char *nomeFicheiro) {
-    FILE *leitura;
-    int i,c,m,n;
-    i=n=m=0;
-    char *novoEstado = (char *) malloc(1024*sizeof(char));
+/*
 
-    for(int n=0; nomeFicheiro[n]; n++)
-        if(nomeFicheiro[n] == '\n') nomeFicheiro[n] = '\0';
+*/
+int converteDecimal (char jogada[]) {
+    int x=0;
+    x += (jogada[0]-'0') * 10;
+    x+= (jogada[1]-'0');
+    return x;
+}
 
-    leitura=fopen(nomeFicheiro,"r+");
 
-    if(leitura==NULL) {
-        perror("Não abre file");
-        exit(EXIT_FAILURE);
-    }
 
-    while((c=fgetc(leitura)) != EOF) {
-        if(c != '\n') {
-            if(m<MAX_HOUSES){
-                e->tab[m][n]=converteChar(c);
-                if(converteChar(c) == BRANCA)
-                    e->ultimaJogada.linha=m;
-                    e->ultimaJogada.coluna=n++;
+int lerJogo (ESTADO *state, char *nomeFicheiro) {
+    FILE *ficheiro;
+    int m,n,i=0;
+    char *jogada, lin[2], col[2],*teste = (char *) malloc (BUF_SIZE * sizeof(char));
+    char c;
+    m=n=0;
+    while(nomeFicheiro[n] && nomeFicheiro[n] != '\n') n++;
+    nomeFicheiro[n]='\0';
+    ficheiro=fopen(nomeFicheiro,"r+");
+    //char *teste = (char *) malloc(MAX_HOUSES*MAX_HOUSES*sizeof(char));
+    for(m=MAX_HOUSES-1;m>=0;m--){
+        for(n=0;n<MAX_HOUSES;n++){
+            c=converteChar(fgetc(ficheiro));
+            state->tab[m][n] = c;
+            if(casaJogar(c)) {
+                state->ultimaJogada.linha = m;
+                state->ultimaJogada.coluna = n;
             }
-        } else {
-            m--;
-            n=0;
         }
+        fgetc(ficheiro);
     }
-    mostrarTabuleiro(e);
-    i=0;
-    while(novoEstado[i]) printf("%c",novoEstado[i++]);
-    fclose(leitura);
-    //printf("ler %s", nomeFicheiro);
+    
+    fclose(ficheiro);
+    mostrarTabuleiro(state);
     return 0;
 }
 
