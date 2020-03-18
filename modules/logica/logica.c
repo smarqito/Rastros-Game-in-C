@@ -5,9 +5,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "logica.h"
 #include "ficheiros.h"
 #include "../interface/interface.h"
+#include "../data.h"
 
 //Esta função, dado um Estado, vai mudar o Estado CASA para PRETA (pois foi efetuada uma jogada).
 //Sendo assim, em termos gráficos, substitui-se o '*' por um '#';
@@ -114,6 +116,7 @@ int jogar (ESTADO *state, COORDENADA c){
         changeCardinal(state,c); //muda '*' e '#'
         atualizaJogadas(state,c);
         mostrarTabuleiro(state);
+        printf("%c", converteCasa(state->tab[0][0]));
         return 1;
     }
     else {
@@ -153,7 +156,8 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
         fprintf(save,"\n");
     }
     fprintf(save,"\n");
-    for(i=0;i<=state->numJogadas;i++) {
+    for(i=0;i<state->numJogadas;i++) {  
+
         fprintf(save,"%d: %c%c ", i+1,state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
         fprintf(save,"%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
     }
@@ -162,40 +166,42 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
     return 0;
 }
 
-int lerJogo (ESTADO *e, char *nomeFicheiro) {
-    FILE *leitura;
-    int i,c,m,n;
-    i=n=m=0;
-    char *novoEstado = (char *) malloc(1024*sizeof(char));
+/*
 
-    for(int n=0; nomeFicheiro[n]; n++)
-        if(nomeFicheiro[n] == '\n') nomeFicheiro[n] = '\0';
+*/
+int converteDecimal (char jogada[]) {
+    int x=0;
+    x += (jogada[0]-'0') * 10;
+    x+= (jogada[1]-'0');
+    return x;
+}
 
-    leitura=fopen(nomeFicheiro,"r+");
 
-    if(leitura==NULL) {
-        perror("Não abre file");
-        exit(EXIT_FAILURE);
-    }
 
-    while((c=fgetc(leitura)) != EOF) {
-        if(c != '\n') {
-            if(m<MAX_HOUSES){
-                e->tab[m][n]=converteChar(c);
-                if(converteChar(c) == BRANCA)
-                    e->ultimaJogada.linha=m;
-                    e->ultimaJogada.coluna=n++;
+int lerJogo (ESTADO *state, char *nomeFicheiro) {
+    FILE *ficheiro;
+    int m,n,i=0;
+    char *jogada, lin[2], col[2],*teste = (char *) malloc (BUF_SIZE * sizeof(char));
+    char c;
+    m=n=0;
+    while(nomeFicheiro[n] && nomeFicheiro[n] != '\n') n++;
+    nomeFicheiro[n]='\0';
+    ficheiro=fopen(nomeFicheiro,"r+");
+    //char *teste = (char *) malloc(MAX_HOUSES*MAX_HOUSES*sizeof(char));
+    for(m=MAX_HOUSES-1;m>=0;m--){
+        for(n=0;n<MAX_HOUSES;n++){
+            c=converteChar(fgetc(ficheiro));
+            state->tab[m][n] = c;
+            if(casaJogar(c)) {
+                state->ultimaJogada.linha = m;
+                state->ultimaJogada.coluna = n;
             }
-        } else {
-            m--;
-            n=0;
         }
+        fgetc(ficheiro);
     }
-    mostrarTabuleiro(e);
-    i=0;
-    while(novoEstado[i]) printf("%c",novoEstado[i++]);
-    fclose(leitura);
-    //printf("ler %s", nomeFicheiro);
+    
+    fclose(ficheiro);
+    mostrarTabuleiro(state);
     return 0;
 }
 

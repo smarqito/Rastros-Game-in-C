@@ -68,3 +68,7 @@ CASA converteChar (int c) {
             return JOGADOR2;
     }
 }
+
+int casaJogar (CASA casa) {
+    return (casa == BRANCA) ? 1 : 0;
+}
