@@ -53,3 +53,18 @@ int numero_comandos (ESTADO *state) {
     else
         return (state -> numJogadas*2)+2;
 }
+
+CASA converteChar (int c) {
+    switch (c) {
+        case '*':
+            return BRANCA;
+        case '#':
+            return PRETA;
+        case '.':
+            return VAZIO;
+        case '1':
+            return JOGADOR1;
+        case '2':
+            return JOGADOR2;
+    }
+}

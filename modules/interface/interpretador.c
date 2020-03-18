@@ -80,7 +80,7 @@ int interpretador (ESTADO *e) {
     char linha[BUF_SIZE];
     char col[2], lin[2], espaco[2] = " ";
     char *instr, *arg;
-    int iinstr;
+    int iinstr,r;
     printf("Diga-nos a sua instrucao:\n");
     //lê uma linha do teclado
     if(fgets(linha,BUF_SIZE,stdin) == NULL)
@@ -105,10 +105,12 @@ int interpretador (ESTADO *e) {
             gravarJogo(e,arg);
             break;
         case 3:
-            lerJogo(e,arg);
+            if(!lerJogo(e,arg))
+                interpretador(e);
             break;
         case 4:
-            lerMovimentos(e);
+            if(!lerMovimentos(e))
+                interpretador(e);
             break;
         case 5:
             jogaBot(e);

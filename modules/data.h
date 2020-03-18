@@ -45,6 +45,7 @@ ESTADO *initState ();
 int getPlayer (ESTADO *state);
 
 CASA getHouseState(ESTADO *state, COORDENADA c);
+CASA converteChar (int c);
 
 int getNumberPlays (ESTADO *state);
 

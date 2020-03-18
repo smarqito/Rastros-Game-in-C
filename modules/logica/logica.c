@@ -4,6 +4,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "logica.h"
 #include "ficheiros.h"
 #include "../interface/interface.h"
@@ -162,7 +163,39 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
 }
 
 int lerJogo (ESTADO *e, char *nomeFicheiro) {
-    printf("ler %s", nomeFicheiro);
+    FILE *leitura;
+    int i,c,m,n;
+    i=n=m=0;
+    char *novoEstado = (char *) malloc(1024*sizeof(char));
+
+    for(int n=0; nomeFicheiro[n]; n++)
+        if(nomeFicheiro[n] == '\n') nomeFicheiro[n] = '\0';
+
+    leitura=fopen(nomeFicheiro,"r+");
+
+    if(leitura==NULL) {
+        perror("Não abre file");
+        exit(EXIT_FAILURE);
+    }
+
+    while((c=fgetc(leitura)) != EOF) {
+        if(c != '\n') {
+            if(m<MAX_HOUSES){
+                e->tab[m][n]=converteChar(c);
+                if(converteChar(c) == BRANCA)
+                    e->ultimaJogada.linha=m;
+                    e->ultimaJogada.coluna=n++;
+            }
+        } else {
+            m--;
+            n=0;
+        }
+    }
+    mostrarTabuleiro(e);
+    i=0;
+    while(novoEstado[i]) printf("%c",novoEstado[i++]);
+    fclose(leitura);
+    //printf("ler %s", nomeFicheiro);
     return 0;
 }
 
