@@ -84,8 +84,8 @@ void atualizaJogadas (ESTADO *state, COORDENADA c) {
         state->jogadas[state->numJogadas].jogador1=c;
     } else {
         state->jogadorAtual=0;
-        state->jogadas[state->numJogadas].jogador2=c;
-        state->numJogadas++;
+        state->jogadas[state->numJogadas++].jogador2=c;
+        // state->numJogadas++;
     }
     state->ultimaJogada=c;
 }
@@ -160,7 +160,7 @@ int verificaFim (ESTADO *state) {
 // Números com dois digitos ficam inalterados.
 
 void numeros2Digitos (int i, FILE *save){
-    if (i+1 < 10) fprintf (save,"0%d:", i+1);
+    if (i+1 < 10) fprintf (save,"0%d: ", i+1);
     else fprintf(save, "%d: ", i+1);
 }
 
@@ -212,22 +212,35 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
 int converteDecimal (char jogada[]) {
     int x=0;
     x += (jogada[0]-'0') * 10;
-    x+= (jogada[1]-'0');
+    x += (jogada[1]-'0');
     return x;
 }
 
-
+int removeCarateresExtra (char *s) {
+    int i=0,n;
+    while(s[i]) {
+        if(s[i] == ':') {
+            n=i;
+            while(s[n]) {
+                s[n] = s[n+1];
+                n++;
+            }
+        }
+        i++;
+    }
+    return 0;
+}
 
 int lerJogo (ESTADO *state, char *nomeFicheiro) {
     FILE *ficheiro;
+    COORDENADA coordJog1, coordJog2;
     int m,n,i=0;
-    char *jogada, lin[2], col[2],*teste = (char *) malloc (BUF_SIZE * sizeof(char));
-    char c;
+    char numJogada[3], lin1, col1, lin2, col2,*restoFicheiro = malloc (BUF_SIZE * sizeof(char));
+    char c,*token={"\n"}, *cadaToken;
     m=n=0;
     while(nomeFicheiro[n] && nomeFicheiro[n] != '\n') n++;
     nomeFicheiro[n]='\0';
     ficheiro=fopen(nomeFicheiro,"r+");
-    //char *teste = (char *) malloc(MAX_HOUSES*MAX_HOUSES*sizeof(char));
     for(m=MAX_HOUSES-1;m>=0;m--){
         for(n=0;n<MAX_HOUSES;n++){
             c=converteChar(fgetc(ficheiro));
@@ -239,7 +252,26 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
         }
         fgetc(ficheiro);
     }
-    
+    i=0;
+    while((c=fgetc(ficheiro)) != EOF)
+        restoFicheiro[i++] = c;
+    cadaToken = strtok(restoFicheiro,token); /*!< Começa a percorrer o resto do ficheiro */
+    while (cadaToken != NULL) {
+        if(!removeCarateresExtra(cadaToken)) {
+            if(strlen(cadaToken) == 8){
+                if(sscanf(cadaToken,"%s %c%c",numJogada,&col1,&lin1,&col2,&lin2)) {
+                    state->numJogadas=converteDecimal(numJogada)-1;
+                    coordJog1.coluna = col1-'a'; coordJog1.linha=lin1-'1';
+                    coordJog2.coluna = col2-'a'; coordJog2.linha=lin2-'1';
+                    atualizaCoordenadaJogada(state,coordJog1,1);
+                    atualizaCoordenadaJogada(state,coordJog2,2);
+                }
+                state->numJogadas++;
+            } 
+        }
+        cadaToken = strtok(NULL,token);
+        
+    }
     fclose(ficheiro);
     mostrarTabuleiro(state);
     return 0;
