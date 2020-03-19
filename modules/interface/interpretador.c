@@ -9,7 +9,8 @@
 #include "interface.h"
 #include "../logica/ficheiros.h"
 
-/** @brief
+/** @brief Imprime os Comandos.
+ *
  *
  * @param state Estado do jogo;
  */
