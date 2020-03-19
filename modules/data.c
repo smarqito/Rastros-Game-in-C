@@ -1,9 +1,11 @@
-//
-// Created by marco on 3/9/20.
-//
+/** @file */
 #include <stdlib.h>
 #include "data.h"
 
+/**
+ * \brief Inicializa o tabuleiro
+ * @param state Apontador para o estado do programa.
+ */
 void initBoard (ESTADO *state)
 {
     int m,n;
@@ -15,6 +17,10 @@ void initBoard (ESTADO *state)
     state->tab[0][0] = JOGADOR1;
 }
 
+/**
+ * \brief Inicializa o jogo na posição d4
+ * @param state Apontador para o estado do programa.
+ */
 void initPlay (ESTADO *state) {
     state->ultimaJogada.linha=3;
     state->ultimaJogada.coluna=4;
