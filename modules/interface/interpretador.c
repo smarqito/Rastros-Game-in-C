@@ -1,6 +1,5 @@
-//
-// Created by marco on 3/9/20.
-//
+/** @file */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,7 +8,6 @@
 #include "../logica/bot.h"
 #include "interface.h"
 #include "../logica/ficheiros.h"
-/** @file */
 
 /** @brief
  *

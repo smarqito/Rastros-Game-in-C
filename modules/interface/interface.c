@@ -1,12 +1,10 @@
-//
-// Created by marco on 3/9/20.
-//
+/** @file */
+
 #include <string.h>
 #include <stdio.h>
 #include "interface.h"
 #include "../logica/ficheiros.h"
 #include "../logica/logica.h"
-
 
 /** @brief Mostra o tabuleiro.
   *  Imprime o tabuleiro em dois locais: (1) Na linha de comandos (2) Num ficheiro temporário (de texto);
