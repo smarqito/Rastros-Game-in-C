@@ -3,7 +3,10 @@
 #include "ficheiros.h"
 #include <stdio.h>
 
-
+/**
+ * \brief
+ * @param state Apontador para o estado do programa;
+ */
 void escreveHistorico (ESTADO *state)
 {
     FILE *temp;
@@ -16,6 +19,11 @@ void escreveHistorico (ESTADO *state)
     }
     fclose(temp);
 }
+
+/**
+ * \brief
+ * @param state Apontador para o estado do programa;
+ */
 
 void verificaHistorico(ESTADO *state) {
     FILE *temp;

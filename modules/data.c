@@ -3,8 +3,8 @@
 #include "data.h"
 
 /**
- * \brief Inicializa o tabuleiro
- * @param state Apontador para o estado do programa.
+ * \brief Inicializa o tabuleiro.
+ * @param state Apontador para o estado do programa;
  */
 void initBoard (ESTADO *state)
 {
@@ -18,14 +18,18 @@ void initBoard (ESTADO *state)
 }
 
 /**
- * \brief Inicializa o jogo na posição d4
- * @param state Apontador para o estado do programa.
+ * \brief Inicializa o jogo na posição d4.
+ * @param state Apontador para o estado do programa;
  */
 void initPlay (ESTADO *state) {
     state->ultimaJogada.linha=3;
     state->ultimaJogada.coluna=4;
 }
 
+/**
+ * \brief Inicializa o programa com o Jogador 1 e 0 jogadas;
+ * @param state Apontador para o estado do programa;
+ */
 void initPlayer (ESTADO *state) {
     state -> numJogadas = 0;
     state -> jogadorAtual = 0;
@@ -33,6 +37,10 @@ void initPlayer (ESTADO *state) {
     state->nivel=0;
 }
 
+/**
+ * \brief Cria o Estado.
+ * @return Apontador do estado criado;
+ */
 ESTADO *initState() {
     ESTADO *newState = (ESTADO *) malloc(sizeof(ESTADO));
     initBoard(newState);
@@ -41,17 +49,34 @@ ESTADO *initState() {
     return newState;
 }
 
+/**
+ * \brief
+ * @param state Apontador para o estado do programa;
+ * @return
+ */
 int getPlayer (ESTADO *state) {
     return state->jogadorAtual + 1;
 }
 
+/**
+ * \brief
+ * @param state Apontador para o estado do programa;
+ * @param c Coordenada Atual;
+ * @return
+ */
 CASA getHouseState (ESTADO *state, COORDENADA c){
     return state->tab[c.linha][c.coluna];
 }
 
+/**
+ * \brief Obtém o número de jogadas;
+ * @param state Apontador para o estado do programa;
+ * @return Número de jogadas;
+ */
 int getNumberPlays (ESTADO *state){
     return state->numJogadas;
 }
+
 
 int numero_comandos (ESTADO *state) {
     if (!state->jogadorAtual)
@@ -59,6 +84,7 @@ int numero_comandos (ESTADO *state) {
     else
         return (state -> numJogadas*2)+2;
 }
+
 
 CASA converteChar (int c) {
     switch (c) {
