@@ -73,7 +73,7 @@ int verificaCasa (ESTADO *state, COORDENADA c){
     return resposta;
 }
 
-/** @brief Atualiza o histórico de jogadas no respetivo Jogador;
+/** @brief Atualiza o histórico de jogadas no respetivo Jogador.
  * @param state Estado do jogo;
  * @param c Coordenada Atual;
  */
@@ -122,16 +122,20 @@ char converteCasa (CASA house) {
     return casa;
 }
 
-//Esta função tem o intuito de efetuar (se possível) uma jogada, recebendo para tal um Estado e uma coordenada.
-//Após verificar a condição (Função -> verificaCasa) modifica o ESTADO CASA (Para BRANCA);
-//Substitui no Tabuleiro o '*' por um '#' (Função -> changeCardinal);
-//Atualiza a última jogada;
-//Por fim retorna 1, caso a jogada seja possível, ou 0, caso contrário.
 
+/** @brief Efetua (se possível) uma jogada.
+ * Após verificar a condição (Função -> verificaCasa) modifica o ESTADO CASA (Para BRANCA);
+ * Substitui no Tabuleiro o '*' por um '#' (Função -> changeCardinal);
+ * Atualiza a última jogada;
+ *
+ * @param state Estado do jogo;
+ * @param c Coordenada Atual;
+ * @return 1 ou 0, caso a jogada seja possível ou não, respetivamente;
+ */
 
 int jogar (ESTADO *state, COORDENADA c){
     if (verificaCasa(state, c)){
-        changeCardinal(state,c); //muda '*' e '#'
+        changeCardinal(state,c); /*! <Muda '*' e '#' */
         atualizaJogadas(state,c);
         mostrarTabuleiro(state);
         printf("%c", converteCasa(state->tab[0][0]));
@@ -144,7 +148,11 @@ int jogar (ESTADO *state, COORDENADA c){
 }
 
 
-//Esta função, dado um Estado, verifica se o Jogador chegou ao fim.
+/** brief Verifica se o Jogador chegou ao fim.
+ *
+ * @param state Estado do jogo;
+ * @return 1 ou 0, caso o Jogador tenha chegado ao fim ou não, respetivamente;
+ */
 
 int verificaFim (ESTADO *state) {
     if(state->tab[MAX_HOUSES-1][MAX_HOUSES-1] == BRANCA)
@@ -155,17 +163,28 @@ int verificaFim (ESTADO *state) {
         return 0;;
 }
 
-// Usada na função 'imprimirJogadas'.
-// Imprime os números com dois dígitos. (ex : 1 = 01 ou 2 = 02).
-// Números com dois digitos ficam inalterados.
 
+/** @brief  Imprime números com dois dígitos.
+ * Exemplo.: 1 = 01 ou 2 = 02 (Números com dois digitos ficam inalterados);
+ * Usada na função 'imprimirJogadas' e 'gravarJogo';
+ *
+ * @param i Número da Jogada;
+ * @param save Ficheiro;
+ */
 void numeros2Digitos (int i, FILE *save){
     if (i+1 < 10) fprintf (save,"0%d: ", i+1);
     else fprintf(save, "%d: ", i+1);
 }
 
-// Usada na função 'gravarJogo'.
-// Imprime as Jogadas efetuadas (abaixo do tabuleiro).
+
+
+/** @brief Imprime as Jogadas efetuadas (abaixo do tabuleiro).
+ * Usada na função 'gravarJogo';
+ *
+ * @param state Estado do jogo;
+ * @param i Número da Jogada;
+ * @param save Ficheiro;
+ */
 
 void imprimirJogadas (ESTADO *state, int i, FILE *save){
     if (i < state->numJogadas){
@@ -179,9 +198,15 @@ void imprimirJogadas (ESTADO *state, int i, FILE *save){
     }
 }
 
-//As funções 'gravarJogo' e 'lerJogo', dados o Estado e o Nome do Ficheiro (String), tem o intuito de imprimir uma mensagem.
-//É imprimido uma mensagem para gravar o Jogo, caso o Jogador queira.
-//É imprimida ,também ,uma mensagem para ler um Jogo, caso o Jogador tenha gravado um e queira voltar.
+
+/** @brief Imprime uma mensagem.
+ * Imprime uma mensagem para gravar ou ler o Jogo, caso o Jogador queira;
+ *
+ *
+ * @param state Estado do Jogo;
+ * @param nomeFicheiro Ficheiro onde se vai gravar o Jogo;
+ * @return
+ */
 
 int gravarJogo (ESTADO *state, char *nomeFicheiro) {
     int m,n,i;
@@ -191,10 +216,10 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
         if (nomeFicheiro[i] == '\n') nomeFicheiro[i] = '\0';
         i++;
     }
-    save = fopen(nomeFicheiro,"w+"); //abre o ficheiro temporário
+    save = fopen(nomeFicheiro,"w+"); /*! <Abre o ficheiro temporário */
     for (m=MAX_HOUSES-1; m>=0;m--) {
         for(n=0;n<MAX_HOUSES;n++) {
-            fprintf(save,"%c", converteCasa(state->tab[m][n])); // imprime a casa no ficheiro de texto temporário
+            fprintf(save,"%c", converteCasa(state->tab[m][n])); /*! <Imprime a casa no ficheiro de texto temporário */
         }
         fprintf(save,"\n");
     }
@@ -202,13 +227,14 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
     for(i=0;i<= state->numJogadas;i++) {
         imprimirJogadas(state,i, save);
     }
-    fclose(save); //fecha o ficheiro temporário
+    fclose(save); /*! <Fecha o ficheiro temporário */
 
     return 0;
 }
-/*
 
-*/
+
+//Converte uma string com dois char para um dígito
+
 int converteDecimal (char jogada[]) {
     int x=0;
     x += (jogada[0]-'0') * 10;
@@ -267,10 +293,10 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
                     atualizaCoordenadaJogada(state,coordJog2,2);
                 }
                 state->numJogadas++;
-            } 
+            }
         }
         cadaToken = strtok(NULL,token);
-        
+
     }
     fclose(ficheiro);
     mostrarTabuleiro(state);
