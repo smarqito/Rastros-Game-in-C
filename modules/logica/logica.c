@@ -24,8 +24,8 @@ void changeCardinal (ESTADO *state, COORDENADA c) {
 
 
 
-/// @brief Verifica se é possível escolher a CASA pretendida.
-/** A CASA escolhida pelo Jogador tem de estar na vizinhança da última jogada;
+/** @brief Verifica se é possível escolher a CASA pretendida.
+ * A CASA escolhida pelo Jogador tem de estar na vizinhança da última jogada;
  * As coordenadas para a nova jogada tem de ter 1 de distância, como se verifica no gráfico que se segue:
  *   . . .
  *   . * .
@@ -55,8 +55,8 @@ int verificaVizinhanca (ESTADO *state, COORDENADA c){
 
 
 
-/// @brief Verifica se a jogada é possível utilizando as funções getHouseState (definida no módulo data.c) e verificaVizinhança.
-/** A jogada é possível se a CASA escolhida pelo Jogador estiver VAZIA ou for o JOGADOR1/JOGADOR2 (Verficado através da função -> getHouseState);
+/** @brief Verifica se a jogada é possível utilizando as funções getHouseState (definida no módulo data.c) e verificaVizinhança.
+ * A jogada é possível se a CASA escolhida pelo Jogador estiver VAZIA ou for o JOGADOR1/JOGADOR2 (Verficado através da função -> getHouseState);
  * É necessário que a casa esteja na vizinhança (Verificado através da função -> verificaVizinhanca).
  *
  * @param state Estado do jogo;
@@ -91,8 +91,8 @@ void atualizaJogadas (ESTADO *state, COORDENADA c) {
 }
 
 
-/// @brief Converte uma CASA para o tipo char correspondente.
-/** 1. VAZIO: '.';
+/** @brief Converte uma CASA para o tipo char correspondente.
+ * 1. VAZIO: '.';
  *  2. BRANCA: '*';
  *  3. JOGADOR1: '1';
  *  4. JOGADOR2: '2';
@@ -128,6 +128,7 @@ char converteCasa (CASA house) {
 //Atualiza a última jogada;
 //Por fim retorna 1, caso a jogada seja possível, ou 0, caso contrário.
 
+
 int jogar (ESTADO *state, COORDENADA c){
     if (verificaCasa(state, c)){
         changeCardinal(state,c); //muda '*' e '#'
@@ -141,6 +142,7 @@ int jogar (ESTADO *state, COORDENADA c){
         return 0;
     }
 }
+
 
 //Esta função, dado um Estado, verifica se o Jogador chegou ao fim.
 
