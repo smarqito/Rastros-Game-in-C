@@ -9,29 +9,34 @@
 #include "../data.h"
 
 /**
- @brief Muda o carater da jogada atual
- @param state Estado do jogo
- @param c Coordenada em que vai mudar o carater (jogada atual)
+ @brief Muda o caratér da jogada atual;
+ @param state Estado do jogo;
+ @param c Coordenada em que vai ser mudado o caratér (jogada atual);
  */
 
 void changeCardinal (ESTADO *state, COORDENADA c) {
     int m,n;
-    m=state->ultimaJogada.linha; /*!< Linha da jogada */
-    n=state->ultimaJogada.coluna; //!< coluna da jogada
-    state->tab[m][n] = PRETA; //!< jogada anterior -> '#'
-    state-> tab[c.linha][c.coluna] = BRANCA; //!< jogada atual -> '*'
+    m=state->ultimaJogada.linha; /*! <Linha da jogada */
+    n=state->ultimaJogada.coluna; /*! <Coluna da jogada */
+    state->tab[m][n] = PRETA; /*! <Jogada anterior -> '#' */
+    state-> tab[c.linha][c.coluna] = BRANCA; /*! <Jogada atual -> '*' */
 }
 
-//Esta função, dado um Estado e uma coordenada, verifica se é possivel escolher essa CASA (Presente nessas coordenadas).
-//A CASA escolhida pelo Jogador tem de estar na vizinhança da última jogada;
-//As coordenadas para a nova jogada tem de ter 1 de distância, como se verifica no gráfico que se segue;
-/*
-  . . .
-  . * .
-  . . .
-*/
-// Neste sentido, o Jogador (marcado com '*') pode mover-se para cada uma das casas marcadas com '.';
-//A função vai devolver 1 ou 0, caso encontre-se ou não na sua vizinhança, respetivamente.
+
+
+/// @brief Verifica se é possível escolher a CASA pretendida.
+/** A CASA escolhida pelo Jogador tem de estar na vizinhança da última jogada;
+ * As coordenadas para a nova jogada tem de ter 1 de distância, como se verifica no gráfico que se segue:
+ *   . . .
+ *   . * .
+ *   . . .
+ *
+ * Neste sentido, o Jogador (marcado com '*') pode mover-se para cada uma das casas marcadas com '.'.
+ *
+ * @param state Estado do jogo;
+ * @param c Coordenada que o Jogador quer jogar;
+ * @return 1 ou 0, caso se encontre ou não na sua vizinhança, respetivamente;
+ */
 
 int verificaVizinhanca (ESTADO *state, COORDENADA c){
     COORDENADA ultima = state->ultimaJogada;
@@ -47,10 +52,17 @@ int verificaVizinhanca (ESTADO *state, COORDENADA c){
     return resposta;
 }
 
-//Esta função, dados o Estado e uma coordenada, utiliza as funções getHouseState (definida no módulo data.c) e verificaVizinhança para verficar se a jogada é possível (Utilizada na função 'jogar').
-//A jogada é possível se a CASA escolhida pelo Jogador estiver VAZIA ou for o JOGADOR1/JOGADOR2 (Verficado através da função -> getHouseState);
-//É necessario que a casa esteja na vizinhança (Verificado através da função -> verificaVizinhanca).
 
+
+
+/// @brief Verifica se a jogada é possível utilizando as funções getHouseState (definida no módulo data.c) e verificaVizinhança.
+/** A jogada é possível se a CASA escolhida pelo Jogador estiver VAZIA ou for o JOGADOR1/JOGADOR2 (Verficado através da função -> getHouseState);
+ * É necessário que a casa esteja na vizinhança (Verificado através da função -> verificaVizinhanca).
+ *
+ * @param state Estado do jogo;
+ * @param c Coordenada que o Jogador quer jogar;
+ * @return 1 ou 0, caso a jogada seja possível ou não, respetivamente;
+ */
 int verificaCasa (ESTADO *state, COORDENADA c){
     int resposta = 0;
     if ((   getHouseState(state,c) == VAZIO
@@ -61,7 +73,11 @@ int verificaCasa (ESTADO *state, COORDENADA c){
     return resposta;
 }
 
-// atualiza o histórico de jogada
+/** @brief Atualiza o histórico de jogadas no respetivo Jogador;
+ * @param state Estado do jogo;
+ * @param c Coordenada Atual;
+ */
+
 void atualizaJogadas (ESTADO *state, COORDENADA c) {
     if (!state->jogadorAtual) {
         state->jogadorAtual=1;
@@ -74,13 +90,16 @@ void atualizaJogadas (ESTADO *state, COORDENADA c) {
     state->ultimaJogada=c;
 }
 
-/*
- * Utiliza-se esta função para converter uma CASA para o tipo char correspondente:
- * 1. VAZIO: '.'
- * 2. BRANCA: '*'
- * 3. JOGADOR1: '1'
- * 4. JOGADOR2: '2'
- */
+
+/// @brief Converte uma CASA para o tipo char correspondente.
+/** 1. VAZIO: '.';
+ *  2. BRANCA: '*';
+ *  3. JOGADOR1: '1';
+ *  4. JOGADOR2: '2';
+ * @param house Casa que pretendemos converter;
+ * @return casa convertida mediante o char correspondente;
+*/
+
 char converteCasa (CASA house) {
     char casa;
     switch (house) {
