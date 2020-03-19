@@ -268,6 +268,7 @@ int removeCarateresExtra (char *s) {
 }
 
 /** @brief: Lê o jogo.
+ * Acede ao ficheiro inserido pelo utilizador e atualiza o estado do jogo;
  *
  * @param state Estado do jogo;
  * @param nomeFicheiro Ficheiro do qual se está a ler o jogo;
@@ -320,10 +321,7 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
     return 0;
 }
 
-/** @brief Lê movimentos.
- *
- * @param e
- * @return 0 ou !0 caso funcione ou não, respetivamente;
+/** @brief Lê movimentos. Função aplicada no comando movs;
  */
 
 int lerMovimentos (ESTADO *e) {
@@ -331,10 +329,7 @@ int lerMovimentos (ESTADO *e) {
     return 0;
 }
 
-/** @brief Mostra
- *
- * @param state Estado do jogo;
- * @param pos
+/** @brief Função aplicada no comando pos;
  */
 
 void mostraPos(ESTADO *state, char *pos) {

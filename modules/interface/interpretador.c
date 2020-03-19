@@ -9,6 +9,12 @@
 #include "../logica/bot.h"
 #include "interface.h"
 #include "../logica/ficheiros.h"
+/** @file */
+
+/** @brief
+ *
+ * @param state Estado do jogo;
+ */
 
 void imprimeComandos (ESTADO *state) {
     int numeroComandos = numero_comandos(state);
@@ -18,6 +24,12 @@ void imprimeComandos (ESTADO *state) {
         printf("#%d ",numeroComandos);
     }
 }
+
+/** @brief
+ *
+ * @param instr
+ * @return
+ */
 
 int instrucao (char *instr) {
     int i=0;
