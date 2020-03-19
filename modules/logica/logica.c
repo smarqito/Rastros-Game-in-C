@@ -320,10 +320,10 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
     return 0;
 }
 
-/** @brief
+/** @brief Lê movimentos.
  *
  * @param e
- * @return
+ * @return 0 ou !0 caso funcione ou não, respetivamente;
  */
 
 int lerMovimentos (ESTADO *e) {
@@ -331,9 +331,9 @@ int lerMovimentos (ESTADO *e) {
     return 0;
 }
 
-/** @brief
+/** @brief Mostra
  *
- * @param state
+ * @param state Estado do jogo;
  * @param pos
  */
 
