@@ -1,6 +1,5 @@
-//
-// Created by marco on 3/3/20.
-//
+/** @file */
+
 #include "ficheiros.h"
 #include <stdio.h>
 

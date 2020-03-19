@@ -13,7 +13,6 @@
  @param state Estado do jogo;
  @param c Coordenada em que vai ser mudado o caratér (jogada atual);
  */
-
 void changeCardinal (ESTADO *state, COORDENADA c) {
     int m,n;
     m=state->ultimaJogada.linha; /*! <Linha da jogada */
@@ -37,7 +36,6 @@ void changeCardinal (ESTADO *state, COORDENADA c) {
  * @param c Coordenada que o Jogador quer jogar;
  * @return 1 ou 0, caso se encontre ou não na sua vizinhança, respetivamente;
  */
-
 int verificaVizinhanca (ESTADO *state, COORDENADA c){
     COORDENADA ultima = state->ultimaJogada;
     int linhaU = ultima.linha, colunaU = ultima.coluna;
@@ -77,7 +75,6 @@ int verificaCasa (ESTADO *state, COORDENADA c){
  * @param state Estado do jogo;
  * @param c Coordenada Atual;
  */
-
 void atualizaJogadas (ESTADO *state, COORDENADA c) {
     if (!state->jogadorAtual) {
         state->jogadorAtual=1;
@@ -99,7 +96,6 @@ void atualizaJogadas (ESTADO *state, COORDENADA c) {
  * @param house Casa que pretendemos converter;
  * @return casa convertida mediante o char correspondente;
 */
-
 char converteCasa (CASA house) {
     char casa;
     switch (house) {
@@ -132,7 +128,6 @@ char converteCasa (CASA house) {
  * @param c Coordenada Atual;
  * @return 1 ou 0, caso a jogada seja possível ou não, respetivamente;
  */
-
 int jogar (ESTADO *state, COORDENADA c){
     if (verificaCasa(state, c)){
         changeCardinal(state,c); /*! <Muda '*' e '#' */
@@ -153,7 +148,6 @@ int jogar (ESTADO *state, COORDENADA c){
  * @param state Estado do jogo;
  * @return 1 ou 0, caso o Jogador tenha chegado ao fim ou não, respetivamente;
  */
-
 int verificaFim (ESTADO *state) {
     if(state->tab[MAX_HOUSES-1][MAX_HOUSES-1] == BRANCA)
         return 2;
@@ -185,7 +179,6 @@ void numeros2Digitos (int i, FILE *save){
  * @param i Número da Jogada;
  * @param save Ficheiro;
  */
-
 void imprimirJogadas (ESTADO *state, int i, FILE *save){
     if (i < state->numJogadas){
         numeros2Digitos(i, save);
@@ -202,12 +195,10 @@ void imprimirJogadas (ESTADO *state, int i, FILE *save){
 /** @brief Imprime uma mensagem.
  * Imprime uma mensagem para gravar ou ler o Jogo, caso o Jogador queira;
  *
- *
  * @param state Estado do Jogo;
  * @param nomeFicheiro Ficheiro onde se vai gravar o Jogo;
  * @return
  */
-
 int gravarJogo (ESTADO *state, char *nomeFicheiro) {
     int m,n,i;
     FILE *save;
@@ -233,8 +224,11 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
 }
 
 
-//Converte uma string com dois char para um dígito
-
+/** @brief Converte dois char's para um dígito.
+ * Usada na 'lerJogo';
+ * @param jogada Jogada;
+ * @return Retorna os respetivos char contidos na Jogada em decimal;
+ */
 int converteDecimal (char jogada[]) {
     int x=0;
     x += (jogada[0]-'0') * 10;
@@ -242,6 +236,11 @@ int converteDecimal (char jogada[]) {
     return x;
 }
 
+/** @brief Remove caractéres extra.
+ *
+ * @param s String à qual vai ser removida os caractéres;
+ * @return 0 ou !0 caso funcione ou não, respetivamente;
+ */
 int removeCarateresExtra (char *s) {
     int i=0,n;
     while(s[i]) {
@@ -257,6 +256,13 @@ int removeCarateresExtra (char *s) {
     return 0;
 }
 
+/** @brief: Lê o jogo.
+ * Acede ao ficheiro inserido pelo utilizador e atualiza o estado do jogo;
+ *
+ * @param state Estado do jogo;
+ * @param nomeFicheiro Ficheiro do qual se está a ler o jogo;
+ * @return 0 ou !0 caso funcione ou não, respetivamente;
+ */
 int lerJogo (ESTADO *state, char *nomeFicheiro) {
     FILE *ficheiro;
     COORDENADA coordJog1, coordJog2;
@@ -303,11 +309,15 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
     return 0;
 }
 
+/** @brief Lê movimentos. Função aplicada no comando movs;
+ */
 int lerMovimentos (ESTADO *e) {
     printf("apresentar movimentos do jogo");
     return 0;
 }
 
+/** @brief Função aplicada no comando pos;
+ */
 void mostraPos(ESTADO *state, char *pos) {
     printf("mostra um tabuleiro antigo na pos \"%s\".", pos);
 }

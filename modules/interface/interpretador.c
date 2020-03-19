@@ -1,6 +1,5 @@
-//
-// Created by marco on 3/9/20.
-//
+/** @file */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,6 +9,12 @@
 #include "interface.h"
 #include "../logica/ficheiros.h"
 
+/** @brief Imprime os Comandos.
+ *
+ *
+ * @param state Estado do jogo;
+ */
+
 void imprimeComandos (ESTADO *state) {
     int numeroComandos = numero_comandos(state);
     if (numeroComandos < 10) {
@@ -18,6 +23,12 @@ void imprimeComandos (ESTADO *state) {
         printf("#%d ",numeroComandos);
     }
 }
+
+/** @brief
+ *
+ * @param instr
+ * @return
+ */
 
 int instrucao (char *instr) {
     int i=0;
