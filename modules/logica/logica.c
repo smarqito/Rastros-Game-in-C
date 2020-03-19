@@ -171,6 +171,7 @@ int verificaFim (ESTADO *state) {
  * @param i Número da Jogada;
  * @param save Ficheiro;
  */
+
 void numeros2Digitos (int i, FILE *save){
     if (i+1 < 10) fprintf (save,"0%d: ", i+1);
     else fprintf(save, "%d: ", i+1);
@@ -202,7 +203,6 @@ void imprimirJogadas (ESTADO *state, int i, FILE *save){
 /** @brief Imprime uma mensagem.
  * Imprime uma mensagem para gravar ou ler o Jogo, caso o Jogador queira;
  *
- *
  * @param state Estado do Jogo;
  * @param nomeFicheiro Ficheiro onde se vai gravar o Jogo;
  * @return
@@ -233,7 +233,11 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
 }
 
 
-//Converte uma string com dois char para um dígito
+/** @brief Converte dois char's para um dígito.
+ * Usada na 'lerJogo';
+ * @param jogada Jogada;
+ * @return Retorna os respetivos char contidos na Jogada em decimal;
+ */
 
 int converteDecimal (char jogada[]) {
     int x=0;
@@ -241,6 +245,12 @@ int converteDecimal (char jogada[]) {
     x += (jogada[1]-'0');
     return x;
 }
+
+/** @brief Remove caractéres extra.
+ *
+ * @param s String à qual vai ser removida os caractéres;
+ * @return 0 ou !0 caso funcione ou não, respetivamente;
+ */
 
 int removeCarateresExtra (char *s) {
     int i=0,n;
@@ -256,6 +266,13 @@ int removeCarateresExtra (char *s) {
     }
     return 0;
 }
+
+/** @brief: Lê o jogo.
+ *
+ * @param state Estado do jogo;
+ * @param nomeFicheiro Ficheiro do qual se está a ler o jogo;
+ * @return 0 ou !0 caso funcione ou não, respetivamente;
+ */
 
 int lerJogo (ESTADO *state, char *nomeFicheiro) {
     FILE *ficheiro;
@@ -303,10 +320,22 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
     return 0;
 }
 
+/** @brief
+ *
+ * @param e
+ * @return
+ */
+
 int lerMovimentos (ESTADO *e) {
     printf("apresentar movimentos do jogo");
     return 0;
 }
+
+/** @brief
+ *
+ * @param state
+ * @param pos
+ */
 
 void mostraPos(ESTADO *state, char *pos) {
     printf("mostra um tabuleiro antigo na pos \"%s\".", pos);
