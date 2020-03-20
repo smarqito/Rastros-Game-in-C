@@ -50,19 +50,19 @@ ESTADO *initState() {
 }
 
 /**
- * \brief
+ * \brief Busca o jogador que está a jogar.
  * @param state Apontador para o estado do programa;
- * @return
+ * @return Retorna o Jogador atual;
  */
 int getPlayer (ESTADO *state) {
     return state->jogadorAtual + 1;
 }
 
 /**
- * \brief
+ * \brief Encontra a CASA da coordenada dada.
  * @param state Apontador para o estado do programa;
  * @param c Coordenada Atual;
- * @return
+ * @return Retorna a CASA em questão;
  */
 CASA getHouseState (ESTADO *state, COORDENADA c){
     return state->tab[c.linha][c.coluna];
@@ -77,7 +77,11 @@ int getNumberPlays (ESTADO *state){
     return state->numJogadas;
 }
 
-
+/** @brief
+ *
+ * @param state Apontador para o estado do programa;
+ * @return
+ */
 int numero_comandos (ESTADO *state) {
     if (!state->jogadorAtual)
         return (state ->numJogadas*2)+1;
@@ -85,7 +89,11 @@ int numero_comandos (ESTADO *state) {
         return (state -> numJogadas*2)+2;
 }
 
-
+/** @brief Converte um caractér para CASA.
+ *
+ * @param c Caractér associado à casa;
+ * @return Retorna a CASA em questão;
+ */
 CASA converteChar (int c) {
     switch (c) {
         case '*':
@@ -101,10 +109,22 @@ CASA converteChar (int c) {
     }
 }
 
+/** @brief Verifica sse pode jogar naquela CASA.
+ *
+ * @param casa Casa que pretendemos jogar;
+ * @return 1 ou 0, caso seja possível jogar ou não, respetivamente;
+ */
 int casaJogar (CASA casa) {
     return (casa == BRANCA) ? 1 : 0;
 }
 
+/** @brief Atualiza a coordenada após a jogada.
+ *
+ * @param state Apontador para o estado do programa;
+ * @param c Coordenada Atual;
+ * @param jogador Jogador que efetuou a jogada;
+ * @return 0 ou !0, caso funcione ou não, respetivamente;
+ */
 int atualizaCoordenadaJogada (ESTADO *state, COORDENADA c, int jogador) {
         int numJogada = state->numJogadas;
         if(jogador == 1) {
