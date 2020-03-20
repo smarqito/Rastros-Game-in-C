@@ -127,22 +127,3 @@ CASA converteChar (int c) {
 int casaJogar (CASA casa) {
     return (casa == BRANCA) ? 1 : 0;
 }
-
-/** @brief Atualiza a coordenada após a jogada.
- *
- * @param state Apontador para o estado do programa;
- * @param c Coordenada Atual;
- * @param jogador Jogador que efetuou a jogada;
- * @return 0 ou !0, caso funcione ou não, respetivamente;
- */
-int atualizaCoordenadaJogada (ESTADO *state, COORDENADA c, int jogador) {
-        int numJogada = state->numJogadas;
-        if(jogador == 1) {
-            state->jogadas[numJogada].jogador1.coluna=c.coluna;
-            state->jogadas[numJogada].jogador1.linha=c.linha;
-        } else {
-            state->jogadas[numJogada].jogador2.coluna=c.coluna;
-            state->jogadas[numJogada].jogador2.linha=c.linha;
-        }
-    return 0;
-}

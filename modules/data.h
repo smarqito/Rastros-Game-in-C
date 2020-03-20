@@ -46,6 +46,4 @@ int numero_comandos(ESTADO *state);
 
 int casaJogar(CASA);
 
-int atualizaCoordenadaJogada (ESTADO *state, COORDENADA c, int jogador);
-
 #endif //RASTROS_DATA_H

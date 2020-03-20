@@ -122,7 +122,7 @@ Funções</h2></td></tr>
 <tr class="memdesc:a50746387c4564bae4c3e92dc73b70ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove caractéres extra.  <a href="#a50746387c4564bae4c3e92dc73b70ec9">Mais...</a><br /></td></tr>
 <tr class="separator:a50746387c4564bae4c3e92dc73b70ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a487d3083f2f1a6914718ccdbcb84ab05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8c.html#a487d3083f2f1a6914718ccdbcb84ab05">atualizaCoordenadaJogada</a> (<a class="el" href="structESTADO.html">ESTADO</a> *state, <a class="el" href="structCOORDENADA.html">COORDENADA</a> c, int jogador)</td></tr>
-<tr class="memdesc:a487d3083f2f1a6914718ccdbcb84ab05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atualiza a coordenada do jogador no número da jogada atual.  <a href="#a487d3083f2f1a6914718ccdbcb84ab05">Mais...</a><br /></td></tr>
+<tr class="memdesc:a487d3083f2f1a6914718ccdbcb84ab05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atualiza a coordenada após a jogada.  <a href="#a487d3083f2f1a6914718ccdbcb84ab05">Mais...</a><br /></td></tr>
 <tr class="separator:a487d3083f2f1a6914718ccdbcb84ab05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acab32ff540cb5b7a7fb1f35e059b7a50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8c.html#acab32ff540cb5b7a7fb1f35e059b7a50">lerJogo</a> (<a class="el" href="structESTADO.html">ESTADO</a> *state, char *nomeFicheiro)</td></tr>
 <tr class="memdesc:acab32ff540cb5b7a7fb1f35e059b7a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Lê o jogo. Acede ao ficheiro inserido pelo utilizador e atualiza o estado do jogo;  <a href="#acab32ff540cb5b7a7fb1f35e059b7a50">Mais...</a><br /></td></tr>
@@ -171,17 +171,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logi
       </table>
 </div><div class="memdoc">
 
-<p>Atualiza a coordenada do jogador no número da jogada atual. </p>
-<p>Atualiza a coordenada após a jogada.</p>
+<p>Atualiza a coordenada após a jogada. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">state</td><td>Apontador para o estado do programa. </td></tr>
-    <tr><td class="paramname">c</td><td>Coordenada a ser inserida no estado. </td></tr>
-    <tr><td class="paramname">jogador</td><td>#jogador a ser </td></tr>
+    <tr><td class="paramname">state</td><td>Apontador para o estado do programa; </td></tr>
+    <tr><td class="paramname">c</td><td>Coordenada Atual; </td></tr>
+    <tr><td class="paramname">jogador</td><td>Jogador que efetuou a jogada; </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Retorna</dt><dd></dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>0 ou !0, caso funcione ou não, respetivamente; </dd></dl>
 
 </div>
 </div>

@@ -258,12 +258,12 @@ int removeCarateresExtra (char *s) {
     return 0;
 }
 
-/**
- * @brief Atualiza a coordenada do jogador no número da jogada atual.
- * @param state Apontador para o estado do programa.
- * @param c Coordenada a ser inserida no estado.
- * @param jogador #jogador a ser
- * @return
+/** @brief Atualiza a coordenada após a jogada.
+ *
+ * @param state Apontador para o estado do programa;
+ * @param c Coordenada Atual;
+ * @param jogador Jogador que efetuou a jogada;
+ * @return 0 ou !0, caso funcione ou não, respetivamente;
  */
 int atualizaCoordenadaJogada (ESTADO *state, COORDENADA c, int jogador) {
     int numJogada = state->numJogadas;
