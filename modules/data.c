@@ -4,6 +4,7 @@
 
 /**
  * \brief Inicializa o tabuleiro.
+ *
  * @param state Apontador para o estado do programa;
  */
 void initBoard (ESTADO *state)
@@ -12,22 +13,24 @@ void initBoard (ESTADO *state)
     for(m=MAX_HOUSES-1;m>=0;m--)
         for(n=0;n<MAX_HOUSES;n++)
             state->tab[m][n] = VAZIO;
-    state->tab[3][4] = BRANCA;
+    state->tab[4][4] = BRANCA;
     state->tab[7][7] = JOGADOR2;
     state->tab[0][0] = JOGADOR1;
 }
 
 /**
- * \brief Inicializa o jogo na posição d4.
+ * \brief Inicializa o jogo na posição e5.
+ *
  * @param state Apontador para o estado do programa;
  */
 void initPlay (ESTADO *state) {
-    state->ultimaJogada.linha=3;
+    state->ultimaJogada.linha=4;
     state->ultimaJogada.coluna=4;
 }
 
 /**
  * \brief Inicializa o programa com o Jogador 1 e 0 jogadas;
+ *
  * @param state Apontador para o estado do programa;
  */
 void initPlayer (ESTADO *state) {
@@ -39,6 +42,7 @@ void initPlayer (ESTADO *state) {
 
 /**
  * \brief Cria o Estado.
+ *
  * @return Apontador do estado criado;
  */
 ESTADO *initState() {
@@ -51,6 +55,7 @@ ESTADO *initState() {
 
 /**
  * \brief Busca o jogador que está a jogar.
+ *
  * @param state Apontador para o estado do programa;
  * @return Retorna o Jogador atual;
  */
@@ -60,6 +65,7 @@ int getPlayer (ESTADO *state) {
 
 /**
  * \brief Encontra a CASA da coordenada dada.
+ *
  * @param state Apontador para o estado do programa;
  * @param c Coordenada Atual;
  * @return Retorna a CASA em questão;
@@ -70,6 +76,7 @@ CASA getHouseState (ESTADO *state, COORDENADA c){
 
 /**
  * \brief Obtém o número de jogadas;
+ *
  * @param state Apontador para o estado do programa;
  * @return Número de jogadas;
  */
@@ -77,7 +84,8 @@ int getNumberPlays (ESTADO *state){
     return state->numJogadas;
 }
 
-/** @brief Conta o número de comandos.
+/**
+ * @brief Conta o número de comandos.
  *
  * @param state Apontador para o estado do programa;
  * @return Multiplica por 2 e soma 1 no caso do Jogador 1 ou multiplica por 2 e soma 2 no caso do Jogador 2, ambos os casos através do número de jogadas;

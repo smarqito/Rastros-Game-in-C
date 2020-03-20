@@ -9,9 +9,10 @@
 #include "../data.h"
 
 /**
- @brief Muda o caratér da jogada atual;
- @param state Estado do jogo;
- @param c Coordenada em que vai ser mudado o caratér (jogada atual);
+ * @brief Muda o caratér da jogada atual;
+ *
+ * @param state Estado do jogo;
+ * @param c Coordenada em que vai ser mudado o caratér (jogada atual);
  */
 void changeCardinal (ESTADO *state, COORDENADA c) {
     int m,n;
@@ -72,6 +73,7 @@ int verificaCasa (ESTADO *state, COORDENADA c){
 }
 
 /** @brief Atualiza o histórico de jogadas no respetivo Jogador.
+ *
  * @param state Estado do jogo;
  * @param c Coordenada Atual;
  */
@@ -93,6 +95,7 @@ void atualizaJogadas (ESTADO *state, COORDENADA c) {
  *  2. BRANCA: '*';
  *  3. JOGADOR1: '1';
  *  4. JOGADOR2: '2';
+ *
  * @param house Casa que pretendemos converter;
  * @return casa convertida mediante o char correspondente;
 */
@@ -225,6 +228,7 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
 
 
 /** @brief Converte dois char's para um dígito.
+ *
  * Usada na 'lerJogo';
  * @param jogada Jogada;
  * @return Retorna os respetivos char contidos na Jogada em decimal;

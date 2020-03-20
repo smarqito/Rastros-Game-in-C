@@ -37,11 +37,15 @@ ESTADO *initState ();
 int getPlayer (ESTADO *state);
 
 CASA getHouseState(ESTADO *state, COORDENADA c);
+
 CASA converteChar (int c);
 
 int getNumberPlays (ESTADO *state);
 
 int numero_comandos(ESTADO *state);
+
 int casaJogar(CASA);
+
 int atualizaCoordenadaJogada (ESTADO *state, COORDENADA c, int jogador);
+
 #endif //RASTROS_DATA_H
