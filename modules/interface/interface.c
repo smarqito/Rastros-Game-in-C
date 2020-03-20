@@ -1,4 +1,7 @@
-/** @file */
+/** @file
+ *  @brief Definição das função da camada de interface do programa.
+ *
+ */
 
 #include <string.h>
 #include <stdio.h>
@@ -7,6 +10,7 @@
 #include "../logica/logica.h"
 
 /** @brief Mostra o tabuleiro.
+  *
   *  Imprime o tabuleiro em dois locais: (1) Na linha de comandos (2) Num ficheiro temporário (de texto);
   *
   *  Método:

@@ -1,4 +1,6 @@
-/** @file */
+/** @file
+ *  @brief Definição das função que permitem ao utilizador interagir com o programa.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,7 +12,6 @@
 #include "../logica/ficheiros.h"
 
 /** @brief Imprime os Comandos.
- *
  *
  * @param state Apontador para o estado do programa;
  */
@@ -24,16 +25,17 @@ void imprimeComandos (ESTADO *state) {
     }
 }
 
-/** @brief
+/**
+ * @brief Compara se a instrução recebida pertence ao grupo de instruções possíveis
  *
- * @param instr
- * @return
+ * @param instr instrução inserida pelo utilizador e que vai ser comparada.
+ * @return 0 se não for possível. o índice + 1 caso a instrução exista.
  */
 
 int instrucao (char *instr) {
     int i=0;
     while(instr[i++]) if (instr[i] == '\n') instr[i] = '\0';
-    char opcoes[MAX_INSTR][11] = {
+    char opcoes[MAX_INSTR][11] = { //!< Array bidimensional de instruções possíveis
             "jogar",
             "gr",
             "ler",
@@ -49,20 +51,27 @@ int instrucao (char *instr) {
     return (i==MAX_INSTR) ? 0 : (i+1);
 }
 
+/**
+ * @brief Permite jogar rastros até:
+ *        Um jogador ganhar.
+ *        O utilizador optar por voltar ao menú anterior.
+ * @param state Apontador para o estado do programa.
+ * @return 1 se houver algum erro. 0 sem erro.
+ */
 int jogarRastros (ESTADO *state) {
     char linha[BUF_SIZE];
     char lin[2], col[2];
     int chegouFim;
-    imprimeComandos(state); // imprime o numero de comandos utilizados
+    imprimeComandos(state); //!< imprime o numero de comandos utilizados
     printf("PL%d (%d) > ",getPlayer(state),getNumberPlays(state));
     if(fgets(linha,BUF_SIZE,stdin) == NULL)
-        return 0;
-    if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
+        return 1;
+    if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) { //!< caso o input tenha 2 carateres lê a col e lin
         COORDENADA coord = {*lin - '1', *col - 'a'};
         jogar(state,coord);
-    } else if (strlen(linha) == 2 && sscanf(linha, "%[Q-Q]",col) == 1 ) {
+    } else if (strlen(linha) == 2 && sscanf(linha, "%[Q-Q]",col) == 1 ) { //!< caso o input tenha 1 carater, verifica se é um 'Q'
         interpretador(state);
-        return 1;
+        return 0;
     } else {
         printf("Coordenada inválida. Tente novamente.\n");
     }
@@ -75,6 +84,9 @@ int jogarRastros (ESTADO *state) {
     }
 }
 
+/**
+ * @brief Imprime a tabela de opções de comandos.
+ */
 void pedeAjuda() {
     printf("\n%-25s Descrição","Instruções");
     printf("\n%-23s Permite entrar no modo de jogo.\n","jogar");
@@ -87,6 +99,13 @@ void pedeAjuda() {
     printf("%-23s sair do jogo.\n\n", "Q");
 }
 
+/**
+ * @brief Principal interpretador de comandos do programa.
+ *
+ * Permite ao utilizador interagir com o programa, utilizando os comandos descritos na função pedeAjuda.
+ * @param e Apontador para o estado do programa.
+ * @return 1 se erro de leitura. 0 se sucesso.
+ */
 int interpretador (ESTADO *e) {
     char linha[BUF_SIZE];
     char col[2], lin[2], espaco[2] = " ";
@@ -95,7 +114,7 @@ int interpretador (ESTADO *e) {
     printf("Diga-nos a sua instrucao:\n");
     //lê uma linha do teclado
     if(fgets(linha,BUF_SIZE,stdin) == NULL)
-        return 0;
+        return 1;
     //divide o input em instrução e argumento
     instr = strtok(linha,espaco);
     arg = strtok(NULL,espaco);
@@ -108,33 +127,33 @@ int interpretador (ESTADO *e) {
     }
     switch (iinstr)
     {
-        case 1:
+        case 1: //!< Opção "jogar"
             mostrarTabuleiro(e);
             jogarRastros(e);
             break;
-        case 2:
+        case 2: //!< Opção "gr nomeficheiro"
             gravarJogo(e,arg);
             break;
-        case 3:
+        case 3: //!< Opção "ler nomeficheiro"
             if(!lerJogo(e,arg))
                 interpretador(e);
             break;
-        case 4:
+        case 4: //!< Opção "movs"
             if(!lerMovimentos(e))
                 interpretador(e);
             break;
-        case 5:
+        case 5: //!< Opção "jog"
             jogaBot(e);
             break;
-        case 6:
+        case 6: //!< Opção "pos #pos#"
             mostraPos(e,arg);
             break;
-        case 7:
-        case 8:
+        case 7: //!< Opção "ajuda"
+        case 8: //!< Opção "help"
             pedeAjuda();
             interpretador(e);
             break;
-        case 9:
+        case 9: //!< Opção "Q" para sair
             printf("Obrigado por jogar connosco! Até à próxima.\n");
             break;
         default:
@@ -143,5 +162,5 @@ int interpretador (ESTADO *e) {
             break;
     }
 
-    return 1;
+    return 0;
 }

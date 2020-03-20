@@ -1,12 +1,12 @@
-/** @file */
+/** @file
+ * @brief Definição das função da camada de lógica do programa.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "logica.h"
-#include "ficheiros.h"
 #include "../interface/interface.h"
-#include "../data.h"
 
 /**
  * @brief Muda o caratér da jogada atual;
@@ -21,8 +21,6 @@ void changeCardinal (ESTADO *state, COORDENADA c) {
     state->tab[m][n] = PRETA; /*! <Jogada anterior -> '#' */
     state-> tab[c.linha][c.coluna] = BRANCA; /*! <Jogada atual -> '*' */
 }
-
-
 
 /** @brief Verifica se é possível escolher a CASA pretendida.
  * A CASA escolhida pelo Jogador tem de estar na vizinhança da última jogada;
@@ -260,11 +258,30 @@ int removeCarateresExtra (char *s) {
     return 0;
 }
 
+/**
+ * @brief Atualiza a coordenada do jogador no número da jogada atual.
+ * @param state Apontador para o estado do programa.
+ * @param c Coordenada a ser inserida no estado.
+ * @param jogador #jogador a ser
+ * @return
+ */
+int atualizaCoordenadaJogada (ESTADO *state, COORDENADA c, int jogador) {
+    int numJogada = state->numJogadas;
+    if(jogador == 1) {
+        state->jogadas[numJogada].jogador1.coluna=c.coluna;
+        state->jogadas[numJogada].jogador1.linha=c.linha;
+    } else {
+        state->jogadas[numJogada].jogador2.coluna=c.coluna;
+        state->jogadas[numJogada].jogador2.linha=c.linha;
+    }
+    return 0;
+}
+
 /** @brief: Lê o jogo.
  * Acede ao ficheiro inserido pelo utilizador e atualiza o estado do jogo;
  *
- * @param state Estado do jogo;
- * @param nomeFicheiro Ficheiro do qual se está a ler o jogo;
+ * @param state Apontador para o estado do programa;
+ * @param nomeFicheiro Ficheiro do qual se está a ler o programa;
  * @return 0 ou !0 caso funcione ou não, respetivamente;
  */
 int lerJogo (ESTADO *state, char *nomeFicheiro) {

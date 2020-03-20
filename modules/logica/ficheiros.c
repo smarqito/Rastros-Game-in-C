@@ -1,4 +1,6 @@
-/** @file */
+/** @file
+ * @brief Atualmente este ficheiro não está a ser utilizado. Serve para referência futura e reorganização do código.
+ */
 
 #include "ficheiros.h"
 #include <stdio.h>

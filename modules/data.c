@@ -1,4 +1,6 @@
-/** @file */
+/** @file
+ * @brief Definição das função da camada de dados do programa.
+ */
 #include <stdlib.h>
 #include "data.h"
 
