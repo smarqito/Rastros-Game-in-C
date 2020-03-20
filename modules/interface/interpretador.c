@@ -12,7 +12,7 @@
 /** @brief Imprime os Comandos.
  *
  *
- * @param state Estado do jogo;
+ * @param state Apontador para o estado do programa;
  */
 
 void imprimeComandos (ESTADO *state) {

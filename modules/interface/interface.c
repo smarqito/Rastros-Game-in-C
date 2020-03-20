@@ -17,7 +17,7 @@
   *  4. Fecha-se o ficheiro (fclose).
   *
   *  A impressão na linha de comandos encontra-se formatada para uma melhor leitura humana, enquanto que a impressão em ficheiro está organizada para facilitar a leitura através de funções IO e criação de um novo ESTADO do programa.
-  * @param state Estado do jogo;
+  * @param state Apontador para o estado do programa;
  */
 
 void mostrarTabuleiro (ESTADO *state) {
