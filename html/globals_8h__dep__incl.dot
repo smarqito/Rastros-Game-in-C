@@ -1,0 +1,40 @@
+digraph "globals/globals.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="globals/globals.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="modules/data.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$data_8h_source.html"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html",tooltip="Ficheiro de entrada no programa. "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="modules/interface/interpretador.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interpretador_8h_source.html"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="modules/interface/interpretador.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interpretador_8c.html",tooltip="Definição das função que permitem ao utilizador interagir com o programa. "];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="modules/data.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$data_8c.html",tooltip="Definição das função da camada de dados do programa. "];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="modules/interface/interface.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_8h_source.html"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="modules/interface/interface.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_8c.html",tooltip="Definição das função da camada de interface do programa. "];
+  Node7 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="modules/logica/logica.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logica_8c.html",tooltip="Definição das função da camada de lógica do programa. "];
+  Node2 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="modules/logica/ficheiros.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ficheiros_8h_source.html"];
+  Node10 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="modules/logica/ficheiros.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ficheiros_8c.html",tooltip="Atualmente este ficheiro não está a ser utilizado. Serve para referência futura e reorganização do có..."];
+  Node2 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="modules/logica/logica.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logica_8h_source.html"];
+  Node12 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="modules/logica/bot.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bot_8h_source.html"];
+  Node13 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

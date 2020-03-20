@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LI2PL6G05: Código-Fonte de modules/logica/logica.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">LI2PL6G05
+   </div>
+   <div id="projectbrief">Jogo Rastros em C. Projeto LI2 MIEI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e05d7e2b1ecd646af5bb94391405f3b5.html">modules</a></li><li class="navelem"><a class="el" href="dir_0191ee3e597b365a20f4f34b6c8b9e19.html">logica</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">logica.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by marco on 3/9/20.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef RASTROS_LOGICA_H</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define RASTROS_LOGICA_H</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../data.h&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordtype">int</span> isPossiblePlay (<a class="code" href="structESTADO.html">ESTADO</a> *state, <a class="code" href="structCOORDENADA.html">COORDENADA</a> c);</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">int</span> <a class="code" href="logica_8c.html#a546fdee8f229672ea536b3765cf439f8">jogar</a> (<a class="code" href="structESTADO.html">ESTADO</a> *state, <a class="code" href="structCOORDENADA.html">COORDENADA</a> c);</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">int</span> <a class="code" href="logica_8c.html#ad2929040a36c3d8da9e76686907b6079">verificaFim</a>(<a class="code" href="structESTADO.html">ESTADO</a> *state);</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// funções para o interpretador</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">int</span> <a class="code" href="logica_8c.html#a294c697018601dcc114de13b0c0edcf1">gravarJogo</a> (<a class="code" href="structESTADO.html">ESTADO</a> *state, <span class="keywordtype">char</span> *nomeFicheiro);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">int</span> <a class="code" href="logica_8c.html#acab32ff540cb5b7a7fb1f35e059b7a50">lerJogo</a> (<a class="code" href="structESTADO.html">ESTADO</a> *e, <span class="keywordtype">char</span> *nomeFicheiro);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">int</span> <a class="code" href="logica_8c.html#a9b2c9e020d96d09af362e189163cb8fc">lerMovimentos</a> (<a class="code" href="structESTADO.html">ESTADO</a> *e);</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> <a class="code" href="logica_8c.html#a68440f84753fc80e440610bf528c9c70">mostraPos</a>(<a class="code" href="structESTADO.html">ESTADO</a> *state, <span class="keywordtype">char</span> *pos);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">char</span> <a class="code" href="logica_8c.html#a19947fc319e925c3e3f1af8d51396a6a">converteCasa</a> (CASA house);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif //RASTROS_LOGICA_H</span></div><div class="ttc" id="logica_8c_html_a546fdee8f229672ea536b3765cf439f8"><div class="ttname"><a href="logica_8c.html#a546fdee8f229672ea536b3765cf439f8">jogar</a></div><div class="ttdeci">int jogar(ESTADO *state, COORDENADA c)</div><div class="ttdoc">Efetua (se possível) uma jogada. Após verificar a condição (Função -&gt; verificaCasa) modifica o ESTADO...</div><div class="ttdef"><b>Definition:</b> logica.c:132</div></div>
+<div class="ttc" id="structESTADO_html"><div class="ttname"><a href="structESTADO.html">ESTADO</a></div><div class="ttdef"><b>Definition:</b> data.h:25</div></div>
+<div class="ttc" id="logica_8c_html_ad2929040a36c3d8da9e76686907b6079"><div class="ttname"><a href="logica_8c.html#ad2929040a36c3d8da9e76686907b6079">verificaFim</a></div><div class="ttdeci">int verificaFim(ESTADO *state)</div><div class="ttdef"><b>Definition:</b> logica.c:152</div></div>
+<div class="ttc" id="logica_8c_html_a68440f84753fc80e440610bf528c9c70"><div class="ttname"><a href="logica_8c.html#a68440f84753fc80e440610bf528c9c70">mostraPos</a></div><div class="ttdeci">void mostraPos(ESTADO *state, char *pos)</div><div class="ttdoc">Função aplicada no comando pos;. </div><div class="ttdef"><b>Definition:</b> logica.c:342</div></div>
+<div class="ttc" id="structCOORDENADA_html"><div class="ttname"><a href="structCOORDENADA.html">COORDENADA</a></div><div class="ttdef"><b>Definition:</b> data.h:15</div></div>
+<div class="ttc" id="logica_8c_html_a9b2c9e020d96d09af362e189163cb8fc"><div class="ttname"><a href="logica_8c.html#a9b2c9e020d96d09af362e189163cb8fc">lerMovimentos</a></div><div class="ttdeci">int lerMovimentos(ESTADO *e)</div><div class="ttdoc">Lê movimentos. Função aplicada no comando movs;. </div><div class="ttdef"><b>Definition:</b> logica.c:335</div></div>
+<div class="ttc" id="logica_8c_html_a19947fc319e925c3e3f1af8d51396a6a"><div class="ttname"><a href="logica_8c.html#a19947fc319e925c3e3f1af8d51396a6a">converteCasa</a></div><div class="ttdeci">char converteCasa(CASA house)</div><div class="ttdoc">Converte uma CASA para o tipo char correspondente. </div><div class="ttdef"><b>Definition:</b> logica.c:100</div></div>
+<div class="ttc" id="logica_8c_html_acab32ff540cb5b7a7fb1f35e059b7a50"><div class="ttname"><a href="logica_8c.html#acab32ff540cb5b7a7fb1f35e059b7a50">lerJogo</a></div><div class="ttdeci">int lerJogo(ESTADO *state, char *nomeFicheiro)</div><div class="ttdoc">: Lê o jogo. Acede ao ficheiro inserido pelo utilizador e atualiza o estado do jogo; ...</div><div class="ttdef"><b>Definition:</b> logica.c:287</div></div>
+<div class="ttc" id="logica_8c_html_a294c697018601dcc114de13b0c0edcf1"><div class="ttname"><a href="logica_8c.html#a294c697018601dcc114de13b0c0edcf1">gravarJogo</a></div><div class="ttdeci">int gravarJogo(ESTADO *state, char *nomeFicheiro)</div><div class="ttdoc">Imprime uma mensagem. Imprime uma mensagem para gravar ou ler o Jogo, caso o Jogador queira;...</div><div class="ttdef"><b>Definition:</b> logica.c:203</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

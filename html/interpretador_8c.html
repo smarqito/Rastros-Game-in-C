@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LI2PL6G05: Referência ao ficheiro modules/interface/interpretador.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">LI2PL6G05
+   </div>
+   <div id="projectbrief">Jogo Rastros em C. Projeto LI2 MIEI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e05d7e2b1ecd646af5bb94391405f3b5.html">modules</a></li><li class="navelem"><a class="el" href="dir_43985c429e5ab3d24f982bac2c233900.html">interface</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro interpretador.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Definição das função que permitem ao utilizador interagir com o programa.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;interpretador.h&quot;</code><br />
+<code>#include &quot;../logica/logica.h&quot;</code><br />
+<code>#include &quot;../logica/bot.h&quot;</code><br />
+<code>#include &quot;interface.h&quot;</code><br />
+<code>#include &quot;../logica/ficheiros.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para interpretador.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="interpretador_8c__incl.png" border="0" usemap="#modules_2interface_2interpretador_8c" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a26549a64119f3a788e2ebdd85e9c0cb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interpretador_8c.html#a26549a64119f3a788e2ebdd85e9c0cb6">imprimeComandos</a> (<a class="el" href="structESTADO.html">ESTADO</a> *state)</td></tr>
+<tr class="memdesc:a26549a64119f3a788e2ebdd85e9c0cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime os Comandos.  <a href="#a26549a64119f3a788e2ebdd85e9c0cb6">Mais...</a><br /></td></tr>
+<tr class="separator:a26549a64119f3a788e2ebdd85e9c0cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adca3e0b631af13502b4da6c120ecb0e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interpretador_8c.html#adca3e0b631af13502b4da6c120ecb0e4">instrucao</a> (char *instr)</td></tr>
+<tr class="memdesc:adca3e0b631af13502b4da6c120ecb0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compara se a instrução recebida pertence ao grupo de instruções possíveis.  <a href="#adca3e0b631af13502b4da6c120ecb0e4">Mais...</a><br /></td></tr>
+<tr class="separator:adca3e0b631af13502b4da6c120ecb0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a727885f23da29d5c9545135f941d9a95"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interpretador_8c.html#a727885f23da29d5c9545135f941d9a95">jogarRastros</a> (<a class="el" href="structESTADO.html">ESTADO</a> *state)</td></tr>
+<tr class="memdesc:a727885f23da29d5c9545135f941d9a95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permite jogar rastros até: Um jogador ganhar. O utilizador optar por voltar ao menú anterior.  <a href="#a727885f23da29d5c9545135f941d9a95">Mais...</a><br /></td></tr>
+<tr class="separator:a727885f23da29d5c9545135f941d9a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2962b6753393267f5151853d86515ae4"><td class="memItemLeft" align="right" valign="top"><a id="a2962b6753393267f5151853d86515ae4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interpretador_8c.html#a2962b6753393267f5151853d86515ae4">pedeAjuda</a> ()</td></tr>
+<tr class="memdesc:a2962b6753393267f5151853d86515ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime a tabela de opções de comandos. <br /></td></tr>
+<tr class="separator:a2962b6753393267f5151853d86515ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24da95ebeede4a540e37790ce8be359b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interpretador_8c.html#a24da95ebeede4a540e37790ce8be359b">interpretador</a> (<a class="el" href="structESTADO.html">ESTADO</a> *e)</td></tr>
+<tr class="memdesc:a24da95ebeede4a540e37790ce8be359b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Principal interpretador de comandos do programa.  <a href="#a24da95ebeede4a540e37790ce8be359b">Mais...</a><br /></td></tr>
+<tr class="separator:a24da95ebeede4a540e37790ce8be359b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Definição das função que permitem ao utilizador interagir com o programa. </p>
+</div><h2 class="groupheader">Documentação das funções</h2>
+<a id="a26549a64119f3a788e2ebdd85e9c0cb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26549a64119f3a788e2ebdd85e9c0cb6">&#9670;&nbsp;</a></span>imprimeComandos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imprimeComandos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime os Comandos. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Apontador para o estado do programa; </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adca3e0b631af13502b4da6c120ecb0e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adca3e0b631af13502b4da6c120ecb0e4">&#9670;&nbsp;</a></span>instrucao()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int instrucao </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>instr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compara se a instrução recebida pertence ao grupo de instruções possíveis. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instr</td><td>instrução inserida pelo utilizador e que vai ser comparada. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>0 se não for possível. o índice + 1 caso a instrução exista. </dd></dl>
+<p>&lt; Array bidimensional de instruções possíveis </p>
+
+</div>
+</div>
+<a id="a24da95ebeede4a540e37790ce8be359b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24da95ebeede4a540e37790ce8be359b">&#9670;&nbsp;</a></span>interpretador()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int interpretador </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Principal interpretador de comandos do programa. </p>
+<p>Permite ao utilizador interagir com o programa, utilizando os comandos descritos na função pedeAjuda. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Apontador para o estado do programa. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 se erro de leitura. 0 se sucesso. </dd></dl>
+<p>&lt; Opção "jogar"</p>
+<p>&lt; Opção "gr nomeficheiro"</p>
+<p>&lt; Opção "ler nomeficheiro"</p>
+<p>&lt; Opção "movs"</p>
+<p>&lt; Opção "jog"</p>
+<p>&lt; Opção "pos #pos#"</p>
+<p>&lt; Opção "ajuda"</p>
+<p>&lt; Opção "help"</p>
+<p>&lt; Opção "Q" para sair </p>
+
+</div>
+</div>
+<a id="a727885f23da29d5c9545135f941d9a95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a727885f23da29d5c9545135f941d9a95">&#9670;&nbsp;</a></span>jogarRastros()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int jogarRastros </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permite jogar rastros até: Um jogador ganhar. O utilizador optar por voltar ao menú anterior. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Apontador para o estado do programa. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 se houver algum erro. 0 sem erro. </dd></dl>
+<p>&lt; imprime o numero de comandos utilizados</p>
+<p>&lt; caso o input tenha 2 carateres lê a col e lin</p>
+<p>&lt; caso o input tenha 1 carater, verifica se é um 'Q' </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
