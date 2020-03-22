@@ -7,6 +7,7 @@
 #include <string.h>
 #include "logica.h"
 #include "../interface/interface.h"
+#include "ficheiros.h"
 
 /**
  * @brief Muda o caratér da jogada atual;
@@ -101,23 +102,23 @@ char converteCasa (CASA house) {
     char casa;
     switch (house) {
         case VAZIO:
-            casa = '.';
+            casa = CASA_VAZIO;
             break;
         case BRANCA:
             promptFormata(COR_VERMELHO_NEGRITO);
-            casa = '#';
+            casa = CASA_BRANCA;
             break;
         case PRETA:
             promptFormata(COR_ROXO);
-            casa = 'X';
+            casa = CASA_PRETA;
             break;
         case JOGADOR1:
             promptFormata(COR_AMARELO_NEGRITO);
-            casa = '1';
+            casa = CASA_JOGADOR1;
             break;
         case JOGADOR2:
             promptFormata(COR_AMARELO_NEGRITO);
-            casa ='2';
+            casa = CASA_JOGADOR2;
             break;
     }
     return casa;
@@ -138,7 +139,6 @@ int jogar (ESTADO *state, COORDENADA c){
         changeCardinal(state,c); /*! <Muda '*' e '#' */
         atualizaJogadas(state,c);
         mostrarTabuleiro(state);
-        //printf("%c", converteCasa(state->tab[0][0]));
         return 1;
     }
     else {
@@ -209,12 +209,9 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
     FILE *save;
     char dir[BUF_SIZE] = LOCAL_GRAVAR_FICHEIROS;
     i=0;
-    while(nomeFicheiro[i]) {
-        if (nomeFicheiro[i] == '\n') nomeFicheiro[i] = '\0';
-        i++;
-    }
+    removerLinha(nomeFicheiro);
     strcat(dir,nomeFicheiro);
-    save = fopen(dir,"w+"); /*! <Abre o ficheiro temporário */
+    save = fopen(dir,"w+"); /*! <Abre o ficheiro para gravar */
     for (m=MAX_HOUSES-1; m>=0;m--) {
         for(n=0;n<MAX_HOUSES;n++) {
             fprintf(save,"%c", converteCasa(state->tab[m][n])); /*! <Imprime a casa no ficheiro de texto temporário */
@@ -293,13 +290,13 @@ int atualizaCoordenadaJogada (ESTADO *state, COORDENADA c, int jogador) {
 int lerJogo (ESTADO *state, char *nomeFicheiro) {
     FILE *ficheiro;
     COORDENADA coordJog1, coordJog2;
+    char dir[BUF_SIZE] = LOCAL_GRAVAR_FICHEIROS;
     int m,n,i=0;
     char numJogada[3], lin1, col1, lin2, col2,*restoFicheiro = malloc (BUF_SIZE * sizeof(char));
     char c,*token={"\n"}, *cadaToken;
-    m=n=0;
-    while(nomeFicheiro[n] && nomeFicheiro[n] != '\n') n++;
-    nomeFicheiro[n]='\0';
-    ficheiro=fopen(nomeFicheiro,"r+");
+    removerLinha(nomeFicheiro);
+    strcat(dir,nomeFicheiro);
+    ficheiro=fopen(dir,"r+");
     for(m=MAX_HOUSES-1;m>=0;m--){
         for(n=0;n<MAX_HOUSES;n++){
             c=converteChar(fgetc(ficheiro));

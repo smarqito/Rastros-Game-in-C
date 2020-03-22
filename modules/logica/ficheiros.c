@@ -5,6 +5,16 @@
 #include "ficheiros.h"
 #include <stdio.h>
 
+
+/**
+ *
+ */
+
+void removerLinha (char *string) {
+    int i;
+    for(i=0; string[i] && string[i] != '\n';i++);
+    string[i]='\0';
+}
 /**
  * \brief
  * @param state Apontador para o estado do programa;

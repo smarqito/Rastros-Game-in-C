@@ -106,15 +106,15 @@ int numero_comandos (ESTADO *state) {
  */
 CASA converteChar (int c) {
     switch (c) {
-        case '*':
+        case CASA_BRANCA:
             return BRANCA;
-        case '#':
+        case CASA_PRETA:
             return PRETA;
-        case '.':
+        case CASA_VAZIO:
             return VAZIO;
-        case '1':
+        case CASA_JOGADOR1:
             return JOGADOR1;
-        case '2':
+        case CASA_JOGADOR2:
             return JOGADOR2;
     }
 }

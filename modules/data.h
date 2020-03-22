@@ -36,6 +36,11 @@ typedef struct {
     char *comando,*argumento;
 } INPUT;
 
+#define CASA_VAZIO '.'
+#define CASA_BRANCA '#'
+#define CASA_PRETA 'X'
+#define CASA_JOGADOR1 '1'
+#define CASA_JOGADOR2 '2'
 ESTADO *initState ();
 
 int getPlayer (ESTADO *state);

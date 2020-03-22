@@ -6,6 +6,7 @@
 #define RASTROS_FICHEIROS_H
 
 #include "../data.h"
+void removerLinha (char *string);
 void escreveHistorico (ESTADO *state);
 void verificaHistorico(ESTADO *state);
 #endif //RASTROS_FICHEIROS_H
