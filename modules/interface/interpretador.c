@@ -100,7 +100,7 @@ int jogarRastros (ESTADO *state, INPUT *input) {
     char linha[BUF_SIZE];
     char lin[2], col[2];
     int chegouFim;
-    promptFormata(COR_VERMELHO);
+    promptFormata(COR_VERMELHO_NEGRITO);
     imprimeComandos(state); //!< imprime o numero de comandos utilizados
     printf("PL%d (%d) > ",getPlayer(state),getNumberPlays(state));
     promptFormata(COR_VERDE_NEGRITO);
@@ -124,7 +124,7 @@ int jogarRastros (ESTADO *state, INPUT *input) {
     }
 
     if((chegouFim=verificaFim(state))) {
-        printf("Venceu o jogador %d.\n",chegouFim);
+        printf(SUBLINHADO_ON NEGRITO_ON COR_AMARELO_NEGRITO "Venceu o jogador %d" SUBLINHADO_OFF ".\n" NEGRITO_OFF,chegouFim);
         //interpretador(initState());
         return 1;
     } else {

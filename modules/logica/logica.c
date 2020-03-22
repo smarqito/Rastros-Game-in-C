@@ -105,16 +105,18 @@ char converteCasa (CASA house) {
             break;
         case BRANCA:
             promptFormata(COR_VERMELHO_NEGRITO);
-            casa = '*';
-            break;
-        case PRETA:
-            promptFormata(COR__AZUL_NEGRITO);
             casa = '#';
             break;
+        case PRETA:
+            promptFormata(COR_ROXO);
+            casa = 'X';
+            break;
         case JOGADOR1:
+            promptFormata(COR_AMARELO_NEGRITO);
             casa = '1';
             break;
         case JOGADOR2:
+            promptFormata(COR_AMARELO_NEGRITO);
             casa ='2';
             break;
     }
