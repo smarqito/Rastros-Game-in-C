@@ -124,7 +124,7 @@ int jogarRastros (ESTADO *state, INPUT *input) {
     }
 
     if((chegouFim=verificaFim(state))) {
-        printf(SUBLINHADO_ON NEGRITO_ON COR_AMARELO_NEGRITO "Venceu o jogador %d" SUBLINHADO_OFF ".\n" NEGRITO_OFF,chegouFim);
+        printf(SUBLINHADO_ON COR_AMARELO_NEGRITO "Venceu o jogador %d\n\n" SUBLINHADO_OFF,chegouFim);
         //interpretador(initState());
         return 1;
     } else {
