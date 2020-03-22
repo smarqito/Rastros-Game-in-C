@@ -208,7 +208,6 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
     int m,n,i;
     FILE *save;
     char dir[BUF_SIZE] = LOCAL_GRAVAR_FICHEIROS;
-    i=0;
     removerLinha(nomeFicheiro);
     strcat(dir,nomeFicheiro);
     save = fopen(dir,"w+"); /*! <Abre o ficheiro para gravar */
@@ -315,7 +314,7 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
     while (cadaToken != NULL) {
         if(!removeCarateresExtra(cadaToken)) {
             if(strlen(cadaToken) == 8){
-                if(sscanf(cadaToken,"%s %c%c",numJogada,&col1,&lin1,&col2,&lin2)) {
+                if(sscanf(cadaToken,"%s %c%c %c%c",numJogada,&col1,&lin1,&col2,&lin2)) {
                     state->numJogadas=converteDecimal(numJogada)-1;
                     coordJog1.coluna = col1-'a'; coordJog1.linha=lin1-'1';
                     coordJog2.coluna = col2-'a'; coordJog2.linha=lin2-'1';
@@ -323,6 +322,13 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
                     atualizaCoordenadaJogada(state,coordJog2,2);
                 }
                 state->numJogadas++;
+            } else if(strlen(cadaToken) == 6) {
+                if (sscanf(cadaToken,"%s %c%c", numJogada,&col1,&lin1)) {
+                    state->numJogadas=converteDecimal(numJogada)-1;
+                    coordJog1.coluna = col1-'a'; coordJog1.linha=lin1-'1';
+                    atualizaCoordenadaJogada(state,coordJog1,1);
+                }
+                state->jogadorAtual=1;
             }
         }
         cadaToken = strtok(NULL,token);
@@ -335,7 +341,7 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
 
 /** @brief Lê movimentos. Função aplicada no comando movs;
  */
-int lerMovimentos (ESTADO *e) {
+int lerMovimentos (ESTADO *state) {
     printf("apresentar movimentos do jogo");
     return 0;
 }
