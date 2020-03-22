@@ -8,6 +8,12 @@ Definição do estado e das funções que o manipulam
 
 #include "../globals/globals.h"
 
+#define CASA_VAZIO '.'
+#define CASA_BRANCA '*'
+#define CASA_PRETA '#'
+#define CASA_JOGADOR1 '1'
+#define CASA_JOGADOR2 '2'
+
 typedef enum {VAZIO, BRANCA, PRETA,JOGADOR1,JOGADOR2} CASA;
 
 typedef enum {NO,YES} BOT;
@@ -36,11 +42,6 @@ typedef struct {
     char *comando,*argumento;
 } INPUT;
 
-#define CASA_VAZIO '.'
-#define CASA_BRANCA '#'
-#define CASA_PRETA 'X'
-#define CASA_JOGADOR1 '1'
-#define CASA_JOGADOR2 '2'
 ESTADO *initState ();
 
 int getPlayer (ESTADO *state);
