@@ -9,7 +9,6 @@
 #include "../logica/logica.h"
 #include "../logica/bot.h"
 #include "interface.h"
-#include "../logica/ficheiros.h"
 #include "auxiliaresInterface.h"
 
 int jogarRastros(ESTADO *e, INPUT *input);
@@ -113,12 +112,7 @@ int jogarRastros (ESTADO *state, INPUT *input) {
     } else if (strlen(linha) == 2 && sscanf(linha, "%[Q-Q]",col) == 1 ) { //!< caso o input tenha 1 carater, verifica se é um 'Q'
         return 0;
     } else if (!divideInput(input, linha)) {
-        if(!comandos(state,input,instrucao(input->comando))) {
-            jogarRastros(state,input);
-        }
-        else {
-            return 0;
-        }
+        comandos(state,input,instrucao(input->comando));
     } else {
         printf("Coordenada inválida. Tente novamente.\n");
     }

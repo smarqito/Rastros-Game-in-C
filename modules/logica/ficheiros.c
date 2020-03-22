@@ -7,7 +7,8 @@
 
 
 /**
- *
+ * @brief Remove o primeiro \n que encontra e termina a string.
+ * @param string Array que vai ser processada.
  */
 
 void removerLinha (char *string) {
