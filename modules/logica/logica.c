@@ -104,9 +104,11 @@ char converteCasa (CASA house) {
             casa = '.';
             break;
         case BRANCA:
+            promptFormata(COR_VERMELHO_NEGRITO);
             casa = '*';
             break;
         case PRETA:
+            promptFormata(COR__AZUL_NEGRITO);
             casa = '#';
             break;
         case JOGADOR1:
@@ -134,7 +136,7 @@ int jogar (ESTADO *state, COORDENADA c){
         changeCardinal(state,c); /*! <Muda '*' e '#' */
         atualizaJogadas(state,c);
         mostrarTabuleiro(state);
-        printf("%c", converteCasa(state->tab[0][0]));
+        //printf("%c", converteCasa(state->tab[0][0]));
         return 1;
     }
     else {
@@ -203,12 +205,14 @@ void imprimirJogadas (ESTADO *state, int i, FILE *save){
 int gravarJogo (ESTADO *state, char *nomeFicheiro) {
     int m,n,i;
     FILE *save;
+    char dir[BUF_SIZE] = LOCAL_GRAVAR_FICHEIROS;
     i=0;
     while(nomeFicheiro[i]) {
         if (nomeFicheiro[i] == '\n') nomeFicheiro[i] = '\0';
         i++;
     }
-    save = fopen(nomeFicheiro,"w+"); /*! <Abre o ficheiro temporário */
+    strcat(dir,nomeFicheiro);
+    save = fopen(dir,"w+"); /*! <Abre o ficheiro temporário */
     for (m=MAX_HOUSES-1; m>=0;m--) {
         for(n=0;n<MAX_HOUSES;n++) {
             fprintf(save,"%c", converteCasa(state->tab[m][n])); /*! <Imprime a casa no ficheiro de texto temporário */

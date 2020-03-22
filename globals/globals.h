@@ -21,4 +21,7 @@
  */
 #define MAX_INSTR 9
 
+#include "cores.h"
+
+#define LOCAL_GRAVAR_FICHEIROS "./ficheirosGravados/"
 #endif //RASTROS_GLOBALS_H

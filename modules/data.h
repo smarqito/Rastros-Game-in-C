@@ -32,6 +32,10 @@ typedef struct {
     int nivel;
 } ESTADO;
 
+typedef struct {
+    char *comando,*argumento;
+} INPUT;
+
 ESTADO *initState ();
 
 int getPlayer (ESTADO *state);
