@@ -61,7 +61,7 @@ ESTADO *initState() {
  * @param state Apontador para o estado do programa;
  * @return Retorna o Jogador atual;
  */
-int getPlayer (ESTADO *state) {
+int obterJogador (ESTADO *state) {
     return state->jogadorAtual + 1;
 }
 
@@ -72,7 +72,7 @@ int getPlayer (ESTADO *state) {
  * @param c Coordenada Atual;
  * @return Retorna a CASA em questão;
  */
-CASA getHouseState (ESTADO *state, COORDENADA c){
+CASA obterEstadoCasa (ESTADO *state, COORDENADA c){
     return state->tab[c.linha][c.coluna];
 }
 
@@ -82,7 +82,7 @@ CASA getHouseState (ESTADO *state, COORDENADA c){
  * @param state Apontador para o estado do programa;
  * @return Número de jogadas;
  */
-int getNumberPlays (ESTADO *state){
+int obterNumeroJogadas (ESTADO *state){
     return state->numJogadas;
 }
 
@@ -92,7 +92,7 @@ int getNumberPlays (ESTADO *state){
  * @param state Apontador para o estado do programa;
  * @return Multiplica por 2 e soma 1 no caso do Jogador 1 ou multiplica por 2 e soma 2 no caso do Jogador 2, ambos os casos através do número de jogadas;
  */
-int numero_comandos (ESTADO *state) {
+int numeroComandos (ESTADO *state) {
     if (!state->jogadorAtual)
         return (state ->numJogadas*2)+1;
     else
@@ -124,6 +124,6 @@ CASA converteChar (int c) {
  * @param casa Casa que pretendemos jogar;
  * @return 1 ou 0, caso seja possível jogar ou não, respetivamente;
  */
-int casaJogar (CASA casa) {
+int podeJogar (CASA casa) {
     return (casa == BRANCA) ? 1 : 0;
 }

@@ -21,11 +21,11 @@ int jogarRastros(ESTADO *e, INPUT *input);
  */
 
 void imprimeComandos (ESTADO *state) {
-    int numeroComandos = numero_comandos(state);
-    if (numeroComandos < 10) {
-        printf("#0%d ",numeroComandos);
+    int numeroComandosAtual = numeroComandos(state);
+    if (numeroComandosAtual < 10) {
+        printf("#0%d ",numeroComandosAtual);
     } else {
-        printf("#%d ",numeroComandos);
+        printf("#%d ",numeroComandosAtual);
     }
 }
 
@@ -101,7 +101,7 @@ int jogarRastros (ESTADO *state, INPUT *input) {
     int chegouFim;
     promptFormata(COR_VERMELHO_NEGRITO);
     imprimeComandos(state); //!< imprime o numero de comandos utilizados
-    printf("PL%d (%d) > ",getPlayer(state),getNumberPlays(state));
+    printf("PL%d (%d) > ", obterJogador(state), obterNumeroJogadas(state));
     promptFormata(COR_VERDE_NEGRITO);
     if(fgets(linha,BUF_SIZE,stdin) == NULL)
         return 1;

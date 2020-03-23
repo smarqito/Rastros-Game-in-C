@@ -53,8 +53,8 @@ int verificaVizinhanca (ESTADO *state, COORDENADA c){
 
 
 
-/** @brief Verifica se a jogada é possível utilizando as funções getHouseState (definida no módulo data.c) e verificaVizinhança.
- * A jogada é possível se a CASA escolhida pelo Jogador estiver VAZIA ou for o JOGADOR1/JOGADOR2 (Verficado através da função -> getHouseState);
+/** @brief Verifica se a jogada é possível utilizando as funções obterEstadoCasa (definida no módulo data.c) e verificaVizinhança.
+ * A jogada é possível se a CASA escolhida pelo Jogador estiver VAZIA ou for o JOGADOR1/JOGADOR2 (Verficado através da função -> obterEstadoCasa);
  * É necessário que a casa esteja na vizinhança (Verificado através da função -> verificaVizinhanca).
  *
  * @param state Estado do jogo;
@@ -63,9 +63,9 @@ int verificaVizinhanca (ESTADO *state, COORDENADA c){
  */
 int verificaCasa (ESTADO *state, COORDENADA c){
     int resposta = 0;
-    if ((   getHouseState(state,c) == VAZIO
-         || getHouseState(state,c) == JOGADOR1
-         || getHouseState(state,c) == JOGADOR2)
+    if ((obterEstadoCasa(state, c) == VAZIO
+         || obterEstadoCasa(state, c) == JOGADOR1
+         || obterEstadoCasa(state, c) == JOGADOR2)
         && verificaVizinhanca(state, c))
             resposta = 1;
     return resposta;
@@ -159,7 +159,7 @@ int verificaFim (ESTADO *state) {
     else if (state->tab[0][0]==BRANCA)
         return 1;
     else if (verificaPossibilidades(state))
-        return (getPlayer(state) == 1) ? 2 : 1 ;
+        return (obterJogador(state) == 1) ? 2 : 1 ;
     else
         return 0;;
 }
@@ -192,7 +192,7 @@ void imprimirJogadas (ESTADO *state, int i, FILE *save){
         fprintf(save,"%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
         fprintf(save,"%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
     }
-    else if (i == state->numJogadas && getPlayer(state) == 2){
+    else if (i == state->numJogadas && obterJogador(state) == 2){
         numeros2Digitos (i, save);
         fprintf(save,"%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
     }
@@ -209,6 +209,7 @@ void imprimirJogadas (ESTADO *state, int i, FILE *save){
 int gravarJogo (ESTADO *state, char *nomeFicheiro) {
     int m,n,i;
     FILE *save;
+
     char dir[BUF_SIZE] = LOCAL_GRAVAR_FICHEIROS;
     removerLinha(nomeFicheiro);
     strcat(dir,nomeFicheiro);
@@ -302,7 +303,7 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
         for(n=0;n<MAX_HOUSES;n++){
             c=converteChar(fgetc(ficheiro));
             state->tab[m][n] = c;
-            if(casaJogar(c)) {
+            if(podeJogar(c)) {
                 state->ultimaJogada.linha = m;
                 state->ultimaJogada.coluna = n;
             }
@@ -363,7 +364,7 @@ int lerMovimentos (ESTADO *state) {
             printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
             printf("%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
         }
-        else if (i == state->numJogadas && getPlayer(state) == 2){
+        else if (i == state->numJogadas && obterJogador(state) == 2){
             digitosTerminal (i);
             printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
         }
