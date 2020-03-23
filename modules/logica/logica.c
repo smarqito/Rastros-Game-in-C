@@ -339,15 +339,59 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
     return 0;
 }
 
+/** @brief Imprime um número de apenas 1 dígito em dois, acresentando um zero atrás.
+ * Números de dois dígitos permancem inalterados.
+ * Neste caso, imprime no terminal e não num ficheiro.
+ *
+ * @param state Apontador para o estado do programa.
+ */
+
+int digitosTerminal (int i){
+    if (i < 10) printf("0%d: ",i+1);
+    else printf ("%d", i+1);
+}
+
 /** @brief Lê movimentos. Função aplicada no comando movs;
  */
 int lerMovimentos (ESTADO *state) {
-    printf("apresentar movimentos do jogo");
+    int i;
+    for(i=0;i<= state->numJogadas;i++){
+        if (i < state->numJogadas){
+            digitosTerminal (i);
+            printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+            printf("%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
+        }
+        else if (i == state->numJogadas && getPlayer(state) == 2){
+            digitosTerminal (i);
+            printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+        }
+    }
+
     return 0;
+}
+
+void posAux (ESTADO *novo, COORDENADA c){
+     changeCardinal(novo, c);
+     atualizaJogadas(novo, c);
 }
 
 /** @brief Função aplicada no comando pos;
  */
-void mostraPos(ESTADO *state, char *pos) {
-    printf("mostra um tabuleiro antigo na pos \"%s\".", pos);
+void mostraPos( ESTADO *state, char *pos) {
+    int i;
+    int c = atoi(pos); // número de jogadas que se pretende imprimir
+    ESTADO *novo = initState();
+    if (c <= state->numJogadas){
+        for(i = 1; i <= c; i++ ){
+            COORDENADA jog1 = state->jogadas[i].jogador1;
+            COORDENADA jog2 = state->jogadas[i].jogador2;
+            if (i < c){
+                posAux(novo,jog1);
+                posAux(novo, jog2);
+               }
+            else if (i == c && getPlayer(state) == 2) posAux(novo,jog1);
+            }
+        mostrarTabuleiro(novo);
+    }
+    else printf ("Não é possível efetuar esse comando!Tente novamente");
 }
