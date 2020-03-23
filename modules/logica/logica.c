@@ -388,7 +388,7 @@ void mostraPos( ESTADO *state, char *pos) {
     if (c==0)
         mostrarTabuleiro(novo);
     else if (c <= state->numJogadas) {
-        for(i = 0; i < c; i++ ){ //! Começa em 1,pq eles n consideram a jogada e5 (estado inicial)
+        for(i = 0; i < c; i++ ){ 
             COORDENADA jog1 = state->jogadas[i].jogador1;
             COORDENADA jog2 = state->jogadas[i].jogador2;
                 posAux(novo,jog1);
@@ -401,6 +401,7 @@ void mostraPos( ESTADO *state, char *pos) {
 
 int verificaPossibilidades (ESTADO *state) {
     int r=0;
+    
 
 
 
