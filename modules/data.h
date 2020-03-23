@@ -42,16 +42,16 @@ typedef struct {
 
 ESTADO *initState ();
 
-int getPlayer (ESTADO *state);
+int obterJogador (ESTADO *state);
 
-CASA getHouseState(ESTADO *state, COORDENADA c);
+CASA obterEstadoCasa(ESTADO *state, COORDENADA c);
 
 CASA converteChar (int c);
 
-int getNumberPlays (ESTADO *state);
+int obterNumeroJogadas (ESTADO *state);
 
-int numero_comandos(ESTADO *state);
+int numeroComandos(ESTADO *state);
 
-int casaJogar(CASA);
+int podeJogar(CASA casa);
 
 #endif //RASTROS_DATA_H
