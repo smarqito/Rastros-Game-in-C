@@ -158,6 +158,8 @@ int verificaFim (ESTADO *state) {
         return 2;
     else if (state->tab[0][0]==BRANCA)
         return 1;
+    else if (verificaPossibilidades(state))
+        return (getPlayer(state) == 1) ? 2 : 1 ;
     else
         return 0;;
 }
@@ -376,22 +378,31 @@ void posAux (ESTADO *novo, COORDENADA c){
 }
 
 /** @brief Função aplicada no comando pos;
+ *  @param state 
+ *  @param pos
  */
 void mostraPos( ESTADO *state, char *pos) {
     int i;
-    int c = atoi(pos); // número de jogadas que se pretende imprimir
+    int c = atoi(pos) ; //! número de jogadas que se pretende imprimir
     ESTADO *novo = initState();
-    if (c <= state->numJogadas){
-        for(i = 1; i <= c; i++ ){
+    if (c==0)
+        mostrarTabuleiro(novo);
+    else if (c <= state->numJogadas) {
+        for(i = 0; i < c; i++ ){ //! Começa em 1,pq eles n consideram a jogada e5 (estado inicial)
             COORDENADA jog1 = state->jogadas[i].jogador1;
             COORDENADA jog2 = state->jogadas[i].jogador2;
-            if (i < c){
                 posAux(novo,jog1);
                 posAux(novo, jog2);
-               }
-            else if (i == c && getPlayer(state) == 2) posAux(novo,jog1);
             }
         mostrarTabuleiro(novo);
-    }
-    else printf ("Não é possível efetuar esse comando!Tente novamente");
+    } else
+        printf ("Não é possível efetuar esse comando!Tente novamente\n");
+}
+
+int verificaPossibilidades (ESTADO *state) {
+    int r=0;
+
+
+
+    return r;
 }
