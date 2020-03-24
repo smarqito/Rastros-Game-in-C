@@ -349,12 +349,15 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
  * @param state Apontador para o estado do programa.
  */
 
-int digitosTerminal (int i){
+void digitosTerminal (int i){
     if (i < 10) printf("0%d: ",i+1);
     else printf ("%d", i+1);
 }
 
-/** @brief Lê movimentos. Função aplicada no comando movs;
+/** @brief Lê movimentos. Função aplicada no comando movs.
+ *
+ * @param state Apontador para o estado do programa.
+ * @return 0 caso seja possível efetuar este comando.
  */
 int lerMovimentos (ESTADO *state) {
     int i;
@@ -373,14 +376,22 @@ int lerMovimentos (ESTADO *state) {
     return 0;
 }
 
+/**@brief Atualiza o estado de uma casa numa determinada coordenada, bem como a Jogada.
+ * Modificada a última Jogada.
+ * Muda o Estado de BRANCA para PRETA.
+ *
+ * @param novo Apontador para o estado do programa.
+ * @param c Coordenada Atual.
+ */
 void posAux (ESTADO *novo, COORDENADA c){
      changeCardinal(novo, c);
      atualizaJogadas(novo, c);
 }
 
-/** @brief Função aplicada no comando pos;
- *  @param state 
- *  @param pos
+/** @brief Função aplicada no comando pos.
+ *
+ *  @param state Apontador para o estado do programa.
+ *  @param pos Array de Char que indica até que jogada é suposto mostrar o tabuleiro.
  */
 void mostraPos( ESTADO *state, char *pos) {
     int i;
@@ -400,10 +411,15 @@ void mostraPos( ESTADO *state, char *pos) {
         printf ("Não é possível efetuar esse comando!Tente novamente\n");
 }
 
+/**@brief Função para obter o número de Jogadas que o Jogador(Atual) pode efetuar.
+ *
+ * @param state Apontador para o estado do programa.
+ * @return o número de Jogadas que o Jogador pode efetuar.
+ */
 int verificaPossibilidades (ESTADO *state) {
     int r=0;
+    int jogadorA = state->jogadorAtual;
     
-
 
 
     return r;
