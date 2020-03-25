@@ -118,12 +118,12 @@ void numeros2Digitos (int i, FILE *save){
 
 
 void imprimirJogadas (ESTADO *state, int i, FILE *save){
-    if (i < state->numJogadas){
+    if (i < obterJogadas(state)){
         numeros2Digitos(i, save);
         fprintf(save,"%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
         fprintf(save,"%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
     }
-    else if (i == state->numJogadas && obterJogador(state) == 2){
+    else if (i == obterJogadas(state) && obterJogador(state) == 2){
         numeros2Digitos (i, save);
         fprintf(save,"%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
     }
@@ -145,7 +145,7 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
         fprintf(save,"\n");
     }
     fprintf(save,"\n");
-    for(i=0;i<= state->numJogadas;i++) {
+    for(i=0;i<= obterJogadas(state) ;i++) {
         imprimirJogadas(state,i, save);
     }
     fclose(save); /*! <Fecha o ficheiro temporário */
@@ -251,13 +251,13 @@ void digitosTerminal (int i){
 
 int lerMovimentos (ESTADO *state) {
     int i;
-    for(i=0;i<= state->numJogadas;i++){
-        if (i < state->numJogadas){
+    for(i=0;i<= obterNumeroJogadas(state);i++){
+        if (i < obterNumeroJogadas(state)){
             digitosTerminal (i);
             printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
             printf("%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
         }
-        else if (i == state->numJogadas && obterJogador(state) == 2){
+        else if (i == obterNumeroJogadas(state) && obterJogador(state) == 2){
             digitosTerminal (i);
             printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
         }
@@ -272,24 +272,32 @@ void posAux (ESTADO *novo, COORDENADA c){
      atualizaJogadas(novo, c);
 }
 
-void mostraPos( ESTADO *state, char *pos) {
-    int i;
+int mostraPos( ESTADO *state, char *pos) {
+    int i,r=0;
     int c = atoi(pos) ; //! Número de jogadas que se pretende imprimir;
-    ESTADO *novo = initState();
-    if (c==0)
-        mostrarTabuleiro(novo);
-    else if (c <= state->numJogadas) {
+    //ESTADO *novo = initState();
+    initBoard(state);
+    initPlay(state);
+    if (c==0) {
+        initPlayer(state);
+        mostrarTabuleiro(state);
+    } else if (c < obterNumeroJogadas(state)) {
+        initPlayer(state);
         for(i = 0; i < c; i++ ){ 
             COORDENADA jog1 = state->jogadas[i].jogador1;
             COORDENADA jog2 = state->jogadas[i].jogador2;
-                posAux(novo,jog1);
-                posAux(novo, jog2);
+                posAux(state, jog1);
+                posAux(state, jog2);
             }
-        mostrarTabuleiro(novo);
-    } else
-        printf ("Não é possível efetuar esse comando!Tente novamente\n");
-}
+        mostrarTabuleiro(state);
 
+    } else {
+        printf ("Não é possível efetuar esse comando!Tente novamente\n");
+        printf("O intervalo de posições é de %d até %d\n", 0, (obterNumeroJogadas(state) > 0) ? 0 : (obterNumeroJogadas(state) - 1));
+        r=1;
+    }
+    return r;
+}
 
 int verificaPossibilidades (ESTADO *state) {
     int r=0;
