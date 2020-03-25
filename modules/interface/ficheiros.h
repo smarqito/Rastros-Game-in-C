@@ -55,6 +55,14 @@ void numeros2Digitos (int i, FILE *save);
  */
 void imprimirJogadas (ESTADO *state, int i, FILE *save);
 
+/** @brief: Lê o jogo.
+ *
+ * Acede ao ficheiro inserido pelo utilizador e atualiza o estado do jogo;
+ * @param state Apontador para o estado do programa;
+ * @param nome Ficheiro Ficheiro do qual se está a ler o programa;
+ * @return 0 ou !0 caso funcione ou não, respetivamente;
+ */
+int lerJogo (ESTADO *e, char *nomeFicheiro);
 
 
 

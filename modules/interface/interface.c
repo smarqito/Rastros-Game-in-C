@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "interface.h"
-#include "../logica/ficheiros.h"
+#include "ficheiros.h"
 #include "../logica/logica.h"
 
 
