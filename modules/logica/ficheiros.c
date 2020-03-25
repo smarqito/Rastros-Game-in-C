@@ -1,27 +1,16 @@
-/** @file
- * @brief Atualmente este ficheiro não está a ser utilizado. Serve para referência futura e reorganização do código.
- */
+/** @file */
 
 #include "ficheiros.h"
 #include <stdio.h>
 
-
-/**
- * @brief Remove o primeiro \n que encontra e termina a string.
- * @param string Array que vai ser processada.
- */
 
 void removerLinha (char *string) {
     int i;
     for(i=0; string[i] && string[i] != '\n';i++);
     string[i]='\0';
 }
-/**
- * \brief
- * @param state Apontador para o estado do programa;
- */
-void escreveHistorico (ESTADO *state)
-{
+
+void escreveHistorico (ESTADO *state) {
     FILE *temp;
     temp=fopen("temp","a");
 
@@ -32,11 +21,6 @@ void escreveHistorico (ESTADO *state)
     }
     fclose(temp);
 }
-
-/**
- * \brief
- * @param state Apontador para o estado do programa;
- */
 
 void verificaHistorico(ESTADO *state) {
     FILE *temp;

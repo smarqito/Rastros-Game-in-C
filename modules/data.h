@@ -1,6 +1,6 @@
-/*
-@file data.h
-Definição do estado e das funções que o manipulam
+
+/** @file
+ * @brief Definição das funções da camada de dados do programa.
  */
 
 #ifndef RASTROS_DATA_H
@@ -40,18 +40,80 @@ typedef struct {
     char *comando,*argumento;
 } INPUT;
 
+
+/**
+ * \brief Inicializa o tabuleiro.
+ *
+ * @param state Apontador para o estado do programa;
+ */
+void initBoard (ESTADO *state);
+
+/**
+ * \brief Inicializa o jogo na posição e5.
+ *
+ * @param state Apontador para o estado do programa;
+ */
+void initPlay (ESTADO *state);
+
+/**
+ * \brief Inicializa o programa com o Jogador 1 e 0 jogadas;
+ *
+ * @param state Apontador para o estado do programa;
+ */
+void initPlayer (ESTADO *state);
+
+/**
+ * \brief Cria o Estado.
+ *
+ * @return Apontador do estado criado;
+ */
 ESTADO *initState ();
 
+/**
+ * \brief Busca o jogador que está a jogar.
+ *
+ * @param state Apontador para o estado do programa;
+ * @return Retorna o Jogador atual;
+ */
 int obterJogador (ESTADO *state);
 
+/**
+ * \brief Encontra a CASA da coordenada dada.
+ *
+ * @param state Apontador para o estado do programa;
+ * @param c Coordenada Atual;
+ * @return Retorna a CASA em questão;
+ */
 CASA obterEstadoCasa(ESTADO *state, COORDENADA c);
 
-CASA converteChar (int c);
-
+/**
+ * \brief Obtém o número de jogadas;
+ *
+ * @param state Apontador para o estado do programa;
+ * @return Número de jogadas;
+ */
 int obterNumeroJogadas (ESTADO *state);
 
+/**
+ * @brief Conta o número de comandos.
+ *
+ * @param state Apontador para o estado do programa;
+ * @return Multiplica por 2 e soma 1 no caso do Jogador 1 ou multiplica por 2 e soma 2 no caso do Jogador 2, ambos os casos através do número de jogadas;
+ */
 int numeroComandos(ESTADO *state);
 
+/** @brief Converte um caractér para CASA.
+ *
+ * @param c Caractér associado à casa;
+ * @return Retorna a CASA em questão;
+ */
+CASA converteChar (int c);
+
+/** @brief Verifica sse pode jogar naquela CASA.
+ *
+ * @param casa Casa que pretendemos jogar;
+ * @return 1 ou 0, caso seja possível jogar ou não, respetivamente;
+ */
 int podeJogar(CASA casa);
 
 #endif //RASTROS_DATA_H

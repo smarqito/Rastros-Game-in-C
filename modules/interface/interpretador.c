@@ -1,6 +1,4 @@
-/** @file
- *  @brief Definição das função que permitem ao utilizador interagir com o programa.
- */
+/** @file */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,12 +12,6 @@
 int jogarRastros(ESTADO *e, INPUT *input);
 
 
-
-/** @brief Imprime os Comandos.
- *
- * @param state Apontador para o estado do programa;
- */
-
 void imprimeComandos (ESTADO *state) {
     int numeroComandosAtual = numeroComandos(state);
     if (numeroComandosAtual < 10) {
@@ -28,8 +20,6 @@ void imprimeComandos (ESTADO *state) {
         printf("#%d ",numeroComandosAtual);
     }
 }
-
-
 
 
 int comandos (ESTADO *e, INPUT *input, int comando) {
@@ -73,12 +63,7 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
     }
     return r;
 }
-/**
- * @brief Divide um determinado input em comando e argumento.
- *
- * @param input Linha de texto inserida pelo utilizador.
- * @return 0 se sucesso
- */
+
 int *divideInput (INPUT *resposta, char *input){
     int r=0;
     char espaco[2] = " ";
@@ -88,13 +73,7 @@ int *divideInput (INPUT *resposta, char *input){
 
     return 0;
 }
-/**
- * @brief Permite jogar rastros até:
- *        Um jogador ganhar.
- *        O utilizador optar por voltar ao menú anterior.
- * @param state Apontador para o estado do programa.
- * @return 1 se houver algum erro. 0 sem erro.
- */
+
 int jogarRastros (ESTADO *state, INPUT *input) {
     char linha[BUF_SIZE];
     char lin[2], col[2];
@@ -128,13 +107,6 @@ int jogarRastros (ESTADO *state, INPUT *input) {
 
 
 
-/**
- * @brief Principal interpretador de comandos do programa.
- *
- * Permite ao utilizador interagir com o programa, utilizando os comandos descritos na função pedeAjuda.
- * @param e Apontador para o estado do programa.
- * @return 1 se erro de leitura. 0 se sucesso.
- */
 int interpretador (ESTADO *e) {
 
     char linha[BUF_SIZE];
