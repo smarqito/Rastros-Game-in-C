@@ -1,8 +1,7 @@
 /** @file */
-#include <string.h>
+
 #include <stdio.h>
 #include "interface.h"
-#include "ficheiros.h"
 #include "../logica/logica.h"
 
 
