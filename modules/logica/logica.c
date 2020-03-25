@@ -91,7 +91,7 @@ int verificaFim (ESTADO *state) {
         return 2;
     else if (state->tab[0][0]==BRANCA)
         return 1;
-    else if (verificaPossibilidades(state))
+    else if (!verificaPossibilidades(state))
         return (obterJogador(state) == 1) ? 2 : 1 ;
     else
         return 0;;
@@ -168,23 +168,21 @@ void mostraPos( ESTADO *state, char *pos) {
 int coordenadasPossiveis (ESTADO *state, COORDENADA *cs) {
     int m,n,il,ic,acc=0;
     COORDENADA c;
-    m=state->ultimaJogada.linha-1;
-    // m = (m == 0) ? m : (m-1);
-    n=state->ultimaJogada.coluna-1;
-    // n = (n==0) ? n : (n-1);
-    printf("lin: %d col:  %d\n", m, n);
 
-    for(il=0; il<3 && m<MAX_HOUSES && m<=(state->ultimaJogada.linha+1); il++,m++)
-        for(ic=0; ic<3 && n<MAX_HOUSES && n<=(state->ultimaJogada.coluna+1); ic++,n++) {
+    m=state->ultimaJogada.linha;
+    m = (m == 0) ? m : (m-1);
+
+    for(il=0; il<3 && m<MAX_HOUSES && m<=(state->ultimaJogada.linha+1); il++,m++) {
+        for(ic=0, n=(state->ultimaJogada.coluna==0) ? 0 : (state->ultimaJogada.coluna-1); ic<3 && n<MAX_HOUSES && n<=(state->ultimaJogada.coluna+1); ic++,n++) {
             c.linha = m;
             c.coluna = n;
-            printf("LIN: %d COL: %d\n", m, n);
             if(verificaCasa(state,c)) {
                 cs[acc].linha = m;
                 cs[acc++].coluna = n;
             }
 
         }
+    }
 
     return acc;
 }
@@ -193,6 +191,6 @@ int verificaPossibilidades (ESTADO *state) {
     COORDENADA cs[8];
     int r;
     r = coordenadasPossiveis (state,cs);
-    printf("POSSIVEIS: %d", r);
+    printf("J. Poss.: %d\n", r);
     return r;
 }
