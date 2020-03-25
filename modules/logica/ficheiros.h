@@ -5,6 +5,7 @@
 #ifndef RASTROS_FICHEIROS_H
 #define RASTROS_FICHEIROS_H
 
+#include <bits/types/FILE.h>
 #include "../data.h"
 
 
@@ -25,5 +26,36 @@ void escreveHistorico (ESTADO *state);
  * @param state Apontador para o estado do programa;
  */
 void verificaHistorico(ESTADO *state);
+
+
+/** @brief Imprime uma mensagem.
+ * Imprime uma mensagem para gravar ou ler o Jogo, caso o Jogador queira;
+ *
+ * @param state Apontador para o estado do programa;
+ * @param nomeFicheiro Ficheiro onde se vai gravar o Jogo;
+ * @return
+ */
+int gravarJogo (ESTADO *state, char *nomeFicheiro);
+
+/** @brief  Imprime números com dois dígitos.
+ * Exemplo.: 1 = 01 ou 2 = 02 (Números com dois digitos ficam inalterados);
+ * Usada na função 'imprimirJogadas' e 'gravarJogo';
+ *
+ * @param i Número da Jogada;
+ * @param save Ficheiro;
+ */
+void numeros2Digitos (int i, FILE *save);
+
+/** @brief Imprime as Jogadas efetuadas (abaixo do tabuleiro).
+ * Usada na função 'gravarJogo';
+ *
+ * @param state Apontador para o estado do programa;
+ * @param i Número da Jogada;
+ * @param save Ficheiro;
+ */
+void imprimirJogadas (ESTADO *state, int i, FILE *save);
+
+
+
 
 #endif //RASTROS_FICHEIROS_H

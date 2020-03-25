@@ -35,3 +35,36 @@ void mostrarTabuleiro (ESTADO *state) {
         printf(COR__AZUL_NEGRITO "%c   ",i);
     putchar('\n');
 }
+
+
+int jogar (ESTADO *state, COORDENADA c){
+    if (verificaCasa(state, c)){
+        changeCardinal(state,c); /*! <Muda '*' e '#' */
+        atualizaJogadas(state,c);
+        mostrarTabuleiro(state);
+        return 1;
+    }
+    else {
+        printf("Não é possível efetuar essa jogada! Tente Novamente.\n");
+        return 0;
+    }
+}
+
+
+int lerMovimentos (ESTADO *state) {
+    int i;
+    for(i=0;i<= state->numJogadas;i++){
+        if (i < state->numJogadas){
+            digitosTerminal (i);
+            printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+            printf("%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
+        }
+        else if (i == state->numJogadas && obterJogador(state) == 2){
+            digitosTerminal (i);
+            printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+        }
+    }
+
+    return 0;
+}
+

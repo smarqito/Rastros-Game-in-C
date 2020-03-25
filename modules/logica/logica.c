@@ -84,20 +84,6 @@ char converteCasa (CASA house) {
 
 
 
-int jogar (ESTADO *state, COORDENADA c){
-    if (verificaCasa(state, c)){
-        changeCardinal(state,c); /*! <Muda '*' e '#' */
-        atualizaJogadas(state,c);
-        mostrarTabuleiro(state);
-        return 1;
-    }
-    else {
-        printf("Não é possível efetuar essa jogada! Tente Novamente.\n");
-        return 0;
-    }
-}
-
-
 int verificaFim (ESTADO *state) {
     if(state->tab[MAX_HOUSES-1][MAX_HOUSES-1] == BRANCA)
         return 2;
@@ -110,48 +96,7 @@ int verificaFim (ESTADO *state) {
 }
 
 
-void numeros2Digitos (int i, FILE *save){
-    if (i+1 < 10) fprintf (save,"0%d: ", i+1);
-    else fprintf(save, "%d: ", i+1);
-}
 
-
-
-void imprimirJogadas (ESTADO *state, int i, FILE *save){
-    if (i < state->numJogadas){
-        numeros2Digitos(i, save);
-        fprintf(save,"%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
-        fprintf(save,"%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
-    }
-    else if (i == state->numJogadas && obterJogador(state) == 2){
-        numeros2Digitos (i, save);
-        fprintf(save,"%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
-    }
-}
-
-
-int gravarJogo (ESTADO *state, char *nomeFicheiro) {
-    int m,n,i;
-    FILE *save;
-
-    char dir[BUF_SIZE] = LOCAL_GRAVAR_FICHEIROS;
-    removerLinha(nomeFicheiro);
-    strcat(dir,nomeFicheiro);
-    save = fopen(dir,"w+"); /*! <Abre o ficheiro para gravar */
-    for (m=MAX_HOUSES-1; m>=0;m--) {
-        for(n=0;n<MAX_HOUSES;n++) {
-            fprintf(save,"%c", converteCasa(state->tab[m][n])); /*! <Imprime a casa no ficheiro de texto temporário */
-        }
-        fprintf(save,"\n");
-    }
-    fprintf(save,"\n");
-    for(i=0;i<= state->numJogadas;i++) {
-        imprimirJogadas(state,i, save);
-    }
-    fclose(save); /*! <Fecha o ficheiro temporário */
-
-    return 0;
-}
 
 int converteDecimal (char jogada[]) {
     int x=0;
@@ -248,28 +193,9 @@ void digitosTerminal (int i){
     else printf ("%d", i+1);
 }
 
-
-int lerMovimentos (ESTADO *state) {
-    int i;
-    for(i=0;i<= state->numJogadas;i++){
-        if (i < state->numJogadas){
-            digitosTerminal (i);
-            printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
-            printf("%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
-        }
-        else if (i == state->numJogadas && obterJogador(state) == 2){
-            digitosTerminal (i);
-            printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
-        }
-    }
-
-    return 0;
-}
-
-
 void posAux (ESTADO *novo, COORDENADA c){
-     changeCardinal(novo, c);
-     atualizaJogadas(novo, c);
+    changeCardinal(novo, c);
+    atualizaJogadas(novo, c);
 }
 
 void mostraPos( ESTADO *state, char *pos) {
@@ -279,23 +205,26 @@ void mostraPos( ESTADO *state, char *pos) {
     if (c==0)
         mostrarTabuleiro(novo);
     else if (c <= state->numJogadas) {
-        for(i = 0; i < c; i++ ){ 
+        for(i = 0; i < c; i++ ){
             COORDENADA jog1 = state->jogadas[i].jogador1;
             COORDENADA jog2 = state->jogadas[i].jogador2;
-                posAux(novo,jog1);
-                posAux(novo, jog2);
-            }
+            posAux(novo,jog1);
+            posAux(novo, jog2);
+        }
         mostrarTabuleiro(novo);
     } else
         printf ("Não é possível efetuar esse comando!Tente novamente\n");
 }
 
+int ifOcupada (CASA house) {
+    if (house == VAZIO) return 0;
+}
 
 int verificaPossibilidades (ESTADO *state) {
-    int r=0;
-    int jogadorA = state->jogadorAtual;
-    
+    int m,n,r=0;
+    COORDENADA ultima = state->ultimaJogada;
+    m=state->ultimaJogada.linha; /*! <Linha da jogada */
+    n=state->ultimaJogada.coluna; /*! <Coluna da jogada */
 
-
-    return r;
+    return 0;
 }

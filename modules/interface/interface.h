@@ -25,4 +25,28 @@
  */
 void mostrarTabuleiro (ESTADO *state);
 
+
+
+/** @brief Efetua (se possível) uma jogada.
+ * Após verificar a condição (Função -> verificaCasa) modifica o ESTADO CASA (Para BRANCA);
+ * Substitui no Tabuleiro o '*' por um '#' (Função -> changeCardinal);
+ * Atualiza a última jogada;
+ *
+ * @param state Apontador para o estado do programa;
+ * @param c Coordenada Atual;
+ * @return 1 ou 0, caso a jogada seja possível ou não, respetivamente;
+ */
+int jogar (ESTADO *state, COORDENADA c);
+
+
+
+/** @brief Lê movimentos. Função aplicada no comando movs.
+ *
+ * @param state Apontador para o estado do programa.
+ * @return 0 caso seja possível efetuar este comando.
+ */
+int lerMovimentos (ESTADO *e);
+
+
+
 #endif //RASTROS_INTERFACE_H

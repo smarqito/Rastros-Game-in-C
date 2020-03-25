@@ -57,16 +57,6 @@ void atualizaJogadas (ESTADO *state, COORDENADA c);
 */
 char converteCasa (CASA house);
 
-/** @brief Efetua (se possível) uma jogada.
- * Após verificar a condição (Função -> verificaCasa) modifica o ESTADO CASA (Para BRANCA);
- * Substitui no Tabuleiro o '*' por um '#' (Função -> changeCardinal);
- * Atualiza a última jogada;
- *
- * @param state Apontador para o estado do programa;
- * @param c Coordenada Atual;
- * @return 1 ou 0, caso a jogada seja possível ou não, respetivamente;
- */
-int jogar (ESTADO *state, COORDENADA c);
 
 /** brief Verifica se o Jogador chegou ao fim.
  *
@@ -78,33 +68,6 @@ int verificaFim(ESTADO *state);
 
 /** Funções para o interpretador */
 
-/** @brief  Imprime números com dois dígitos.
- * Exemplo.: 1 = 01 ou 2 = 02 (Números com dois digitos ficam inalterados);
- * Usada na função 'imprimirJogadas' e 'gravarJogo';
- *
- * @param i Número da Jogada;
- * @param save Ficheiro;
- */
-void numeros2Digitos (int i, FILE *save);
-
-/** @brief Imprime as Jogadas efetuadas (abaixo do tabuleiro).
- * Usada na função 'gravarJogo';
- *
- * @param state Apontador para o estado do programa;
- * @param i Número da Jogada;
- * @param save Ficheiro;
- */
-void imprimirJogadas (ESTADO *state, int i, FILE *save);
-
-
-/** @brief Imprime uma mensagem.
- * Imprime uma mensagem para gravar ou ler o Jogo, caso o Jogador queira;
- *
- * @param state Apontador para o estado do programa;
- * @param nomeFicheiro Ficheiro onde se vai gravar o Jogo;
- * @return
- */
-int gravarJogo (ESTADO *state, char *nomeFicheiro);
 
 /** @brief Converte dois char's para um dígito.
  *
@@ -148,13 +111,6 @@ int lerJogo (ESTADO *e, char *nomeFicheiro);
  */
 void digitosTerminal (int i);
 
-/** @brief Lê movimentos. Função aplicada no comando movs.
- *
- * @param state Apontador para o estado do programa.
- * @return 0 caso seja possível efetuar este comando.
- */
-int lerMovimentos (ESTADO *e);
-
 /**@brief Atualiza o estado de uma casa numa determinada coordenada, bem como a Jogada.
  * Modificada a última Jogada.
  * Muda o Estado de BRANCA para PRETA.
@@ -170,6 +126,7 @@ void posAux (ESTADO *novo, COORDENADA c);
  *  @param pos Array de Char que indica até que jogada é suposto mostrar o tabuleiro.
  */
 void mostraPos(ESTADO *state, char *pos);
+
 
 /**@brief Função para obter o número de Jogadas que o Jogador(Atual) pode efetuar.
  *
