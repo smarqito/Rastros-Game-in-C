@@ -1,8 +1,11 @@
 /** @file */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "logica.h"
 #include "../interface/interface.h"
+#include "../../globals/globals.h"
+#include "../data.h"
 
 
 
@@ -97,7 +100,7 @@ int verificaFim (ESTADO *state) {
 
 
 
-int converteDecimal (char jogada[]) {
+int converteDecimal (const char *jogada) {
     int x=0;
     x += (jogada[0]-'0') * 10;
     x += (jogada[1]-'0');
@@ -162,15 +165,34 @@ void mostraPos( ESTADO *state, char *pos) {
         printf ("Não é possível efetuar esse comando!Tente novamente\n");
 }
 
-int ifOcupada (CASA house) {
-    if (house == VAZIO) return 0;
+int coordenadasPossiveis (ESTADO *state, COORDENADA *cs) {
+    int m,n,il,ic,acc=0;
+    COORDENADA c;
+    m=state->ultimaJogada.linha-1;
+    // m = (m == 0) ? m : (m-1);
+    n=state->ultimaJogada.coluna-1;
+    // n = (n==0) ? n : (n-1);
+    printf("lin: %d col:  %d\n", m, n);
+
+    for(il=0; il<3 && m<MAX_HOUSES && m<=(state->ultimaJogada.linha+1); il++,m++)
+        for(ic=0; ic<3 && n<MAX_HOUSES && n<=(state->ultimaJogada.coluna+1); ic++,n++) {
+            c.linha = m;
+            c.coluna = n;
+            printf("LIN: %d COL: %d\n", m, n);
+            if(verificaCasa(state,c)) {
+                cs[acc].linha = m;
+                cs[acc++].coluna = n;
+            }
+
+        }
+
+    return acc;
 }
 
 int verificaPossibilidades (ESTADO *state) {
-    int m,n,r=0;
-    COORDENADA ultima = state->ultimaJogada;
-    m=state->ultimaJogada.linha; /*! <Linha da jogada */
-    n=state->ultimaJogada.coluna; /*! <Coluna da jogada */
-
-    return 0;
+    COORDENADA cs[8];
+    int r;
+    r = coordenadasPossiveis (state,cs);
+    printf("POSSIVEIS: %d", r);
+    return r;
 }

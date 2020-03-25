@@ -1,3 +1,8 @@
+//
+// Created by mariana on 25/03/20.
+//
+
+
 /** @file
  *  @brief Definição de macros utilizados no programa.
  *
@@ -24,4 +29,5 @@
 #include "cores.h"
 
 #define LOCAL_GRAVAR_FICHEIROS "./ficheirosGravados/"
+
 #endif //RASTROS_GLOBALS_H

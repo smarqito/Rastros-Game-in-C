@@ -19,8 +19,8 @@ data.o: ./modules/data.c
 interface.o: ./modules/interface/interface.c
 	gcc -c ./modules/interface/interface.c
 
-ficheiros.o: ./modules/logica/ficheiros.c
-	gcc -c ./modules/logica/ficheiros.c
+ficheiros.o: ./modules/interface/ficheiros.c
+	gcc -c ./modules/interface/ficheiros.c
 
 logica.o: ./modules/logica/logica.c
 	gcc -c ./modules/logica/logica.c

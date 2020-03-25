@@ -1,7 +1,6 @@
 /** @file */
 
 #include <stdio.h>
-#include "auxiliaresInterface.h"
 #include "string.h"
 #include "../../globals/globals.h"
 
@@ -34,6 +33,6 @@ int instrucao (char *instr) {
             "Q"
     };
 
-    for(i=0; i<MAX_INSTR && strcmp(opcoes[i],instr);i++);
+    for(i=0; i<MAX_INSTR && strcmp(opcoes[i],instr) != 0;i++);
     return (i==MAX_INSTR) ? 0 : (i+1);
 }

@@ -15,6 +15,7 @@
 void changeCardinal (ESTADO *state, COORDENADA c);
 
 /** @brief Verifica se é possível escolher a CASA pretendida.
+ *
  * A CASA escolhida pelo Jogador tem de estar na vizinhança da última jogada;
  * As coordenadas para a nova jogada tem de ter 1 de distância, como se verifica no gráfico que se segue:
  *   . . .
@@ -30,6 +31,7 @@ void changeCardinal (ESTADO *state, COORDENADA c);
 int verificaVizinhanca (ESTADO *state, COORDENADA c);
 
 /** @brief Verifica se a jogada é possível utilizando as funções obterEstadoCasa (definida no módulo data.c) e verificaVizinhança.
+ *
  * A jogada é possível se a CASA escolhida pelo Jogador estiver VAZIA ou for o JOGADOR1/JOGADOR2 (Verficado através da função -> obterEstadoCasa);
  * É necessário que a casa esteja na vizinhança (Verificado através da função -> verificaVizinhanca).
  *
@@ -47,11 +49,12 @@ int verificaCasa (ESTADO *state, COORDENADA c);
 void atualizaJogadas (ESTADO *state, COORDENADA c);
 
 /** @brief Converte uma CASA para o tipo char correspondente.
+ *
  * 1. VAZIO: '.';
  *  2. BRANCA: '*';
  *  3. JOGADOR1: '1';
  *  4. JOGADOR2: '2';
- *
+ *0
  * @param house Casa que pretendemos converter;
  * @return casa convertida mediante o char correspondente;
 */
@@ -75,7 +78,7 @@ int verificaFim(ESTADO *state);
  * @param jogada Jogada;
  * @return Retorna os respetivos char contidos na Jogada em decimal;
  */
-int converteDecimal (char jogada[]);
+int converteDecimal (const char jogada[]);
 
 /** @brief Remove caractéres extra.
  *
@@ -104,6 +107,7 @@ int atualizaCoordenadaJogada (ESTADO *state, COORDENADA c, int jogador);
 void digitosTerminal (int i);
 
 /**@brief Atualiza o estado de uma casa numa determinada coordenada, bem como a Jogada.
+ *
  * Modificada a última Jogada.
  * Muda o Estado de BRANCA para PRETA.
  *

@@ -1,8 +1,10 @@
 /** @file */
 
+
 #include "ficheiros.h"
 #include "../logica/logica.h"
 #include "interface.h"
+#include "../../globals/globals.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

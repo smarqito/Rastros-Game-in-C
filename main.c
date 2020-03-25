@@ -4,6 +4,7 @@
 #include "modules/data.h"
 #include "modules/interface/interpretador.h"
 
+
 /**
  * @brief Função de entrada no programa.
  * @return 0 se não houvve erros.

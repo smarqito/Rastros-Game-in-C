@@ -8,6 +8,8 @@
 #include "../logica/bot.h"
 #include "interface.h"
 #include "auxiliaresInterface.h"
+#include "../../globals/globals.h"
+#include "ficheiros.h"
 
 int jogarRastros(ESTADO *e, INPUT *input);
 
