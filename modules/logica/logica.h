@@ -47,7 +47,7 @@ int verificaCasa (ESTADO *state, COORDENADA c);
 void atualizaJogadas (ESTADO *state, COORDENADA c);
 
 /** @brief Converte uma CASA para o tipo char correspondente.
- * 1. VAZIO: '.';
+ *  1. VAZIO: '.';
  *  2. BRANCA: '*';
  *  3. JOGADOR1: '1';
  *  4. JOGADOR2: '2';
@@ -169,7 +169,7 @@ void posAux (ESTADO *novo, COORDENADA c);
  *  @param state Apontador para o estado do programa.
  *  @param pos Array de Char que indica até que jogada é suposto mostrar o tabuleiro.
  */
-void mostraPos(ESTADO *state, char *pos);
+int mostraPos(ESTADO *state, char *pos);
 
 /**@brief Função para obter o número de Jogadas que o Jogador(Atual) pode efetuar.
  *
