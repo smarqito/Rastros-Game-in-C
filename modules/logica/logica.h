@@ -14,7 +14,8 @@
  */
 void changeCardinal (ESTADO *state, COORDENADA c);
 
-/** @brief Verifica se é possível escolher a CASA pretendida.
+/** 
+ * @brief Verifica se é possível escolher a CASA pretendida.
  *
  * A CASA escolhida pelo Jogador tem de estar na vizinhança da última jogada;
  * As coordenadas para a nova jogada tem de ter 1 de distância, como se verifica no gráfico que se segue:
@@ -30,7 +31,8 @@ void changeCardinal (ESTADO *state, COORDENADA c);
  */
 int verificaVizinhanca (ESTADO *state, COORDENADA c);
 
-/** @brief Verifica se a jogada é possível utilizando as funções obterEstadoCasa (definida no módulo data.c) e verificaVizinhança.
+/**
+ * @brief Verifica se a jogada é possível utilizando as funções obterEstadoCasa (definida no módulo data.c) e verificaVizinhança.
  *
  * A jogada é possível se a CASA escolhida pelo Jogador estiver VAZIA ou for o JOGADOR1/JOGADOR2 (Verficado através da função -> obterEstadoCasa);
  * É necessário que a casa esteja na vizinhança (Verificado através da função -> verificaVizinhanca).
@@ -48,7 +50,8 @@ int verificaCasa (ESTADO *state, COORDENADA c);
  */
 void atualizaJogadas (ESTADO *state, COORDENADA c);
 
-/** @brief Converte uma CASA para o tipo char correspondente.
+/** 
+ * @brief Converte uma CASA para o tipo char correspondente.
  *
  * 1. VAZIO: '.';
  *  2. BRANCA: '*';
@@ -61,7 +64,8 @@ void atualizaJogadas (ESTADO *state, COORDENADA c);
 char converteCasa (CASA house);
 
 
-/** brief Verifica se o Jogador chegou ao fim.
+/** 
+ * @brief Verifica se o Jogador chegou ao fim.
  *
  * @param state Apontador para o estado do programa;
  * @return 1 ou 0, caso o Jogador tenha chegado ao fim ou não, respetivamente;
@@ -72,7 +76,8 @@ int verificaFim(ESTADO *state);
 /** Funções para o interpretador */
 
 
-/** @brief Converte dois char's para um dígito.
+/** 
+ * @brief Converte dois char's para um dígito.
  *
  * Usada na 'lerJogo';
  * @param jogada Jogada;
@@ -80,14 +85,16 @@ int verificaFim(ESTADO *state);
  */
 int converteDecimal (const char jogada[]);
 
-/** @brief Remove caractéres extra.
+/** 
+ * @brief Remove caractéres extra.
  *
  * @param s String à qual vai ser removida os caractéres;
  * @return 0 ou !0 caso funcione ou não, respetivamente;
  */
 int removeCarateresExtra (char *s);
 
-/** @brief Atualiza a coordenada após a jogada.
+/** 
+ * @brief Atualiza a coordenada após a jogada.
  *
  * @param state Apontador para o estado do programa;
  * @param c Coordenada Atual;
@@ -97,7 +104,8 @@ int removeCarateresExtra (char *s);
 int atualizaCoordenadaJogada (ESTADO *state, COORDENADA c, int jogador);
 
 
-/** @brief Imprime um número de apenas 1 dígito em dois, acresentando um zero atrás.
+/** 
+ * @brief Imprime um número de apenas 1 dígito em dois, acresentando um zero atrás.
  *
  * Números de dois dígitos permancem inalterados.
  * Neste caso, imprime no terminal e não num ficheiro.
@@ -106,7 +114,8 @@ int atualizaCoordenadaJogada (ESTADO *state, COORDENADA c, int jogador);
  */
 void digitosTerminal (int i);
 
-/**@brief Atualiza o estado de uma casa numa determinada coordenada, bem como a Jogada.
+/**
+ * @brief Atualiza o estado de uma casa numa determinada coordenada, bem como a Jogada.
  *
  * Modificada a última Jogada.
  * Muda o Estado de BRANCA para PRETA.
@@ -116,17 +125,32 @@ void digitosTerminal (int i);
  */
 void posAux (ESTADO *novo, COORDENADA c);
 
-/** @brief Função aplicada no comando pos.
+/** 
+ *  @brief Função aplicada no comando pos.
  *
  *  @param state Apontador para o estado do programa.
  *  @param pos Array de Char que indica até que jogada é suposto mostrar o tabuleiro.
  */
 void mostraPos(ESTADO *state, char *pos);
 
+/**
+ * @brief Calcula o número de jogadas possíveis e quais as respetivas coordenadas
+ * a partir coordenada da última jogada.
+ * 
+ * @param state Apontador para o estado do programa
+ * @param cs Vetor unidimensional com 8 posições livres (máximo de jogadas possíveis).
+ * Este vetor será preenchido com as coordenadas das jogadas possíveis
+ * 
+ * @return Número de jogadas possíveis
+ * 
+ */
+int coordenadasPossiveis (ESTADO *state, COORDENADA *cs);
 
-/**@brief Função para obter o número de Jogadas que o Jogador(Atual) pode efetuar.
+/**
+ * @brief Função para obter o número de Jogadas que o Jogador(Atual) pode efetuar.
  *
  * @param state Apontador para o estado do programa.
+ * 
  * @return o número de Jogadas que o Jogador pode efetuar.
  */
 int verificaPossibilidades (ESTADO *state);

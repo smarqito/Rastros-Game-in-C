@@ -166,14 +166,14 @@ void mostraPos( ESTADO *state, char *pos) {
 }
 
 int coordenadasPossiveis (ESTADO *state, COORDENADA *cs) {
-    int m,n,il,ic,acc=0;
+    int m,n,acc=0;
     COORDENADA c;
 
     m=state->ultimaJogada.linha;
     m = (m == 0) ? m : (m-1);
 
-    for(il=0; il<3 && m<MAX_HOUSES && m<=(state->ultimaJogada.linha+1); il++,m++) {
-        for(ic=0, n=(state->ultimaJogada.coluna==0) ? 0 : (state->ultimaJogada.coluna-1); ic<3 && n<MAX_HOUSES && n<=(state->ultimaJogada.coluna+1); ic++,n++) {
+    for(m; m<MAX_HOUSES && m<=(state->ultimaJogada.linha+1); m++) {
+        for(n=(state->ultimaJogada.coluna==0) ? 0 : (state->ultimaJogada.coluna-1); n<MAX_HOUSES && n<=(state->ultimaJogada.coluna+1); n++) {
             c.linha = m;
             c.coluna = n;
             if(verificaCasa(state,c)) {
