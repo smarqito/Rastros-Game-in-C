@@ -27,5 +27,5 @@ void verAutores();
  * @return 0 se for para sair
  *         1 se for para voltar ao interpretador
  */
-int confirmarSaida ();
+int confirmaSaida ();
 #endif //RASTROS_AUXILIARESINTERFACE_H
