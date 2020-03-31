@@ -85,48 +85,53 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
     int m,n,i=0;
     char numJogada[3], lin1, col1, lin2, col2,*restoFicheiro = malloc (BUF_SIZE * sizeof(char));
     char c,*token={"\n"}, *cadaToken;
+    int r=0;
     removerLinha(nomeFicheiro);
     strcat(dir,nomeFicheiro);
     ficheiro=fopen(dir,"r+");
-    for(m=MAX_HOUSES-1;m>=0;m--){
-        for(n=0;n<MAX_HOUSES;n++){
-            c=converteChar(fgetc(ficheiro));
-            state->tab[m][n] = c;
-            if(podeJogar(c)) {
-                state->ultimaJogada.linha = m;
-                state->ultimaJogada.coluna = n;
-            }
-        }
-        fgetc(ficheiro);
-    }
-    i=0;
-    while((c=fgetc(ficheiro)) != EOF)
-        restoFicheiro[i++] = c;
-    cadaToken = strtok(restoFicheiro,token); /*!< Começa a percorrer o resto do ficheiro */
-    while (cadaToken != NULL) {
-        if(!removeCarateresExtra(cadaToken)) {
-            if(strlen(cadaToken) == 8){
-                if(sscanf(cadaToken,"%s %c%c %c%c",numJogada,&col1,&lin1,&col2,&lin2)) {
-                    state->numJogadas=converteDecimal(numJogada)-1;
-                    coordJog1.coluna = col1-'a'; coordJog1.linha=lin1-'1';
-                    coordJog2.coluna = col2-'a'; coordJog2.linha=lin2-'1';
-                    atualizaCoordenadaJogada(state,coordJog1,1);
-                    atualizaCoordenadaJogada(state,coordJog2,2);
+    if (ficheiro == NULL) {
+        r = 1;
+    } 
+    else {
+        for(m=MAX_HOUSES-1;m>=0;m--){
+            for(n=0;n<MAX_HOUSES;n++){
+                c=converteChar(fgetc(ficheiro));
+                state->tab[m][n] = c;
+                if(podeJogar(c)) {
+                    state->ultimaJogada.linha = m;
+                    state->ultimaJogada.coluna = n;
                 }
-                state->numJogadas++;
-            } else if(strlen(cadaToken) == 6) {
-                if (sscanf(cadaToken,"%s %c%c", numJogada,&col1,&lin1)) {
-                    state->numJogadas=converteDecimal(numJogada)-1;
-                    coordJog1.coluna = col1-'a'; coordJog1.linha=lin1-'1';
-                    atualizaCoordenadaJogada(state,coordJog1,1);
-                }
-                state->jogadorAtual=1;
             }
+            fgetc(ficheiro);
         }
-        cadaToken = strtok(NULL,token);
+        i=0;
+        while((c=fgetc(ficheiro)) != EOF)
+            restoFicheiro[i++] = c;
+        cadaToken = strtok(restoFicheiro,token); /*!< Começa a percorrer o resto do ficheiro */
+        while (cadaToken != NULL) {
+            if(!removeCarateresExtra(cadaToken)) {
+                if(strlen(cadaToken) == 8){
+                    if(sscanf(cadaToken,"%s %c%c %c%c",numJogada,&col1,&lin1,&col2,&lin2)) {
+                        state->numJogadas=converteDecimal(numJogada)-1;
+                        coordJog1.coluna = col1-'a'; coordJog1.linha=lin1-'1';
+                        coordJog2.coluna = col2-'a'; coordJog2.linha=lin2-'1';
+                        atualizaCoordenadaJogada(state,coordJog1,1);
+                        atualizaCoordenadaJogada(state,coordJog2,2);
+                    }
+                    state->numJogadas++;
+                } else if(strlen(cadaToken) == 6) {
+                    if (sscanf(cadaToken,"%s %c%c", numJogada,&col1,&lin1)) {
+                        state->numJogadas=converteDecimal(numJogada)-1;
+                        coordJog1.coluna = col1-'a'; coordJog1.linha=lin1-'1';
+                        atualizaCoordenadaJogada(state,coordJog1,1);
+                    }
+                    state->jogadorAtual=1;
+                }
+            }
+            cadaToken = strtok(NULL,token);
 
+        }
+        fclose(ficheiro);
     }
-    fclose(ficheiro);
-    mostrarTabuleiro(state);
-    return 0;
+    return r;
 }

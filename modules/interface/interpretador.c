@@ -38,8 +38,10 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
             }
             break;
         case 3: //!< Opção "ler nomeficheiro"
-            if(!lerJogo(e,input->argumento))
-
+            if(lerJogo(e,input->argumento) == 0)
+                mostrarTabuleiro(e);
+            else
+                printf("O ficheiro que procura \"%s\" não existe.\n", input->argumento);
             break;
         case 4: //!< Opção "movs"
             if(!lerMovimentos(e))
