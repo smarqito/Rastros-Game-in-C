@@ -4,7 +4,7 @@ rastros.exe: main.o globals.o data.o interpretador.o interface.o logica.o bot.o 
 main.o: main.c
 	gcc -c main.c
 
-globals.o: ./globals/globals.c
+globals.o: ./globals/globals.c ./globals/globals.h
 	gcc -c ./globals/globals.c
 
 interpretador.o: ./modules/interface/interpretador.c
@@ -13,7 +13,7 @@ interpretador.o: ./modules/interface/interpretador.c
 bot.o: ./modules/logica/bot.c
 	gcc -c ./modules/logica/bot.c
 
-data.o: ./modules/data.c
+data.o: ./modules/data.c ./modules/data.h
 	gcc -c ./modules/data.c
 
 interface.o: ./modules/interface/interface.c

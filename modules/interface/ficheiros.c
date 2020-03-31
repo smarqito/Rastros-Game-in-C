@@ -1,13 +1,13 @@
 /** @file */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "ficheiros.h"
 #include "../logica/logica.h"
 #include "interface.h"
 #include "../../globals/globals.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 
 void removerLinha (char *string) {
@@ -38,24 +38,27 @@ void verificaHistorico(ESTADO *state) {
 int gravarJogo (ESTADO *state, char *nomeFicheiro) {
     int m,n,i;
     FILE *save;
-
+    int r=0;
     char dir[BUF_SIZE] = LOCAL_GRAVAR_FICHEIROS;
     removerLinha(nomeFicheiro);
     strcat(dir,nomeFicheiro);
     save = fopen(dir,"w+"); /*! <Abre o ficheiro para gravar */
-    for (m=MAX_HOUSES-1; m>=0;m--) {
-        for(n=0;n<MAX_HOUSES;n++) {
-            fprintf(save,"%c", converteCasa(state->tab[m][n])); /*! <Imprime a casa no ficheiro de texto temporário */
+    if (save == NULL) r=1;
+    else {
+        for (m=MAX_HOUSES-1; m>=0;m--) {
+            for(n=0;n<MAX_HOUSES;n++) {
+                fprintf(save,"%c", converteCasa(state->tab[m][n])); /*! <Imprime a casa no ficheiro de texto temporário */
+            }
+            fprintf(save,"\n");
         }
         fprintf(save,"\n");
+        for(i=0;i<= state->numJogadas;i++) {
+            imprimirJogadas(state,i, save);
+        }
+        fclose(save); /*! <Fecha o ficheiro temporário */
     }
-    fprintf(save,"\n");
-    for(i=0;i<= state->numJogadas;i++) {
-        imprimirJogadas(state,i, save);
-    }
-    fclose(save); /*! <Fecha o ficheiro temporário */
 
-    return 0;
+    return r;
 
 }
 
@@ -89,9 +92,7 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
     removerLinha(nomeFicheiro);
     strcat(dir,nomeFicheiro);
     ficheiro=fopen(dir,"r+");
-    if (ficheiro == NULL) {
-        r = 1;
-    } 
+    if (ficheiro == NULL) r = 1;
     else {
         for(m=MAX_HOUSES-1;m>=0;m--){
             for(n=0;n<MAX_HOUSES;n++){

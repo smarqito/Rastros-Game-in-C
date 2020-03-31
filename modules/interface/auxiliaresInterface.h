@@ -16,4 +16,16 @@ void pedeAjuda();
  */
 int instrucao (char *instr);
 
+/**
+ * @brief Imprime a informação sobre os autores deste projeto.
+ */
+void verAutores();
+
+/**
+ * @brief Função que permite gerir a saída do programa.
+ * 
+ * @return 0 se for para sair
+ *         1 se for para voltar ao interpretador
+ */
+int confirmarSaida ();
 #endif //RASTROS_AUXILIARESINTERFACE_H

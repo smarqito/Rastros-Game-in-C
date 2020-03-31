@@ -191,6 +191,5 @@ int verificaPossibilidades (ESTADO *state) {
     COORDENADA cs[8];
     int r;
     r = coordenadasPossiveis (state,cs);
-    printf("J. Poss.: %d\n", r);
     return r;
 }

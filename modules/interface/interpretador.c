@@ -31,10 +31,13 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
         case 1: //!< Opção "jogar"
             mostrarTabuleiro(e);
             jogarRastros(e, input);
+            r=1;
             break;
         case 2: //!< Opção "gr nomeficheiro"
-            if(!gravarJogo(e,input->argumento)) {
+            if(gravarJogo(e,input->argumento)==0) {
                 printf(COR_VERMELHO NEGRITO_ON "Jogo gravado no ficheiro \"%s\".\n" RESET, input->argumento);
+            } else {
+                printf("Não foi possível gravar o estado do jogo no ficheiro \"%s\". Tente novamente\n",input->argumento);
             }
             break;
         case 3: //!< Opção "ler nomeficheiro"
@@ -56,7 +59,10 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
         case 8: //!< Opção "help"
             pedeAjuda();
             break;
-        case 9: //!< Opção "Q" para sair
+        case 9: //!< Opção "autores"
+            verAutores();
+            break;
+        case 10: //!< Opção "Q" para sair
             printf(COR__AZUL_NEGRITO "Obrigado por jogar connosco! Até à próxima.\n");
             r=1;
             break;
@@ -113,7 +119,7 @@ int jogarRastros (ESTADO *state, INPUT *input) {
 
 int interpretador (ESTADO *e) {
 
-    char linha[BUF_SIZE];
+    char linha[BUF_SIZE], sair[2];
     int iinstr,r;
 
     INPUT *input = (INPUT *) malloc (sizeof(INPUT));
@@ -133,8 +139,15 @@ int interpretador (ESTADO *e) {
         interpretador(e);
         return 0;
     } else {
-        if(comandos(e,input,iinstr)==0) {
+        if((r=comandos(e,input,iinstr))==0) {
             interpretador(e);
+        } else if(r==1) {
+            r = confirmaSaida();
+            if (r == 1) 
+                interpretador(e);
+        } else {
+            printf("Aconteceu algo imprevisto. Por favor reporte à equipa de programadores.");
+            verAutores();
         }
     }
     return 0;
