@@ -60,7 +60,7 @@ int lerMovimentos (ESTADO *state) {
         }
         else if (i == state->numJogadas && obterJogador(state) == 2){
             digitosTerminal (i);
-            printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+            printf("%c%c\n",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
         }
     }
 
