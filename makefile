@@ -25,7 +25,7 @@ ficheiros.o: ./modules/interface/ficheiros.c ./modules/interface/ficheiros.h
 logica.o: ./modules/logica/logica.c ./modules/logica/logica.h
 	gcc -c ./modules/logica/logica.c
 
-auxiliaresInterface.o: ./modules/interface/auxiliaresInterface.c ./modules/interface/auxiliaresInterface.h
+auxiliaresInterface.o: ./modules/interface/auxiliaresInterface.c  ./modules/interface/auxiliaresInterface.h
 	gcc -c ./modules/interface/auxiliaresInterface.c
 
 cores.o: ./globals/cores.c ./globals/cores.h
