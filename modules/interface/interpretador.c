@@ -74,14 +74,16 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
     return r;
 }
 
-int *divideInput (INPUT *resposta, char *input){
-    int r=0;
+int divideInput (INPUT *resposta, char *input){
+    int r=0, nInstr;
     char espaco[2] = " ";
 
     resposta->comando = strtok(input,espaco);
+    if (resposta->comando == NULL) r = 1;
     resposta->argumento = strtok(NULL,espaco);
-
-    return 0;
+    nInstr=instrucao(resposta->comando);
+    if (resposta->argumento == NULL && (nInstr == 2 || nInstr == 3)) r = 1;
+    return r;
 }
 
 int jogarRastros (ESTADO *state, INPUT *input) {
@@ -131,9 +133,10 @@ int interpretador (ESTADO *e) {
         return 1;
 
     //divide o input em comando e argumento
-    divideInput(input, linha);
+    r=divideInput(input, linha);
+    printf("erro de leitura da linha: %d\n", r);
     //caso a instrução não seja válida, pede nova função
-    if (!(iinstr = instrucao(input->comando))) {
+    if (!(iinstr = instrucao(input->comando)) || r) {
         pedeAjuda();
         printf("Opcao invalida!\n\n");
         interpretador(e);

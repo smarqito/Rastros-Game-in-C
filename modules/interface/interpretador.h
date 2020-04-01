@@ -31,15 +31,7 @@ int comandos (ESTADO *e, INPUT *input, int comando);
  * @param input Linha de texto inserida pelo utilizador.
  * @return 0 ou !0 caso funcione ou não, respetivamente;
  */
-int *divideInput (INPUT *resposta, char *input);
-
-/**
- * @brief Divide um determinado input em comando e argumento.
- *
- * @param input Linha de texto inserida pelo utilizador.
- * @return 0 ou !0 caso funcione ou não, respetivamente;
- */
-int *divideInput (INPUT *resposta, char *input);
+int divideInput (INPUT *resposta, char *input);
 
 /**
  * @brief Permite jogar rastros até:

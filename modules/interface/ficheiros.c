@@ -63,8 +63,8 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
 }
 
 void numeros2Digitos (int i, FILE *save){
-    if (i+1 < 10) fprintf (save,"0%d: ", i+1);
-    else fprintf(save, "%d: ", i+1);
+    if (i+1 < 10) fprintf (save,"0%d:", i+1);
+    else fprintf(save, "%d:", i+1);
 }
 
 
@@ -72,12 +72,12 @@ void numeros2Digitos (int i, FILE *save){
 void imprimirJogadas (ESTADO *state, int i, FILE *save){
     if (i < state->numJogadas){
         numeros2Digitos(i, save);
-        fprintf(save,"%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
-        fprintf(save,"%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
+        fprintf(save," %c%c",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+        fprintf(save," %c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
     }
     else if (i == state->numJogadas && obterJogador(state) == 2){
         numeros2Digitos (i, save);
-        fprintf(save,"%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+        fprintf(save," %c%c",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
     }
 }
 
@@ -125,7 +125,7 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
                         printf("cada token: %s\n", cadaToken);
                     }
                     state->numJogadas++;
-                } else if(strlen(cadaToken) == 6) {
+                } else if(strlen(cadaToken) == 5) {
                     if (sscanf(cadaToken,"%s %c%c", numJogada,&col1,&lin1)) {
                         printf("IF 2: %d\n", state->numJogadas);
                         state->numJogadas=converteDecimal(numJogada)-1;

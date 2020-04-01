@@ -6,5 +6,5 @@
 #include <stdio.h>
 
 void promptFormata(char cor[]) {
-    printf(cor);
+    printf("%s",cor);
 }
