@@ -89,6 +89,9 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
     char numJogada[3], lin1, col1, lin2, col2,*restoFicheiro = malloc (BUF_SIZE * sizeof(char));
     char c,*token={"\n"}, *cadaToken;
     int r=0;
+    initBoard(state);
+    initPlay(state);
+    initPlayer(state);
     removerLinha(nomeFicheiro);
     strcat(dir,nomeFicheiro);
     ficheiro=fopen(dir,"r+");
@@ -118,10 +121,13 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
                         coordJog2.coluna = col2-'a'; coordJog2.linha=lin2-'1';
                         atualizaCoordenadaJogada(state,coordJog1,1);
                         atualizaCoordenadaJogada(state,coordJog2,2);
+
+                        printf("cada token: %s\n", cadaToken);
                     }
                     state->numJogadas++;
                 } else if(strlen(cadaToken) == 6) {
                     if (sscanf(cadaToken,"%s %c%c", numJogada,&col1,&lin1)) {
+                        printf("IF 2: %d\n", state->numJogadas);
                         state->numJogadas=converteDecimal(numJogada)-1;
                         coordJog1.coluna = col1-'a'; coordJog1.linha=lin1-'1';
                         atualizaCoordenadaJogada(state,coordJog1,1);
@@ -130,7 +136,6 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
                 }
             }
             cadaToken = strtok(NULL,token);
-
         }
         fclose(ficheiro);
     }
