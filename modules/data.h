@@ -40,6 +40,13 @@ typedef struct {
     char *comando,*argumento;
 } INPUT;
 
+typedef struct listas *LISTA;
+
+typedef struct listas {
+    void *valor;
+    LISTA proxima;
+} Nodo;
+
 
 /**
  * \brief Inicializa o tabuleiro.
