@@ -149,20 +149,29 @@ void posAux (ESTADO *novo, COORDENADA c){
 
 void mostraPos( ESTADO *state, char *pos) {
     int i;
-    int c = atoi(pos) ; //! Número de jogadas que se pretende imprimir;
-    ESTADO *novo = initState();
-    if (c==0)
-        mostrarTabuleiro(novo);
-    else if (c <= state->numJogadas) {
-        for(i = 0; i < c; i++ ){
-            COORDENADA jog1 = state->jogadas[i].jogador1;
-            COORDENADA jog2 = state->jogadas[i].jogador2;
-            posAux(novo,jog1);
-            posAux(novo, jog2);
+    int c = atoi(pos), numeroJogadas; //! Número de jogadas que se pretende imprimir;
+    numeroJogadas = obterNumeroJogadas(state);
+    if (c >= numeroJogadas || c < 0) {
+        if (c == 0) 
+            printf("Encontra-se na posição inicial. Não há jogadas anteriores.\n");
+        else 
+            printf("O intervalo de posições é de %d até %d\n", 0, numeroJogadas - 1);
+    } else {
+        initBoard(state);
+        initPlay(state);
+        initPlayer(state);
+        if (c > 0) {
+            for(i = 0; i < c; i++ ){
+                COORDENADA jog1 = state->jogadas[i].jogador1;
+                COORDENADA jog2 = state->jogadas[i].jogador2;
+                posAux(state,jog1);
+                posAux(state, jog2);
+            }
         }
-        mostrarTabuleiro(novo);
-    } else
-        printf ("Não é possível efetuar esse comando!Tente novamente\n");
+        mostrarTabuleiro(state);
+
+    }
+
 }
 
 int coordenadasPossiveis (ESTADO *state, COORDENADA *cs) {
