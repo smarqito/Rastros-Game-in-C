@@ -1,6 +1,6 @@
 /cmake-build-debug/
-/rastros.exe
 /.idea
 /latex/
 
 *.o
+*.exe
