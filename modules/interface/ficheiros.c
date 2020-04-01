@@ -134,6 +134,7 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
                     }
                     state->jogadorAtual=1;
                 }
+                printf("%d\n", numeroComandos(state));
             }
             cadaToken = strtok(NULL,token);
         }

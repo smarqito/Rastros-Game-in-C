@@ -41,7 +41,7 @@ int instrucao (char *instr) {
 
 void verAutores() {
     printf("Marco António Sousa - a62608@alunos.uminho.pt\n");
-    printf("José Malheiro - a#####@alunos.uminho.pt\n");
+    printf("José Malheiro - a93271@alunos.uminho.pt\n");
     printf("Mariana Marques - a#####@alunos.uminho.pt\n");
     putchar('\n');
 }
