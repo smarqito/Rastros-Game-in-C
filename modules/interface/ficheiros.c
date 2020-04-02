@@ -47,7 +47,7 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
     else {
         for (m=MAX_HOUSES-1; m>=0;m--) {
             for(n=0;n<MAX_HOUSES;n++) {
-                fprintf(save,"%c", converteCasa(state->tab[m][n])); /*! <Imprime a casa no ficheiro de texto temporário */
+                fprintf(save,"%c", converteCasa(state->tab[m][n])); /*!< Imprime a casa no ficheiro de texto temporário */
             }
             fprintf(save,"\n");
         }
