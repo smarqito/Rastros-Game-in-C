@@ -134,7 +134,6 @@ int interpretador (ESTADO *e) {
 
     //divide o input em comando e argumento
     r=divideInput(input, linha);
-    printf("erro de leitura da linha: %d\n", r);
     //caso a instrução não seja válida, pede nova função
     if (!(iinstr = instrucao(input->comando)) || r) {
         pedeAjuda();

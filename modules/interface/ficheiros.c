@@ -122,19 +122,16 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
                         atualizaCoordenadaJogada(state,coordJog1,1);
                         atualizaCoordenadaJogada(state,coordJog2,2);
 
-                        printf("cada token: %s\n", cadaToken);
                     }
                     state->numJogadas++;
                 } else if(strlen(cadaToken) == 5) {
                     if (sscanf(cadaToken,"%s %c%c", numJogada,&col1,&lin1)) {
-                        printf("IF 2: %d\n", state->numJogadas);
                         state->numJogadas=converteDecimal(numJogada)-1;
                         coordJog1.coluna = col1-'a'; coordJog1.linha=lin1-'1';
                         atualizaCoordenadaJogada(state,coordJog1,1);
                     }
                     state->jogadorAtual=1;
                 }
-                printf("%d\n", numeroComandos(state));
             }
             cadaToken = strtok(NULL,token);
         }
