@@ -140,5 +140,6 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
         }
         fclose(ficheiro);
     }
+    free(restoFicheiro);
     return r;
 }
