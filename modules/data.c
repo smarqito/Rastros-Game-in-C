@@ -49,6 +49,10 @@ int obterNumeroJogadas (ESTADO *state){
     return state->numJogadas;
 }
 
+int obterMaxJogadas (ESTADO *state) {
+    return state->maxJogadas;
+}
+
 
 int numeroComandos (ESTADO *state) {
     if (!state->jogadorAtual)

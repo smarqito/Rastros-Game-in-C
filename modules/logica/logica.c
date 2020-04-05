@@ -44,11 +44,14 @@ int verificaCasa (ESTADO *state, COORDENADA c){
     return resposta;
 }
 
+void atualizaMaxJogadas (ESTADO *state) {
+    state->maxJogadas=obterNumeroJogadas(state);
+}
 
 void atualizaJogadas (ESTADO *state, COORDENADA c) {
     if (!state->jogadorAtual) {
         state->jogadorAtual=1;
-        state->jogadas[state->numJogadas].jogador1=c;
+        state->jogadas[obterNumeroJogadas(state)].jogador1=c;
     } else {
         state->jogadorAtual=0;
         state->jogadas[state->numJogadas++].jogador2=c;
@@ -150,12 +153,13 @@ void posAux (ESTADO *novo, COORDENADA c){
 void mostraPos( ESTADO *state, char *pos) {
     int i;
     int c = atoi(pos), numeroJogadas; //! Número de jogadas que se pretende imprimir;
-    numeroJogadas = obterNumeroJogadas(state);
-    if (c >= numeroJogadas || c < 0) {
+    numeroJogadas = obterMaxJogadas(state) + 1;
+
+    if (c > numeroJogadas || c < 0) {
         if (c == 0) 
             printf("Encontra-se na posição inicial. Não há jogadas anteriores.\n");
         else 
-            printf("O intervalo de posições é de %d até %d\n", 0, numeroJogadas - 1);
+            printf("O intervalo de posições é de %d até %d\n", 0, numeroJogadas );
     } else {
         initBoard(state);
         initPlay(state);
@@ -165,7 +169,9 @@ void mostraPos( ESTADO *state, char *pos) {
                 COORDENADA jog1 = state->jogadas[i].jogador1;
                 COORDENADA jog2 = state->jogadas[i].jogador2;
                 posAux(state,jog1);
-                posAux(state, jog2);
+                if( (jog2.linha || jog2.coluna) || verificaFim(state) == 2 ) {
+                    posAux(state, jog2);
+                }               
             }
         }
         mostrarTabuleiro(state);

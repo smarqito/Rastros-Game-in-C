@@ -31,7 +31,7 @@ typedef struct {
     COORDENADA ultimaJogada;
     JOGADAS jogadas;
     BOT bot;
-    int numJogadas;
+    int numJogadas, maxJogadas;
     int jogadorAtual;
     int nivel;
 } ESTADO;
@@ -122,5 +122,17 @@ CASA converteChar (int c);
  * @return 1 ou 0, caso seja possível jogar ou não, respetivamente;
  */
 int podeJogar(CASA casa);
+
+/**
+ * @brief Vai buscar o número máximo de jogadas
+ * 
+ * Função utilizada na mostraPos para manter a possibilidade de fazer vários pos
+ * sem perder a posição atual
+ * 
+ * @param state Apontador para o estado do programa
+ * 
+ * @return número máximo de jogadas (posições)
+ */
+int obterMaxJogadas (ESTADO *state);
 
 #endif //RASTROS_DATA_H

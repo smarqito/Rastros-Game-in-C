@@ -58,7 +58,10 @@ int confirmaSaida () {
             ;
         else if(strlen(linha) == 2 && sscanf(linha, "%[N-N]",sair) == 1)
             r=1;
-        else printf("Opcao invalida");
+        else {
+            printf("Opcao invalida\n");
+            r=2;
+        }
     }
     if (r!=0 && r!=1) confirmaSaida();
 
