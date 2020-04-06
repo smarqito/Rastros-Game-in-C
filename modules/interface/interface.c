@@ -40,6 +40,7 @@ int jogar (ESTADO *state, COORDENADA c){
     if (verificaCasa(state, c)){
         changeCardinal(state,c); /*! <Muda '*' e '#' */
         atualizaJogadas(state,c);
+        atualizaMaxJogadas(state);
         mostrarTabuleiro(state);
         return 1;
     }
@@ -52,15 +53,23 @@ int jogar (ESTADO *state, COORDENADA c){
 
 int lerMovimentos (ESTADO *state) {
     int i;
-    for(i=0;i<= state->numJogadas;i++){
-        if (i < state->numJogadas){
+    int maxJogadas;
+    for(i=0, maxJogadas = obterMaxJogadas(state) ;i <= maxJogadas;i++){
+        if (i < maxJogadas){
+
             digitosTerminal (i);
             printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
             printf("%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
-        }
-        else if (i == state->numJogadas && obterJogador(state) == 2){
+
+        } else if (state->jogadas[i].jogador1.coluna || state->jogadas[i].jogador1.linha || verificaFim(state) == 1) {
+
             digitosTerminal (i);
-            printf("%c%c\n",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+            printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+            if (state->jogadas[i].jogador2.coluna || state->jogadas[i].jogador2.linha || verificaFim(state) == 2)
+                printf("%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
+            else
+                putchar('\n');
+
         }
     }
 

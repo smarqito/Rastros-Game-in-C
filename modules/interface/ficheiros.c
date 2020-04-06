@@ -132,6 +132,7 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
                     }
                     state->jogadorAtual=1;
                 }
+                state->maxJogadas=obterNumeroJogadas(state);
             }
             cadaToken = strtok(NULL,token);
         }

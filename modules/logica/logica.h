@@ -43,6 +43,15 @@ int verificaVizinhanca (ESTADO *state, COORDENADA c);
  */
 int verificaCasa (ESTADO *state, COORDENADA c);
 
+/**
+ * @brief Atualiza o número máximo de jogadas
+ * 
+ * Utiliza a jogadaAtual para atualizar o máximo de jogadas disponíveis.
+ * 
+ * @param state Apontador para o estado do programa
+ */
+void atualizaMaxJogadas (ESTADO *state);
+
 /** @brief Atualiza o histórico de jogadas no respetivo Jogador.
  *
  * @param state Apontador para o estado do programa;
