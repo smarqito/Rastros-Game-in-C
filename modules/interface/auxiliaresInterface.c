@@ -13,11 +13,16 @@ void pedeAjuda() {
     printf("%-23s imprimir a lista de movimentos do jogo atual.\n","movs");
     printf("%-23s pedir ajuda ao bot para escolher a jogada atual.\n","jog");
     printf("%-23s visualizar uma posição anterior através do seu número.\n","pos numero_da_jogada");
+    printf("%-23s iniciar um novo jogo. Perde o estado do jogo atual!\n","novo");
     printf("%-23s mostra este menú.\n","ajuda");
     printf("%-23s ver autores.\n","autores");
     printf("%-23s sair do jogo.\n\n", "Q");
 }
 
+void digitosTerminal (int i){
+    if (i < 9) printf("0%d: ",i+1);
+    else printf ("%d: ", i+1);
+}
 
 int instrucao (char *instr) {
     int i=0;
@@ -29,6 +34,7 @@ int instrucao (char *instr) {
             "movs",
             "jog",
             "pos",
+            "novo",
             "ajuda",
             "help",
             "autores",

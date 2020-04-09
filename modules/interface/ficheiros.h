@@ -15,19 +15,6 @@
  */
 void removerLinha (char *string);
 
-/**
- * \brief
- * @param state Apontador para o estado do programa;
- */
-void escreveHistorico (ESTADO *state);
-
-/**
- * \brief
- * @param state Apontador para o estado do programa;
- */
-void verificaHistorico(ESTADO *state);
-
-
 /** @brief Imprime uma mensagem.
  * Imprime uma mensagem para gravar ou ler o Jogo, caso o Jogador queira;
  *
@@ -55,7 +42,20 @@ void numeros2Digitos (int i, FILE *save);
  */
 void imprimirJogadas (ESTADO *state, int i, FILE *save);
 
-/** @brief: Lê o jogo.
+/**
+ * @brief Lê uma linha do histórico de jogo do ficheiro
+ * e insere-o no estado.
+ * 
+ * @param state Apontador para o estado do programa
+ * @param cadaToken Apontador para a array lida no ficheiro
+ * 
+ * @return 0 caso cada token tenha 8 ou 5 de length. 
+ *         1 caso contrário.
+ */
+int lerJogada (ESTADO *state, char *cadaToken);
+
+/** 
+ * @brief: Lê o jogo.
  *
  * Acede ao ficheiro inserido pelo utilizador e atualiza o estado do jogo;
  * @param state Apontador para o estado do programa;

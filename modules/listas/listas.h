@@ -64,4 +64,13 @@ LISTA removeCabeca (LISTA l);
  */
 int listaEstaVazia (LISTA l);
 
+/**
+ * @brief Devolve o tamanho de uma lista ligada
+ * 
+ * @param lista Apontador para o inicio da lista
+ * 
+ * @return tamanho da lista
+ */
+int lengthLista (LISTA lista);
+
 #endif //RASTROS_DATA_H

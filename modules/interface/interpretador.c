@@ -15,7 +15,7 @@ int jogarRastros(ESTADO *e, INPUT *input);
 
 
 void imprimeComandos (ESTADO *state) {
-    int numeroComandosAtual = numeroComandos(state);
+    int numeroComandosAtual = numeroComandos(state)+1;
     if (numeroComandosAtual < 10) {
         printf("#0%d ",numeroComandosAtual);
     } else {
@@ -41,13 +41,21 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
             }
             break;
         case 3: //!< Opção "ler nomeficheiro"
-            if(lerJogo(e,input->argumento) == 0)
+            if(!(r = lerJogo(e,input->argumento)))
                 mostrarTabuleiro(e);
-            else
-                printf("O ficheiro que procura \"%s\" não existe.\n", input->argumento);
+            else if(r==1) {
+                promptFormata(COR_VERMELHO_NEGRITO);
+                printf("O ficheiro que procura \""SUBLINHADO_ON"%s"SUBLINHADO_OFF"\" não existe.\n", input->argumento);
+                r=0;
+            } else {
+                promptFormata(COR_VERMELHO_NEGRITO);
+                printf("O ficheiro \""SUBLINHADO_ON"%s"SUBLINHADO_OFF"\" não foi lido corretamente.\n", input->argumento);
+                printf("Verifique se o ficheiro está bem construído.\n");
+            } 
             break;
         case 4: //!< Opção "movs"
-            if(!lerMovimentos(e))
+            if(!lerMovimentos(e)) {
+            }
             break;
         case 5: //!< Opção "jog"
             jogaBot(e);
@@ -55,14 +63,18 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
         case 6: //!< Opção "pos #pos#"
             mostraPos(e,input->argumento);
             break;
-        case 7: //!< Opção "ajuda"
-        case 8: //!< Opção "help"
+        case 7:
+            free(e);
+            e=initState();
+            break;
+        case 8: //!< Opção "ajuda"
+        case 9: //!< Opção "help"
             pedeAjuda();
             break;
-        case 9: //!< Opção "autores"
+        case 10: //!< Opção "autores"
             verAutores();
             break;
-        case 10: //!< Opção "Q" para sair
+        case 11: //!< Opção "Q" para sair
             printf(COR__AZUL_NEGRITO "Obrigado por jogar connosco! Até à próxima.\n");
             r=1;
             break;
@@ -92,7 +104,7 @@ int jogarRastros (ESTADO *state, INPUT *input) {
     int chegouFim;
     promptFormata(COR_VERMELHO_NEGRITO);
     imprimeComandos(state); //!< imprime o numero de comandos utilizados
-    printf("PL%d (%d) > ", obterJogador(state), obterNumeroJogadas(state));
+    printf("PL%d (%d) > ", obterJogador(state), obterJogador(state) ? (obterNumeroJogadas(state)+1) : (obterNumeroJogadas(state)));
     promptFormata(COR_VERDE_NEGRITO);
     if(fgets(linha,BUF_SIZE,stdin) == NULL)
         return 1;
@@ -148,8 +160,12 @@ int interpretador (ESTADO *e) {
             if (r == 1) 
                 interpretador(e);
         } else {
-            printf("Aconteceu algo imprevisto. Por favor reporte à equipa de programadores.");
+            printf("Por favor reporte à equipa de programadores o que aconteceu.\n");
+            promptFormata(COR_CIANO_NEGRITO);
+            promptFormata(SUBLINHADO_ON);
             verAutores();
+            promptFormata(SUBLINHADO_OFF);
+            interpretador(e);
         }
     }
     return 0;

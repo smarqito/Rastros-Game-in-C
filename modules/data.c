@@ -22,6 +22,7 @@ void initPlay (ESTADO *state) {
 void initPlayer (ESTADO *state) {
     state -> numJogadas = 0;
     state -> jogadorAtual = 0;
+    state -> numComandos = 0;
     state->bot=NO;
     state->nivel=0;
 }
@@ -32,6 +33,7 @@ ESTADO *initState() {
     initBoard(newState);
     initPlay(newState);
     initPlayer(newState);
+    newState->maxComandos=0;
     return newState;
 }
 
@@ -55,12 +57,16 @@ int obterMaxJogadas (ESTADO *state) {
 
 
 int numeroComandos (ESTADO *state) {
-    if (!state->jogadorAtual)
-        return (state ->numJogadas*2)+1;
-    else
-        return (state -> numJogadas*2)+2;
+    // if (!state->jogadorAtual)
+    //     return (state ->numJogadas*2)+1;
+    // else
+    //     return (state -> numJogadas*2)+2;
+    return state->numComandos;
 }
 
+int obterMaxComandos (ESTADO *state) {
+    return state->maxComandos;
+}
 
 CASA converteChar (int c) {
     switch (c) {
