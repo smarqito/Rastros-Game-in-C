@@ -10,6 +10,7 @@
 
 
 
+
 void changeCardinal (ESTADO *state, COORDENADA c) {
     int m,n;
     m=state->ultimaJogada.linha; /*! <Linha da jogada */
@@ -85,6 +86,9 @@ char converteCasa (CASA house) {
         case JOGADOR2:
             promptFormata(COR_AMARELO_NEGRITO);
             casa = CASA_JOGADOR2;
+            break;
+        default:
+            casa='0';
             break;
     }
     return casa;
@@ -176,21 +180,18 @@ void mostraPos( ESTADO *state, char *pos) {
 }
 
 LISTA coordenadasPossiveis (ESTADO *state) {
-    int m,n,acc=0;
+    int m,n;
     COORDENADA c;
-    LISTA ll =NULL;
+    LISTA ll = NULL;
     m=state->ultimaJogada.linha;
     m = (m == 0) ? m : (m-1);
 
-    for(m; m<MAX_HOUSES && m<=(state->ultimaJogada.linha+1); m++) {
+    for(; m<MAX_HOUSES && m<=(state->ultimaJogada.linha+1); m++) {
         for(n=(state->ultimaJogada.coluna==0) ? 0 : (state->ultimaJogada.coluna-1); n<MAX_HOUSES && n<=(state->ultimaJogada.coluna+1); n++) {
             c.linha = m;
             c.coluna = n;
             if(verificaCasa(state,c)) {
                 ll=insereCabeca(ll, criaCoordenada(c));
-                acc++;
-                // cs[acc].linha = m;
-                // cs[acc++].coluna = n;
             }
 
         }
@@ -199,7 +200,7 @@ LISTA coordenadasPossiveis (ESTADO *state) {
     return ll;
 }
 
-void *criaCoordenada (COORDENADA c) {
+COORDENADA *criaCoordenada (COORDENADA c) {
     COORDENADA *novo = (COORDENADA *) malloc (sizeof(COORDENADA));
     
     novo->coluna=c.coluna;
@@ -209,10 +210,11 @@ void *criaCoordenada (COORDENADA c) {
 }
 
 int verificaPossibilidades (ESTADO *state) {
-    // COORDENADA cs[8];
-    int r;
+    int r=0;
     LISTA l;
-    l=coordenadasPossiveis (state);
-    r = lengthLista(l);
+    
+    l=coordenadasPossiveis(state);
+    r=lengthLista(l);
+
     return r;
 }

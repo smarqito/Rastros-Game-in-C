@@ -148,7 +148,7 @@ LISTA coordenadasPossiveis (ESTADO *state);
 /**
  * @brief Cria um apontador do tipo void para uma coordenada
  */
-void *criaCoordenada (COORDENADA c);
+COORDENADA *criaCoordenada (COORDENADA c);
 
 /**
  * @brief Função para obter o número de Jogadas que o Jogador(Atual) pode efetuar.

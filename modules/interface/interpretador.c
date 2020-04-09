@@ -127,13 +127,14 @@ int jogarRastros (ESTADO *state, INPUT *input) {
     } else {
         jogarRastros(state, input);
     }
+    return 0;
 }
 
 
 
 int interpretador (ESTADO *e) {
 
-    char linha[BUF_SIZE], sair[2];
+    char linha[BUF_SIZE];
     int iinstr,r;
 
     INPUT *input = (INPUT *) malloc (sizeof(INPUT));

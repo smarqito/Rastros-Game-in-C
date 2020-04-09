@@ -80,6 +80,8 @@ CASA converteChar (int c) {
             return JOGADOR1;
         case CASA_JOGADOR2:
             return JOGADOR2;
+        default:
+            return CASA_PRETA;
     }
 }
 

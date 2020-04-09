@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include "interface.h"
 #include "../logica/logica.h"
+#include "auxiliaresInterface.h"
 
 
 
@@ -53,7 +54,7 @@ int jogar (ESTADO *state, COORDENADA c){
 
 int lerMovimentos (ESTADO *state) {
     int i;
-    int maxJogadas,maxComandos;
+    int maxComandos;
 
     for(maxComandos=obterMaxComandos(state), i=0; maxComandos>0; i++) {
         if(maxComandos > 1) {

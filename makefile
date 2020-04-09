@@ -3,10 +3,9 @@ TARGET=rastros.exe
 INCLUDE=-I.
 
 CC=gcc
-CFLAGS=-Wall -O2 -ggdb
+CFLAGS=-Wall -Wextra -pedantic -O2 -g
 
-
-rastros.exe: main.o globals.o data.o interpretador.o interface.o logica.o bot.o ficheiros.o auxiliaresInterface.o cores.o listas.o
+$(TARGET): main.o globals.o data.o interpretador.o interface.o logica.o bot.o ficheiros.o auxiliaresInterface.o cores.o listas.o
 	$(CC) $(CFLAGS) $(INCLUDE) main.o globals.o data.o interpretador.o interface.o \
 	logica.o bot.o ficheiros.o auxiliaresInterface.o cores.o listas.o -o $(TARGET)
 
