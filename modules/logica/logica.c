@@ -6,6 +6,7 @@
 #include "../interface/interface.h"
 #include "../../globals/globals.h"
 #include "../data.h"
+#include "../listas/listas.h"
 
 
 
@@ -60,7 +61,6 @@ void atualizaJogadas (ESTADO *state, COORDENADA c) {
     }
     state->ultimaJogada=c;
     state->numComandos++;
-    printf("numero comandos: %d -> %d\n",state->maxComandos, state->numComandos);
 }
 
 
@@ -175,10 +175,10 @@ void mostraPos( ESTADO *state, char *pos) {
 
 }
 
-int coordenadasPossiveis (ESTADO *state, COORDENADA *cs) {
+LISTA coordenadasPossiveis (ESTADO *state) {
     int m,n,acc=0;
     COORDENADA c;
-
+    LISTA ll =NULL;
     m=state->ultimaJogada.linha;
     m = (m == 0) ? m : (m-1);
 
@@ -187,19 +187,32 @@ int coordenadasPossiveis (ESTADO *state, COORDENADA *cs) {
             c.linha = m;
             c.coluna = n;
             if(verificaCasa(state,c)) {
-                cs[acc].linha = m;
-                cs[acc++].coluna = n;
+                ll=insereCabeca(ll, criaCoordenada(c));
+                acc++;
+                // cs[acc].linha = m;
+                // cs[acc++].coluna = n;
             }
 
         }
     }
 
-    return acc;
+    return ll;
+}
+
+void *criaCoordenada (COORDENADA c) {
+    COORDENADA *novo = (COORDENADA *) malloc (sizeof(COORDENADA));
+    
+    novo->coluna=c.coluna;
+    novo->linha=c.linha;
+
+    return novo;
 }
 
 int verificaPossibilidades (ESTADO *state) {
-    COORDENADA cs[8];
+    // COORDENADA cs[8];
     int r;
-    r = coordenadasPossiveis (state,cs);
+    LISTA l;
+    l=coordenadasPossiveis (state);
+    r = lengthLista(l);
     return r;
 }

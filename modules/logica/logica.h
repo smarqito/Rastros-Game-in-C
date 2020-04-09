@@ -143,7 +143,12 @@ void mostraPos(ESTADO *state, char *pos);
  * @return Número de jogadas possíveis
  * 
  */
-int coordenadasPossiveis (ESTADO *state, COORDENADA *cs);
+LISTA coordenadasPossiveis (ESTADO *state);
+
+/**
+ * @brief Cria um apontador do tipo void para uma coordenada
+ */
+void *criaCoordenada (COORDENADA c);
 
 /**
  * @brief Função para obter o número de Jogadas que o Jogador(Atual) pode efetuar.
@@ -153,5 +158,6 @@ int coordenadasPossiveis (ESTADO *state, COORDENADA *cs);
  * @return o número de Jogadas que o Jogador pode efetuar.
  */
 int verificaPossibilidades (ESTADO *state);
+
 
 #endif //RASTROS_LOGICA_H

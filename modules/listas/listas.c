@@ -9,6 +9,7 @@
 
 LISTA criarLista () {
     LISTA novaLista;
+    // novaLista=NULL;
     novaLista = malloc(sizeof(Nodo));
     novaLista->proxima=NULL;
     return novaLista;
@@ -47,4 +48,11 @@ int listaEstaVazia (LISTA l) {
     int r=0;
     if (l==NULL) r=1;
     return r;
+}
+
+int lengthLista (LISTA l) {
+    int i;
+    for (i=0; l!=NULL; l=l->proxima)
+        i++;
+    return i;
 }

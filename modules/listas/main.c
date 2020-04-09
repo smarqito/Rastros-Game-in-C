@@ -24,7 +24,7 @@ int main() {
         char *str = (char *) devolveCabeca(T);
         printf("%s", str);
     }
-    
+
   printf("\n==============================\n");
   printf(  "=           REMOCAO          =\n");
   printf(  "==============================\n\n");

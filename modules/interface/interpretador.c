@@ -104,7 +104,7 @@ int jogarRastros (ESTADO *state, INPUT *input) {
     int chegouFim;
     promptFormata(COR_VERMELHO_NEGRITO);
     imprimeComandos(state); //!< imprime o numero de comandos utilizados
-    printf("PL%d (%d) > ", obterJogador(state), obterNumeroJogadas(state));
+    printf("PL%d (%d) > ", obterJogador(state), obterJogador(state) ? (obterNumeroJogadas(state)+1) : (obterNumeroJogadas(state)));
     promptFormata(COR_VERDE_NEGRITO);
     if(fgets(linha,BUF_SIZE,stdin) == NULL)
         return 1;

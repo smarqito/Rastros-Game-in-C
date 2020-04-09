@@ -15,19 +15,6 @@
  */
 void removerLinha (char *string);
 
-/**
- * \brief
- * @param state Apontador para o estado do programa;
- */
-void escreveHistorico (ESTADO *state);
-
-/**
- * \brief
- * @param state Apontador para o estado do programa;
- */
-void verificaHistorico(ESTADO *state);
-
-
 /** @brief Imprime uma mensagem.
  * Imprime uma mensagem para gravar ou ler o Jogo, caso o Jogador queira;
  *
