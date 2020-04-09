@@ -81,23 +81,55 @@ void imprimirJogadas (ESTADO *state, int i, FILE *save){
     }
 }
 
+int lerJogada (ESTADO *state, char *cadaToken) {
+    int r=0;
+    char numJogada[3],col1[2],col2[2],lin1[2],lin2[2];
+    COORDENADA coordJog1, coordJog2;
+    if(strlen(cadaToken) == 8){
+        if(sscanf(cadaToken,"%s %[a-h]%[1-8] %[a-h]%[1-8]",numJogada,col1,lin1,col2,lin2) == 5) {
+            state->numJogadas=atoi(numJogada)-1;
+            state->numComandos=numeroComandos(state) + 2;
+            coordJog1.coluna = *col1 - 'a'; coordJog1.linha = *lin1 - '1';
+            coordJog2.coluna = *col2 - 'a'; coordJog2.linha = *lin2 - '1';
+            atualizaCoordenadaJogada(state,&coordJog1,1);
+            atualizaCoordenadaJogada(state,&coordJog2,2);
+            state->numJogadas++;
+        } else r=2;
+    } else if(strlen(cadaToken) >= 5) {
+        if (sscanf(cadaToken,"%s %[a-h]%[1-8]", numJogada,col1,lin1) == 3) {
+            state->numJogadas=converteDecimal(numJogada)-1;
+            state->numComandos=numeroComandos(state)+1;
+            coordJog1.coluna = *col1 - 'a'; coordJog1.linha = *lin1 - '1';
+            atualizaCoordenadaJogada(state,&coordJog1,1);
+            state->jogadorAtual=1;
+        } else r=2;
+    } else {
+        r = 2;
+    }
+
+    return r;
+
+}
+
 int lerJogo (ESTADO *state, char *nomeFicheiro) {
     FILE *ficheiro;
     COORDENADA coordJog1, coordJog2;
-    char dir[BUF_SIZE] = LOCAL_GRAVAR_FICHEIROS;
+    char dir[] = LOCAL_GRAVAR_FICHEIROS;
     int m,n,i=0;
-    char numJogada[3], lin1, col1, lin2, col2,*restoFicheiro = malloc (BUF_SIZE * sizeof(char));
-    char c,*token={"\n"}, *cadaToken;
+    char *restoFicheiro = malloc (BUF_SIZE * sizeof(char));
+    char c,*token="\n", *cadaToken;
     int r=0;
-    initBoard(state);
+    initBoard(state); /*!< Faz reset do estado atual */
     initPlay(state);
     initPlayer(state);
-    removerLinha(nomeFicheiro);
+
+    removerLinha(nomeFicheiro); //!< Remove o caracter '\n'
     strcat(dir,nomeFicheiro);
     ficheiro=fopen(dir,"r+");
-    if (ficheiro == NULL) r = 1;
+
+    if (ficheiro == NULL) r = 1; //!< Se não for possível abrir o ficheiro, dá erro.
     else {
-        for(m=MAX_HOUSES-1;m>=0;m--){
+        for(m=MAX_HOUSES-1;m>=0;m--){ /*!< Inicia a construção do tabuleiro a partir da leitura do ficheiro */
             for(n=0;n<MAX_HOUSES;n++){
                 c=converteChar(fgetc(ficheiro));
                 state->tab[m][n] = c;
@@ -108,35 +140,29 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
             }
             fgetc(ficheiro);
         }
-        i=0;
-        while((c=fgetc(ficheiro)) != EOF)
-            restoFicheiro[i++] = c;
-        cadaToken = strtok(restoFicheiro,token); /*!< Começa a percorrer o resto do ficheiro */
-        while (cadaToken != NULL) {
-            if(!removeCarateresExtra(cadaToken)) {
-                if(strlen(cadaToken) == 8){
-                    if(sscanf(cadaToken,"%s %c%c %c%c",numJogada,&col1,&lin1,&col2,&lin2)) {
-                        state->numJogadas=converteDecimal(numJogada)-1;
-                        coordJog1.coluna = col1-'a'; coordJog1.linha=lin1-'1';
-                        coordJog2.coluna = col2-'a'; coordJog2.linha=lin2-'1';
-                        atualizaCoordenadaJogada(state,coordJog1,1);
-                        atualizaCoordenadaJogada(state,coordJog2,2);
 
-                    }
-                    state->numJogadas++;
-                } else if(strlen(cadaToken) == 5) {
-                    if (sscanf(cadaToken,"%s %c%c", numJogada,&col1,&lin1)) {
-                        state->numJogadas=converteDecimal(numJogada)-1;
-                        coordJog1.coluna = col1-'a'; coordJog1.linha=lin1-'1';
-                        atualizaCoordenadaJogada(state,coordJog1,1);
-                    }
-                    state->jogadorAtual=1;
-                }
-                state->maxJogadas=obterNumeroJogadas(state);
+        // do {
+        //     c=fgetc(ficheiro);
+        //     if(feof(ficheiro))
+        //         break;
+        //     restoFicheiro = (char *) c;
+        // } while (1);
+        for(i=0; (c=fgetc(ficheiro)) != EOF ; i++)
+            restoFicheiro[i] = c;
+
+        cadaToken = strtok(restoFicheiro,token); /*!< Começa a percorrer o resto do ficheiro (histórico de jogadas) */
+        while (cadaToken != NULL && !r) {
+            if(!removeCarateresExtra(cadaToken)) {
+                r = lerJogada(state, cadaToken);
             }
             cadaToken = strtok(NULL,token);
         }
+
+        state->maxJogadas=obterNumeroJogadas(state);
+        state->maxComandos=numeroComandos(state);
+
         fclose(ficheiro);
+        free(cadaToken);
     }
     free(restoFicheiro);
     return r;

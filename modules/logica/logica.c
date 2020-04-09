@@ -46,6 +46,7 @@ int verificaCasa (ESTADO *state, COORDENADA c){
 
 void atualizaMaxJogadas (ESTADO *state) {
     state->maxJogadas=obterNumeroJogadas(state);
+    state->maxComandos=numeroComandos(state);
 }
 
 void atualizaJogadas (ESTADO *state, COORDENADA c) {
@@ -58,6 +59,8 @@ void atualizaJogadas (ESTADO *state, COORDENADA c) {
         // state->numJogadas++;
     }
     state->ultimaJogada=c;
+    state->numComandos++;
+    printf("numero comandos: %d -> %d\n",state->maxComandos, state->numComandos);
 }
 
 
@@ -126,28 +129,21 @@ int removeCarateresExtra (char *s) {
 }
 
 
-int atualizaCoordenadaJogada (ESTADO *state, COORDENADA c, int jogador) {
+int atualizaCoordenadaJogada (ESTADO *state, COORDENADA *c, int jogador) {
     int numJogada = state->numJogadas;
     if(jogador == 1) {
-        state->jogadas[numJogada].jogador1.coluna=c.coluna;
-        state->jogadas[numJogada].jogador1.linha=c.linha;
+        state->jogadas[numJogada].jogador1.coluna=c->coluna;
+        state->jogadas[numJogada].jogador1.linha=c->linha;
     } else {
-        state->jogadas[numJogada].jogador2.coluna=c.coluna;
-        state->jogadas[numJogada].jogador2.linha=c.linha;
+        state->jogadas[numJogada].jogador2.coluna=c->coluna;
+        state->jogadas[numJogada].jogador2.linha=c->linha;
     }
     return 0;
 }
 
-
-
-void digitosTerminal (int i){
-    if (i < 10) printf("0%d: ",i+1);
-    else printf ("%d", i+1);
-}
-
-void posAux (ESTADO *novo, COORDENADA c){
-    changeCardinal(novo, c);
-    atualizaJogadas(novo, c);
+void posAux (ESTADO *state, COORDENADA c){
+    changeCardinal(state, c);
+    atualizaJogadas(state, c);
 }
 
 void mostraPos( ESTADO *state, char *pos) {
@@ -171,11 +167,10 @@ void mostraPos( ESTADO *state, char *pos) {
                 posAux(state,jog1);
                 if( (jog2.linha || jog2.coluna) || verificaFim(state) == 2 ) {
                     posAux(state, jog2);
-                }               
+                }
             }
         }
         mostrarTabuleiro(state);
-
     }
 
 }

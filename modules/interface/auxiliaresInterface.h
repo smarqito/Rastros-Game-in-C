@@ -3,6 +3,16 @@
 #ifndef RASTROS_AUXILIARESINTERFACE_H
 #define RASTROS_AUXILIARESINTERFACE_H
 
+/** 
+ * @brief Imprime um número de apenas 1 dígito em dois, acresentando um zero atrás.
+ *
+ * Números de dois dígitos permancem inalterados.
+ * Neste caso, imprime no terminal e não num ficheiro.
+ *
+ * @param i Número de jogadas a imprimir
+ */
+void digitosTerminal (int i);
+
 /**
  * @brief Imprime a tabela de opções de comandos.
  */

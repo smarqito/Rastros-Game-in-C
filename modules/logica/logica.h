@@ -62,7 +62,7 @@ void atualizaJogadas (ESTADO *state, COORDENADA c);
 /** 
  * @brief Converte uma CASA para o tipo char correspondente.
  *
- * 1. VAZIO: '.';
+ *  1. VAZIO: '.';
  *  2. BRANCA: '*';
  *  3. JOGADOR1: '1';
  *  4. JOGADOR2: '2';
@@ -108,20 +108,10 @@ int removeCarateresExtra (char *s);
  * @param state Apontador para o estado do programa;
  * @param c Coordenada Atual;
  * @param jogador Jogador que efetuou a jogada;
- * @return 0 ou !0, caso funcione ou não, respetivamente;
+ * 
+ * @return 0 ou ~0, caso funcione ou não, respetivamente;
  */
-int atualizaCoordenadaJogada (ESTADO *state, COORDENADA c, int jogador);
-
-
-/** 
- * @brief Imprime um número de apenas 1 dígito em dois, acresentando um zero atrás.
- *
- * Números de dois dígitos permancem inalterados.
- * Neste caso, imprime no terminal e não num ficheiro.
- *
- * @param state Apontador para o estado do programa.
- */
-void digitosTerminal (int i);
+int atualizaCoordenadaJogada (ESTADO *state, COORDENADA *c, int jogador);
 
 /**
  * @brief Atualiza o estado de uma casa numa determinada coordenada, bem como a Jogada.

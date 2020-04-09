@@ -16,27 +16,28 @@ typedef enum {VAZIO, BRANCA, PRETA,JOGADOR1,JOGADOR2} CASA;
 
 typedef enum {NO,YES} BOT;
 
-typedef struct {
+typedef struct coordenada {
     int linha, coluna;
 } COORDENADA;
 
-typedef struct {
+typedef struct jogada {
     COORDENADA jogador1, jogador2;
 } JOGADA;
 
 typedef JOGADA JOGADAS[32];
 
-typedef struct {
+typedef struct estado {
     CASA tab[MAX_HOUSES][MAX_HOUSES];
     COORDENADA ultimaJogada;
     JOGADAS jogadas;
     BOT bot;
     int numJogadas, maxJogadas;
+    int numComandos, maxComandos;
     int jogadorAtual;
     int nivel;
 } ESTADO;
 
-typedef struct {
+typedef struct in {
     char *comando,*argumento;
 } INPUT;
 
@@ -108,6 +109,16 @@ int obterNumeroJogadas (ESTADO *state);
  * @return Multiplica por 2 e soma 1 no caso do Jogador 1 ou multiplica por 2 e soma 2 no caso do Jogador 2, ambos os casos através do número de jogadas;
  */
 int numeroComandos(ESTADO *state);
+
+/**
+ * @brief Vai ler o número máximo de comandos que foram jogados
+ * 
+ * Utilizado para lerJogada, mostraPos.
+ * @param state Apontador para o estado do programa
+ * 
+ * @return máximo de comandos
+ */
+int obterMaxComandos (ESTADO *state);
 
 /** @brief Converte um caractér para CASA.
  *
