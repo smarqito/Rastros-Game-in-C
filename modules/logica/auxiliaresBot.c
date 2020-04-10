@@ -38,23 +38,43 @@ COORDENADA *criaCoordenada (COORDENADA c) {
     return novo;
 }
 
-int jogaBot (ESTADO *state) {
+int botRandom (LISTA coordPossiveis, COORDENADA **jogada) {
     int r,i;
+
+    r = lengthLista(coordPossiveis);
+
+    if(r>0) {
+        for(i = (rand() % r); i>0; i--){
+            proximo(coordPossiveis);
+        }
+        (*jogada)=devolveCabeca(coordPossiveis);
+    }
+
+    return r;
+}
+
+int jogaBot (ESTADO *state) {
+    int r;
     srand(time(0));
 
     LISTA l = coordenadasPossiveis(state);
-    COORDENADA *jogadaBot;
-    r = lengthLista(l);
-    if(r>0) {
-        for(i = rand() % r; i>0; i--){
-            proximo(l);
-        }
-        jogadaBot=devolveCabeca(l);
+    COORDENADA *jogadaBot = (COORDENADA*) malloc(sizeof(COORDENADA));
 
-        r = jogar(state,*jogadaBot);
+    switch (state->nivel) {
+        case 0:
+            r = botRandom(l, &jogadaBot);
+            break;
+        default:
+            r = botRandom(l, &jogadaBot);
+            break;
     }
-    else r = 2;
-    
+
+    if(r>0) {
+        if((r = jogar(state,*jogadaBot))) { //!< a função jogar retorna 1 se for sucesso, ao contrário do que acontece na jogaBot
+            r=0;
+        } 
+        else r=1;
+    }
 
     return r;
 }

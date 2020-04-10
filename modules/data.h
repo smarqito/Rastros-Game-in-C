@@ -78,6 +78,15 @@ void initPlayer (ESTADO *state);
 ESTADO *initState ();
 
 /**
+ * @brief Lê a última coordenada jogada
+ * 
+ * @param state Apontador para o estado do programa
+ * 
+ * @return Apontador para uma coordenada que contém os valores da última jogada
+ */
+COORDENADA *obterUltimaJogada (ESTADO *state);
+
+/**
  * \brief Busca o jogador que está a jogar.
  *
  * @param state Apontador para o estado do programa;
@@ -145,5 +154,14 @@ int podeJogar(CASA casa);
  * @return número máximo de jogadas (posições)
  */
 int obterMaxJogadas (ESTADO *state);
+
+/**
+ * @brief Lê o nível atual do bot.
+ * 
+ * @param state Apontador para o estado do programa
+ * 
+ * @return Nível do bot
+ */
+int obterNivelBot(ESTADO *state);
 
 #endif //RASTROS_DATA_H

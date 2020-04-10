@@ -15,13 +15,18 @@
 int main (int argc, char *argv[]) {
     int r=0;
     ESTADO *state = initState();
+    COORDENADA *ultJogada;
     char *sourceF = argv[1], *destinF = argv[2];
     
     if(argc == 3) {
     
         if( (r = lerJogo(state,sourceF)) ==0 ) {
-            if ((r = jogaBot(state)) == 0)
+            if ((r = jogaBot(state)) == 0) {
                 r=gravarJogo(state,destinF);
+                ultJogada = obterUltimaJogada(state);
+                printf(COR_VERDE "Efetuado a jogada %c%c.\n", ultJogada->coluna+'a', ultJogada->linha+'1');
+                printf("Nível da jogada: %d\n\n", obterNivelBot(state));
+            }
         }
     } else {
         printf("Insira o comando corretamente:\n");
@@ -29,7 +34,7 @@ int main (int argc, char *argv[]) {
         r=1;
     }
     if (r==1) {
-        printf("Verifique se o nome do ficheiro está correto!");
+        printf("Verifique se o nome do ficheiro está correto!\n");
     } else if (r==2) {
         printf("Não há jogadas possíveis. O jogador %d já ganhou!\n", verificaFim(state));
     }

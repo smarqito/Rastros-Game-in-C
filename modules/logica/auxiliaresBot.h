@@ -26,6 +26,17 @@ LISTA coordenadasPossiveis (ESTADO *state);
 COORDENADA *criaCoordenada (COORDENADA c);
 
 /**
+ * @brief Utiliza uma lista criada para selecionar uma jogada aleatória
+ * 
+ * @param coordPossiveis Apontador para o inicio da lista de coord possíveis
+ * @param jogada Endereço de um apontador para uma coordenada
+ * 
+ * @return 0 se não houver jogadas possíveis
+ *         ~0 se selecionou uma jogada
+ */
+int botRandom (LISTA coordPossiveis, COORDENADA **jogada);
+
+/**
  * @brief Efetua uma jogada construída pelo bot
  * 
  * @param state Apontador para o estado do programa

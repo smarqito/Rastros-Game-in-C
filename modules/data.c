@@ -37,6 +37,15 @@ ESTADO *initState() {
     return newState;
 }
 
+COORDENADA *obterUltimaJogada (ESTADO *state) {
+    COORDENADA *ultimaJog = (COORDENADA*) malloc(sizeof(COORDENADA));
+
+    ultimaJog->coluna=state->ultimaJogada.coluna;
+    ultimaJog->linha=state->ultimaJogada.linha;
+    
+    return ultimaJog;
+}
+
 int obterJogador (ESTADO *state) {
     return state->jogadorAtual + 1;
 }
@@ -87,4 +96,8 @@ CASA converteChar (int c) {
 
 int podeJogar (CASA casa) {
     return (casa == BRANCA) ? 1 : 0;
+}
+
+int obterNivelBot(ESTADO *state) {
+    return state->nivel;
 }
