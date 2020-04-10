@@ -34,9 +34,5 @@ int main (int argc, char *argv[]) {
         printf("Não há jogadas possíveis. O jogador %d já ganhou!\n", verificaFim(state));
     }
     
-    free(state);
-    free(sourceF);
-    free(destinF);
-
     return r;
 }
