@@ -13,7 +13,7 @@
 void removerLinha (char *string) {
     int i;
     for(i=0; string[i] && string[i] != '\n';i++);
-    string[i]='\0';
+    if(string[i] == '\n') string[i]='\0';
 }
 
 int gravarJogo (ESTADO *state, char *nomeFicheiro) {
@@ -88,7 +88,7 @@ int lerJogada (ESTADO *state, char *cadaToken) {
 
 int lerJogo (ESTADO *state, char *nomeFicheiro) {
     FILE *ficheiro;
-    char dir[] = LOCAL_GRAVAR_FICHEIROS;
+    char dir[BUF_SIZE] = LOCAL_GRAVAR_FICHEIROS;
     int m,n,i=0;
     char *restoFicheiro = calloc (BUF_SIZE, sizeof(char));
     char c,*token="\n", *cadaToken;
@@ -115,12 +115,6 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
             fgetc(ficheiro);
         }
 
-        // do {
-        //     c=fgetc(ficheiro);
-        //     if(feof(ficheiro))
-        //         break;
-        //     restoFicheiro = (char *) c;
-        // } while (1);
         for(i=0; (c=fgetc(ficheiro)) != EOF ; i++)
             restoFicheiro[i] = c;
 

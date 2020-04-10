@@ -1,35 +1,42 @@
-//
-// Created by marco on 3/10/20.
-//
+/**
+ * @file
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
-#include "../listas/listas.h"
+#include "../data.h"
+#include "../interface/ficheiros.h"
+#include "auxiliaresBot.h"
+#include "../../globals/globals.h"
 #include "logica.h"
-#include "bot.h"
-#include "../interface/interface.h"
 
-int jogaBot (ESTADO *state) {
-    int r,i;
-    srand(time(0));
-
-    LISTA l = coordenadasPossiveis(state);
-    COORDENADA *jogadaBot;
-    r = lengthLista(l);
+int main (int argc, char *argv[]) {
+    int r=0;
+    ESTADO *state = initState();
+    char *sourceF = argv[1], *destinF = argv[2];
     
-    for(i = rand() % r; i>0; i--){
-        proximo(l);
-
+    if(argc == 3) {
+    
+        if( (r = lerJogo(state,sourceF)) ==0 ) {
+            if ((r = jogaBot(state)) == 0)
+                r=gravarJogo(state,destinF);
+        }
+    } else {
+        printf("Insira o comando corretamente:\n");
+        printf("jog source destination\n");
+        r=1;
+    }
+    if (r==1) {
+        printf("Verifique se o nome do ficheiro está correto!");
+    } else if (r==2) {
+        printf("Não há jogadas possíveis. O jogador %d já ganhou!\n", verificaFim(state));
     }
     
-    jogadaBot=devolveCabeca(l);
+    free(state);
+    free(sourceF);
+    free(destinF);
 
-    jogar(state,*jogadaBot);
-
-    return 0;
+    return r;
 }
-
-// int main (int argc, char *argv) {
-
-// }

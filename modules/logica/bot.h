@@ -7,7 +7,6 @@
 
 #include "../data.h"
 
-int jogaBot (ESTADO *state);
 
 
 #endif //RASTROS_BOT_H

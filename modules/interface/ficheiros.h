@@ -20,7 +20,8 @@ void removerLinha (char *string);
  *
  * @param state Apontador para o estado do programa;
  * @param nomeFicheiro Ficheiro onde se vai gravar o Jogo;
- * @return
+ * @return 0 sem erros
+ *         1 Não foi possível gravar o ficheiro
  */
 int gravarJogo (ESTADO *state, char *nomeFicheiro);
 
@@ -58,9 +59,12 @@ int lerJogada (ESTADO *state, char *cadaToken);
  * @brief: Lê o jogo.
  *
  * Acede ao ficheiro inserido pelo utilizador e atualiza o estado do jogo;
+ * 
  * @param state Apontador para o estado do programa;
  * @param nome Ficheiro Ficheiro do qual se está a ler o programa;
- * @return 0 ou !0 caso funcione ou não, respetivamente;
+ * @return 0 sem erros
+ *         1 não foi possível alocar memória/ ficheiro não encontrado
+ *         2 ficheiro de origem mal construído
  */
 int lerJogo (ESTADO *e, char *nomeFicheiro);
 

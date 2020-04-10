@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "logica.h"
+#include "auxiliaresBot.h"
 #include "../interface/interface.h"
 #include "../../globals/globals.h"
 #include "../data.h"
@@ -177,36 +178,6 @@ void mostraPos( ESTADO *state, char *pos) {
         mostrarTabuleiro(state);
     }
 
-}
-
-LISTA coordenadasPossiveis (ESTADO *state) {
-    int m,n;
-    COORDENADA c;
-    LISTA ll = NULL;
-    m=state->ultimaJogada.linha;
-    m = (m == 0) ? m : (m-1);
-
-    for(; m<MAX_HOUSES && m<=(state->ultimaJogada.linha+1); m++) {
-        for(n=(state->ultimaJogada.coluna==0) ? 0 : (state->ultimaJogada.coluna-1); n<MAX_HOUSES && n<=(state->ultimaJogada.coluna+1); n++) {
-            c.linha = m;
-            c.coluna = n;
-            if(verificaCasa(state,c)) {
-                ll=insereCabeca(ll, criaCoordenada(c));
-            }
-
-        }
-    }
-
-    return ll;
-}
-
-COORDENADA *criaCoordenada (COORDENADA c) {
-    COORDENADA *novo = (COORDENADA *) malloc (sizeof(COORDENADA));
-    
-    novo->coluna=c.coluna;
-    novo->linha=c.linha;
-
-    return novo;
 }
 
 int verificaPossibilidades (ESTADO *state) {

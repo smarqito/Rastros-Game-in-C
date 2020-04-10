@@ -1,13 +1,35 @@
-TARGET=rastros.exe
+#Targets
 
-INCLUDE=-I.
+TARGET1=rastros.exe
+TARGET2=bot
+
+#Compilador
 
 CC=gcc
-CFLAGS=-Wall -Wextra -pedantic -O2 -g
 
-$(TARGET): main.o globals.o data.o interpretador.o interface.o logica.o bot.o ficheiros.o auxiliaresInterface.o cores.o listas.o
-	$(CC) $(CFLAGS) $(INCLUDE) main.o globals.o data.o interpretador.o interface.o \
-	logica.o bot.o ficheiros.o auxiliaresInterface.o cores.o listas.o -o $(TARGET)
+#Flags a usar
+
+CFLAGS=-Wall -Wextra -pedantic -O2 -g
+INCLUDE=-I.
+
+#Módulos do programa
+
+LOGICA=logica.o
+INTERFACE=auxiliaresInterface.o interface.o ficheiros.o interpretador.o
+DADOS=globals.o data.o cores.o
+LISTAS=listas.o
+BOT=bot.o auxiliaresBot.o
+
+#Define que o makefile constroi os dois targets só chamando makefile
+
+all: $(TARGET1) $(TARGET2)
+
+$(TARGET1): main.o auxiliaresBot.o $(LOGICA) $(INTERFACE) $(DADOS) $(LISTAS)
+	$(CC) $(CFLAGS) $(INCLUDE) main.o auxiliaresBot.o $(LOGICA) $(INTERFACE) $(DADOS) $(LISTAS) \
+	-o $(TARGET1)
+
+$(TARGET2): $(BOT) $(LOGICA) $(DADOS) $(LISTAS) ficheiros.o interface.o auxiliaresInterface.o
+	$(CC) $(CFLAGS) $(INPUT) $(BOT) $(LOGICA) $(DADOS) $(LISTAS) ficheiros.o interface.o auxiliaresInterface.o -o $(TARGET2)
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c main.c
@@ -17,6 +39,9 @@ globals.o: ./globals/globals.c ./globals/globals.h
 
 interpretador.o: ./modules/interface/interpretador.c ./modules/interface/interpretador.h
 	$(CC) $(CFLAGS) -c ./modules/interface/interpretador.c
+
+auxiliaresBot.o: ./modules/logica/auxiliaresBot.c ./modules/logica/auxiliaresBot.h
+	$(CC) $(CFLAGS) -c ./modules/logica/auxiliaresBot.c
 
 bot.o: ./modules/logica/bot.c ./modules/logica/bot.h
 	$(CC) $(CFLAGS) -c ./modules/logica/bot.c
@@ -44,4 +69,5 @@ listas.o: ./modules/listas/listas.c ./modules/listas/listas.h
 
 clean:
 	rm rastros.exe main.o globals.o interface.o interpretador.o \
-	auxiliaresInterface.o bot.o data.o ficheiros.o logica.o cores.o listas.o
+	auxiliaresInterface.o auxiliaresBot.o data.o ficheiros.o logica.o \
+	cores.o listas.o bot
