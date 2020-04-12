@@ -140,8 +140,6 @@ int jogarRastros (ESTADO *state, INPUT *input) {
 
     if (state->bot && r==0 && numeroComandos(state)>0)  //!< Caso o jogo termine após o bot jogar!
         r=jogaBot(state);
-    input->argumento[0]='\0';
-    input->comando[0]='\0';
     jogarRastros(state, input);
 
     return r;
