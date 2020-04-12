@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+#include <limits.h>
 
 #include "auxiliaresBot.h"
 #include "../data.h"
@@ -73,7 +74,7 @@ double calculaDist (COORDENADA *a, COORDENADA b){
 
 
 int distanciaJog (ESTADO *state, LISTA coordPossiveis, COORDENADA **jogada) {
-    double distancia, distanciaMenor = 50;
+    double distancia, distanciaMenor = INT_MAX;
     int tamanho = lengthLista(coordPossiveis);
     LISTA r;
     COORDENADA *resposta = NULL, Jogador1, Jogador2;
