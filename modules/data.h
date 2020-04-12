@@ -156,6 +156,13 @@ int podeJogar(CASA casa);
 int obterMaxJogadas (ESTADO *state);
 
 /**
+ * @brief Inicializa o input
+ * 
+ * @return Apontador para o input inicializado
+ */
+INPUT *initInput();
+
+/**
  * @brief Lê o nível atual do bot.
  * 
  * @param state Apontador para o estado do programa
@@ -170,6 +177,13 @@ int obterNivelBot(ESTADO *state);
  * @param state Apontador para o estado do jogo
  */
 void alteraEstadoBot(ESTADO *state);
+
+/**
+ * @brief Altera o nível do bot.
+ * 
+ * @param state Apontador para o estado do jogo
+ */
+void alteraNivelBot(ESTADO *state, int nivel);
 
 /**
  * @brief Retorna o estado do bot

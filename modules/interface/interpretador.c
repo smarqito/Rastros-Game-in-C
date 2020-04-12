@@ -69,7 +69,11 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
             e=initState();
             break;
         case 8:
-            alteraEstadoBot(e);
+            if(input->argumento) {
+                if (!e->bot) alteraEstadoBot(e);
+                alteraNivelBot(e, atoi(input->argumento));
+            } else 
+                alteraEstadoBot(e);
             printf("O bot encontra-se ");
             lerEstadoBot(e) ?
                 printf(COR_VERDE_NEGRITO "ativado.\n")
@@ -136,6 +140,8 @@ int jogarRastros (ESTADO *state, INPUT *input) {
 
     if (state->bot && r==0 && numeroComandos(state)>0)  //!< Caso o jogo termine após o bot jogar!
         r=jogaBot(state);
+    input->argumento[0]='\0';
+    input->comando[0]='\0';
     jogarRastros(state, input);
 
     return r;
@@ -148,7 +154,8 @@ int interpretador (ESTADO *e) {
     char linha[BUF_SIZE];
     int iinstr,r;
 
-    INPUT *input = (INPUT *) malloc (sizeof(INPUT));
+    INPUT *input = initInput();
+
 
     printf(COR__AZUL_NEGRITO "Diga-nos a sua instrucao:\n");
     promptFormata(COR_AZUL);
