@@ -171,4 +171,14 @@ int obterNivelBot(ESTADO *state);
  */
 void alteraEstadoBot(ESTADO *state);
 
+/**
+ * @brief Retorna o estado do bot
+ * 
+ * @param state Apontador para o estado do programa
+ * 
+ * @return 0 se está desativado
+ *         1 se está ativado
+ */
+int lerEstadoBot(ESTADO *state);
+
 #endif //RASTROS_DATA_H

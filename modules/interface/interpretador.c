@@ -70,6 +70,11 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
             break;
         case 8:
             alteraEstadoBot(e);
+            printf("O bot encontra-se ");
+            lerEstadoBot(e) ?
+                printf(COR_VERDE_NEGRITO "ativado.\n")
+                :
+                printf(COR_VERMELHO_NEGRITO "desativado.\n");
             break;
         case 9: //!< Opção "ajuda"
         case 10: //!< Opção "help"

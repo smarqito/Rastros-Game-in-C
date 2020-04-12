@@ -105,3 +105,7 @@ int obterNivelBot(ESTADO *state) {
 void alteraEstadoBot(ESTADO *state) {
     state->bot = !(state->bot);
 }
+
+int lerEstadoBot(ESTADO *state) {
+    return state->bot;
+}
