@@ -10,7 +10,6 @@
 #include "auxiliaresInterface.h"
 #include "../../globals/globals.h"
 #include "ficheiros.h"
-// #include "../data.h"
 
 int jogarRastros(ESTADO *e, INPUT *input);
 
@@ -43,7 +42,7 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
             break;
         case 3: //!< Opção "ler nomeficheiro"
             if(!(r = lerJogo(e,input->argumento)))
-                mostrarTabuleiro(e);
+                printf("O ficheiro "COR_VERDE_NEGRITO "%s" COR_AZUL " foi lido corretamente.\n\n",input->argumento);//mostrarTabuleiro(e);
             else if(r==1) {
                 promptFormata(COR_VERMELHO_NEGRITO);
                 printf("O ficheiro que procura \""SUBLINHADO_ON"%s"SUBLINHADO_OFF"\" não existe.\n", input->argumento);
@@ -133,6 +132,7 @@ int jogarRastros (ESTADO *state, INPUT *input) {
             return 0;
         } else if (!divideInput(input, linha)) {
             comandos(state,input,instrucao(input->comando));
+            r=1;
         } else {
             printf("Coordenada inválida. Tente novamente.\n");
         }
@@ -140,6 +140,7 @@ int jogarRastros (ESTADO *state, INPUT *input) {
 
     if (state->bot && r==0 && numeroComandos(state)>0)  //!< Caso o jogo termine após o bot jogar!
         r=jogaBot(state);
+    mostrarTabuleiro(state);
     jogarRastros(state, input);
 
     return r;

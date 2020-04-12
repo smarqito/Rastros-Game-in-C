@@ -42,7 +42,7 @@ int jogar (ESTADO *state, COORDENADA c){
         changeCardinal(state,c); /*! <Muda '*' e '#' */
         atualizaJogadas(state,c);
         atualizaMaxJogadas(state);
-        mostrarTabuleiro(state);
+        
         return 0;
     }
     else {
