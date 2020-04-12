@@ -10,6 +10,7 @@
 #include "auxiliaresInterface.h"
 #include "../../globals/globals.h"
 #include "ficheiros.h"
+// #include "../data.h"
 
 int jogarRastros(ESTADO *e, INPUT *input);
 
@@ -63,18 +64,21 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
         case 6: //!< Opção "pos #pos#"
             mostraPos(e,input->argumento);
             break;
-        case 7:
+        case 7: //!< Opção "novo" inicia um novo jogo
             free(e);
             e=initState();
             break;
-        case 8: //!< Opção "ajuda"
-        case 9: //!< Opção "help"
+        case 8:
+            alteraEstadoBot(e);
+            break;
+        case 9: //!< Opção "ajuda"
+        case 10: //!< Opção "help"
             pedeAjuda();
             break;
-        case 10: //!< Opção "autores"
+        case 11: //!< Opção "autores"
             verAutores();
             break;
-        case 11: //!< Opção "Q" para sair
+        case 12: //!< Opção "Q" para sair
             printf(COR__AZUL_NEGRITO "Obrigado por jogar connosco! Até à próxima.\n");
             r=1;
             break;
@@ -101,7 +105,7 @@ int divideInput (INPUT *resposta, char *input){
 int jogarRastros (ESTADO *state, INPUT *input) {
     char linha[BUF_SIZE];
     char lin[2], col[2];
-    int chegouFim;
+    int chegouFim, r=0;
     promptFormata(COR_VERMELHO_NEGRITO);
     imprimeComandos(state); //!< imprime o numero de comandos utilizados
     printf("PL%d (%d) > ", obterJogador(state), obterJogador(state) ? (obterNumeroJogadas(state)+1) : (obterNumeroJogadas(state)));
@@ -111,7 +115,7 @@ int jogarRastros (ESTADO *state, INPUT *input) {
 
     if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) { //!< caso o input tenha 2 carateres lê a col e lin
         COORDENADA coord = {*lin - '1', *col - 'a'};
-        jogar(state,coord);
+        r=jogar(state,coord);
     } else if (strlen(linha) == 2 && sscanf(linha, "%[Q-Q]",col) == 1 ) { //!< caso o input tenha 1 carater, verifica se é um 'Q'
         return 0;
     } else if (!divideInput(input, linha)) {
@@ -125,9 +129,12 @@ int jogarRastros (ESTADO *state, INPUT *input) {
         //interpretador(initState());
         return 1;
     } else {
+        if (state->bot && r==0) {
+            jogaBot(state);
+        }
         jogarRastros(state, input);
     }
-    return 0;
+    return r;
 }
 
 

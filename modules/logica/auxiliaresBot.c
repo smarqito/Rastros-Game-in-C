@@ -99,12 +99,13 @@ int distanciaJog (ESTADO *state, LISTA coordPossiveis, COORDENADA **jogada) {
 
 int jogaBot (ESTADO *state) {
     int r;
+    
     srand(time(0));
 
     LISTA l = coordenadasPossiveis(state);
     COORDENADA *jogadaBot = (COORDENADA*) calloc(1,sizeof(COORDENADA));
 
-    switch (state->nivel) {
+    switch (state->nivel) { //!< Nível de dificuldade do bot
         case 0:
             r = botRandom(l,&jogadaBot);
             break;

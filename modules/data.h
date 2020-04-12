@@ -164,4 +164,11 @@ int obterMaxJogadas (ESTADO *state);
  */
 int obterNivelBot(ESTADO *state);
 
+/**
+ * @brief Altera o estado do bot.
+ * 
+ * @param state Apontador para o estado do jogo
+ */
+void alteraEstadoBot(ESTADO *state);
+
 #endif //RASTROS_DATA_H

@@ -43,11 +43,11 @@ int jogar (ESTADO *state, COORDENADA c){
         atualizaJogadas(state,c);
         atualizaMaxJogadas(state);
         mostrarTabuleiro(state);
-        return 1;
+        return 0;
     }
     else {
         printf("Não é possível efetuar essa jogada! Tente Novamente.\n");
-        return 0;
+        return 1;
     }
 }
 

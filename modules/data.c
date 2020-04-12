@@ -101,3 +101,7 @@ int podeJogar (CASA casa) {
 int obterNivelBot(ESTADO *state) {
     return state->nivel;
 }
+
+void alteraEstadoBot(ESTADO *state) {
+    state->bot = !(state->bot);
+}
