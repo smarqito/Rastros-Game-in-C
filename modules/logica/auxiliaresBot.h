@@ -37,8 +37,8 @@ COORDENADA *criaCoordenada (COORDENADA c);
 int botRandom (LISTA coordPossiveis, COORDENADA **jogada);
 
 /**
-* @brief Calcula a distância euclidiana
-* Se for
+* @brief Calcula a distância euclidiana entre a coordenada dada e o destino
+* O destino pode ser a casa do Jogador 1, ou 2
 *
 * @param c Apontador para uma coordenada da lista de coord possíveis
 * @param jog int correspondente ao Jogador em questão
@@ -47,7 +47,17 @@ int botRandom (LISTA coordPossiveis, COORDENADA **jogada);
 */
 double calculaDist (COORDENADA *a, int numeroJog);
 
-
+/**
+* @brief Escolhe a melhor Jogada dependendo da distancia euclidiana
+* De acordo com o Jogador atual, vai escolher a jogada que fica mais perto do seu destino
+*
+* @param state Apontador para o estado do programa
+* @param c coordPossiveis Apontador para o inicio da lista de coord possíveis
+* @param jogada Endereço de um apontador para uma coordenada
+*
+* @return 0 se não houver jogadas possíveis
+*         ~0 se selecionou uma jogada
+*/
 int distanciaJog (ESTADO *state, LISTA coordPossiveis, COORDENADA **jogada);
 
 /**
