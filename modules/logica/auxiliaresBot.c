@@ -105,10 +105,10 @@ int jogaBot (ESTADO *state) {
 
     switch (state->nivel) {
         case 0:
-            r = botRandom(l, &jogadaBot);
+            r = distanciaJog(state,l,jogadaBot);
             break;
         default:
-            r = botRandom(l, &jogadaBot);
+            r = distanciaJog(state,l,jogadaBot);
             break;
     }
 
