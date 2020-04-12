@@ -55,18 +55,22 @@ int botRandom (LISTA coordPossiveis, COORDENADA **jogada) {
 }
 
 
-double calculaDist (COORDENADA *a, COORDENADA b){
+double calculaDist (COORDENADA *a, int numeroJog){
     int linhaA = a->linha, colunaA = a->coluna;
-    int linhaB = b.linha, colunaB = b.coluna;
+    int linhaB, colunaB;
     int distancia, distanciaB;
     double distanciaFinal;
+    if (numeroJog == 1){
+        linhaB = 0; colunaB = 0;
+    } else {
+        linhaB = 7; colunaB = 7;
+    }
     distancia = linhaA - linhaB;
     distancia *= distancia;
     distanciaB = colunaA - colunaB;
     distanciaB *= distanciaB;
     distancia += distanciaB;
     distanciaFinal = sqrt(distancia);
-    
 
     return distanciaFinal;
 }
@@ -76,29 +80,14 @@ int distanciaJog (ESTADO *state, LISTA coordPossiveis, COORDENADA **jogada) {
     double distancia, distanciaMenor = 50;
     int tamanho = lengthLista(coordPossiveis);
     LISTA r;
-    COORDENADA *resposta = NULL, Jogador1, Jogador2;
-    Jogador1.linha = 1;
-    Jogador1.coluna = 1;
-    Jogador2.linha = 8;
-    Jogador2.coluna = 8;
+    COORDENADA *resposta = NULL;
     if (tamanho > 0) {
-        if (obterJogador(state) == 1) {
-            for (r = coordPossiveis; r; r = r->proxima) {
-                distancia = calculaDist(r->valor, Jogador1);
-                if (distancia < distanciaMenor) {
-                    resposta = r->valor;
-                    distanciaMenor=distancia;
-                }
+        for (r = coordPossiveis; r; r = r->proxima) {
+            distancia = calculaDist(r->valor, obterJogador(state));
+            if (distancia < distanciaMenor) {
+                resposta = r->valor;
+                distanciaMenor=distancia;
             }
-        } else {
-            for (r = coordPossiveis; r; r = r->proxima) {
-                distancia = calculaDist(r->valor, Jogador2);
-                if (distancia < distanciaMenor)  {
-                    resposta = r->valor;
-                    distanciaMenor=distancia;
-                }
-            }
-
         }
         (*jogada) = resposta;
     }

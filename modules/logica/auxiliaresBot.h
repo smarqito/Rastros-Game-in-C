@@ -37,6 +37,20 @@ COORDENADA *criaCoordenada (COORDENADA c);
 int botRandom (LISTA coordPossiveis, COORDENADA **jogada);
 
 /**
+* @brief Calcula a distância euclidiana
+* Se for
+*
+* @param c Apontador para uma coordenada da lista de coord possíveis
+* @param jog int correspondente ao Jogador em questão
+*
+* @return Distância euclidiana resultante
+*/
+double calculaDist (COORDENADA *a, int numeroJog);
+
+
+int distanciaJog (ESTADO *state, LISTA coordPossiveis, COORDENADA **jogada);
+
+/**
  * @brief Efetua uma jogada construída pelo bot
  * 
  * @param state Apontador para o estado do programa
