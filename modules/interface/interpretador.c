@@ -113,7 +113,7 @@ int jogarRastros (ESTADO *state, INPUT *input) {
     if(fgets(linha,BUF_SIZE,stdin) == NULL)
         return 1;
 
-    if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) { //!< caso o input tenha 2 carateres lê a col e lin
+    if(strlen(linha) == 3 && sscanf(linha, "%1[a-h]%1[1-8]", col, lin) == 2) { //!< caso o input tenha 2 carateres lê a col e lin
         COORDENADA coord = {*lin - '1', *col - 'a'};
         r=jogar(state,coord);
     } else if (strlen(linha) == 2 && sscanf(linha, "%[Q-Q]",col) == 1 ) { //!< caso o input tenha 1 carater, verifica se é um 'Q'
@@ -125,14 +125,14 @@ int jogarRastros (ESTADO *state, INPUT *input) {
     }
 
     if((chegouFim=verificaFim(state))) {
-        printf(SUBLINHADO_ON COR_AMARELO_NEGRITO "Venceu o jogador %d\n\n" SUBLINHADO_OFF,chegouFim);
-        //interpretador(initState());
+        congratulaVencedor(chegouFim);
         return 1;
     } else {
-        if (state->bot && r==0) {
-            jogaBot(state);
+        if (state->bot && r==0 && jogaBot(state)==0 && (chegouFim=verificaFim(state))==0) {
+            jogarRastros(state, input);
+        } else {
+            congratulaVencedor(chegouFim);
         }
-        jogarRastros(state, input);
     }
     return r;
 }

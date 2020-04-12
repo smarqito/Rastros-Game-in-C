@@ -75,3 +75,7 @@ int confirmaSaida () {
 
     return r;
 }
+
+void congratulaVencedor (int vencedor) {
+    printf(SUBLINHADO_ON COR_AMARELO_NEGRITO "Venceu o jogador %d\n\n" SUBLINHADO_OFF,vencedor);
+}

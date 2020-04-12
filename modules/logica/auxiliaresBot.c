@@ -118,10 +118,7 @@ int jogaBot (ESTADO *state) {
     }
 
     if(r>0) {
-        if((r = jogar(state,*jogadaBot))) { //!< a função jogar retorna 1 se for sucesso, ao contrário do que acontece na jogaBot
-            r=0;
-        } 
-        else r=1;
+        r = jogar(state,*jogadaBot);
     }
 
     free(l);

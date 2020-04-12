@@ -105,7 +105,7 @@ int verificaFim (ESTADO *state) {
     else if (!verificaPossibilidades(state))
         return (obterJogador(state) == 1) ? 2 : 1 ;
     else
-        return 0;;
+        return 0;
 }
 
 
