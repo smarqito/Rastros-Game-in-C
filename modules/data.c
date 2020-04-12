@@ -24,7 +24,7 @@ void initPlayer (ESTADO *state) {
     state -> jogadorAtual = 0;
     state -> numComandos = 0;
     state->bot=NO;
-    state->nivel=0;
+    state->nivel=1;
 }
 
 

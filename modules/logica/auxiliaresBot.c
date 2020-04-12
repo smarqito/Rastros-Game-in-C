@@ -55,37 +55,48 @@ int botRandom (LISTA coordPossiveis, COORDENADA **jogada) {
 }
 
 
-int calculaDist (COORDENADA *a, COORDENADA b){
+double calculaDist (COORDENADA *a, COORDENADA b){
     int linhaA = a->linha, colunaA = a->coluna;
     int linhaB = b.linha, colunaB = b.coluna;
-    int distancia;
+    int distancia, distanciaB;
+    double distanciaFinal;
+    distancia = linhaA - linhaB;
+    distancia *= distancia;
+    distanciaB = colunaA - colunaB;
+    distanciaB *= distanciaB;
+    distancia += distanciaB;
+    distanciaFinal = sqrt(distancia);
+    
 
-    distancia = sqrt(((linhaA - linhaB)^2) + ((colunaA - colunaB)^2));
-
-    return distancia;
+    return distanciaFinal;
 }
 
 
 int distanciaJog (ESTADO *state, LISTA coordPossiveis, COORDENADA **jogada) {
-    int distancia, distanciaMenor = 50;
+    double distancia, distanciaMenor = 50;
     int tamanho = lengthLista(coordPossiveis);
     LISTA r;
-    COORDENADA *resposta, Jogador1, Jogador2;
+    COORDENADA *resposta = NULL, Jogador1, Jogador2;
     Jogador1.linha = 1;
     Jogador1.coluna = 1;
     Jogador2.linha = 8;
     Jogador2.coluna = 8;
-    if (!tamanho) {
+    if (tamanho > 0) {
         if (obterJogador(state) == 1) {
-            for (r = coordPossiveis; r && r != NULL; r = r->proxima) {
+            for (r = coordPossiveis; r; r = r->proxima) {
                 distancia = calculaDist(r->valor, Jogador1);
-                if (distancia < distanciaMenor) resposta = r->valor;
+                if (distancia < distanciaMenor) {
+                    resposta = r->valor;
+                    distanciaMenor=distancia;
+                }
             }
-        }
-        if (obterJogador(state) == 2) {
-            for (r = coordPossiveis; r && r != NULL; r = r->proxima) {
+        } else {
+            for (r = coordPossiveis; r; r = r->proxima) {
                 distancia = calculaDist(r->valor, Jogador2);
-                if (distancia < distanciaMenor) resposta = r->valor;
+                if (distancia < distanciaMenor)  {
+                    resposta = r->valor;
+                    distanciaMenor=distancia;
+                }
             }
 
         }
@@ -101,14 +112,17 @@ int jogaBot (ESTADO *state) {
     srand(time(0));
 
     LISTA l = coordenadasPossiveis(state);
-    COORDENADA *jogadaBot = (COORDENADA*) malloc(sizeof(COORDENADA));
+    COORDENADA *jogadaBot = (COORDENADA*) calloc(1,sizeof(COORDENADA));
 
     switch (state->nivel) {
         case 0:
-            r = distanciaJog(state,l,jogadaBot);
+            r = botRandom(l,&jogadaBot);
+            break;
+        case 1:
+            r = distanciaJog(state,l,&jogadaBot);
             break;
         default:
-            r = distanciaJog(state,l,jogadaBot);
+            r = botRandom(l,&jogadaBot);
             break;
     }
 
@@ -118,6 +132,9 @@ int jogaBot (ESTADO *state) {
         } 
         else r=1;
     }
+
+    free(l);
+    free(jogadaBot);
 
     return r;
 }

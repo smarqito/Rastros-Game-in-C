@@ -26,10 +26,10 @@ all: $(TARGET1) $(TARGET2)
 
 $(TARGET1): main.o auxiliaresBot.o $(LOGICA) $(INTERFACE) $(DADOS) $(LISTAS)
 	$(CC) $(CFLAGS) $(INCLUDE) main.o auxiliaresBot.o $(LOGICA) $(INTERFACE) $(DADOS) $(LISTAS) \
-	-o $(TARGET1)
+	-o $(TARGET1) -lm
 
 $(TARGET2): $(BOT) $(LOGICA) $(DADOS) $(LISTAS) ficheiros.o interface.o auxiliaresInterface.o
-	$(CC) $(CFLAGS) $(INPUT) $(BOT) $(LOGICA) $(DADOS) $(LISTAS) ficheiros.o interface.o auxiliaresInterface.o -o $(TARGET2)
+	$(CC) $(CFLAGS) $(INPUT) $(BOT) $(LOGICA) $(DADOS) $(LISTAS) ficheiros.o interface.o auxiliaresInterface.o -o $(TARGET2) -lm
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c main.c
@@ -41,7 +41,7 @@ interpretador.o: ./modules/interface/interpretador.c ./modules/interface/interpr
 	$(CC) $(CFLAGS) -c ./modules/interface/interpretador.c
 
 auxiliaresBot.o: ./modules/logica/auxiliaresBot.c ./modules/logica/auxiliaresBot.h
-	$(CC) $(CFLAGS) -c ./modules/logica/auxiliaresBot.c
+	$(CC) $(CFLAGS) -c ./modules/logica/auxiliaresBot.c -lm
 
 bot.o: ./modules/logica/bot.c ./modules/logica/bot.h
 	$(CC) $(CFLAGS) -c ./modules/logica/bot.c
