@@ -38,4 +38,13 @@ void verAutores();
  *         1 se for para voltar ao interpretador
  */
 int confirmaSaida ();
+
+/**
+ * @brief Congratula o vencedor do jogo!
+ * 
+ * @param state Apontador para o estado do programa
+ * @param vencedor Número do jogador que venceu
+ */
+void congratulaVencedor (int vencedor);
+
 #endif //RASTROS_AUXILIARESINTERFACE_H

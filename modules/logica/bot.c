@@ -29,14 +29,14 @@ int main (int argc, char *argv[]) {
             }
         }
     } else {
-        printf("Insira o comando corretamente:\n");
-        printf("jog source destination\n");
+        printf(COR_CIANO"Insira o comando corretamente:\n");
+        printf(NEGRITO_ON "jog " COR_VERDE_NEGRITO "fichOrigem" COR_VERMELHO_NEGRITO " destination" RESET "\n");
         r=1;
     }
     if (r==1) {
-        printf("Verifique se o nome do ficheiro está correto!\n");
+        printf(COR_VERMELHO "\nVerifique se o nome do ficheiro de origem está correto!\n");
     } else if (r==2) {
-        printf("Não há jogadas possíveis. O jogador %d já ganhou!\n", verificaFim(state));
+        printf(COR_VERMELHO "Não há jogadas possíveis. O jogador %d já ganhou!\n", verificaFim(state));
     }
     
     return r;

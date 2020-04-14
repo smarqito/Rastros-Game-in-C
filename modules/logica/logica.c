@@ -105,7 +105,7 @@ int verificaFim (ESTADO *state) {
     else if (!verificaPossibilidades(state))
         return (obterJogador(state) == 1) ? 2 : 1 ;
     else
-        return 0;;
+        return 0;
 }
 
 
@@ -153,8 +153,9 @@ void posAux (ESTADO *state, COORDENADA c){
 
 void mostraPos( ESTADO *state, char *pos) {
     int i;
-    int c = atoi(pos), numeroJogadas; //! Número de jogadas que se pretende imprimir;
+    int c = atoi(pos), numeroJogadas, maxComandos; //! Número de jogadas que se pretende imprimir;
     numeroJogadas = obterMaxJogadas(state) + 1;
+    maxComandos = obterMaxComandos(state);
 
     if (c > numeroJogadas || c < 0) {
         if (c == 0) 
@@ -170,8 +171,10 @@ void mostraPos( ESTADO *state, char *pos) {
                 COORDENADA jog1 = state->jogadas[i].jogador1;
                 COORDENADA jog2 = state->jogadas[i].jogador2;
                 posAux(state,jog1);
-                if( (jog2.linha || jog2.coluna) || verificaFim(state) == 2 ) {
+                maxComandos--;
+                if( maxComandos && ((jog2.linha || jog2.coluna) || verificaFim(state) == 2 )) {
                     posAux(state, jog2);
+                    maxComandos--;
                 }
             }
         }

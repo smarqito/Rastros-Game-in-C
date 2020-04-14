@@ -1,5 +1,6 @@
 /** @file */
 #include <stdlib.h>
+#include <string.h>
 #include "data.h"
 
 
@@ -24,7 +25,7 @@ void initPlayer (ESTADO *state) {
     state -> jogadorAtual = 0;
     state -> numComandos = 0;
     state->bot=NO;
-    state->nivel=0;
+    state->nivel=1;
 }
 
 
@@ -98,6 +99,27 @@ int podeJogar (CASA casa) {
     return (casa == BRANCA) ? 1 : 0;
 }
 
+INPUT *initInput() {
+    INPUT *novoInput = (INPUT *) malloc (sizeof(INPUT));
+
+    novoInput->comando=(char*) calloc(10,sizeof(char));
+    novoInput->argumento=(char*) calloc(10,sizeof(char));
+
+    return novoInput;
+}
+
 int obterNivelBot(ESTADO *state) {
     return state->nivel;
+}
+
+void alteraEstadoBot(ESTADO *state) {
+    state->bot=!(state->bot);
+}
+
+void alteraNivelBot(ESTADO *state, int nivel) {
+    state->nivel=nivel;
+}
+
+int lerEstadoBot(ESTADO *state) {
+    return state->bot;
 }

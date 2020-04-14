@@ -10,7 +10,7 @@
 LISTA criarLista () {
     LISTA novaLista;
     // novaLista=NULL;
-    novaLista = malloc(sizeof(Nodo));
+    novaLista = calloc(1,sizeof(Nodo));
     novaLista->proxima=NULL;
     return novaLista;
 }

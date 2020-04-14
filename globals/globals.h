@@ -24,7 +24,7 @@
 /**
  * @def Número de comandos possíveis de utilizar no interpretador.
  */
-#define MAX_INSTR 11
+#define MAX_INSTR 12
 
 #include "cores.h"
 
