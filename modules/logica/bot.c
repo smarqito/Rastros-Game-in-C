@@ -8,6 +8,7 @@
 
 #include "../data.h"
 #include "../interface/ficheiros.h"
+#include "../interface/auxiliaresInterface.h"
 #include "auxiliaresBot.h"
 #include "../../globals/globals.h"
 #include "logica.h"
@@ -17,11 +18,15 @@ int main (int argc, char *argv[]) {
     ESTADO *state = initState();
     COORDENADA *ultJogada;
     char *sourceF = argv[1], *destinF = argv[2];
-    
-    if(argc == 3) {
-    
+
+        if(argc == 3) {
+
         if( (r = lerJogo(state,sourceF)) ==0 ) {
-            if ((r = jogaBot(state)) == 0) {
+            if (verificaFim(state) == 1) {
+                congratulaVencedor(obterJogador(state));
+                return r;
+            }
+            if ((r = jogaBot(state)) == 0 ) {
                 r=gravarJogo(state,destinF);
                 ultJogada = obterUltimaJogada(state);
                 printf(COR_VERDE "Efetuado a jogada %c%c.\n", ultJogada->coluna+'a', ultJogada->linha+'1');
