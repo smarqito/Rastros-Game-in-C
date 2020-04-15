@@ -77,7 +77,8 @@ char converteCasa (CASA house);
  * @brief Verifica se o Jogador chegou ao fim.
  *
  * @param state Apontador para o estado do programa;
- * @return 1 ou 0, caso o Jogador tenha chegado ao fim ou não, respetivamente;
+ * @return 0 se o jogo não acabou
+ *         ~0 número do jogador que venceu
  */
 int verificaFim(ESTADO *state);
 
