@@ -22,18 +22,15 @@ int main (int argc, char *argv[]) {
         if(argc == 3) {
 
         if( (r = lerJogo(state,sourceF)) ==0 ) {
-            if (verificaFim(state)) {
-                if (obterJogador(state) == 1) congratulaVencedor(2);
-                else congratulaVencedor(1);
-                return r;
-            }
-            if ((r = jogaBot(state)) == 0 ) {
+            if ((r = jogaBot(state)) == 0) {
                 r=gravarJogo(state,destinF);
                 ultJogada = obterUltimaJogada(state);
                 printf(COR_VERDE "Efetuado a jogada %c%c.\n", ultJogada->coluna+'a', ultJogada->linha+'1');
                 printf("Nível da jogada: %d\n\n", obterNivelBot(state));
-            }
-        }
+                if (verificaFim(state)) congratulaVencedor(obterJogador(state));
+
+              }
+          }
     } else {
         printf(COR_CIANO"Insira o comando corretamente:\n");
         printf(NEGRITO_ON "jog " COR_VERDE_NEGRITO "fichOrigem" COR_VERMELHO_NEGRITO " destination" RESET "\n");
