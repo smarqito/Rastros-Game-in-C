@@ -22,8 +22,9 @@ int main (int argc, char *argv[]) {
         if(argc == 3) {
 
         if( (r = lerJogo(state,sourceF)) ==0 ) {
-            if (verificaFim(state) == 1) {
-                congratulaVencedor(obterJogador(state));
+            if (verificaFim(state)) {
+                if (obterJogador(state) == 1) congratulaVencedor(2);
+                else congratulaVencedor(1);
                 return r;
             }
             if ((r = jogaBot(state)) == 0 ) {
