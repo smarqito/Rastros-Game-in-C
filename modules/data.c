@@ -123,3 +123,21 @@ void alteraNivelBot(ESTADO *state, int nivel) {
 int lerEstadoBot(ESTADO *state) {
     return state->bot;
 }
+
+char obterLinhaColuna (ESTADO *state, int jogador, int jogada, char tipo) {
+    char r = 0;
+    if(tipo == 'c') {
+        if(jogador == 1) {
+            r = state->jogadas[jogada].jogador1.coluna +'a';
+        } else {
+            r = state->jogadas[jogada].jogador2.coluna +'a';
+        }
+    } else if (tipo == 'l') {
+        if(jogador == 1) {
+            r = state->jogadas[jogada].jogador1.linha + '1';
+        } else {
+            r = state->jogadas[jogada].jogador2.linha + '1';
+        }
+    }
+    return r;
+}

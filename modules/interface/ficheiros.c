@@ -17,7 +17,7 @@ void removerLinha (char *string) {
 }
 
 int gravarJogo (ESTADO *state, char *nomeFicheiro) {
-    int m,n,i;
+    int m,n,i, nJog;
     FILE *save;
     int r=0;
     char dir[BUF_SIZE] = LOCAL_GRAVAR_FICHEIROS;
@@ -33,7 +33,7 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
             fprintf(save,"\n");
         }
         fprintf(save,"\n");
-        for(i=0;i<= state->numJogadas;i++) {
+        for(i=0, nJog=obterNumeroJogadas (state); i <= nJog;i++) {
             imprimirJogadas(state,i, save);
         }
         fclose(save); /*! <Fecha o ficheiro temporário */
@@ -51,14 +51,14 @@ void numeros2Digitos (int i, FILE *save){
 
 
 void imprimirJogadas (ESTADO *state, int i, FILE *save){
-    if (i < state->numJogadas){
+    if (i < obterNumeroJogadas(state)){
         numeros2Digitos(i, save);
-        fprintf(save," %c%c",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
-        fprintf(save," %c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
+        fprintf(save," %c%c",obterLinhaColuna(state, 1, i, 'c'),obterLinhaColuna(state, 1, i, 'l'));
+        fprintf(save," %c%c\n", obterLinhaColuna(state, 2, i, 'c'),obterLinhaColuna(state, 2, i, 'l'));
     }
-    else if (i == state->numJogadas && obterJogador(state) == 2){
+    else if (i == obterNumeroJogadas(state) && obterJogador(state) == 2){
         numeros2Digitos (i, save);
-        fprintf(save," %c%c",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+        fprintf(save," %c%c",obterLinhaColuna(state, 1, i, 'c'),obterLinhaColuna(state, 1, i, 'l'));
     }
 }
 
