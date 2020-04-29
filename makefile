@@ -1,7 +1,7 @@
 #Targets
 
 TARGET1=rastros.exe
-TARGET2=bot
+TARGET2=li2pl6g05_bot
 
 #Compilador
 
@@ -11,6 +11,15 @@ CC=gcc
 
 CFLAGS=-Wall -Wextra -pedantic -O2 -g
 INCLUDE=-I.
+
+#Diretorias dos módulos
+
+DIRMODULES=./modules
+DIRLOGICA=$(DIRMODULES)/logica
+DIRINTERFACE=$(DIRMODULES)/interface
+DIRLISTAS=$(DIRMODULES)/listas
+DIRGLOBALS=./globals
+DIRBOT=./bot
 
 #Módulos do programa
 
@@ -29,45 +38,43 @@ $(TARGET1): main.o auxiliaresBot.o $(LOGICA) $(INTERFACE) $(DADOS) $(LISTAS)
 	-o $(TARGET1) -lm
 
 $(TARGET2): $(BOT) $(LOGICA) $(DADOS) $(LISTAS) ficheiros.o interface.o auxiliaresInterface.o
-	$(CC) $(CFLAGS) $(INPUT) $(BOT) $(LOGICA) $(DADOS) $(LISTAS) ficheiros.o interface.o auxiliaresInterface.o -o $(TARGET2) -lm
+	$(CC) $(CFLAGS) $(INPUT) $(BOT) $(LOGICA) $(DADOS) $(LISTAS) ficheiros.o interface.o auxiliaresInterface.o -o ./bot/$(TARGET2) -lm
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c main.c
 
-globals.o: ./globals/globals.c ./globals/globals.h
-	$(CC) $(CFLAGS) -c ./globals/globals.c
+globals.o: $(DIRGLOBALS)/globals.c $(DIRGLOBALS)/globals.h
+	$(CC) $(CFLAGS) -c $(DIRGLOBALS)/globals.c
 
-interpretador.o: ./modules/interface/interpretador.c ./modules/interface/interpretador.h
-	$(CC) $(CFLAGS) -c ./modules/interface/interpretador.c
+cores.o: $(DIRGLOBALS)/cores.c $(DIRGLOBALS)/cores.h
+	$(CC) $(CFLAGS) -c $(DIRGLOBALS)/cores.c
 
-auxiliaresBot.o: ./modules/logica/auxiliaresBot.c ./modules/logica/auxiliaresBot.h
-	$(CC) $(CFLAGS) -c ./modules/logica/auxiliaresBot.c -lm
+interpretador.o: $(DIRINTERFACE)/interpretador.c $(DIRINTERFACE)/interpretador.h
+	$(CC) $(CFLAGS) -c $(DIRINTERFACE)/interpretador.c
 
-bot.o: ./modules/logica/bot.c ./modules/logica/bot.h
-	$(CC) $(CFLAGS) -c ./modules/logica/bot.c
+auxiliaresBot.o: $(DIRBOT)/auxiliaresBot.c $(DIRBOT)/auxiliaresBot.h
+	$(CC) $(CFLAGS) -c $(DIRBOT)/auxiliaresBot.c -lm
 
-data.o: ./modules/data.c ./modules/data.h
-	$(CC) $(CFLAGS) -c ./modules/data.c
+bot.o: $(DIRBOT)/bot.c $(DIRBOT)/bot.h
+	$(CC) $(CFLAGS) -c $(DIRBOT)/bot.c
 
-interface.o: ./modules/interface/interface.c ./modules/interface/interface.h
-	$(CC) $(CFLAGS) -c ./modules/interface/interface.c
+data.o: $(DIRMODULES)/data.c $(DIRMODULES)/data.h
+	$(CC) $(CFLAGS) -c $(DIRMODULES)/data.c
 
-ficheiros.o: ./modules/interface/ficheiros.c ./modules/interface/ficheiros.h
-	$(CC) $(CFLAGS) -c ./modules/interface/ficheiros.c
+interface.o: $(DIRINTERFACE)/interface.c $(DIRINTERFACE)/interface.h
+	$(CC) $(CFLAGS) -c $(DIRINTERFACE)/interface.c
 
-logica.o: ./modules/logica/logica.c ./modules/logica/logica.h
-	$(CC) $(CFLAGS) -c ./modules/logica/logica.c
+ficheiros.o: $(DIRINTERFACE)/ficheiros.c $(DIRINTERFACE)/ficheiros.h
+	$(CC) $(CFLAGS) -c $(DIRINTERFACE)/ficheiros.c
 
-auxiliaresInterface.o: ./modules/interface/auxiliaresInterface.c  ./modules/interface/auxiliaresInterface.h
-	$(CC) $(CFLAGS) -c ./modules/interface/auxiliaresInterface.c
+logica.o: $(DIRLOGICA)/logica.c $(DIRLOGICA)/logica.h
+	$(CC) $(CFLAGS) -c $(DIRLOGICA)/logica.c
 
-cores.o: ./globals/cores.c ./globals/cores.h
-	$(CC) $(CFLAGS) -c ./globals/cores.c
+auxiliaresInterface.o: $(DIRINTERFACE)/auxiliaresInterface.c  $(DIRINTERFACE)/auxiliaresInterface.h
+	$(CC) $(CFLAGS) -c $(DIRINTERFACE)/auxiliaresInterface.c
 
-listas.o: ./modules/listas/listas.c ./modules/listas/listas.h
-	$(CC) $(CFLAGS) -c ./modules/listas/listas.c
+listas.o: $(DIRLISTAS)/listas.c $(DIRLISTAS)/listas.h
+	$(CC) $(CFLAGS) -c $(DIRLISTAS)/listas.c
 
 clean:
-	rm rastros.exe main.o globals.o interface.o interpretador.o \
-	auxiliaresInterface.o auxiliaresBot.o data.o ficheiros.o logica.o \
-	cores.o listas.o bot
+	rm $(TARGET1) $(DIRBOT)/$(TARGET2) $(LOGICA) $(INTERFACE) $(DADOS) $(LISTAS) $(BOT)

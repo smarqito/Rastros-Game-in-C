@@ -59,6 +59,14 @@ void atualizaMaxJogadas (ESTADO *state);
  */
 void atualizaJogadas (ESTADO *state, COORDENADA c);
 
+/**
+ * @brief Divide um determinado input em comando e argumento.
+ *
+ * @param input Linha de texto inserida pelo utilizador.
+ * @return 0 ou !0 caso funcione ou não, respetivamente;
+ */
+int divideInput (INPUT *resposta, char *input);
+
 /** 
  * @brief Converte uma CASA para o tipo char correspondente.
  *
@@ -70,6 +78,7 @@ void atualizaJogadas (ESTADO *state, COORDENADA c);
  * @param house Casa que pretendemos converter;
  * @return casa convertida mediante o char correspondente;
 */
+
 char converteCasa (CASA house);
 
 
@@ -160,5 +169,30 @@ COORDENADA *criaCoordenada (COORDENADA c);
  */
 int verificaPossibilidades (ESTADO *state);
 
+/**
+ * @brief Atualiza o número de jogadas com um inteiro recebido como argumento
+ * 
+ * @param state Apontador para o estado do jogo
+ * @param numJog Novo número de jogadas
+ */
+void atualizaJogadasEstatico (ESTADO *state, int numJog);
+
+/**
+ * @brief Atualiza o número de jogadas com argumento
+ * 
+ * @param state Apontador para o estado do programa
+ * @param numComandos Novo número de comandos
+ */
+void atualNumComandosEstatico (ESTADO *state, int numComandos);
+
+/**
+ * @brief Atualiza o jogador atual
+ * 
+ * @param state Apontador para o estado do programa
+ * @param jogador Próximo jogador
+ *        0 -> Jogador 1
+ *        1 -> Jogador 2
+ */
+void atualizaJogAtual (ESTADO *state, int jogador);
 
 #endif //RASTROS_LOGICA_H

@@ -195,4 +195,21 @@ void alteraNivelBot(ESTADO *state, int nivel);
  */
 int lerEstadoBot(ESTADO *state);
 
+/**
+ * @brief Lê qual o valor da linha ou da coluna numa determinada jogada
+ *        e jogador.
+ * 
+ * @param state Apontador para o estado do programa
+ * @param jogador Jogador 1 ou jogador 2
+ * @param jogada Número da jogada a ser lida
+ * @param tipo Se vai ler uma linha ou coluna:
+ *        'c' para coluna
+ *        'l' para linha
+ * 
+ * @return A coluna/linha que foi jogada numa jogada por um jogador.
+ */
+char obterLinhaColuna (ESTADO *state, int jogador, int jogada, char tipo);
+
+char *obterArgumentoComando (INPUT *input, int escolha );
+
 #endif //RASTROS_DATA_H

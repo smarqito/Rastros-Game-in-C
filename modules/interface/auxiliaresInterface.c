@@ -34,6 +34,7 @@ int instrucao (char *instr) {
             "ler",
             "movs",
             "jog",
+            "jog2",
             "pos",
             "novo",
             "bot",
