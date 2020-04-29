@@ -58,16 +58,23 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
             }
             break;
         case 5: //!< Opção "jog"
+            if(obterNivelBot(e) != 0)
+                alteraNivelBot(e, 0);
             jogaBot(e);
             break;
-        case 6: //!< Opção "pos #pos#"
+        case 6:
+            if(obterNivelBot(e) != 1)
+                alteraNivelBot(e, 1);
+            jogaBot(e);
+            break;
+        case 7: //!< Opção "pos #pos#"
             mostraPos(e,input->argumento);
             break;
-        case 7: //!< Opção "novo" inicia um novo jogo
+        case 8: //!< Opção "novo" inicia um novo jogo
             free(e);
             e=initState();
             break;
-        case 8:
+        case 9:
             if(input->argumento) {
                 if (!e->bot) alteraEstadoBot(e);
                 alteraNivelBot(e, atoi(input->argumento));
@@ -79,14 +86,14 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
                 :
                 printf(COR_VERMELHO_NEGRITO "desativado.\n");
             break;
-        case 9: //!< Opção "ajuda"
-        case 10: //!< Opção "help"
+        case 10: //!< Opção "ajuda"
+        case 11: //!< Opção "help"
             pedeAjuda();
             break;
-        case 11: //!< Opção "autores"
+        case 12: //!< Opção "autores"
             verAutores();
             break;
-        case 12: //!< Opção "Q" para sair
+        case 13: //!< Opção "Q" para sair
             printf(COR__AZUL_NEGRITO "Obrigado por jogar connosco! Até à próxima.\n");
             r=1;
             break;
