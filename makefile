@@ -1,7 +1,7 @@
 #Targets
 
 TARGET1=rastros.exe
-TARGET2=bot
+TARGET2=li2pl6g05_bot
 
 #Compilador
 
@@ -70,4 +70,4 @@ listas.o: ./modules/listas/listas.c ./modules/listas/listas.h
 clean:
 	rm rastros.exe main.o globals.o interface.o interpretador.o \
 	auxiliaresInterface.o auxiliaresBot.o data.o ficheiros.o logica.o \
-	bot.o cores.o listas.o bot
+	bot.o cores.o listas.o bot/$(TARGET2)
