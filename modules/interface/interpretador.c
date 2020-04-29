@@ -34,22 +34,22 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
             r=1;
             break;
         case 2: //!< Opção "gr nomeficheiro"
-            if(gravarJogo(e,input->argumento)==0) {
-                printf(COR_VERMELHO NEGRITO_ON "Jogo gravado no ficheiro \"%s\".\n" RESET, input->argumento);
+            if(gravarJogo(e, obterArgumentoComando(input, 1)) == 0) {
+                printf(COR_VERMELHO NEGRITO_ON "Jogo gravado no ficheiro \"%s\".\n" RESET, obterArgumentoComando(input, 1));
             } else {
-                printf("Não foi possível gravar o estado do jogo no ficheiro \"%s\". Tente novamente\n",input->argumento);
+                printf("Não foi possível gravar o estado do jogo no ficheiro \"%s\". Tente novamente\n",obterArgumentoComando(input, 1));
             }
             break;
         case 3: //!< Opção "ler nomeficheiro"
-            if(!(r = lerJogo(e,input->argumento)))
-                printf("O ficheiro "COR_VERDE_NEGRITO "%s" COR_AZUL " foi lido corretamente.\n\n",input->argumento);//mostrarTabuleiro(e);
+            if(!(r = lerJogo(e,obterArgumentoComando(input, 1))))
+                printf("O ficheiro "COR_VERDE_NEGRITO "%s" COR_AZUL " foi lido corretamente.\n\n",obterArgumentoComando(input, 1));//mostrarTabuleiro(e);
             else if(r==1) {
                 promptFormata(COR_VERMELHO_NEGRITO);
-                printf("O ficheiro que procura \""SUBLINHADO_ON"%s"SUBLINHADO_OFF"\" não existe.\n", input->argumento);
+                printf("O ficheiro que procura \""SUBLINHADO_ON"%s"SUBLINHADO_OFF"\" não existe.\n", obterArgumentoComando(input, 1));
                 r=0;
             } else {
                 promptFormata(COR_VERMELHO_NEGRITO);
-                printf("O ficheiro \""SUBLINHADO_ON"%s"SUBLINHADO_OFF"\" não foi lido corretamente.\n", input->argumento);
+                printf("O ficheiro \""SUBLINHADO_ON"%s"SUBLINHADO_OFF"\" não foi lido corretamente.\n", obterArgumentoComando(input, 1));
                 printf("Verifique se o ficheiro está bem construído.\n");
             } 
             break;
@@ -68,16 +68,16 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
             jogaBot(e);
             break;
         case 7: //!< Opção "pos #pos#"
-            mostraPos(e,input->argumento);
+            mostraPos(e,obterArgumentoComando(input, 1));
             break;
         case 8: //!< Opção "novo" inicia um novo jogo
             free(e);
             e=initState();
             break;
         case 9:
-            if(input->argumento) {
-                if (!e->bot) alteraEstadoBot(e);
-                alteraNivelBot(e, atoi(input->argumento));
+            if(obterArgumentoComando(input, 1)) {
+                if (!lerEstadoBot(e)) alteraEstadoBot(e);
+                alteraNivelBot(e, atoi(obterArgumentoComando(input, 1)));
             } else 
                 alteraEstadoBot(e);
             printf("O bot encontra-se ");
@@ -105,18 +105,6 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
     return r;
 }
 
-int divideInput (INPUT *resposta, char *input){
-    int r=0, nInstr;
-    char espaco[2] = " ";
-
-    resposta->comando = strtok(input,espaco);
-    if (resposta->comando == NULL) r = 1;
-    resposta->argumento = strtok(NULL,espaco);
-    nInstr=instrucao(resposta->comando);
-    if (resposta->argumento == NULL && (nInstr == 2 || nInstr == 3)) r = 1;
-    return r;
-}
-
 int jogarRastros (ESTADO *state, INPUT *input) {
     char linha[BUF_SIZE];
     char lin[2], col[2];
@@ -138,14 +126,14 @@ int jogarRastros (ESTADO *state, INPUT *input) {
         } else if (strlen(linha) == 2 && sscanf(linha, "%[Q-Q]",col) == 1 ) { //!< caso o input tenha 1 carater, verifica se é um 'Q'
             return 0;
         } else if (!divideInput(input, linha)) {
-            comandos(state,input,instrucao(input->comando));
+            comandos(state,input,instrucao(obterArgumentoComando(input,0)));
             r=1;
         } else {
             printf("Coordenada inválida. Tente novamente.\n");
         }
     }
 
-    if (state->bot && r==0 && numeroComandos(state)>0)  //!< Caso o jogo termine após o bot jogar!
+    if (lerEstadoBot(state) && r==0 && numeroComandos(state)>0)  //!< Caso o jogo termine após o bot jogar!
         r=jogaBot(state);
     mostrarTabuleiro(state);
     jogarRastros(state, input);
@@ -172,7 +160,7 @@ int interpretador (ESTADO *e) {
     //divide o input em comando e argumento
     r=divideInput(input, linha);
     //caso a instrução não seja válida, pede nova função
-    if (!(iinstr = instrucao(input->comando)) || r) {
+    if (!(iinstr = instrucao(obterArgumentoComando(input,0))) || r) {
         pedeAjuda();
         printf("Opcao invalida!\n\n");
         interpretador(e);

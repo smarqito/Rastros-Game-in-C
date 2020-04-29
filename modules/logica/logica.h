@@ -59,6 +59,14 @@ void atualizaMaxJogadas (ESTADO *state);
  */
 void atualizaJogadas (ESTADO *state, COORDENADA c);
 
+/**
+ * @brief Divide um determinado input em comando e argumento.
+ *
+ * @param input Linha de texto inserida pelo utilizador.
+ * @return 0 ou !0 caso funcione ou não, respetivamente;
+ */
+int divideInput (INPUT *resposta, char *input);
+
 /** 
  * @brief Converte uma CASA para o tipo char correspondente.
  *
@@ -70,6 +78,7 @@ void atualizaJogadas (ESTADO *state, COORDENADA c);
  * @param house Casa que pretendemos converter;
  * @return casa convertida mediante o char correspondente;
 */
+
 char converteCasa (CASA house);
 
 

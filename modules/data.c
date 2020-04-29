@@ -141,3 +141,8 @@ char obterLinhaColuna (ESTADO *state, int jogador, int jogada, char tipo) {
     }
     return r;
 }
+
+char *obterArgumentoComando (INPUT *input, int escolha ){
+    return ((escolha) ? input->argumento : input->comando);
+}
+

@@ -210,4 +210,6 @@ int lerEstadoBot(ESTADO *state);
  */
 char obterLinhaColuna (ESTADO *state, int jogador, int jogada, char tipo);
 
+char *obterArgumentoComando (INPUT *input, int escolha );
+
 #endif //RASTROS_DATA_H

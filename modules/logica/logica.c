@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "logica.h"
+#include "../interface/auxiliaresInterface.h"
 #include "../../bot/auxiliaresBot.h"
 #include "../interface/interface.h"
 #include "../../globals/globals.h"
@@ -65,6 +66,17 @@ void atualizaJogadas (ESTADO *state, COORDENADA c) {
     state->numComandos++;
 }
 
+int divideInput (INPUT *resposta, char *input){
+    int r=0, nInstr;
+    char espaco[2] = " ";
+
+    resposta->comando = strtok(input,espaco);
+    if (resposta->comando == NULL) r = 1;
+    resposta->argumento = strtok(NULL,espaco);
+    nInstr=instrucao(resposta->comando);
+    if (resposta->argumento == NULL && (nInstr == 2 || nInstr == 3)) r = 1;
+    return r;
+}
 void atualizaJogadasEstatico (ESTADO *state, int numJog) {
     state->numJogadas=numJog;
 }
