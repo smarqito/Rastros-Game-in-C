@@ -8,24 +8,31 @@
 
 #include "../data.h"
 #include "../interface/ficheiros.h"
+#include "../interface/auxiliaresInterface.h"
 #include "auxiliaresBot.h"
 #include "../../globals/globals.h"
 #include "logica.h"
+#include "../../globals/cores.h"
 
 int main (int argc, char *argv[]) {
     int r=0;
     ESTADO *state = initState();
     COORDENADA *ultJogada;
     char *sourceF = argv[1], *destinF = argv[2];
-    
+
     if(argc == 3) {
-    
         if( (r = lerJogo(state,sourceF)) ==0 ) {
-            if ((r = jogaBot(state)) == 0) {
+            if ((r=verificaFim(state))!=0) {
+            printf(COR_VERDE_NEGRITO "O jogador %d já ganhou este jogo.\n",r);
+            printf(COR_VERMELHO "Não foi efetuada nenhuma jogada!\n");
+            r=0;
+            } else if ((r = jogaBot(state)) == 0) {
                 r=gravarJogo(state,destinF);
                 ultJogada = obterUltimaJogada(state);
                 printf(COR_VERDE "Efetuado a jogada %c%c.\n", ultJogada->coluna+'a', ultJogada->linha+'1');
                 printf("Nível da jogada: %d\n\n", obterNivelBot(state));
+                if (verificaFim(state)) congratulaVencedor(obterJogador(state));
+
             }
         }
     } else {
