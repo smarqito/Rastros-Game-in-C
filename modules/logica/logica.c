@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "logica.h"
-#include "auxiliaresBot.h"
+#include "../../bot/auxiliaresBot.h"
 #include "../interface/interface.h"
 #include "../../globals/globals.h"
 #include "../data.h"

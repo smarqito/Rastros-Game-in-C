@@ -5,7 +5,7 @@
 #include <string.h>
 #include "interpretador.h"
 #include "../logica/logica.h"
-#include "../logica/auxiliaresBot.h"
+#include "../../bot/auxiliaresBot.h"
 #include "interface.h"
 #include "auxiliaresInterface.h"
 #include "../../globals/globals.h"

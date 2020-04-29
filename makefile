@@ -29,7 +29,7 @@ $(TARGET1): main.o auxiliaresBot.o $(LOGICA) $(INTERFACE) $(DADOS) $(LISTAS)
 	-o $(TARGET1) -lm
 
 $(TARGET2): $(BOT) $(LOGICA) $(DADOS) $(LISTAS) ficheiros.o interface.o auxiliaresInterface.o
-	$(CC) $(CFLAGS) $(INPUT) $(BOT) $(LOGICA) $(DADOS) $(LISTAS) ficheiros.o interface.o auxiliaresInterface.o -o $(TARGET2) -lm
+	$(CC) $(CFLAGS) $(INPUT) $(BOT) $(LOGICA) $(DADOS) $(LISTAS) ficheiros.o interface.o auxiliaresInterface.o -o ./bot/$(TARGET2) -lm
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c main.c
@@ -40,11 +40,11 @@ globals.o: ./globals/globals.c ./globals/globals.h
 interpretador.o: ./modules/interface/interpretador.c ./modules/interface/interpretador.h
 	$(CC) $(CFLAGS) -c ./modules/interface/interpretador.c
 
-auxiliaresBot.o: ./modules/logica/auxiliaresBot.c ./modules/logica/auxiliaresBot.h
-	$(CC) $(CFLAGS) -c ./modules/logica/auxiliaresBot.c -lm
+auxiliaresBot.o: ./bot/auxiliaresBot.c ./bot/auxiliaresBot.h
+	$(CC) $(CFLAGS) -c ./bot/auxiliaresBot.c -lm
 
-bot.o: ./modules/logica/bot.c ./modules/logica/bot.h
-	$(CC) $(CFLAGS) -c ./modules/logica/bot.c
+bot.o: ./bot/bot.c ./bot/bot.h
+	$(CC) $(CFLAGS) -c ./bot/bot.c
 
 data.o: ./modules/data.c ./modules/data.h
 	$(CC) $(CFLAGS) -c ./modules/data.c
@@ -70,4 +70,4 @@ listas.o: ./modules/listas/listas.c ./modules/listas/listas.h
 clean:
 	rm rastros.exe main.o globals.o interface.o interpretador.o \
 	auxiliaresInterface.o auxiliaresBot.o data.o ficheiros.o logica.o \
-	cores.o listas.o bot
+	bot.o cores.o listas.o bot
