@@ -12,13 +12,14 @@
 
 LISTA coordenadasPossiveis (ESTADO *state) {
     int m,n;
-    COORDENADA c;
+    COORDENADA c, *ultJogada;
     LISTA ll = NULL;
-    m=state->ultimaJogada.linha;
+    ultJogada = obterUltimaJogada(state);
+    m=ultJogada->linha;
     m = (m == 0) ? m : (m-1);
 
-    for(; m<MAX_HOUSES && m<=(state->ultimaJogada.linha+1); m++) {
-        for(n=(state->ultimaJogada.coluna==0) ? 0 : (state->ultimaJogada.coluna-1); n<MAX_HOUSES && n<=(state->ultimaJogada.coluna+1); n++) {
+    for(; m<MAX_HOUSES && m<=(ultJogada->linha+1); m++) {
+        for(n=(ultJogada->coluna==0) ? 0 : (ultJogada->coluna-1); n<MAX_HOUSES && n<=(ultJogada->coluna+1); n++) {
             c.linha = m;
             c.coluna = n;
             if(verificaCasa(state,c)) {

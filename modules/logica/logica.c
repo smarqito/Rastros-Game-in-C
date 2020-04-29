@@ -65,6 +65,14 @@ void atualizaJogadas (ESTADO *state, COORDENADA c) {
     state->numComandos++;
 }
 
+void atualizaJogadasEstatico (ESTADO *state, int numJog) {
+    state->numJogadas=numJog;
+}
+
+void atualNumComandosEstatico (ESTADO *state, int numComandos) {
+    state->numComandos=numComandos;
+}
+
 
 char converteCasa (CASA house) {
     char casa;
@@ -191,4 +199,9 @@ int verificaPossibilidades (ESTADO *state) {
     r=lengthLista(l);
 
     return r;
+}
+
+void atualizaJogAtual (ESTADO *state, int jogador) {
+    if(jogador == 1 || jogador == 2)
+        state->jogadorAtual = jogador;
 }

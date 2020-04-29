@@ -67,19 +67,19 @@ int lerJogada (ESTADO *state, char *cadaToken) {
     char numJogada[3],col1[2],col2[2],lin1[2],lin2[2];
     JOGADA jogad;
     if(sscanf(cadaToken,"%s %[a-h]%[1-8] %[a-h]%[1-8]",numJogada,col1,lin1,col2,lin2) == 5) {
-        state->numJogadas=atoi(numJogada)-1;
-        state->numComandos=numeroComandos(state) + 2;
+        atualizaJogadasEstatico (state, atoi(numJogada)-1 );
+        atualNumComandosEstatico(state, numeroComandos(state) + 2);
         jogad.jogador1.coluna = *col1 - 'a'; jogad.jogador1.linha = *lin1 - '1';
         jogad.jogador2.coluna = *col2 - 'a'; jogad.jogador2.linha = *lin2 - '1';
         atualizaCoordenadaJogada(state,&jogad.jogador1,1);
         atualizaCoordenadaJogada(state,&jogad.jogador2,2);
-        state->numJogadas++;
+        atualizaJogadasEstatico (state, obterNumeroJogadas(state)+1);
     } else if (sscanf(cadaToken,"%s %[a-h]%[1-8]", numJogada,col1,lin1) == 3) {
-        state->numJogadas=converteDecimal(numJogada)-1;
-        state->numComandos=numeroComandos(state)+1;
+        atualizaJogadasEstatico (state, atoi(numJogada)-1 );
+        atualNumComandosEstatico(state, numeroComandos(state) + 1);
         jogad.jogador1.coluna = *col1 - 'a'; jogad.jogador1.linha = *lin1 - '1';
         atualizaCoordenadaJogada(state,&jogad.jogador1,1);
-        state->jogadorAtual=1;
+        atualizaJogAtual(state, 1);
     } else r=2;
 
     return r;

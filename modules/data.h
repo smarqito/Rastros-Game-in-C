@@ -209,4 +209,5 @@ int lerEstadoBot(ESTADO *state);
  * @return A coluna/linha que foi jogada numa jogada por um jogador.
  */
 char obterLinhaColuna (ESTADO *state, int jogador, int jogada, char tipo);
+
 #endif //RASTROS_DATA_H

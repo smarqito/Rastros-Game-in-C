@@ -160,5 +160,30 @@ COORDENADA *criaCoordenada (COORDENADA c);
  */
 int verificaPossibilidades (ESTADO *state);
 
+/**
+ * @brief Atualiza o número de jogadas com um inteiro recebido como argumento
+ * 
+ * @param state Apontador para o estado do jogo
+ * @param numJog Novo número de jogadas
+ */
+void atualizaJogadasEstatico (ESTADO *state, int numJog);
+
+/**
+ * @brief Atualiza o número de jogadas com argumento
+ * 
+ * @param state Apontador para o estado do programa
+ * @param numComandos Novo número de comandos
+ */
+void atualNumComandosEstatico (ESTADO *state, int numComandos);
+
+/**
+ * @brief Atualiza o jogador atual
+ * 
+ * @param state Apontador para o estado do programa
+ * @param jogador Próximo jogador
+ *        0 -> Jogador 1
+ *        1 -> Jogador 2
+ */
+void atualizaJogAtual (ESTADO *state, int jogador);
 
 #endif //RASTROS_LOGICA_H
