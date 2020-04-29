@@ -210,6 +210,16 @@ int lerEstadoBot(ESTADO *state);
  */
 char obterLinhaColuna (ESTADO *state, int jogador, int jogada, char tipo);
 
+/**
+ * @brief  Lê o argumento ou o comando do input
+ *
+ * @param input apontador para o input
+ * @param escolha Escolher entre ler o argumento ou o comando
+ *       <0 para argumento
+ *        0 para comando
+ *
+ * @return O argumento/comando desejado
+ */
 char *obterArgumentoComando (INPUT *input, int escolha );
 
 #endif //RASTROS_DATA_H
