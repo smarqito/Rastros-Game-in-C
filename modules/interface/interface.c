@@ -19,7 +19,9 @@ void mostrarTabuleiro (ESTADO *state) {
     for (m=MAX_HOUSES-1; m>=0;m--) {
         printf(COR__AZUL_NEGRITO "%d" COR_AZUL " | ",m+1);
         for(n=0;n<MAX_HOUSES;n++) {
-            printf("%c" COR_AZUL " | ", converteCasa(state->tab[m][n])); // imprime a casa na linha de comandos
+            COORDENADA c;
+            c.coluna = n; c.linha = m;
+            printf("%c" COR_AZUL " | ", converteCasa(obterEstadoCasa(state,c))); // imprime a casa na linha de comandos
         }
         printf("\n");
         for(n=0; n<2;n++)
@@ -59,12 +61,12 @@ int lerMovimentos (ESTADO *state) {
     for(maxComandos=obterMaxComandos(state), i=0; maxComandos>0; i++) {
         if(maxComandos > 1) {
             digitosTerminal (i);
-            printf("%c%c ",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
-            printf("%c%c\n", state->jogadas[i].jogador2.coluna+'a',state->jogadas[i].jogador2.linha+'1');
+            printf("%c%c ",obterLinhaColuna(state,1,i,'c'),obterLinhaColuna(state,1,i,'l'));
+            printf("%c%c\n",obterLinhaColuna(state,2,i,'c'),obterLinhaColuna(state,2,i,'l'));
             maxComandos=maxComandos-2;
         } else {
             digitosTerminal (i);
-            printf("%c%c",state->jogadas[i].jogador1.coluna+'a',state->jogadas[i].jogador1.linha+'1');
+            printf("%c%c",obterLinhaColuna(state,1,i,'c'),obterLinhaColuna(state,1,i,'l'));
                 putchar('\n');
             maxComandos--;
         }
