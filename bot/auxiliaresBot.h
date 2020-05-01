@@ -34,7 +34,7 @@ COORDENADA *criaCoordenada (COORDENADA c);
  * @return 0 se não houver jogadas possíveis
  *         ~0 se selecionou uma jogada
  */
-int botRandom (LISTA coordPossiveis, COORDENADA **jogada);
+COORDENADA* botRandom (LISTA coordPossiveis);
 
 /**
 * @brief Calcula a distância euclidiana entre a coordenada dada e o destino
@@ -58,7 +58,7 @@ double calculaDist (COORDENADA *a, int numeroJog);
 * @return 0 se não houver jogadas possíveis
 *         ~0 se selecionou uma jogada
 */
-int distanciaJog (ESTADO *state, LISTA coordPossiveis, COORDENADA **jogada);
+COORDENADA *distanciaJog (ESTADO *state, LISTA coordPossiveis);
 
 /**
  * @brief Efetua uma jogada construída pelo bot
@@ -71,5 +71,14 @@ int distanciaJog (ESTADO *state, LISTA coordPossiveis, COORDENADA **jogada);
  */
 int jogaBot (ESTADO *state);
 
-
+/**
+ * @brief Função para efetuar uma pesquisa ao longo de uma árvore
+ *        até uma determinada profundidade
+ * @param state Estado do programa
+ * @param ll Apontador para uma lista de possíveis coordenadas
+ * @param profundidade 
+ * 
+ * @return Coordenada ótima
+ */
+COORDENADA *treeSearch (ESTADO state, LISTA ll, int profundidade, int player);
 #endif

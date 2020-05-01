@@ -53,7 +53,6 @@ int jogar (ESTADO *state, COORDENADA c){
     }
 }
 
-
 int lerMovimentos (ESTADO *state) {
     int i;
     int maxComandos;
