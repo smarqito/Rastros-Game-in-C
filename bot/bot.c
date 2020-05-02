@@ -6,13 +6,13 @@
 #include <time.h>
 #include <string.h>
 
-#include "../modules/data.h"
-#include "../modules/interface/ficheiros.h"
-#include "../modules/interface/auxiliaresInterface.h"
+#include "../projeto/modules/data.h"
+#include "../projeto/modules/interface/ficheiros.h"
+#include "../projeto/modules/interface/auxiliaresInterface.h"
 #include "auxiliaresBot.h"
-#include "../globals/globals.h"
-#include "../modules/logica/logica.h"
-#include "../globals/cores.h"
+#include "../projeto/globals/globals.h"
+#include "../projeto/modules/logica/logica.h"
+#include "../projeto/globals/cores.h"
 
 int main (int argc, char *argv[]) {
     int r=0;

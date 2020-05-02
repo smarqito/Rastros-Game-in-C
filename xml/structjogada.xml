@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structjogada" kind="struct" language="C++" prot="public">
+    <compoundname>jogada</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structjogada_1a8747207bd0b655619ac64777121433a9" prot="public" static="no" mutable="no">
+        <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref></type>
+        <definition>COORDENADA jogada::jogador1</definition>
+        <argsstring></argsstring>
+        <name>jogador1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="24" column="1" bodyfile="modules/data.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structjogada_1ac1cdb0b8fa57cd0b4d18ff119a741d6c" prot="public" static="no" mutable="no">
+        <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref></type>
+        <definition>COORDENADA jogada::jogador2</definition>
+        <argsstring></argsstring>
+        <name>jogador2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="24" column="1" bodyfile="modules/data.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="10">
+        <label>coordenada</label>
+        <link refid="structcoordenada"/>
+      </node>
+      <node id="9">
+        <label>jogada</label>
+        <link refid="structjogada"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>jogador1</edgelabel>
+          <edgelabel>jogador2</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="modules/data.h" line="23" column="1" bodyfile="modules/data.h" bodystart="23" bodyend="25"/>
+    <listofallmembers>
+      <member refid="structjogada_1a8747207bd0b655619ac64777121433a9" prot="public" virt="non-virtual"><scope>jogada</scope><name>jogador1</name></member>
+      <member refid="structjogada_1ac1cdb0b8fa57cd0b4d18ff119a741d6c" prot="public" virt="non-virtual"><scope>jogada</scope><name>jogador2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

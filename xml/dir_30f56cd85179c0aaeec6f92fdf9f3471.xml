@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_30f56cd85179c0aaeec6f92fdf9f3471" kind="dir">
+    <compoundname>bot</compoundname>
+    <innerfile refid="auxiliaresBot_8c">auxiliaresBot.c</innerfile>
+    <innerfile refid="auxiliaresBot_8h">auxiliaresBot.h</innerfile>
+    <innerfile refid="bot_8c">bot.c</innerfile>
+    <innerfile refid="bot_8h">bot.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="bot/"/>
+  </compounddef>
+</doxygen>

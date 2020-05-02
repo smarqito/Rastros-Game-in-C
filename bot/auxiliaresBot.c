@@ -5,10 +5,10 @@
 #include <limits.h>
 
 #include "auxiliaresBot.h"
-#include "../modules/data.h"
-#include "../modules/listas/listas.h"
-#include "../modules/logica/logica.h"
-#include "../modules/interface/interface.h"
+#include "../projeto/modules/data.h"
+#include "../projeto/modules/listas/listas.h"
+#include "../projeto/modules/logica/logica.h"
+#include "../projeto/modules/interface/interface.h"
 
 LISTA coordenadasPossiveis (ESTADO *state) {
     int m,n;

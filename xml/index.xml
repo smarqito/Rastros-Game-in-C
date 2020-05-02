@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="structcoordenada" kind="struct"><name>coordenada</name>
+    <member refid="structcoordenada_1a46c597981d7c9c75bee2ba3d998304fb" kind="variable"><name>linha</name></member>
+    <member refid="structcoordenada_1a014866d591155c7da4225e7fbd9ce8f4" kind="variable"><name>coluna</name></member>
+  </compound>
+  <compound refid="structestado" kind="struct"><name>estado</name>
+    <member refid="structestado_1adc820fed04d0671b1b7e972b51168398" kind="variable"><name>tab</name></member>
+    <member refid="structestado_1a5e7d44c281751103e6475bc62cac825d" kind="variable"><name>ultimaJogada</name></member>
+    <member refid="structestado_1a47091a7b6303b8910c36ddb76dfd5b69" kind="variable"><name>jogadas</name></member>
+    <member refid="structestado_1aa892eed91b5baf33cae5e5a1f227c373" kind="variable"><name>bot</name></member>
+    <member refid="structestado_1a8496069777ec5f863647924e64022910" kind="variable"><name>numJogadas</name></member>
+    <member refid="structestado_1a14b81f9149abb49adc18766072a08aba" kind="variable"><name>maxJogadas</name></member>
+    <member refid="structestado_1a45260108853b714d194fe8d7ea7ae53c" kind="variable"><name>numComandos</name></member>
+    <member refid="structestado_1aa3ed6743cc09e30233ec8f785f6c3fc1" kind="variable"><name>maxComandos</name></member>
+    <member refid="structestado_1a375aa82cadf9c00913b9ca2394980f9d" kind="variable"><name>jogadorAtual</name></member>
+    <member refid="structestado_1a6699838dfe62bfa076b99c72d06457d4" kind="variable"><name>nivel</name></member>
+  </compound>
+  <compound refid="structin" kind="struct"><name>in</name>
+    <member refid="structin_1a5eba8648003cb68ebca5342e108b65c9" kind="variable"><name>comando</name></member>
+    <member refid="structin_1a30dcac824fb95ed8c83551def8276331" kind="variable"><name>argumento</name></member>
+  </compound>
+  <compound refid="structjogada" kind="struct"><name>jogada</name>
+    <member refid="structjogada_1a8747207bd0b655619ac64777121433a9" kind="variable"><name>jogador1</name></member>
+    <member refid="structjogada_1ac1cdb0b8fa57cd0b4d18ff119a741d6c" kind="variable"><name>jogador2</name></member>
+  </compound>
+  <compound refid="structlistas" kind="struct"><name>listas</name>
+    <member refid="structlistas_1a7df7c4880ea2c9932dc13017462c1073" kind="variable"><name>valor</name></member>
+    <member refid="structlistas_1abad741ab6c427ac4ea09340def8851a3" kind="variable"><name>proxima</name></member>
+  </compound>
+  <compound refid="auxiliaresBot_8c" kind="file"><name>auxiliaresBot.c</name>
+    <member refid="auxiliaresBot_8c_1aa527132b71e1ce1526a2e7720c9f4a80" kind="function"><name>coordenadasPossiveis</name></member>
+    <member refid="auxiliaresBot_8c_1af8f04b0ef8ba02106d2c69ee789ee7b2" kind="function"><name>criaCoordenada</name></member>
+    <member refid="auxiliaresBot_8c_1a0e82aef635469a3a1b3aad06bb6b884f" kind="function"><name>botRandom</name></member>
+    <member refid="auxiliaresBot_8c_1af8704372cebf640565365ef922e0dd2a" kind="function"><name>calculaDist</name></member>
+    <member refid="auxiliaresBot_8c_1a9e4f136c5c56efb735ef8f3cb8a144ea" kind="function"><name>distanciaJog</name></member>
+    <member refid="auxiliaresBot_8c_1afff9547b4bdcdaf95a9edd167073fc63" kind="function"><name>novoEstado</name></member>
+    <member refid="auxiliaresBot_8c_1afb4df45c5b94708b603e284258c48f24" kind="function"><name>treeSearch</name></member>
+    <member refid="auxiliaresBot_8c_1a6c63571fffc8e9339b256a65168bac1f" kind="function"><name>jogaBot</name></member>
+  </compound>
+  <compound refid="auxiliaresBot_8h" kind="file"><name>auxiliaresBot.h</name>
+    <member refid="auxiliaresBot_8h_1aa527132b71e1ce1526a2e7720c9f4a80" kind="function"><name>coordenadasPossiveis</name></member>
+    <member refid="auxiliaresBot_8h_1af8f04b0ef8ba02106d2c69ee789ee7b2" kind="function"><name>criaCoordenada</name></member>
+    <member refid="auxiliaresBot_8h_1a0e82aef635469a3a1b3aad06bb6b884f" kind="function"><name>botRandom</name></member>
+    <member refid="auxiliaresBot_8h_1af8704372cebf640565365ef922e0dd2a" kind="function"><name>calculaDist</name></member>
+    <member refid="auxiliaresBot_8h_1a9e4f136c5c56efb735ef8f3cb8a144ea" kind="function"><name>distanciaJog</name></member>
+    <member refid="auxiliaresBot_8h_1a6c63571fffc8e9339b256a65168bac1f" kind="function"><name>jogaBot</name></member>
+    <member refid="auxiliaresBot_8h_1afb4df45c5b94708b603e284258c48f24" kind="function"><name>treeSearch</name></member>
+  </compound>
+  <compound refid="bot_8c" kind="file"><name>bot.c</name>
+    <member refid="bot_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="bot_8h" kind="file"><name>bot.h</name>
+  </compound>
+  <compound refid="CMakeCCompilerId_8c" kind="file"><name>CMakeCCompilerId.c</name>
+    <member refid="CMakeCCompilerId_8c_1a81dee0709ded976b2e0319239f72d174" kind="define"><name>COMPILER_ID</name></member>
+    <member refid="CMakeCCompilerId_8c_1a2ae9b72bb13abaabfcf2ee0ba7d3fa1d" kind="define"><name>STRINGIFY_HELPER</name></member>
+    <member refid="CMakeCCompilerId_8c_1a43e1cad902b6477bec893cb6430bd6c8" kind="define"><name>STRINGIFY</name></member>
+    <member refid="CMakeCCompilerId_8c_1adbc5372f40838899018fadbc89bd588b" kind="define"><name>PLATFORM_ID</name></member>
+    <member refid="CMakeCCompilerId_8c_1aba35d0d200deaeb06aee95ca297acb28" kind="define"><name>ARCHITECTURE_ID</name></member>
+    <member refid="CMakeCCompilerId_8c_1ad1280362da42492bbc11aa78cbf776ad" kind="define"><name>DEC</name></member>
+    <member refid="CMakeCCompilerId_8c_1a46d5d95daa1bef867bd0179594310ed5" kind="define"><name>HEX</name></member>
+    <member refid="CMakeCCompilerId_8c_1a07f8e5783674099cd7f5110e22a78cdb" kind="define"><name>C_DIALECT</name></member>
+    <member refid="CMakeCCompilerId_8c_1a4b0efeb7a5d59313986b3a0390f050f6" kind="variable"><name>info_compiler</name></member>
+    <member refid="CMakeCCompilerId_8c_1a2321403dee54ee23f0c2fa849c60f7d4" kind="variable"><name>info_platform</name></member>
+    <member refid="CMakeCCompilerId_8c_1a59647e99d304ed33b15cb284c27ed391" kind="variable"><name>info_arch</name></member>
+    <member refid="CMakeCCompilerId_8c_1a1ce162bad2fe6966ac8b33cc19e120b8" kind="variable"><name>info_language_dialect_default</name></member>
+    <member refid="CMakeCCompilerId_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="cores_8c" kind="file"><name>cores.c</name>
+    <member refid="cores_8c_1ab3cb6719a00f90e9733905292481b408" kind="function"><name>promptFormata</name></member>
+  </compound>
+  <compound refid="cores_8h" kind="file"><name>cores.h</name>
+    <member refid="cores_8h_1a3552292a94ed29cf28b15c8a447da431" kind="define"><name>COR_VERMELHO</name></member>
+    <member refid="cores_8h_1a3fe74da85cc323e56f29f17247345bc8" kind="define"><name>COR_VERMELHO_NEGRITO</name></member>
+    <member refid="cores_8h_1a8be5044487b613553f34df00b9609f49" kind="define"><name>COR_AMARELO</name></member>
+    <member refid="cores_8h_1a4b0b17061bf541474987a04ba0f55196" kind="define"><name>COR_AMARELO_NEGRITO</name></member>
+    <member refid="cores_8h_1a9c12e0202321b096908beadd87f3ad2d" kind="define"><name>COR_VERDE</name></member>
+    <member refid="cores_8h_1a6d271c30396fda7fce32001afd990439" kind="define"><name>COR_VERDE_NEGRITO</name></member>
+    <member refid="cores_8h_1ade71171f769c91152ef71445e9d98bfc" kind="define"><name>COR_AZUL</name></member>
+    <member refid="cores_8h_1ad700b0009613b1f8df4038ea21637bf3" kind="define"><name>COR__AZUL_NEGRITO</name></member>
+    <member refid="cores_8h_1a8ebeebd8f4de79103c42879fa70cdc80" kind="define"><name>COR_CIANO</name></member>
+    <member refid="cores_8h_1a7e9610264c5a1c41fd06530cc60b897d" kind="define"><name>COR_CIANO_NEGRITO</name></member>
+    <member refid="cores_8h_1a504315cdcfbe6e0bef2c481c0c092b15" kind="define"><name>COR_ROXO</name></member>
+    <member refid="cores_8h_1a78cf78e88a85481d0e3baedcbdc79b2a" kind="define"><name>NEGRITO_ON</name></member>
+    <member refid="cores_8h_1a80a18d5ad252dcd584f82218890714d2" kind="define"><name>NEGRITO_OFF</name></member>
+    <member refid="cores_8h_1af55cce539958d72b74690b14f3f393b1" kind="define"><name>SUBLINHADO_ON</name></member>
+    <member refid="cores_8h_1aa9d9cbdc5fc1eb533d94d2cf11a162b9" kind="define"><name>SUBLINHADO_OFF</name></member>
+    <member refid="cores_8h_1ab702106cf3b3e96750b6845ded4e0299" kind="define"><name>RESET</name></member>
+    <member refid="cores_8h_1ab3cb6719a00f90e9733905292481b408" kind="function"><name>promptFormata</name></member>
+  </compound>
+  <compound refid="globals_8c" kind="file"><name>globals.c</name>
+  </compound>
+  <compound refid="globals_8h" kind="file"><name>globals.h</name>
+    <member refid="globals_8h_1a6821bafc3c88dfb2e433a095df9940c6" kind="define"><name>BUF_SIZE</name></member>
+    <member refid="globals_8h_1a67230316729bcbcc14cb2fdee1ed6a03" kind="define"><name>MAX_HOUSES</name></member>
+    <member refid="globals_8h_1a781fcc5c3342edecba86b7e2a0195c4c" kind="define"><name>MAX_INSTR</name></member>
+    <member refid="globals_8h_1a6d15a725180b81717f0ee4f10c534b6e" kind="define"><name>LOCAL_GRAVAR_FICHEIROS</name></member>
+  </compound>
+  <compound refid="main_8c" kind="file"><name>main.c</name>
+    <member refid="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="modules_2listas_2main_8c" kind="file"><name>main.c</name>
+    <member refid="modules_2listas_2main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="data_8c" kind="file"><name>data.c</name>
+    <member refid="data_8c_1aee198af5c1d2b76f8964cf06d821419f" kind="function"><name>initBoard</name></member>
+    <member refid="data_8c_1a57ed36a9ffdf53f810da96370453904f" kind="function"><name>initPlay</name></member>
+    <member refid="data_8c_1a3dbc5edeff7787174f06b796176a157b" kind="function"><name>initPlayer</name></member>
+    <member refid="data_8c_1af6f7c62a8176e2173a77bca34c7995f3" kind="function"><name>initState</name></member>
+    <member refid="data_8c_1a53f2ccf4535f2db6c9b6c6e143d9f87d" kind="function"><name>obterUltimaJogada</name></member>
+    <member refid="data_8c_1a34468b1df84ffb6f0e8b815bf6fb295c" kind="function"><name>obterJogador</name></member>
+    <member refid="data_8c_1a32a5d264a3e781d9def80147a2c0ebb1" kind="function"><name>obterEstadoCasa</name></member>
+    <member refid="data_8c_1a130b1b2c74cdd895c944ff860550a1a1" kind="function"><name>obterNumeroJogadas</name></member>
+    <member refid="data_8c_1a3944e26300e70dbda6dbf52653613cbb" kind="function"><name>obterMaxJogadas</name></member>
+    <member refid="data_8c_1a414cdc29214160cdf6c925984ab467b4" kind="function"><name>numeroComandos</name></member>
+    <member refid="data_8c_1a7951f1b826d62860bc29f2dbac8f93cd" kind="function"><name>obterMaxComandos</name></member>
+    <member refid="data_8c_1aef863e16c89e0dd61cb496d4782f9d5b" kind="function"><name>converteChar</name></member>
+    <member refid="data_8c_1af778cb6309ade305085b2f68f5a8532a" kind="function"><name>podeJogar</name></member>
+    <member refid="data_8c_1a3ed460fa3feb6aa5806f30fb7c4e5686" kind="function"><name>initInput</name></member>
+    <member refid="data_8c_1a13f6b92d7542533b2f9bfede1bf63359" kind="function"><name>obterNivelBot</name></member>
+    <member refid="data_8c_1a4b09f7c7ab810a21e0403ea5d7c54063" kind="function"><name>alteraEstadoBot</name></member>
+    <member refid="data_8c_1a6cc897be0b4ab3048ad66a4cae6194ba" kind="function"><name>alteraNivelBot</name></member>
+    <member refid="data_8c_1a902fa4e25c8086edbd0fdf45233cfd92" kind="function"><name>lerEstadoBot</name></member>
+    <member refid="data_8c_1a11efafb96b6f104ceaf29070318d3e55" kind="function"><name>obterLinhaColuna</name></member>
+    <member refid="data_8c_1ad582ad4fea5dfdef9a63ed06ba03f694" kind="function"><name>obterArgumentoComando</name></member>
+  </compound>
+  <compound refid="data_8h" kind="file"><name>data.h</name>
+    <member refid="data_8h_1ad37092c580768ba0470a4a64d01c0255" kind="define"><name>CASA_VAZIO</name></member>
+    <member refid="data_8h_1a4d2466ff0c49b1bb3f46eddad65e0b55" kind="define"><name>CASA_BRANCA</name></member>
+    <member refid="data_8h_1ab13fead0fbaac805ac69de8704e9db63" kind="define"><name>CASA_PRETA</name></member>
+    <member refid="data_8h_1a474acfca96b7c6168ff2960036dad9c5" kind="define"><name>CASA_JOGADOR1</name></member>
+    <member refid="data_8h_1a1d609589b3ab30de997d2662cacabea3" kind="define"><name>CASA_JOGADOR2</name></member>
+    <member refid="data_8h_1aba91601f16d4c485b2d9b8c429f27039" kind="enum"><name>CASA</name></member>
+    <member refid="data_8h_1aba91601f16d4c485b2d9b8c429f27039abc711f491a56ec7af7a688be508c5113" kind="enumvalue"><name>VAZIO</name></member>
+    <member refid="data_8h_1aba91601f16d4c485b2d9b8c429f27039ad24485fddec75419fd4a0cc9edda0ca5" kind="enumvalue"><name>BRANCA</name></member>
+    <member refid="data_8h_1aba91601f16d4c485b2d9b8c429f27039a007278eb3827d19891b47cdd3ac8846d" kind="enumvalue"><name>PRETA</name></member>
+    <member refid="data_8h_1aba91601f16d4c485b2d9b8c429f27039a7cb37ed1d85c781815ba3f34c5efe678" kind="enumvalue"><name>JOGADOR1</name></member>
+    <member refid="data_8h_1aba91601f16d4c485b2d9b8c429f27039ad46a7269193196b7864f5291643a5325" kind="enumvalue"><name>JOGADOR2</name></member>
+    <member refid="data_8h_1abc41fb0c628891499e27998edb38f8f9" kind="enum"><name>BOT</name></member>
+    <member refid="data_8h_1abc41fb0c628891499e27998edb38f8f9a0d077f5b932ce05e5b9f30c6087a2f31" kind="enumvalue"><name>NO</name></member>
+    <member refid="data_8h_1abc41fb0c628891499e27998edb38f8f9a99f136a862ba5c7d16967231c29f09d6" kind="enumvalue"><name>YES</name></member>
+    <member refid="data_8h_1ae94bffdbc55de216c86dd147ce5350c2" kind="typedef"><name>COORDENADA</name></member>
+    <member refid="data_8h_1a676ab87743a4e4a2047eabd151b3ee11" kind="typedef"><name>JOGADA</name></member>
+    <member refid="data_8h_1a94c221d29a1760f008b7834093259b7d" kind="typedef"><name>JOGADAS</name></member>
+    <member refid="data_8h_1a857f2529d823a22e6f4a81cf21fb810f" kind="typedef"><name>ESTADO</name></member>
+    <member refid="data_8h_1a144f59b295beab102f8eeb98a2c780f2" kind="typedef"><name>INPUT</name></member>
+    <member refid="data_8h_1a83adc4e797d87b6bcf1b56022c0f0134" kind="typedef"><name>LISTA</name></member>
+    <member refid="data_8h_1a00750c68b31c59153fcfa498d8ae3847" kind="typedef"><name>Nodo</name></member>
+    <member refid="data_8h_1aee198af5c1d2b76f8964cf06d821419f" kind="function"><name>initBoard</name></member>
+    <member refid="data_8h_1a57ed36a9ffdf53f810da96370453904f" kind="function"><name>initPlay</name></member>
+    <member refid="data_8h_1a3dbc5edeff7787174f06b796176a157b" kind="function"><name>initPlayer</name></member>
+    <member refid="data_8h_1af6f7c62a8176e2173a77bca34c7995f3" kind="function"><name>initState</name></member>
+    <member refid="data_8h_1a53f2ccf4535f2db6c9b6c6e143d9f87d" kind="function"><name>obterUltimaJogada</name></member>
+    <member refid="data_8h_1a34468b1df84ffb6f0e8b815bf6fb295c" kind="function"><name>obterJogador</name></member>
+    <member refid="data_8h_1a32a5d264a3e781d9def80147a2c0ebb1" kind="function"><name>obterEstadoCasa</name></member>
+    <member refid="data_8h_1a130b1b2c74cdd895c944ff860550a1a1" kind="function"><name>obterNumeroJogadas</name></member>
+    <member refid="data_8h_1a414cdc29214160cdf6c925984ab467b4" kind="function"><name>numeroComandos</name></member>
+    <member refid="data_8h_1a7951f1b826d62860bc29f2dbac8f93cd" kind="function"><name>obterMaxComandos</name></member>
+    <member refid="data_8h_1aef863e16c89e0dd61cb496d4782f9d5b" kind="function"><name>converteChar</name></member>
+    <member refid="data_8h_1af778cb6309ade305085b2f68f5a8532a" kind="function"><name>podeJogar</name></member>
+    <member refid="data_8h_1a3944e26300e70dbda6dbf52653613cbb" kind="function"><name>obterMaxJogadas</name></member>
+    <member refid="data_8h_1a3ed460fa3feb6aa5806f30fb7c4e5686" kind="function"><name>initInput</name></member>
+    <member refid="data_8h_1a13f6b92d7542533b2f9bfede1bf63359" kind="function"><name>obterNivelBot</name></member>
+    <member refid="data_8h_1a4b09f7c7ab810a21e0403ea5d7c54063" kind="function"><name>alteraEstadoBot</name></member>
+    <member refid="data_8h_1a6cc897be0b4ab3048ad66a4cae6194ba" kind="function"><name>alteraNivelBot</name></member>
+    <member refid="data_8h_1a902fa4e25c8086edbd0fdf45233cfd92" kind="function"><name>lerEstadoBot</name></member>
+    <member refid="data_8h_1a11efafb96b6f104ceaf29070318d3e55" kind="function"><name>obterLinhaColuna</name></member>
+    <member refid="data_8h_1ad582ad4fea5dfdef9a63ed06ba03f694" kind="function"><name>obterArgumentoComando</name></member>
+  </compound>
+  <compound refid="auxiliaresInterface_8c" kind="file"><name>auxiliaresInterface.c</name>
+    <member refid="auxiliaresInterface_8c_1a2962b6753393267f5151853d86515ae4" kind="function"><name>pedeAjuda</name></member>
+    <member refid="auxiliaresInterface_8c_1af96c2c9d8e747c6477704567796c14e1" kind="function"><name>digitosTerminal</name></member>
+    <member refid="auxiliaresInterface_8c_1adca3e0b631af13502b4da6c120ecb0e4" kind="function"><name>instrucao</name></member>
+    <member refid="auxiliaresInterface_8c_1a7a0aa289f7831296b58d4c772fc3b7f4" kind="function"><name>verAutores</name></member>
+    <member refid="auxiliaresInterface_8c_1aed821761a30311ba3e82772ca561bd31" kind="function"><name>confirmaSaida</name></member>
+    <member refid="auxiliaresInterface_8c_1aaed37cdd105692dba78f2e0da9671c11" kind="function"><name>congratulaVencedor</name></member>
+  </compound>
+  <compound refid="auxiliaresInterface_8h" kind="file"><name>auxiliaresInterface.h</name>
+    <member refid="auxiliaresInterface_8h_1af96c2c9d8e747c6477704567796c14e1" kind="function"><name>digitosTerminal</name></member>
+    <member refid="auxiliaresInterface_8h_1a2962b6753393267f5151853d86515ae4" kind="function"><name>pedeAjuda</name></member>
+    <member refid="auxiliaresInterface_8h_1adca3e0b631af13502b4da6c120ecb0e4" kind="function"><name>instrucao</name></member>
+    <member refid="auxiliaresInterface_8h_1a7a0aa289f7831296b58d4c772fc3b7f4" kind="function"><name>verAutores</name></member>
+    <member refid="auxiliaresInterface_8h_1aed821761a30311ba3e82772ca561bd31" kind="function"><name>confirmaSaida</name></member>
+    <member refid="auxiliaresInterface_8h_1aaed37cdd105692dba78f2e0da9671c11" kind="function"><name>congratulaVencedor</name></member>
+  </compound>
+  <compound refid="ficheiros_8c" kind="file"><name>ficheiros.c</name>
+    <member refid="ficheiros_8c_1a574de0998a790467c430ce90c52800e1" kind="function"><name>removerLinha</name></member>
+    <member refid="ficheiros_8c_1a294c697018601dcc114de13b0c0edcf1" kind="function"><name>gravarJogo</name></member>
+    <member refid="ficheiros_8c_1aa02dd887113ba5d43361eb05c62867ec" kind="function"><name>numeros2Digitos</name></member>
+    <member refid="ficheiros_8c_1a300fe400f526c3773a18c80cf77ec047" kind="function"><name>imprimirJogadas</name></member>
+    <member refid="ficheiros_8c_1a6b366955e5475739723021222df288ee" kind="function"><name>lerJogada</name></member>
+    <member refid="ficheiros_8c_1acab32ff540cb5b7a7fb1f35e059b7a50" kind="function"><name>lerJogo</name></member>
+  </compound>
+  <compound refid="ficheiros_8h" kind="file"><name>ficheiros.h</name>
+    <member refid="ficheiros_8h_1a574de0998a790467c430ce90c52800e1" kind="function"><name>removerLinha</name></member>
+    <member refid="ficheiros_8h_1a294c697018601dcc114de13b0c0edcf1" kind="function"><name>gravarJogo</name></member>
+    <member refid="ficheiros_8h_1aa02dd887113ba5d43361eb05c62867ec" kind="function"><name>numeros2Digitos</name></member>
+    <member refid="ficheiros_8h_1a300fe400f526c3773a18c80cf77ec047" kind="function"><name>imprimirJogadas</name></member>
+    <member refid="ficheiros_8h_1a6b366955e5475739723021222df288ee" kind="function"><name>lerJogada</name></member>
+    <member refid="ficheiros_8h_1a7bf5772cf515688c18722aaf98f7210d" kind="function"><name>lerJogo</name></member>
+  </compound>
+  <compound refid="interface_8c" kind="file"><name>interface.c</name>
+    <member refid="interface_8c_1a455e9686a30c6129b2491068be7fde1b" kind="function"><name>mostrarTabuleiro</name></member>
+    <member refid="interface_8c_1a546fdee8f229672ea536b3765cf439f8" kind="function"><name>jogar</name></member>
+    <member refid="interface_8c_1a53fd363a3c721f2776018875018bfff6" kind="function"><name>lerMovimentos</name></member>
+  </compound>
+  <compound refid="interface_8h" kind="file"><name>interface.h</name>
+    <member refid="interface_8h_1a455e9686a30c6129b2491068be7fde1b" kind="function"><name>mostrarTabuleiro</name></member>
+    <member refid="interface_8h_1a546fdee8f229672ea536b3765cf439f8" kind="function"><name>jogar</name></member>
+    <member refid="interface_8h_1a9b2c9e020d96d09af362e189163cb8fc" kind="function"><name>lerMovimentos</name></member>
+  </compound>
+  <compound refid="interpretador_8c" kind="file"><name>interpretador.c</name>
+    <member refid="interpretador_8c_1ab70980c66f4aade20ecfe1a2b00cd33e" kind="function"><name>jogarRastros</name></member>
+    <member refid="interpretador_8c_1a26549a64119f3a788e2ebdd85e9c0cb6" kind="function"><name>imprimeComandos</name></member>
+    <member refid="interpretador_8c_1af06d5227d283e4920a1eaa5b3ff32bd9" kind="function"><name>comandos</name></member>
+    <member refid="interpretador_8c_1a24da95ebeede4a540e37790ce8be359b" kind="function"><name>interpretador</name></member>
+  </compound>
+  <compound refid="interpretador_8h" kind="file"><name>interpretador.h</name>
+    <member refid="interpretador_8h_1a232496090798d008aa6551a6912c7fd6" kind="function"><name>jogarRastros</name></member>
+    <member refid="interpretador_8h_1a26549a64119f3a788e2ebdd85e9c0cb6" kind="function"><name>imprimeComandos</name></member>
+    <member refid="interpretador_8h_1af06d5227d283e4920a1eaa5b3ff32bd9" kind="function"><name>comandos</name></member>
+    <member refid="interpretador_8h_1a24da95ebeede4a540e37790ce8be359b" kind="function"><name>interpretador</name></member>
+  </compound>
+  <compound refid="listas_8c" kind="file"><name>listas.c</name>
+    <member refid="listas_8c_1a993ad873bd38ff750e6eee82cb1ffd17" kind="function"><name>criarLista</name></member>
+    <member refid="listas_8c_1a3d274757fc80e99c6425b595021c64e9" kind="function"><name>insereCabeca</name></member>
+    <member refid="listas_8c_1a3e2d97bdeb57af197b198771a27f0033" kind="function"><name>devolveCabeca</name></member>
+    <member refid="listas_8c_1affb39e37aef63ab00b6df8f9336f6673" kind="function"><name>proximo</name></member>
+    <member refid="listas_8c_1a8d03dacec1ccfd8144899f987d71d54d" kind="function"><name>removeCabeca</name></member>
+    <member refid="listas_8c_1a4395a8ad5bc1caa6c0a976bc47d1f3b2" kind="function"><name>listaEstaVazia</name></member>
+    <member refid="listas_8c_1abf86a6d58c9dec076a6fe0fc808448c2" kind="function"><name>lengthLista</name></member>
+  </compound>
+  <compound refid="listas_8h" kind="file"><name>listas.h</name>
+    <member refid="listas_8h_1a993ad873bd38ff750e6eee82cb1ffd17" kind="function"><name>criarLista</name></member>
+    <member refid="listas_8h_1a3d274757fc80e99c6425b595021c64e9" kind="function"><name>insereCabeca</name></member>
+    <member refid="listas_8h_1a3e2d97bdeb57af197b198771a27f0033" kind="function"><name>devolveCabeca</name></member>
+    <member refid="listas_8h_1affb39e37aef63ab00b6df8f9336f6673" kind="function"><name>proximo</name></member>
+    <member refid="listas_8h_1a8d03dacec1ccfd8144899f987d71d54d" kind="function"><name>removeCabeca</name></member>
+    <member refid="listas_8h_1a4395a8ad5bc1caa6c0a976bc47d1f3b2" kind="function"><name>listaEstaVazia</name></member>
+    <member refid="listas_8h_1aa4b4c76fb024a402f5b370ea6222ef16" kind="function"><name>lengthLista</name></member>
+  </compound>
+  <compound refid="logica_8c" kind="file"><name>logica.c</name>
+    <member refid="logica_8c_1a4f8f2b1bd6e25fc55372bdb05b5b0b30" kind="function"><name>changeCardinal</name></member>
+    <member refid="logica_8c_1a2e0eb56a3607ad2fb057ca268bf64c5c" kind="function"><name>verificaVizinhanca</name></member>
+    <member refid="logica_8c_1a9489ff516ef666f5bb97cff17cfe796d" kind="function"><name>verificaCasa</name></member>
+    <member refid="logica_8c_1a56acd038b99ea6870b1fe8b53d545bf1" kind="function"><name>atualizaMaxJogadas</name></member>
+    <member refid="logica_8c_1a6632ba6b02d00ec7cf90295cbd1d78e8" kind="function"><name>atualizaJogadas</name></member>
+    <member refid="logica_8c_1a770e1a8b63f84cc1ce9a72d8fac2ff51" kind="function"><name>divideInput</name></member>
+    <member refid="logica_8c_1a9621761b29f62c0deaaf7dc4287f31f8" kind="function"><name>atualizaJogadasEstatico</name></member>
+    <member refid="logica_8c_1af85d38bb07d158c69c08a75787b68c30" kind="function"><name>atualNumComandosEstatico</name></member>
+    <member refid="logica_8c_1a19947fc319e925c3e3f1af8d51396a6a" kind="function"><name>converteCasa</name></member>
+    <member refid="logica_8c_1ad2929040a36c3d8da9e76686907b6079" kind="function"><name>verificaFim</name></member>
+    <member refid="logica_8c_1a1426b332daf638c6034dab7ca0429e8c" kind="function"><name>converteDecimal</name></member>
+    <member refid="logica_8c_1a50746387c4564bae4c3e92dc73b70ec9" kind="function"><name>removeCarateresExtra</name></member>
+    <member refid="logica_8c_1a404248a51c788ab1a9b9caf8d0723e26" kind="function"><name>atualizaCoordenadaJogada</name></member>
+    <member refid="logica_8c_1a5f4d1fefcc61d78cb1360c3d688345a5" kind="function"><name>posAux</name></member>
+    <member refid="logica_8c_1a68440f84753fc80e440610bf528c9c70" kind="function"><name>mostraPos</name></member>
+    <member refid="logica_8c_1adab04129af604ecb92e043383c54c971" kind="function"><name>verificaPossibilidades</name></member>
+    <member refid="logica_8c_1ab39326be63a1a7abe509faf7d989377f" kind="function"><name>atualizaJogAtual</name></member>
+  </compound>
+  <compound refid="logica_8h" kind="file"><name>logica.h</name>
+    <member refid="logica_8h_1a4f8f2b1bd6e25fc55372bdb05b5b0b30" kind="function"><name>changeCardinal</name></member>
+    <member refid="logica_8h_1a2e0eb56a3607ad2fb057ca268bf64c5c" kind="function"><name>verificaVizinhanca</name></member>
+    <member refid="logica_8h_1a9489ff516ef666f5bb97cff17cfe796d" kind="function"><name>verificaCasa</name></member>
+    <member refid="logica_8h_1a56acd038b99ea6870b1fe8b53d545bf1" kind="function"><name>atualizaMaxJogadas</name></member>
+    <member refid="logica_8h_1a6632ba6b02d00ec7cf90295cbd1d78e8" kind="function"><name>atualizaJogadas</name></member>
+    <member refid="logica_8h_1a770e1a8b63f84cc1ce9a72d8fac2ff51" kind="function"><name>divideInput</name></member>
+    <member refid="logica_8h_1a19947fc319e925c3e3f1af8d51396a6a" kind="function"><name>converteCasa</name></member>
+    <member refid="logica_8h_1ad2929040a36c3d8da9e76686907b6079" kind="function"><name>verificaFim</name></member>
+    <member refid="logica_8h_1a00b6b01f93ca6a1fa2414d3598d584f3" kind="function"><name>converteDecimal</name></member>
+    <member refid="logica_8h_1a50746387c4564bae4c3e92dc73b70ec9" kind="function"><name>removeCarateresExtra</name></member>
+    <member refid="logica_8h_1a404248a51c788ab1a9b9caf8d0723e26" kind="function"><name>atualizaCoordenadaJogada</name></member>
+    <member refid="logica_8h_1afe35cfd69885cc124daf7f437ee90997" kind="function"><name>posAux</name></member>
+    <member refid="logica_8h_1a68440f84753fc80e440610bf528c9c70" kind="function"><name>mostraPos</name></member>
+    <member refid="logica_8h_1aa527132b71e1ce1526a2e7720c9f4a80" kind="function"><name>coordenadasPossiveis</name></member>
+    <member refid="logica_8h_1af8f04b0ef8ba02106d2c69ee789ee7b2" kind="function"><name>criaCoordenada</name></member>
+    <member refid="logica_8h_1adab04129af604ecb92e043383c54c971" kind="function"><name>verificaPossibilidades</name></member>
+    <member refid="logica_8h_1a9621761b29f62c0deaaf7dc4287f31f8" kind="function"><name>atualizaJogadasEstatico</name></member>
+    <member refid="logica_8h_1af85d38bb07d158c69c08a75787b68c30" kind="function"><name>atualNumComandosEstatico</name></member>
+    <member refid="logica_8h_1ab39326be63a1a7abe509faf7d989377f" kind="function"><name>atualizaJogAtual</name></member>
+  </compound>
+  <compound refid="README_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="md_README" kind="page"><name>md_README</name>
+  </compound>
+  <compound refid="dir_f942a7a73394fda25d4213a70555b3f8" kind="dir"><name>cmake-build-debug/CMakeFiles/3.15.3</name>
+  </compound>
+  <compound refid="dir_30f56cd85179c0aaeec6f92fdf9f3471" kind="dir"><name>bot</name>
+  </compound>
+  <compound refid="dir_95e29a8b8ee7c54052c171a88bb95675" kind="dir"><name>cmake-build-debug</name>
+  </compound>
+  <compound refid="dir_f89abcb304c928c7d889aa5625570de5" kind="dir"><name>cmake-build-debug/CMakeFiles</name>
+  </compound>
+  <compound refid="dir_44ea9ed243d3740341f2efeb45271ac4" kind="dir"><name>cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC</name>
+  </compound>
+  <compound refid="dir_6cae25715198b8e785d094ed2704a374" kind="dir"><name>globals</name>
+  </compound>
+  <compound refid="dir_43985c429e5ab3d24f982bac2c233900" kind="dir"><name>modules/interface</name>
+  </compound>
+  <compound refid="dir_7ebf90940816e0bd51253b6858b19a61" kind="dir"><name>modules/listas</name>
+  </compound>
+  <compound refid="dir_0191ee3e597b365a20f4f34b6c8b9e19" kind="dir"><name>modules/logica</name>
+  </compound>
+  <compound refid="dir_e05d7e2b1ecd646af5bb94391405f3b5" kind="dir"><name>modules</name>
+  </compound>
+</doxygenindex>

@@ -5,7 +5,7 @@
 #ifndef _AUXILIARES_BOT_H
 #define _AUXILIARES_BOT_H
 
-#include "../modules/data.h"
+#include "../projeto/modules/data.h"
 
 /**
  * @brief Calcula o número de jogadas possíveis e quais as respetivas coordenadas

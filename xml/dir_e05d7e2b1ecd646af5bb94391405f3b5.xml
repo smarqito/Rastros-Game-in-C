@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_e05d7e2b1ecd646af5bb94391405f3b5" kind="dir">
+    <compoundname>modules</compoundname>
+    <innerdir refid="dir_43985c429e5ab3d24f982bac2c233900">modules/interface</innerdir>
+    <innerdir refid="dir_7ebf90940816e0bd51253b6858b19a61">modules/listas</innerdir>
+    <innerdir refid="dir_0191ee3e597b365a20f4f34b6c8b9e19">modules/logica</innerdir>
+    <innerfile refid="data_8c">data.c</innerfile>
+    <innerfile refid="data_8h">data.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="modules/"/>
+  </compounddef>
+</doxygen>

@@ -14,67 +14,75 @@ INCLUDE=-I.
 
 #Diretorias dos módulos
 
-DIRMODULES=./modules
+#raiz
+DIRPROJETO=./projeto
+DIRBOT=./bot
+DIROBJETOS=./objetos
+
+DIRMODULES=$(DIRPROJETO)/modules
+
 DIRLOGICA=$(DIRMODULES)/logica
 DIRINTERFACE=$(DIRMODULES)/interface
 DIRLISTAS=$(DIRMODULES)/listas
-DIRGLOBALS=./globals
-DIRBOT=./bot
+DIRGLOBALS=$(DIRPROJETO)/globals
 
 #Módulos do programa
 
-LOGICA=logica.o
-INTERFACE=auxiliaresInterface.o interface.o ficheiros.o interpretador.o
-DADOS=globals.o data.o cores.o
-LISTAS=listas.o
-BOT=bot.o auxiliaresBot.o
+MAIN=$(DIROBJETOS)/main.o
+LOGICA=$(DIROBJETOS)/logica.o
+INTERFACE=$(DIROBJETOS)/auxiliaresInterface.o $(DIROBJETOS)/interface.o $(DIROBJETOS)/ficheiros.o $(DIROBJETOS)/interpretador.o
+DADOS=$(DIROBJETOS)/globals.o $(DIROBJETOS)/data.o $(DIROBJETOS)/cores.o
+LISTAS=$(DIROBJETOS)/listas.o
+BOT=$(DIROBJETOS)/bot.o $(DIROBJETOS)/auxiliaresBot.o
 
 #Define que o makefile constroi os dois targets só chamando makefile
+all: prepare $(TARGET1) $(TARGET2)
 
-all: $(TARGET1) $(TARGET2)
+prepare:
+	mkdir -p objetos
 
-$(TARGET1): main.o auxiliaresBot.o $(LOGICA) $(INTERFACE) $(DADOS) $(LISTAS)
-	$(CC) $(CFLAGS) $(INCLUDE) main.o auxiliaresBot.o $(LOGICA) $(INTERFACE) $(DADOS) $(LISTAS) \
+$(TARGET1): $(MAIN) $(DIROBJETOS)/auxiliaresBot.o $(LOGICA) $(INTERFACE) $(DADOS) $(LISTAS)
+	$(CC) $(CFLAGS) $(INCLUDE) $(MAIN) $(DIROBJETOS)/auxiliaresBot.o $(LOGICA) $(INTERFACE) $(DADOS) $(LISTAS) \
 	-o $(TARGET1) -lm
 
-$(TARGET2): $(BOT) $(LOGICA) $(DADOS) $(LISTAS) ficheiros.o interface.o auxiliaresInterface.o
-	$(CC) $(CFLAGS) $(INPUT) $(BOT) $(LOGICA) $(DADOS) $(LISTAS) ficheiros.o interface.o auxiliaresInterface.o -o ./bot/$(TARGET2) -lm
+$(TARGET2): $(BOT) $(LOGICA) $(DADOS) $(LISTAS) $(DIROBJETOS)/ficheiros.o $(DIROBJETOS)/interface.o $(DIROBJETOS)/auxiliaresInterface.o
+	$(CC) $(CFLAGS) $(INPUT) $(BOT) $(LOGICA) $(DADOS) $(LISTAS) $(DIROBJETOS)/ficheiros.o $(DIROBJETOS)/interface.o $(DIROBJETOS)/auxiliaresInterface.o -o ./bot/$(TARGET2) -lm
 
-main.o: main.c
-	$(CC) $(CFLAGS) -c main.c
+$(DIROBJETOS)/main.o: $(DIRPROJETO)/main.c
+	$(CC) $(CFLAGS) -c $(DIRPROJETO)/main.c -o $@
 
-globals.o: $(DIRGLOBALS)/globals.c $(DIRGLOBALS)/globals.h
-	$(CC) $(CFLAGS) -c $(DIRGLOBALS)/globals.c
+$(DIROBJETOS)/globals.o: $(DIRGLOBALS)/globals.c $(DIRGLOBALS)/globals.h
+	$(CC) $(CFLAGS) -c $(DIRGLOBALS)/globals.c -o $@
 
-cores.o: $(DIRGLOBALS)/cores.c $(DIRGLOBALS)/cores.h
-	$(CC) $(CFLAGS) -c $(DIRGLOBALS)/cores.c
+$(DIROBJETOS)/cores.o: $(DIRGLOBALS)/cores.c $(DIRGLOBALS)/cores.h
+	$(CC) $(CFLAGS) -c $(DIRGLOBALS)/cores.c -o $@
 
-interpretador.o: $(DIRINTERFACE)/interpretador.c $(DIRINTERFACE)/interpretador.h
-	$(CC) $(CFLAGS) -c $(DIRINTERFACE)/interpretador.c
+$(DIROBJETOS)/interpretador.o: $(DIRINTERFACE)/interpretador.c $(DIRINTERFACE)/interpretador.h
+	$(CC) $(CFLAGS) -c $(DIRINTERFACE)/interpretador.c -o $@
 
-auxiliaresBot.o: $(DIRBOT)/auxiliaresBot.c $(DIRBOT)/auxiliaresBot.h
-	$(CC) $(CFLAGS) -c $(DIRBOT)/auxiliaresBot.c -lm
+$(DIROBJETOS)/auxiliaresBot.o: $(DIRBOT)/auxiliaresBot.c $(DIRBOT)/auxiliaresBot.h
+	$(CC) $(CFLAGS) -c $(DIRBOT)/auxiliaresBot.c -lm -o $@
 
-bot.o: $(DIRBOT)/bot.c $(DIRBOT)/bot.h
-	$(CC) $(CFLAGS) -c $(DIRBOT)/bot.c
+$(DIROBJETOS)/bot.o: $(DIRBOT)/bot.c $(DIRBOT)/bot.h
+	$(CC) $(CFLAGS) -c $(DIRBOT)/bot.c -o $@
 
-data.o: $(DIRMODULES)/data.c $(DIRMODULES)/data.h
-	$(CC) $(CFLAGS) -c $(DIRMODULES)/data.c
+$(DIROBJETOS)/data.o: $(DIRMODULES)/data.c $(DIRMODULES)/data.h
+	$(CC) $(CFLAGS) -c $(DIRMODULES)/data.c -o $@
 
-interface.o: $(DIRINTERFACE)/interface.c $(DIRINTERFACE)/interface.h
-	$(CC) $(CFLAGS) -c $(DIRINTERFACE)/interface.c
+$(DIROBJETOS)/interface.o: $(DIRINTERFACE)/interface.c $(DIRINTERFACE)/interface.h
+	$(CC) $(CFLAGS) -c $(DIRINTERFACE)/interface.c -o $@
 
-ficheiros.o: $(DIRINTERFACE)/ficheiros.c $(DIRINTERFACE)/ficheiros.h
-	$(CC) $(CFLAGS) -c $(DIRINTERFACE)/ficheiros.c
+$(DIROBJETOS)/ficheiros.o: $(DIRINTERFACE)/ficheiros.c $(DIRINTERFACE)/ficheiros.h
+	$(CC) $(CFLAGS) -c $(DIRINTERFACE)/ficheiros.c -o $@
 
-logica.o: $(DIRLOGICA)/logica.c $(DIRLOGICA)/logica.h
-	$(CC) $(CFLAGS) -c $(DIRLOGICA)/logica.c
+$(DIROBJETOS)/logica.o: $(DIRLOGICA)/logica.c $(DIRLOGICA)/logica.h
+	$(CC) $(CFLAGS) -c $(DIRLOGICA)/logica.c -o $@
 
-auxiliaresInterface.o: $(DIRINTERFACE)/auxiliaresInterface.c  $(DIRINTERFACE)/auxiliaresInterface.h
-	$(CC) $(CFLAGS) -c $(DIRINTERFACE)/auxiliaresInterface.c
+$(DIROBJETOS)/auxiliaresInterface.o: $(DIRINTERFACE)/auxiliaresInterface.c  $(DIRINTERFACE)/auxiliaresInterface.h
+	$(CC) $(CFLAGS) -c $(DIRINTERFACE)/auxiliaresInterface.c -o $@
 
-listas.o: $(DIRLISTAS)/listas.c $(DIRLISTAS)/listas.h
-	$(CC) $(CFLAGS) -c $(DIRLISTAS)/listas.c
+$(DIROBJETOS)/listas.o: $(DIRLISTAS)/listas.c $(DIRLISTAS)/listas.h
+	$(CC) $(CFLAGS) -c $(DIRLISTAS)/listas.c -o $@
 
 clean:
-	rm $(TARGET1) $(DIRBOT)/$(TARGET2) $(LOGICA) $(INTERFACE) $(DADOS) $(LISTAS) $(BOT)
+	rm -r $(TARGET1) $(DIRBOT)/$(TARGET2) objetos

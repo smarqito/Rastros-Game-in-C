@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="auxiliaresInterface_8h" kind="file" language="C++">
+    <compoundname>auxiliaresInterface.h</compoundname>
+    <includedby refid="bot_8c" local="yes">bot/bot.c</includedby>
+    <includedby refid="interface_8c" local="yes">modules/interface/interface.c</includedby>
+    <includedby refid="interpretador_8c" local="yes">modules/interface/interpretador.c</includedby>
+    <includedby refid="logica_8c" local="yes">modules/logica/logica.c</includedby>
+    <invincdepgraph>
+      <node id="143">
+        <label>modules/logica/logica.c</label>
+        <link refid="logica_8c"/>
+      </node>
+      <node id="142">
+        <label>modules/interface/interpretador.c</label>
+        <link refid="interpretador_8c"/>
+      </node>
+      <node id="139">
+        <label>modules/interface/auxiliaresInterface.h</label>
+        <link refid="auxiliaresInterface_8h"/>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+      </node>
+      <node id="140">
+        <label>bot/bot.c</label>
+        <link refid="bot_8c"/>
+      </node>
+      <node id="141">
+        <label>modules/interface/interface.c</label>
+        <link refid="interface_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="auxiliaresInterface_8h_1af96c2c9d8e747c6477704567796c14e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void digitosTerminal</definition>
+        <argsstring>(int i)</argsstring>
+        <name>digitosTerminal</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Imprime um número de apenas 1 dígito em dois, acresentando um zero atrás. </para>        </briefdescription>
+        <detaileddescription>
+<para>Números de dois dígitos permancem inalterados. Neste caso, imprime no terminal e não num ficheiro.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Número de jogadas a imprimir </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/interface/auxiliaresInterface.h" line="14" column="1" bodyfile="modules/interface/auxiliaresInterface.c" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresInterface_8h_1a2962b6753393267f5151853d86515ae4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pedeAjuda</definition>
+        <argsstring>()</argsstring>
+        <name>pedeAjuda</name>
+        <briefdescription>
+<para>Imprime a tabela de opções de comandos. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/interface/auxiliaresInterface.h" line="19" column="1" bodyfile="modules/interface/auxiliaresInterface.c" bodystart="8" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresInterface_8h_1adca3e0b631af13502b4da6c120ecb0e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int instrucao</definition>
+        <argsstring>(char *instr)</argsstring>
+        <name>instrucao</name>
+        <param>
+          <type>char *</type>
+          <declname>instr</declname>
+        </param>
+        <briefdescription>
+<para>Compara se a instrução recebida pertence ao grupo de instruções possíveis. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>instrução inserida pelo utilizador e que vai ser comparada; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 se não for possível. o índice + 1 caso a instrução exista; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>&lt; Array bidimensional de instruções possíveis; </para>        </inbodydescription>
+        <location file="modules/interface/auxiliaresInterface.h" line="27" column="1" bodyfile="modules/interface/auxiliaresInterface.c" bodystart="28" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresInterface_8h_1a7a0aa289f7831296b58d4c772fc3b7f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void verAutores</definition>
+        <argsstring>()</argsstring>
+        <name>verAutores</name>
+        <briefdescription>
+<para>Imprime a informação sobre os autores deste projeto. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/interface/auxiliaresInterface.h" line="32" column="1" bodyfile="modules/interface/auxiliaresInterface.c" bodystart="51" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresInterface_8h_1aed821761a30311ba3e82772ca561bd31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int confirmaSaida</definition>
+        <argsstring>()</argsstring>
+        <name>confirmaSaida</name>
+        <briefdescription>
+<para>Função que permite gerir a saída do programa. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>0 se for para sair 1 se for para voltar ao interpretador </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/interface/auxiliaresInterface.h" line="40" column="1" bodyfile="modules/interface/auxiliaresInterface.c" bodystart="58" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresInterface_8h_1aaed37cdd105692dba78f2e0da9671c11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void congratulaVencedor</definition>
+        <argsstring>(int vencedor)</argsstring>
+        <name>congratulaVencedor</name>
+        <param>
+          <type>int</type>
+          <declname>vencedor</declname>
+        </param>
+        <briefdescription>
+<para>Congratula o vencedor do jogo! </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vencedor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Número do jogador que venceu </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/interface/auxiliaresInterface.h" line="48" column="1" bodyfile="modules/interface/auxiliaresInterface.c" bodystart="80" bodyend="82"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="3"><highlight class="preprocessor">#ifndef<sp/>RASTROS_AUXILIARESINTERFACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RASTROS_AUXILIARESINTERFACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="auxiliaresInterface_8h_1af96c2c9d8e747c6477704567796c14e1" kindref="member">digitosTerminal</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="auxiliaresInterface_8h_1a2962b6753393267f5151853d86515ae4" kindref="member">pedeAjuda</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="auxiliaresInterface_8h_1adca3e0b631af13502b4da6c120ecb0e4" kindref="member">instrucao</ref><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*instr);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="auxiliaresInterface_8h_1a7a0aa289f7831296b58d4c772fc3b7f4" kindref="member">verAutores</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="auxiliaresInterface_8h_1aed821761a30311ba3e82772ca561bd31" kindref="member">confirmaSaida</ref><sp/>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="auxiliaresInterface_8h_1aaed37cdd105692dba78f2e0da9671c11" kindref="member">congratulaVencedor</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vencedor);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//RASTROS_AUXILIARESINTERFACE_H</highlight></codeline>
+    </programlisting>
+    <location file="modules/interface/auxiliaresInterface.h"/>
+  </compounddef>
+</doxygen>

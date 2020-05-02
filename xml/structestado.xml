@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structestado" kind="struct" language="C++" prot="public">
+    <compoundname>estado</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structestado_1adc820fed04d0671b1b7e972b51168398" prot="public" static="no" mutable="no">
+        <type>CASA</type>
+        <definition>CASA estado::tab[MAX_HOUSES][MAX_HOUSES]</definition>
+        <argsstring>[MAX_HOUSES][MAX_HOUSES]</argsstring>
+        <name>tab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="30" column="1" bodyfile="modules/data.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structestado_1a5e7d44c281751103e6475bc62cac825d" prot="public" static="no" mutable="no">
+        <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref></type>
+        <definition>COORDENADA estado::ultimaJogada</definition>
+        <argsstring></argsstring>
+        <name>ultimaJogada</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="31" column="1" bodyfile="modules/data.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structestado_1a47091a7b6303b8910c36ddb76dfd5b69" prot="public" static="no" mutable="no">
+        <type>JOGADAS</type>
+        <definition>JOGADAS estado::jogadas</definition>
+        <argsstring></argsstring>
+        <name>jogadas</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="32" column="1" bodyfile="modules/data.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structestado_1aa892eed91b5baf33cae5e5a1f227c373" prot="public" static="no" mutable="no">
+        <type>BOT</type>
+        <definition>BOT estado::bot</definition>
+        <argsstring></argsstring>
+        <name>bot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="33" column="1" bodyfile="modules/data.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structestado_1a8496069777ec5f863647924e64022910" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int estado::numJogadas</definition>
+        <argsstring></argsstring>
+        <name>numJogadas</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="34" column="1" bodyfile="modules/data.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structestado_1a14b81f9149abb49adc18766072a08aba" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int estado::maxJogadas</definition>
+        <argsstring></argsstring>
+        <name>maxJogadas</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="34" column="1" bodyfile="modules/data.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structestado_1a45260108853b714d194fe8d7ea7ae53c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int estado::numComandos</definition>
+        <argsstring></argsstring>
+        <name>numComandos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="35" column="1" bodyfile="modules/data.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structestado_1aa3ed6743cc09e30233ec8f785f6c3fc1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int estado::maxComandos</definition>
+        <argsstring></argsstring>
+        <name>maxComandos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="35" column="1" bodyfile="modules/data.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structestado_1a375aa82cadf9c00913b9ca2394980f9d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int estado::jogadorAtual</definition>
+        <argsstring></argsstring>
+        <name>jogadorAtual</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="36" column="1" bodyfile="modules/data.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structestado_1a6699838dfe62bfa076b99c72d06457d4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int estado::nivel</definition>
+        <argsstring></argsstring>
+        <name>nivel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="37" column="1" bodyfile="modules/data.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>estado</label>
+        <link refid="structestado"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ultimaJogada</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>jogadas</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>coordenada</label>
+        <link refid="structcoordenada"/>
+      </node>
+      <node id="5">
+        <label>jogada</label>
+        <link refid="structjogada"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>jogador1</edgelabel>
+          <edgelabel>jogador2</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="modules/data.h" line="29" column="1" bodyfile="modules/data.h" bodystart="29" bodyend="38"/>
+    <listofallmembers>
+      <member refid="structestado_1aa892eed91b5baf33cae5e5a1f227c373" prot="public" virt="non-virtual"><scope>estado</scope><name>bot</name></member>
+      <member refid="structestado_1a47091a7b6303b8910c36ddb76dfd5b69" prot="public" virt="non-virtual"><scope>estado</scope><name>jogadas</name></member>
+      <member refid="structestado_1a375aa82cadf9c00913b9ca2394980f9d" prot="public" virt="non-virtual"><scope>estado</scope><name>jogadorAtual</name></member>
+      <member refid="structestado_1aa3ed6743cc09e30233ec8f785f6c3fc1" prot="public" virt="non-virtual"><scope>estado</scope><name>maxComandos</name></member>
+      <member refid="structestado_1a14b81f9149abb49adc18766072a08aba" prot="public" virt="non-virtual"><scope>estado</scope><name>maxJogadas</name></member>
+      <member refid="structestado_1a6699838dfe62bfa076b99c72d06457d4" prot="public" virt="non-virtual"><scope>estado</scope><name>nivel</name></member>
+      <member refid="structestado_1a45260108853b714d194fe8d7ea7ae53c" prot="public" virt="non-virtual"><scope>estado</scope><name>numComandos</name></member>
+      <member refid="structestado_1a8496069777ec5f863647924e64022910" prot="public" virt="non-virtual"><scope>estado</scope><name>numJogadas</name></member>
+      <member refid="structestado_1adc820fed04d0671b1b7e972b51168398" prot="public" virt="non-virtual"><scope>estado</scope><name>tab</name></member>
+      <member refid="structestado_1a5e7d44c281751103e6475bc62cac825d" prot="public" virt="non-virtual"><scope>estado</scope><name>ultimaJogada</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

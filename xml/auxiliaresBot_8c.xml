@@ -1,0 +1,552 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="auxiliaresBot_8c" kind="file" language="C++">
+    <compoundname>auxiliaresBot.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">time.h</includes>
+    <includes local="no">math.h</includes>
+    <includes local="no">limits.h</includes>
+    <includes refid="auxiliaresBot_8h" local="yes">auxiliaresBot.h</includes>
+    <includes refid="data_8h" local="yes">../modules/data.h</includes>
+    <includes refid="listas_8h" local="yes">../modules/listas/listas.h</includes>
+    <includes refid="logica_8h" local="yes">../modules/logica/logica.h</includes>
+    <includes refid="interface_8h" local="yes">../modules/interface/interface.h</includes>
+    <incdepgraph>
+      <node id="0">
+        <label>bot/auxiliaresBot.c</label>
+        <link refid="auxiliaresBot_8c"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>auxiliaresBot.h</label>
+        <link refid="auxiliaresBot_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="9">
+        <label>cores.h</label>
+        <link refid="cores_8h_source"/>
+      </node>
+      <node id="8">
+        <label>../globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>../modules/logica/logica.h</label>
+        <link refid="logica_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>limits.h</label>
+      </node>
+      <node id="10">
+        <label>../modules/listas/listas.h</label>
+        <link refid="listas_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>time.h</label>
+      </node>
+      <node id="4">
+        <label>math.h</label>
+      </node>
+      <node id="7">
+        <label>../modules/data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>stdio.h</label>
+      </node>
+      <node id="12">
+        <label>../modules/interface/interface.h</label>
+        <link refid="interface_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="auxiliaresBot_8c_1aa527132b71e1ce1526a2e7720c9f4a80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlistas" kindref="compound">LISTA</ref></type>
+        <definition>LISTA coordenadasPossiveis</definition>
+        <argsstring>(ESTADO *state)</argsstring>
+        <name>coordenadasPossiveis</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Calcula o número de jogadas possíveis e quais as respetivas coordenadas a partir coordenada da última jogada. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vetor unidimensional com 8 posições livres (máximo de jogadas possíveis). Este vetor será preenchido com as coordenadas das jogadas possíveis</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Número de jogadas possíveis </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/auxiliaresBot.c" line="13" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="13" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresBot_8c_1af8f04b0ef8ba02106d2c69ee789ee7b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref> *</type>
+        <definition>COORDENADA* criaCoordenada</definition>
+        <argsstring>(COORDENADA c)</argsstring>
+        <name>criaCoordenada</name>
+        <param>
+          <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Cria um apontador do tipo void para uma coordenada. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/auxiliaresBot.c" line="34" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="34" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresBot_8c_1a0e82aef635469a3a1b3aad06bb6b884f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref> *</type>
+        <definition>COORDENADA* botRandom</definition>
+        <argsstring>(LISTA coordPossiveis)</argsstring>
+        <name>botRandom</name>
+        <param>
+          <type><ref refid="structlistas" kindref="compound">LISTA</ref></type>
+          <declname>coordPossiveis</declname>
+        </param>
+        <briefdescription>
+<para>Utiliza uma lista criada para selecionar uma jogada aleatória. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>coordPossiveis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o inicio da lista de coord possíveis </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>jogada</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Endereço de um apontador para uma coordenada</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 se não houver jogadas possíveis ~0 se selecionou uma jogada </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/auxiliaresBot.c" line="43" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="43" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresBot_8c_1af8704372cebf640565365ef922e0dd2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double calculaDist</definition>
+        <argsstring>(COORDENADA *a, int numeroJog)</argsstring>
+        <name>calculaDist</name>
+        <param>
+          <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numeroJog</declname>
+        </param>
+        <briefdescription>
+<para>Calcula a distância euclidiana entre a coordenada dada e o destino O destino pode ser a casa do Jogador 1, ou 2. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para uma coordenada da lista de coord possíveis </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>jog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int correspondente ao Jogador em questão</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Distância euclidiana resultante </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/auxiliaresBot.c" line="60" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="60" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresBot_8c_1a9e4f136c5c56efb735ef8f3cb8a144ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref> *</type>
+        <definition>COORDENADA* distanciaJog</definition>
+        <argsstring>(ESTADO *state, LISTA coordPossiveis)</argsstring>
+        <name>distanciaJog</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="structlistas" kindref="compound">LISTA</ref></type>
+          <declname>coordPossiveis</declname>
+        </param>
+        <briefdescription>
+<para>Escolhe a melhor Jogada dependendo da distancia euclidiana De acordo com o Jogador atual, vai escolher a jogada que fica mais perto do seu destino. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>coordPossiveis Apontador para o inicio da lista de coord possíveis </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>jogada</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Endereço de um apontador para uma coordenada</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 se não houver jogadas possíveis ~0 se selecionou uma jogada </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/auxiliaresBot.c" line="81" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="81" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresBot_8c_1afff9547b4bdcdaf95a9edd167073fc63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structestado" kindref="compound">ESTADO</ref></type>
+        <definition>ESTADO novoEstado</definition>
+        <argsstring>(ESTADO state, void *c)</argsstring>
+        <name>novoEstado</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref></type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/auxiliaresBot.c" line="96" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="96" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresBot_8c_1afb4df45c5b94708b603e284258c48f24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref> *</type>
+        <definition>COORDENADA* treeSearch</definition>
+        <argsstring>(ESTADO state, LISTA ll, int profundidade, int player)</argsstring>
+        <name>treeSearch</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref></type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="structlistas" kindref="compound">LISTA</ref></type>
+          <declname>ll</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>profundidade</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>player</declname>
+        </param>
+        <briefdescription>
+<para>Função para efetuar uma pesquisa ao longo de uma árvore até uma determinada profundidade. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Estado do programa </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ll</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para uma lista de possíveis coordenadas </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>profundidade</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Coordenada ótima </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/auxiliaresBot.c" line="102" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="102" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresBot_8c_1a6c63571fffc8e9339b256a65168bac1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int jogaBot</definition>
+        <argsstring>(ESTADO *state)</argsstring>
+        <name>jogaBot</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Efetua uma jogada construída pelo bot. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 sem erros 1 não foi possível jogar 2 não há jogadas possíveis </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>&lt; Nível de dificuldade do bot </para>        </inbodydescription>
+        <location file="bot/auxiliaresBot.c" line="149" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="149" bodyend="179"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="auxiliaresBot_8h" kindref="compound">auxiliaresBot.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../modules/data.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../modules/listas/listas.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../modules/logica/logica.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../modules/interface/interface.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><ref refid="structlistas" kindref="compound">LISTA</ref><sp/><ref refid="auxiliaresBot_8h_1aa527132b71e1ce1526a2e7720c9f4a80" kindref="member">coordenadasPossiveis</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state)<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,n;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>c,<sp/>*ultJogada;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structlistas" kindref="compound">LISTA</ref><sp/>ll<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>ultJogada<sp/>=<sp/><ref refid="data_8c_1a53f2ccf4535f2db6c9b6c6e143d9f87d" kindref="member">obterUltimaJogada</ref>(state);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>m=ultJogada-&gt;linha;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>m<sp/>=<sp/>(m<sp/>==<sp/>0)<sp/>?<sp/>m<sp/>:<sp/>(m-1);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;<sp/>m&lt;MAX_HOUSES<sp/>&amp;&amp;<sp/>m&lt;=(ultJogada-&gt;linha+1);<sp/>m++)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(n=(ultJogada-&gt;coluna==0)<sp/>?<sp/>0<sp/>:<sp/>(ultJogada-&gt;coluna-1);<sp/>n&lt;MAX_HOUSES<sp/>&amp;&amp;<sp/>n&lt;=(ultJogada-&gt;coluna+1);<sp/>n++)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.linha<sp/>=<sp/>m;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.coluna<sp/>=<sp/>n;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="logica_8c_1a9489ff516ef666f5bb97cff17cfe796d" kindref="member">verificaCasa</ref>(state,c))<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ll=<ref refid="listas_8c_1a3d274757fc80e99c6425b595021c64e9" kindref="member">insereCabeca</ref>(ll,<sp/><ref refid="auxiliaresBot_8h_1af8f04b0ef8ba02106d2c69ee789ee7b2" kindref="member">criaCoordenada</ref>(c));</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ll;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*<ref refid="auxiliaresBot_8h_1af8f04b0ef8ba02106d2c69ee789ee7b2" kindref="member">criaCoordenada</ref><sp/>(<ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*novo<sp/>=<sp/>(<ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*)<sp/>malloc<sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structcoordenada" kindref="compound">COORDENADA</ref>));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>novo-&gt;coluna=c.coluna;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>novo-&gt;linha=c.linha;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>novo;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*<ref refid="auxiliaresBot_8h_1a0e82aef635469a3a1b3aad06bb6b884f" kindref="member">botRandom</ref><sp/>(<ref refid="structlistas" kindref="compound">LISTA</ref><sp/>coordPossiveis)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r,i;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*<ref refid="structjogada" kindref="compound">jogada</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>r<sp/>=<sp/><ref refid="listas_8c_1abf86a6d58c9dec076a6fe0fc808448c2" kindref="member">lengthLista</ref>(coordPossiveis);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(r&gt;0)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>(rand()<sp/>%<sp/>r);<sp/>i&gt;0;<sp/>i--){</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="listas_8c_1affb39e37aef63ab00b6df8f9336f6673" kindref="member">proximo</ref>(coordPossiveis);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jogada=<ref refid="listas_8c_1a3e2d97bdeb57af197b198771a27f0033" kindref="member">devolveCabeca</ref>(coordPossiveis);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>jogada;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="auxiliaresBot_8h_1af8704372cebf640565365ef922e0dd2a" kindref="member">calculaDist</ref><sp/>(<ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numeroJog){</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>linhaA<sp/>=<sp/>a-&gt;linha,<sp/>colunaA<sp/>=<sp/>a-&gt;coluna;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>linhaB,<sp/>colunaB;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>distancia,<sp/>distanciaB;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>distanciaFinal;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numeroJog<sp/>==<sp/>1){</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>linhaB<sp/>=<sp/>0;<sp/>colunaB<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>linhaB<sp/>=<sp/>7;<sp/>colunaB<sp/>=<sp/>7;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>distancia<sp/>=<sp/>linhaA<sp/>-<sp/>linhaB;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>distancia<sp/>*=<sp/>distancia;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>distanciaB<sp/>=<sp/>colunaA<sp/>-<sp/>colunaB;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>distanciaB<sp/>*=<sp/>distanciaB;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>distancia<sp/>+=<sp/>distanciaB;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>distanciaFinal<sp/>=<sp/>sqrt(distancia);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>distanciaFinal;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*<ref refid="auxiliaresBot_8h_1a9e4f136c5c56efb735ef8f3cb8a144ea" kindref="member">distanciaJog</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/><ref refid="structlistas" kindref="compound">LISTA</ref><sp/>coordPossiveis)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>distancia,<sp/>distanciaMenor<sp/>=<sp/>INT_MAX;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structlistas" kindref="compound">LISTA</ref><sp/>r;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*resposta<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(r<sp/>=<sp/>coordPossiveis;<sp/>r;<sp/>r<sp/>=<sp/>r-&gt;proxima)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distancia<sp/>=<sp/><ref refid="auxiliaresBot_8h_1af8704372cebf640565365ef922e0dd2a" kindref="member">calculaDist</ref>(r-&gt;valor,<sp/><ref refid="data_8c_1a34468b1df84ffb6f0e8b815bf6fb295c" kindref="member">obterJogador</ref>(state));</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distancia<sp/>&lt;<sp/>distanciaMenor)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>resposta<sp/>=<sp/>r-&gt;valor;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distanciaMenor=distancia;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>resposta;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><ref refid="structestado" kindref="compound">ESTADO</ref><sp/>novoEstado<sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>state,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*c)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*d<sp/>=<sp/>c;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_8c_1a546fdee8f229672ea536b3765cf439f8" kindref="member">jogar</ref>(&amp;state,*d);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>state;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*<ref refid="auxiliaresBot_8h_1afb4df45c5b94708b603e284258c48f24" kindref="member">treeSearch</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>state,<sp/><ref refid="structlistas" kindref="compound">LISTA</ref><sp/>ll,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>profundidade,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>player)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*jogada=NULL,<sp/>*otima=NULL,<sp/>*temp<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jog;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>caso<sp/>tenha<sp/>chegado<sp/>ao<sp/>limite<sp/>de<sp/>profundidade<sp/>ou<sp/>alguém<sp/>tenha<sp/>ganho<sp/>termina<sp/>a<sp/>pesquisa</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(profundidade<sp/>&amp;&amp;<sp/>!<ref refid="logica_8c_1ad2929040a36c3d8da9e76686907b6079" kindref="member">verificaFim</ref>(&amp;state)<sp/>)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(ll)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structestado" kindref="compound">ESTADO</ref><sp/>tree<sp/>=<sp/>novoEstado(state,<sp/>ll-&gt;valor);<sp/></highlight><highlight class="comment">//<sp/>estado<sp/>do<sp/>jogo<sp/>na<sp/>minha<sp/>jogada<sp/>seguinte</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlistas" kindref="compound">LISTA</ref><sp/>llSearch<sp/>=<sp/><ref refid="auxiliaresBot_8h_1aa527132b71e1ce1526a2e7720c9f4a80" kindref="member">coordenadasPossiveis</ref>(&amp;tree);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*novo<sp/>=<sp/>ll-&gt;valor;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp<sp/>=<sp/><ref refid="auxiliaresBot_8h_1afb4df45c5b94708b603e284258c48f24" kindref="member">treeSearch</ref>(tree,<sp/>llSearch,<sp/>profundidade-1,<sp/>player*-1);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jog<sp/>=<sp/><ref refid="data_8c_1a34468b1df84ffb6f0e8b815bf6fb295c" kindref="member">obterJogador</ref>(&amp;tree);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>player<sp/>==<sp/>1<sp/>)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>temp<sp/>mais<sp/>longe<sp/>possivel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!temp)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>se<sp/>o<sp/>temp<sp/>for<sp/>nulo<sp/>pode<sp/>ser:<sp/>cheguei<sp/>ao<sp/>fim<sp/>da<sp/>arvore;<sp/>não<sp/>tem<sp/>jogadas;<sp/>alguem<sp/>chegou<sp/>ao<sp/>fim</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!otima)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>otima<sp/>=<sp/>novo;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jogada<sp/>=<sp/>novo;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/><ref refid="auxiliaresBot_8h_1af8704372cebf640565365ef922e0dd2a" kindref="member">calculaDist</ref>(otima,<sp/>jog)<sp/>&gt;<sp/><ref refid="auxiliaresBot_8h_1af8704372cebf640565365ef922e0dd2a" kindref="member">calculaDist</ref>(novo,<sp/>jog))<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>otima<sp/>=<sp/>novo;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jogada<sp/>=<sp/>novo;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(otima<sp/>&amp;&amp;<sp/><ref refid="auxiliaresBot_8h_1af8704372cebf640565365ef922e0dd2a" kindref="member">calculaDist</ref>(otima,<sp/>jog)<sp/>&lt;<sp/><ref refid="auxiliaresBot_8h_1af8704372cebf640565365ef922e0dd2a" kindref="member">calculaDist</ref>(temp,<sp/>jog))<sp/>{<sp/></highlight><highlight class="comment">//maximizar<sp/>o<sp/>temp<sp/>(adversário)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>otima<sp/>=<sp/>temp;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jogada<sp/>=<sp/>novo;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!otima)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>otima<sp/>=<sp/>temp;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jogada<sp/>=<sp/>novo;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(player<sp/>==<sp/>-1)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>fica<sp/>com<sp/>a<sp/>coordenada<sp/>mais<sp/>longe<sp/>do<sp/>destino</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(temp<sp/>&amp;&amp;<sp/>otima<sp/>&amp;&amp;<sp/><ref refid="auxiliaresBot_8h_1af8704372cebf640565365ef922e0dd2a" kindref="member">calculaDist</ref>(otima,<sp/>jog)<sp/>&gt;<sp/><ref refid="auxiliaresBot_8h_1af8704372cebf640565365ef922e0dd2a" kindref="member">calculaDist</ref>(temp,<sp/>jog)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>otima<sp/>=<sp/>temp;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jogada<sp/>=<sp/>novo;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(temp<sp/>&amp;&amp;<sp/>!otima)<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>otima<sp/>=<sp/>temp;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jogada<sp/>=<sp/>novo;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ll<sp/>=<sp/>ll-&gt;proxima;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>jogada;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="auxiliaresBot_8h_1a6c63571fffc8e9339b256a65168bac1f" kindref="member">jogaBot</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state)<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r=0;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>srand(time(0));</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structlistas" kindref="compound">LISTA</ref><sp/>l<sp/>=<sp/><ref refid="auxiliaresBot_8h_1aa527132b71e1ce1526a2e7720c9f4a80" kindref="member">coordenadasPossiveis</ref>(state);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*jogadaBot=NULL;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="data_8c_1a13f6b92d7542533b2f9bfede1bf63359" kindref="member">obterNivelBot</ref>(state))<sp/>{<sp/></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>0:</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jogadaBot<sp/>=<sp/><ref refid="auxiliaresBot_8h_1afb4df45c5b94708b603e284258c48f24" kindref="member">treeSearch</ref>(*state,<sp/>l,<sp/>7,<sp/>1);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>1:</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jogadaBot<sp/>=<sp/><ref refid="auxiliaresBot_8h_1a9e4f136c5c56efb735ef8f3cb8a144ea" kindref="member">distanciaJog</ref>(state,l);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jogadaBot<sp/>=<sp/><ref refid="auxiliaresBot_8h_1a0e82aef635469a3a1b3aad06bb6b884f" kindref="member">botRandom</ref>(l);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(jogadaBot)<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/><ref refid="interface_8c_1a546fdee8f229672ea536b3765cf439f8" kindref="member">jogar</ref>(state,*jogadaBot);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r=2;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>free(l);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>free(jogadaBot);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="bot/auxiliaresBot.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlistas" kind="struct" language="C++" prot="public">
+    <compoundname>listas</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structlistas_1a7df7c4880ea2c9932dc13017462c1073" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* listas::valor</definition>
+        <argsstring></argsstring>
+        <name>valor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="47" column="1" bodyfile="modules/data.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlistas_1abad741ab6c427ac4ea09340def8851a3" prot="public" static="no" mutable="no">
+        <type><ref refid="structlistas" kindref="compound">LISTA</ref></type>
+        <definition>LISTA listas::proxima</definition>
+        <argsstring></argsstring>
+        <name>proxima</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/data.h" line="48" column="1" bodyfile="modules/data.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="12">
+        <label>listas</label>
+        <link refid="structlistas"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>proxima</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="modules/data.h" line="46" column="1" bodyfile="modules/data.h" bodystart="46" bodyend="49"/>
+    <listofallmembers>
+      <member refid="structlistas_1abad741ab6c427ac4ea09340def8851a3" prot="public" virt="non-virtual"><scope>listas</scope><name>proxima</name></member>
+      <member refid="structlistas_1a7df7c4880ea2c9932dc13017462c1073" prot="public" virt="non-virtual"><scope>listas</scope><name>valor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

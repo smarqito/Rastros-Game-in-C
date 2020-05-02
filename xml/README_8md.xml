@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">![Rastros<sp/>Game](http://www.luduscience.com/images/rastros.jpg)</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Rastros</highlight></codeline>
+<codeline><highlight class="normal">Rastros<sp/>game<sp/>built<sp/>in<sp/>C</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Projeto<sp/>desenvolvido<sp/>no<sp/>âmbito<sp/>da<sp/>unidade<sp/>curricular<sp/>Laboratórios<sp/>de<sp/>Informática<sp/>II<sp/>do<sp/>curso<sp/>de<sp/></highlight></codeline>
+<codeline><highlight class="normal">Engenharia<sp/>Informática<sp/>da<sp/>Universidade<sp/>do<sp/>Minho.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Etapas<sp/>de<sp/>desenvolvimento:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[x]<sp/>Guião<sp/>1</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[x]<sp/>Guião<sp/>2</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[x]<sp/>Guião<sp/>3</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[x]<sp/>Guião<sp/>4</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[x]<sp/>Guião<sp/>5</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Relatório<sp/>Guião<sp/>5<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Tendo<sp/>por<sp/>base<sp/>as<sp/>orientações<sp/>definidas<sp/>pelos<sp/>docentes,<sp/>a<sp/>realização<sp/>do<sp/>guião<sp/>5<sp/>consistiu<sp/>nas<sp/>seguintes<sp/>fases:</highlight></codeline>
+<codeline><highlight class="normal">####<sp/>1.<sp/>Estrutura<sp/>do<sp/>projeto</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>__Camada<sp/>de<sp/>dados;__</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>-<sp/>Declarou-se<sp/>o<sp/>tipo<sp/>```enum<sp/>CASA```<sp/>que<sp/>serve<sp/>para<sp/>atribuir<sp/>o<sp/>estado<sp/>_{<sp/>Vazio,<sp/>Branca<sp/>ou<sp/>Preta<sp/>}_<sp/>a<sp/>cada<sp/>```CASA```<sp/>do<sp/>tabuleiro.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>-<sp/>```struct<sp/>COORDENADA```<sp/>que<sp/>contém<sp/>a<sp/>linha<sp/>e<sp/>coluna<sp/>(representada<sp/>numa<sp/>matriz);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>-<sp/>```struct<sp/>JOGADA```<sp/>contem<sp/>duas<sp/>COORDENADAs.<sp/>Representando<sp/>o<sp/>jogador1<sp/>e<sp/>jogador2;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>-<sp/>```struct<sp/>ESTADO```<sp/>que<sp/>contém:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>o<sp/>tabuleiro<sp/>do<sp/>jogo<sp/>(array<sp/>bidimensional<sp/>de<sp/>```CASA```);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>```COORDENADA```<sp/>última<sp/>jogada;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>```JOGADAS```<sp/>array<sp/>de<sp/>JOGADA<sp/>-<sp/>é-lhe<sp/>atribuido<sp/>o<sp/>histório<sp/>de<sp/>jogadas;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>```int```<sp/>número<sp/>de<sp/>jogadas<sp/>efetuadas<sp/>até<sp/>ao<sp/>momento;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>```int```<sp/>jogador<sp/>que<sp/>irá<sp/>efetuar<sp/>a<sp/>jogada;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>```BOT```<sp/>dados<sp/>do<sp/>tipo<sp/>```enum<sp/>{<sp/>NO,<sp/>YES<sp/>}<sp/>BOT```<sp/>permite<sp/>definir<sp/>se<sp/>está<sp/>a<sp/>jogar<sp/>contra<sp/>um<sp/>BOT;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>```int```<sp/>nível<sp/>do<sp/>jogo<sp/>no<sp/>caso<sp/>de<sp/>se<sp/>encontrar<sp/>a<sp/>jogar<sp/>contra<sp/>BOT.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>__Lógica<sp/>do<sp/>programa;__</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>-<sp/>Nesta<sp/>camada,<sp/>pode-se<sp/>encontrar<sp/>as<sp/>funções<sp/>que<sp/>são<sp/>utilizadas<sp/>pelo<sp/>interpretador:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>```int<sp/>jogar<sp/>(ESTADO<sp/>*state,<sp/>COORDENADA<sp/>c)```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Efetua<sp/>uma<sp/>jogada:<sp/>atualiza<sp/>o<sp/>estado<sp/>do<sp/>programa<sp/>utilizando<sp/>a<sp/>coordenada<sp/>indicada.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Comando:<sp/>coordenada<sp/>##</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>```int<sp/>gravarJogo<sp/>(ESTADO<sp/>*state,<sp/>char<sp/>*nomeFicheiro)```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Grava<sp/>o<sp/>estado<sp/>do<sp/>jogo<sp/>num<sp/>determinado<sp/>ficheiro<sp/>nomeFicheiro.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Comando:<sp/>```gr<sp/>nome_do_ficheiro```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>```int<sp/>lerJogo<sp/>(ESTADO<sp/>*e,<sp/>char<sp/>*nomeFicheiro)```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Lê<sp/>o<sp/>estado<sp/>de<sp/>um<sp/>jogo<sp/>a<sp/>partir<sp/>de<sp/>um<sp/>ficheiro<sp/>nomeFicheiro.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Comando:<sp/>```ler<sp/>nome_do_ficheiro```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>```int<sp/>lerMovimentos<sp/>(ESTADO<sp/>*e)```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Apresenta<sp/>os<sp/>movimentos<sp/>do<sp/>jogo.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Comando:<sp/>```movs```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>```void<sp/>mostraPos(ESTADO<sp/>*state,<sp/>char<sp/>*pos)```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Imprime<sp/>o<sp/>tabuleiro<sp/>numa<sp/>determinada<sp/>altura<sp/>_pos_<sp/>do<sp/>jogo.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Comando:<sp/>```pos<sp/>posicao_desejada```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>__Camada<sp/>de<sp/>interface.__</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>-<sp/>Interpretador</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Módulo<sp/>que<sp/>permite<sp/>ao<sp/>utilizador<sp/>interagir<sp/>com<sp/>o<sp/>programa<sp/>através<sp/>de<sp/>comandos<sp/>pré-definidos.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Os<sp/>comandos<sp/>possíveis<sp/>encontram-se<sp/>descritos<sp/>no<sp/>ponto<sp/>anterior.</highlight></codeline>
+<codeline><highlight class="normal">####<sp/>2.<sp/>Desenvolvimento</highlight></codeline>
+<codeline><highlight class="normal">Por<sp/>forma<sp/>a<sp/>otimizar<sp/>a<sp/>relação<sp/>do<sp/>programador<sp/>com<sp/>o<sp/>programa,<sp/>começou-se<sp/>por<sp/>definir<sp/>alguns<sp/>**macros**.</highlight></codeline>
+<codeline><highlight class="normal">Para<sp/>tal,<sp/>criou-se<sp/>um<sp/>módulo<sp/>designado<sp/>*globals*.<sp/>Posteriormente,<sp/>criou-se<sp/>uma<sp/>pasta<sp/>*modules*.</highlight></codeline>
+<codeline><highlight class="normal">Dentro<sp/>desta,<sp/>pode-se<sp/>encontrar<sp/>os<sp/>**módulos**<sp/>que<sp/>trazem<sp/>funcionalidade<sp/>ao<sp/>programa.<sp/></highlight></codeline>
+<codeline><highlight class="normal">Estes<sp/>estão<sp/>em<sp/>conformidade<sp/>com<sp/>a<sp/>estrutura<sp/>do<sp/>projeto<sp/>apresentada,<sp/>sendo<sp/>os<sp/>seguintes:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Interface;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Lógica;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Interpretador.<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>maior<sp/>dificuldade<sp/>ocorreu<sp/>durante<sp/>esta<sp/>fase<sp/>inicial<sp/>do<sp/>projeto,<sp/></highlight></codeline>
+<codeline><highlight class="normal">em<sp/>que<sp/>se<sp/>procurou<sp/>definir<sp/>a<sp/>melhor<sp/>hierarquia<sp/>de<sp/>ficheiros<sp/>possível<sp/>que<sp/>permitisse<sp/>criar<sp/>módulos<sp/>facilmente<sp/>reutilizáveis</highlight></codeline>
+<codeline><highlight class="normal">e<sp/>fácil<sp/>de<sp/>efetuar<sp/>*debugging*.</highlight></codeline>
+<codeline><highlight class="normal">Para<sp/>tal,<sp/>utilizou-se<sp/>conhecimento<sp/>adquirido<sp/>em<sp/>artigos<sp/>sobre<sp/>esta<sp/>temática.<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Quanto<sp/>ao<sp/>desenvolvimento<sp/>do<sp/>código,<sp/>utilizando<sp/>as<sp/>orientações<sp/>da<sp/>equipa<sp/>docente<sp/>e<sp/>o<sp/>conhecimento<sp/>adquirido<sp/>nas<sp/>aulas<sp/>teóricas</highlight></codeline>
+<codeline><highlight class="normal">de<sp/>Programação<sp/>Imperativa,<sp/>foi<sp/>relativamente<sp/>simples.<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Por<sp/>forma<sp/>a<sp/>facilitar<sp/>a<sp/>impressão<sp/>do<sp/>tabuleiro<sp/>e<sp/>a<sp/>deteção<sp/>de<sp/>fim<sp/>de<sp/>jogo,<sp/>optou-se<sp/>por<sp/>alterar<sp/>a<sp/>tipo<sp/>de<sp/>dados<sp/>```CASA```,</highlight></codeline>
+<codeline><highlight class="normal">acrescentando<sp/>```JOGADOR1,<sp/>JOGADOR2```.<sp/>Através<sp/>desta<sp/>alteração,<sp/>foi<sp/>possível<sp/>definir<sp/>uma<sp/>função<sp/>que<sp/>imprime<sp/>o<sp/>tabuleiro</highlight></codeline>
+<codeline><highlight class="normal">com<sp/>o<sp/>mínimo<sp/>de<sp/>código<sp/>e<sp/>fácil<sp/>leitura<sp/>humana<sp/>-<sp/>novamente<sp/>com<sp/>o<sp/>objetivo<sp/>de<sp/>facilitar<sp/>o<sp/>*debugging*.<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Em<sp/>relação<sp/>à<sp/>impressão<sp/>do<sp/>tabuleiro,<sp/>optou-se<sp/>por<sp/>desenvolver<sp/>uma<sp/>componente<sp/>gráfica<sp/>que<sp/>melhora<sp/>a<sp/>utilização<sp/>do<sp/>programa.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[x]<sp/>Guião<sp/>6</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[<sp/>]<sp/>Guião<sp/>7</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[<sp/>]<sp/>Guião<sp/>8</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Informação<sp/>sobre<sp/>os<sp/>autores</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Turno<sp/>Prático</highlight></codeline>
+<codeline><highlight class="normal">PL6<sp/>-<sp/>Grupo<sp/>5</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Autores:<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**_62608_**<sp/>__Marco<sp/>António<sp/>Gonçalves<sp/>de<sp/>Sousa__<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**_93271_**<sp/>__José<sp/>Alberto<sp/>Ferreira<sp/>Malheiro__<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**_93198_**<sp/>__Mariana<sp/>Rocha<sp/>Marques__</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

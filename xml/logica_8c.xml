@@ -1,0 +1,880 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="logica_8c" kind="file" language="C++">
+    <compoundname>logica.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="logica_8h" local="yes">logica.h</includes>
+    <includes refid="auxiliaresInterface_8h" local="yes">../interface/auxiliaresInterface.h</includes>
+    <includes refid="auxiliaresBot_8h" local="yes">../../bot/auxiliaresBot.h</includes>
+    <includes refid="interface_8h" local="yes">../interface/interface.h</includes>
+    <includes refid="globals_8h" local="yes">../../globals/globals.h</includes>
+    <includes refid="data_8h" local="yes">../data.h</includes>
+    <includes refid="listas_8h" local="yes">../listas/listas.h</includes>
+    <incdepgraph>
+      <node id="230">
+        <label>../../bot/auxiliaresBot.h</label>
+        <link refid="auxiliaresBot_8h"/>
+        <childnode refid="226" relation="include">
+        </childnode>
+      </node>
+      <node id="223">
+        <label>stdlib.h</label>
+      </node>
+      <node id="228">
+        <label>cores.h</label>
+        <link refid="cores_8h_source"/>
+      </node>
+      <node id="227">
+        <label>../globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="228" relation="include">
+        </childnode>
+      </node>
+      <node id="221">
+        <label>modules/logica/logica.c</label>
+        <link refid="logica_8c"/>
+        <childnode refid="222" relation="include">
+        </childnode>
+        <childnode refid="223" relation="include">
+        </childnode>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="225" relation="include">
+        </childnode>
+        <childnode refid="229" relation="include">
+        </childnode>
+        <childnode refid="230" relation="include">
+        </childnode>
+        <childnode refid="231" relation="include">
+        </childnode>
+        <childnode refid="227" relation="include">
+        </childnode>
+        <childnode refid="226" relation="include">
+        </childnode>
+        <childnode refid="232" relation="include">
+        </childnode>
+      </node>
+      <node id="225">
+        <label>logica.h</label>
+        <link refid="logica_8h"/>
+        <childnode refid="226" relation="include">
+        </childnode>
+      </node>
+      <node id="224">
+        <label>string.h</label>
+      </node>
+      <node id="229">
+        <label>../interface/auxiliaresInterface.h</label>
+        <link refid="auxiliaresInterface_8h"/>
+      </node>
+      <node id="232">
+        <label>../listas/listas.h</label>
+        <link refid="listas_8h"/>
+        <childnode refid="227" relation="include">
+        </childnode>
+        <childnode refid="226" relation="include">
+        </childnode>
+      </node>
+      <node id="226">
+        <label>../data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="227" relation="include">
+        </childnode>
+      </node>
+      <node id="222">
+        <label>stdio.h</label>
+      </node>
+      <node id="231">
+        <label>../interface/interface.h</label>
+        <link refid="interface_8h"/>
+        <childnode refid="226" relation="include">
+        </childnode>
+        <childnode refid="227" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="logica_8c_1a4f8f2b1bd6e25fc55372bdb05b5b0b30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void changeCardinal</definition>
+        <argsstring>(ESTADO *state, COORDENADA c)</argsstring>
+        <name>changeCardinal</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Muda o caratér da jogada atual;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordenada em que vai ser mudado o caratér (jogada atual); </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>&lt;Linha da jogada</para><para>&lt;Coluna da jogada</para><para>&lt;Jogada anterior -&gt; &apos;#&apos;</para><para>&lt;Jogada atual -&gt; &apos;*&apos; </para>        </inbodydescription>
+        <location file="modules/logica/logica.c" line="16" column="1" bodyfile="modules/logica/logica.c" bodystart="16" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1a2e0eb56a3607ad2fb057ca268bf64c5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int verificaVizinhanca</definition>
+        <argsstring>(ESTADO *state, COORDENADA c)</argsstring>
+        <name>verificaVizinhanca</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Verifica se é possível escolher a CASA pretendida. </para>        </briefdescription>
+        <detaileddescription>
+<para>A CASA escolhida pelo Jogador tem de estar na vizinhança da última jogada; As coordenadas para a nova jogada tem de ter 1 de distância, como se verifica no gráfico que se segue: . . . . * . . . .</para><para>Neste sentido, o Jogador (marcado com &apos;*&apos;) pode mover-se para cada uma das casas marcadas com &apos;.&apos;.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordenada que o Jogador quer jogar; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 ou 0, caso se encontre ou não na sua vizinhança, respetivamente; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="25" column="1" bodyfile="modules/logica/logica.c" bodystart="25" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1a9489ff516ef666f5bb97cff17cfe796d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int verificaCasa</definition>
+        <argsstring>(ESTADO *state, COORDENADA c)</argsstring>
+        <name>verificaCasa</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Verifica se a jogada é possível utilizando as funções obterEstadoCasa (definida no módulo <ref refid="data_8c" kindref="compound">data.c</ref>) e verificaVizinhança. </para>        </briefdescription>
+        <detaileddescription>
+<para>A jogada é possível se a CASA escolhida pelo Jogador estiver VAZIA ou for o JOGADOR1/JOGADOR2 (Verficado através da função -&gt; obterEstadoCasa); É necessário que a casa esteja na vizinhança (Verificado através da função -&gt; verificaVizinhanca).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordenada que o Jogador quer jogar; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 ou 0, caso a jogada seja possível ou não, respetivamente; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="41" column="1" bodyfile="modules/logica/logica.c" bodystart="41" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1a56acd038b99ea6870b1fe8b53d545bf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void atualizaMaxJogadas</definition>
+        <argsstring>(ESTADO *state)</argsstring>
+        <name>atualizaMaxJogadas</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Atualiza o número máximo de jogadas. </para>        </briefdescription>
+        <detaileddescription>
+<para>Utiliza a jogadaAtual para atualizar o máximo de jogadas disponíveis.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="51" column="1" bodyfile="modules/logica/logica.c" bodystart="51" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1a6632ba6b02d00ec7cf90295cbd1d78e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void atualizaJogadas</definition>
+        <argsstring>(ESTADO *state, COORDENADA c)</argsstring>
+        <name>atualizaJogadas</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Atualiza o histórico de jogadas no respetivo Jogador. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordenada Atual; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="56" column="1" bodyfile="modules/logica/logica.c" bodystart="56" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1a770e1a8b63f84cc1ce9a72d8fac2ff51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int divideInput</definition>
+        <argsstring>(INPUT *resposta, char *input)</argsstring>
+        <name>divideInput</name>
+        <param>
+          <type><ref refid="structin" kindref="compound">INPUT</ref> *</type>
+          <declname>resposta</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para>Divide um determinado input em comando e argumento. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Linha de texto inserida pelo utilizador. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 ou !0 caso funcione ou não, respetivamente; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="69" column="1" bodyfile="modules/logica/logica.c" bodystart="69" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1a9621761b29f62c0deaaf7dc4287f31f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void atualizaJogadasEstatico</definition>
+        <argsstring>(ESTADO *state, int numJog)</argsstring>
+        <name>atualizaJogadasEstatico</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numJog</declname>
+        </param>
+        <briefdescription>
+<para>Atualiza o número de jogadas com um inteiro recebido como argumento. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do jogo </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numJog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Novo número de jogadas </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="80" column="1" bodyfile="modules/logica/logica.c" bodystart="80" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1af85d38bb07d158c69c08a75787b68c30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void atualNumComandosEstatico</definition>
+        <argsstring>(ESTADO *state, int numComandos)</argsstring>
+        <name>atualNumComandosEstatico</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numComandos</declname>
+        </param>
+        <briefdescription>
+<para>Atualiza o número de jogadas com argumento. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numComandos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Novo número de comandos </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="84" column="1" bodyfile="modules/logica/logica.c" bodystart="84" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1a19947fc319e925c3e3f1af8d51396a6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char converteCasa</definition>
+        <argsstring>(CASA house)</argsstring>
+        <name>converteCasa</name>
+        <param>
+          <type>CASA</type>
+          <declname>house</declname>
+        </param>
+        <briefdescription>
+<para>Converte uma CASA para o tipo char correspondente. </para>        </briefdescription>
+        <detaileddescription>
+<para><orderedlist>
+<listitem><para>VAZIO: &apos;.&apos;;</para></listitem><listitem><para>BRANCA: &apos;*&apos;;</para></listitem><listitem><para>JOGADOR1: &apos;1&apos;;</para></listitem><listitem><para>JOGADOR2: &apos;2&apos;; 0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>house</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Casa que pretendemos converter; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>casa convertida mediante o char correspondente; </para></simplesect>
+</para></listitem></orderedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="89" column="1" bodyfile="modules/logica/logica.c" bodystart="89" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1ad2929040a36c3d8da9e76686907b6079" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int verificaFim</definition>
+        <argsstring>(ESTADO *state)</argsstring>
+        <name>verificaFim</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Verifica se o Jogador chegou ao fim. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 se o jogo não acabou ~0 número do jogador que venceu </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="120" column="1" bodyfile="modules/logica/logica.c" bodystart="120" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1a1426b332daf638c6034dab7ca0429e8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int converteDecimal</definition>
+        <argsstring>(const char *jogada)</argsstring>
+        <name>converteDecimal</name>
+        <param>
+          <type>const char *</type>
+          <declname>jogada</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="134" column="1" bodyfile="modules/logica/logica.c" bodystart="134" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1a50746387c4564bae4c3e92dc73b70ec9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int removeCarateresExtra</definition>
+        <argsstring>(char *s)</argsstring>
+        <name>removeCarateresExtra</name>
+        <param>
+          <type>char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Remove caractéres extra. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String à qual vai ser removida os caractéres; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 ou !0 caso funcione ou não, respetivamente; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="141" column="1" bodyfile="modules/logica/logica.c" bodystart="141" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1a404248a51c788ab1a9b9caf8d0723e26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int atualizaCoordenadaJogada</definition>
+        <argsstring>(ESTADO *state, COORDENADA *c, int jogador)</argsstring>
+        <name>atualizaCoordenadaJogada</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref> *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>jogador</declname>
+        </param>
+        <briefdescription>
+<para>Atualiza a coordenada após a jogada. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordenada Atual; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>jogador</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Jogador que efetuou a jogada;</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 ou ~0, caso funcione ou não, respetivamente; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="157" column="1" bodyfile="modules/logica/logica.c" bodystart="157" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1a5f4d1fefcc61d78cb1360c3d688345a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void posAux</definition>
+        <argsstring>(ESTADO *state, COORDENADA c)</argsstring>
+        <name>posAux</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>novo</declname>
+          <defname>state</defname>
+        </param>
+        <param>
+          <type><ref refid="structcoordenada" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Atualiza o estado de uma casa numa determinada coordenada, bem como a Jogada. </para>        </briefdescription>
+        <detaileddescription>
+<para>Modificada a última Jogada. Muda o Estado de BRANCA para PRETA.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>novo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordenada Atual. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="169" column="1" bodyfile="modules/logica/logica.c" bodystart="169" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1a68440f84753fc80e440610bf528c9c70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mostraPos</definition>
+        <argsstring>(ESTADO *state, char *pos)</argsstring>
+        <name>mostraPos</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Função aplicada no comando pos. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array de Char que indica até que jogada é suposto mostrar o tabuleiro. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Número de jogadas que se pretende imprimir; </para>        </inbodydescription>
+        <location file="modules/logica/logica.c" line="174" column="1" bodyfile="modules/logica/logica.c" bodystart="174" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1adab04129af604ecb92e043383c54c971" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int verificaPossibilidades</definition>
+        <argsstring>(ESTADO *state)</argsstring>
+        <name>verificaPossibilidades</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Função para obter o número de Jogadas que o Jogador(Atual) pode efetuar. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>o número de Jogadas que o Jogador pode efetuar. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="206" column="1" bodyfile="modules/logica/logica.c" bodystart="206" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="logica_8c_1ab39326be63a1a7abe509faf7d989377f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void atualizaJogAtual</definition>
+        <argsstring>(ESTADO *state, int jogador)</argsstring>
+        <name>atualizaJogAtual</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>jogador</declname>
+        </param>
+        <briefdescription>
+<para>Atualiza o jogador atual. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>jogador</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Próximo jogador 0 -&gt; Jogador 1 1 -&gt; Jogador 2 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/logica/logica.c" line="216" column="1" bodyfile="modules/logica/logica.c" bodystart="216" bodyend="219"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="2"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="logica_8h" kindref="compound">logica.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../interface/auxiliaresInterface.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../bot/auxiliaresBot.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../interface/interface.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../globals/globals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../data.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../listas/listas.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1a4f8f2b1bd6e25fc55372bdb05b5b0b30" kindref="member">changeCardinal</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,n;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>m=state-&gt;ultimaJogada.linha;<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>n=state-&gt;ultimaJogada.coluna;<sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>state-&gt;tab[m][n]<sp/>=<sp/>PRETA;<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>state-&gt;<sp/>tab[c.linha][c.coluna]<sp/>=<sp/>BRANCA;<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1a2e0eb56a3607ad2fb057ca268bf64c5c" kindref="member">verificaVizinhanca</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>c){</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>ultima<sp/>=<sp/>state-&gt;ultimaJogada;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>linhaU<sp/>=<sp/>ultima.linha,<sp/>colunaU<sp/>=<sp/>ultima.coluna;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>linhaA<sp/>=<sp/>c.linha,<sp/>colunaA<sp/>=<sp/>c.coluna;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>resposta<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>linhaA<sp/>==<sp/>linhaU<sp/>+<sp/>1<sp/>||<sp/>linhaA<sp/>==<sp/>linhaU<sp/>-<sp/>1<sp/>||<sp/>linhaA<sp/>==<sp/>linhaU){</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(colunaA<sp/>==<sp/>colunaU<sp/>+<sp/>1<sp/>||<sp/>colunaA<sp/>==<sp/>colunaU<sp/>-<sp/>1<sp/>||<sp/>colunaA<sp/>==<sp/>colunaU){</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>resposta<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(linhaA<sp/>==<sp/>linhaU<sp/>&amp;&amp;<sp/>colunaA<sp/>==<sp/>colunaU)<sp/>resposta<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>resposta;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1a9489ff516ef666f5bb97cff17cfe796d" kindref="member">verificaCasa</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>c){</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>resposta<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="data_8c_1a32a5d264a3e781d9def80147a2c0ebb1" kindref="member">obterEstadoCasa</ref>(state,<sp/>c)<sp/>==<sp/>VAZIO</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/><ref refid="data_8c_1a32a5d264a3e781d9def80147a2c0ebb1" kindref="member">obterEstadoCasa</ref>(state,<sp/>c)<sp/>==<sp/>JOGADOR1</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/><ref refid="data_8c_1a32a5d264a3e781d9def80147a2c0ebb1" kindref="member">obterEstadoCasa</ref>(state,<sp/>c)<sp/>==<sp/>JOGADOR2)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/><ref refid="logica_8c_1a2e0eb56a3607ad2fb057ca268bf64c5c" kindref="member">verificaVizinhanca</ref>(state,<sp/>c))</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>resposta<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>resposta;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1a56acd038b99ea6870b1fe8b53d545bf1" kindref="member">atualizaMaxJogadas</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>state-&gt;maxJogadas=<ref refid="data_8c_1a130b1b2c74cdd895c944ff860550a1a1" kindref="member">obterNumeroJogadas</ref>(state);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>state-&gt;maxComandos=<ref refid="data_8c_1a414cdc29214160cdf6c925984ab467b4" kindref="member">numeroComandos</ref>(state);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1a6632ba6b02d00ec7cf90295cbd1d78e8" kindref="member">atualizaJogadas</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!state-&gt;jogadorAtual)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;jogadorAtual=1;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;jogadas[<ref refid="data_8c_1a130b1b2c74cdd895c944ff860550a1a1" kindref="member">obterNumeroJogadas</ref>(state)].jogador1=c;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;jogadorAtual=0;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;jogadas[state-&gt;numJogadas++].jogador2=c;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>state-&gt;numJogadas++;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>state-&gt;ultimaJogada=c;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>state-&gt;numComandos++;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1a770e1a8b63f84cc1ce9a72d8fac2ff51" kindref="member">divideInput</ref><sp/>(<ref refid="structin" kindref="compound">INPUT</ref><sp/>*resposta,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*input){</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r=0,<sp/>nInstr;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>espaco[2]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>resposta-&gt;comando<sp/>=<sp/>strtok(input,espaco);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(resposta-&gt;comando<sp/>==<sp/>NULL)<sp/>r<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>resposta-&gt;argumento<sp/>=<sp/>strtok(NULL,espaco);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>nInstr=<ref refid="auxiliaresInterface_8c_1adca3e0b631af13502b4da6c120ecb0e4" kindref="member">instrucao</ref>(resposta-&gt;comando);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(resposta-&gt;argumento<sp/>==<sp/>NULL<sp/>&amp;&amp;<sp/>(nInstr<sp/>==<sp/>2<sp/>||<sp/>nInstr<sp/>==<sp/>3))<sp/>r<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1a9621761b29f62c0deaaf7dc4287f31f8" kindref="member">atualizaJogadasEstatico</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numJog)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>state-&gt;numJogadas=numJog;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1af85d38bb07d158c69c08a75787b68c30" kindref="member">atualNumComandosEstatico</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numComandos)<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>state-&gt;numComandos=numComandos;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1a19947fc319e925c3e3f1af8d51396a6a" kindref="member">converteCasa</ref><sp/>(CASA<sp/>house)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>casa;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(house)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>VAZIO:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>casa<sp/>=<sp/>CASA_VAZIO;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>BRANCA:</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>promptFormata(COR_VERMELHO_NEGRITO);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>casa<sp/>=<sp/>CASA_BRANCA;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>PRETA:</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>promptFormata(COR_ROXO);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>casa<sp/>=<sp/>CASA_PRETA;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>JOGADOR1:</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>promptFormata(COR_AMARELO_NEGRITO);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>casa<sp/>=<sp/>CASA_JOGADOR1;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>JOGADOR2:</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>promptFormata(COR_AMARELO_NEGRITO);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>casa<sp/>=<sp/>CASA_JOGADOR2;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>casa=</highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>casa;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1ad2929040a36c3d8da9e76686907b6079" kindref="member">verificaFim</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(state-&gt;tab[MAX_HOUSES-1][MAX_HOUSES-1]<sp/>==<sp/>BRANCA)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>2;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(state-&gt;tab[0][0]==BRANCA)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="logica_8c_1adab04129af604ecb92e043383c54c971" kindref="member">verificaPossibilidades</ref>(state))</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="data_8c_1a34468b1df84ffb6f0e8b815bf6fb295c" kindref="member">obterJogador</ref>(state)<sp/>==<sp/>1)<sp/>?<sp/>2<sp/>:<sp/>1<sp/>;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="logica_8h_1a00b6b01f93ca6a1fa2414d3598d584f3" kindref="member">converteDecimal</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structjogada" kindref="compound">jogada</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x=0;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>+=<sp/>(jogada[0]-</highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">)<sp/>*<sp/>10;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>+=<sp/>(jogada[1]-</highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1a50746387c4564bae4c3e92dc73b70ec9" kindref="member">removeCarateresExtra</ref><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s)<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0,n;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(s[i])<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(s[i]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n=i;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(s[n])<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s[n]<sp/>=<sp/>s[n+1];</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n++;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1a404248a51c788ab1a9b9caf8d0723e26" kindref="member">atualizaCoordenadaJogada</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*c,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jogador)<sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numJogada<sp/>=<sp/>state-&gt;numJogadas;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(jogador<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;jogadas[numJogada].jogador1.coluna=c-&gt;coluna;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;jogadas[numJogada].jogador1.linha=c-&gt;linha;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;jogadas[numJogada].jogador2.coluna=c-&gt;coluna;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;jogadas[numJogada].jogador2.linha=c-&gt;linha;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1a5f4d1fefcc61d78cb1360c3d688345a5" kindref="member">posAux</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>c){</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a4f8f2b1bd6e25fc55372bdb05b5b0b30" kindref="member">changeCardinal</ref>(state,<sp/>c);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a6632ba6b02d00ec7cf90295cbd1d78e8" kindref="member">atualizaJogadas</ref>(state,<sp/>c);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1a68440f84753fc80e440610bf528c9c70" kindref="member">mostraPos</ref>(<sp/><ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pos)<sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c<sp/>=<sp/>atoi(pos),<sp/>numeroJogadas,<sp/>maxComandos;<sp/></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>numeroJogadas<sp/>=<sp/><ref refid="data_8c_1a3944e26300e70dbda6dbf52653613cbb" kindref="member">obterMaxJogadas</ref>(state)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>maxComandos<sp/>=<sp/><ref refid="data_8c_1a7951f1b826d62860bc29f2dbac8f93cd" kindref="member">obterMaxComandos</ref>(state);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>&gt;<sp/>numeroJogadas<sp/>||<sp/>c<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/>0)<sp/></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Encontra-se<sp/>na<sp/>posição<sp/>inicial.<sp/>Não<sp/>há<sp/>jogadas<sp/>anteriores.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;O<sp/>intervalo<sp/>de<sp/>posições<sp/>é<sp/>de<sp/>%d<sp/>até<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>0,<sp/>numeroJogadas<sp/>);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="data_8c_1aee198af5c1d2b76f8964cf06d821419f" kindref="member">initBoard</ref>(state);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="data_8c_1a57ed36a9ffdf53f810da96370453904f" kindref="member">initPlay</ref>(state);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="data_8c_1a3dbc5edeff7787174f06b796176a157b" kindref="member">initPlayer</ref>(state);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>c;<sp/>i++<sp/>){</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>jog1<sp/>=<sp/>state-&gt;jogadas[i].jogador1;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>jog2<sp/>=<sp/>state-&gt;jogadas[i].jogador2;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a5f4d1fefcc61d78cb1360c3d688345a5" kindref="member">posAux</ref>(state,jog1);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxComandos--;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>maxComandos<sp/>&amp;&amp;<sp/>((jog2.linha<sp/>||<sp/>jog2.coluna)<sp/>||<sp/><ref refid="logica_8c_1ad2929040a36c3d8da9e76686907b6079" kindref="member">verificaFim</ref>(state)<sp/>==<sp/>2<sp/>))<sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a5f4d1fefcc61d78cb1360c3d688345a5" kindref="member">posAux</ref>(state,<sp/>jog2);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxComandos--;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_8c_1a455e9686a30c6129b2491068be7fde1b" kindref="member">mostrarTabuleiro</ref>(state);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1adab04129af604ecb92e043383c54c971" kindref="member">verificaPossibilidades</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state)<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r=0;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structlistas" kindref="compound">LISTA</ref><sp/>l;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>l=<ref refid="auxiliaresBot_8h_1aa527132b71e1ce1526a2e7720c9f4a80" kindref="member">coordenadasPossiveis</ref>(state);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>r=<ref refid="listas_8c_1abf86a6d58c9dec076a6fe0fc808448c2" kindref="member">lengthLista</ref>(l);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="logica_8c_1ab39326be63a1a7abe509faf7d989377f" kindref="member">atualizaJogAtual</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jogador)<sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(jogador<sp/>==<sp/>1<sp/>||<sp/>jogador<sp/>==<sp/>2)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;jogadorAtual<sp/>=<sp/>jogador;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="modules/logica/logica.c"/>
+  </compounddef>
+</doxygen>

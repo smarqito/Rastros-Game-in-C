@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="interpretador_8h" kind="file" language="C++">
+    <compoundname>interpretador.h</compoundname>
+    <includes refid="data_8h" local="yes">../data.h</includes>
+    <includes refid="globals_8h" local="yes">../../globals/globals.h</includes>
+    <includedby refid="main_8c" local="yes">main.c</includedby>
+    <includedby refid="interpretador_8c" local="yes">modules/interface/interpretador.c</includedby>
+    <incdepgraph>
+      <node id="201">
+        <label>cores.h</label>
+        <link refid="cores_8h_source"/>
+      </node>
+      <node id="200">
+        <label>../globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="201" relation="include">
+        </childnode>
+      </node>
+      <node id="198">
+        <label>modules/interface/interpretador.h</label>
+        <link refid="interpretador_8h"/>
+        <childnode refid="199" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+      </node>
+      <node id="199">
+        <label>../data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="203">
+        <label>main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="204">
+        <label>modules/interface/interpretador.c</label>
+        <link refid="interpretador_8c"/>
+      </node>
+      <node id="202">
+        <label>modules/interface/interpretador.h</label>
+        <link refid="interpretador_8h"/>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="interpretador_8h_1a232496090798d008aa6551a6912c7fd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int jogarRastros</definition>
+        <argsstring>(ESTADO *state, INPUT *input)</argsstring>
+        <name>jogarRastros</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+          <defname>e</defname>
+        </param>
+        <param>
+          <type><ref refid="structin" kindref="compound">INPUT</ref> *</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para>Permite jogar rastros até: Um jogador ganhar. O utilizador optar por voltar ao menú anterior. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 ou 0, caso houver algum erro ou não, respetivamente; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>&lt; imprime o numero de comandos utilizados</para><para>&lt; caso o input tenha 2 carateres lê a col e lin</para><para>&lt; caso o input tenha 1 carater, verifica se é um &apos;Q&apos;</para><para>&lt; Caso o jogo termine após o bot jogar! </para>        </inbodydescription>
+        <location file="modules/interface/interpretador.h" line="11" column="1" bodyfile="modules/interface/interpretador.c" bodystart="109" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="interpretador_8h_1a26549a64119f3a788e2ebdd85e9c0cb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void imprimeComandos</definition>
+        <argsstring>(ESTADO *state)</argsstring>
+        <name>imprimeComandos</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Imprime os Comandos. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/interface/interpretador.h" line="17" column="1" bodyfile="modules/interface/interpretador.c" bodystart="17" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="interpretador_8h_1af06d5227d283e4920a1eaa5b3ff32bd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int comandos</definition>
+        <argsstring>(ESTADO *e, INPUT *input, int comando)</argsstring>
+        <name>comandos</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type><ref refid="structin" kindref="compound">INPUT</ref> *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>comando</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>comando</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>&lt; Opção &quot;jogar&quot;</para><para>&lt; Opção &quot;gr nomeficheiro&quot;</para><para>&lt; Opção &quot;ler nomeficheiro&quot;</para><para>&lt; Opção &quot;movs&quot;</para><para>&lt; Opção &quot;jog&quot;</para><para>&lt; Opção &quot;pos #pos#&quot;</para><para>&lt; Opção &quot;novo&quot; inicia um novo jogo</para><para>&lt; Opção &quot;ajuda&quot;</para><para>&lt; Opção &quot;help&quot;</para><para>&lt; Opção &quot;autores&quot;</para><para>&lt; Opção &quot;Q&quot; para sair </para>        </inbodydescription>
+        <location file="modules/interface/interpretador.h" line="26" column="1" bodyfile="modules/interface/interpretador.c" bodystart="27" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="interpretador_8h_1a24da95ebeede4a540e37790ce8be359b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int interpretador</definition>
+        <argsstring>(ESTADO *e)</argsstring>
+        <name>interpretador</name>
+        <param>
+          <type><ref refid="structestado" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Principal interpretador de comandos do programa. </para>        </briefdescription>
+        <detaileddescription>
+<para>Permite ao utilizador interagir com o programa, utilizando os comandos descritos na função pedeAjuda. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 ou 0, caso ocorrer algum erro de leitura ou não, respetivamente; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="modules/interface/interpretador.h" line="44" column="1" bodyfile="modules/interface/interpretador.c" bodystart="147" bodyend="186"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Definição das função que permitem ao utilizador interagir com o programa. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="5"><highlight class="preprocessor">#ifndef<sp/>RASTROS_INTERPRETADOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RASTROS_INTERPRETADOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../data.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../globals/globals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="interpretador_8h_1a232496090798d008aa6551a6912c7fd6" kindref="member">jogarRastros</ref>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*e,<sp/><ref refid="structin" kindref="compound">INPUT</ref><sp/>*input);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interpretador_8h_1a26549a64119f3a788e2ebdd85e9c0cb6" kindref="member">imprimeComandos</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="interpretador_8h_1af06d5227d283e4920a1eaa5b3ff32bd9" kindref="member">comandos</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*e,<sp/><ref refid="structin" kindref="compound">INPUT</ref><sp/>*input,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>comando);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="interpretador_8h_1a232496090798d008aa6551a6912c7fd6" kindref="member">jogarRastros</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/><ref refid="structin" kindref="compound">INPUT</ref><sp/>*input);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="interpretador_8h_1a24da95ebeede4a540e37790ce8be359b" kindref="member">interpretador</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//RASTROS_INTERPRETADOR_H</highlight></codeline>
+    </programlisting>
+    <location file="modules/interface/interpretador.h"/>
+  </compounddef>
+</doxygen>
