@@ -1,7 +1,7 @@
 #Targets
 
 TARGET1=rastros.exe
-TARGET2=li2pl6g05_bot
+TARGET2=li2PL6G05
 
 #Compilador
 
@@ -33,7 +33,7 @@ LOGICA=$(DIROBJETOS)/logica.o
 INTERFACE=$(DIROBJETOS)/auxiliaresInterface.o $(DIROBJETOS)/interface.o $(DIROBJETOS)/ficheiros.o $(DIROBJETOS)/interpretador.o
 DADOS=$(DIROBJETOS)/globals.o $(DIROBJETOS)/data.o $(DIROBJETOS)/cores.o
 LISTAS=$(DIROBJETOS)/listas.o
-BOT=$(DIROBJETOS)/bot.o $(DIROBJETOS)/auxiliaresBot.o
+BOT=$(DIROBJETOS)/li2pl6g05.o $(DIROBJETOS)/auxiliaresBot.o
 
 #Define que o makefile constroi os dois targets só chamando makefile
 all: prepare $(TARGET1) $(TARGET2)
@@ -63,8 +63,8 @@ $(DIROBJETOS)/interpretador.o: $(DIRINTERFACE)/interpretador.c $(DIRINTERFACE)/i
 $(DIROBJETOS)/auxiliaresBot.o: $(DIRBOT)/auxiliaresBot.c $(DIRBOT)/auxiliaresBot.h
 	$(CC) $(CFLAGS) -c $(DIRBOT)/auxiliaresBot.c -lm -o $@
 
-$(DIROBJETOS)/bot.o: $(DIRBOT)/bot.c $(DIRBOT)/bot.h
-	$(CC) $(CFLAGS) -c $(DIRBOT)/bot.c -o $@
+$(DIROBJETOS)/li2pl6g05.o: $(DIRBOT)/li2pl6g05.c $(DIRBOT)/li2pl6g05.h
+	$(CC) $(CFLAGS) -c $(DIRBOT)/li2pl6g05.c -o $@
 
 $(DIROBJETOS)/data.o: $(DIRMODULES)/data.c $(DIRMODULES)/data.h
 	$(CC) $(CFLAGS) -c $(DIRMODULES)/data.c -o $@
