@@ -8,6 +8,7 @@
 #include "../logica/logica.h"
 #include "interface.h"
 #include "../../globals/globals.h"
+#include "auxiliaresInterface.h"
 
 
 void removerLinha (char *string) {
@@ -41,21 +42,14 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
 
 }
 
-void numeros2Digitos (int i, FILE *save){
-    if (i+1 < 10) fprintf (save,"0%d: ", i+1);
-    else fprintf(save, "%d: ", i+1);
-}
-
-
-
 void imprimirJogadas (ESTADO *state, int i, FILE *save){
     if (i < obterNumeroJogadas(state)){
-        numeros2Digitos(i, save);
+        digitos (i, save);
         fprintf(save,"%c%c ",obterLinhaColuna(state, 1, i, 'c'),obterLinhaColuna(state, 1, i, 'l'));
         fprintf(save,"%c%c\n", obterLinhaColuna(state, 2, i, 'c'),obterLinhaColuna(state, 2, i, 'l'));
     }
     else if (i == obterNumeroJogadas(state) && obterJogador(state) == 2){
-        numeros2Digitos (i, save);
+        digitos (i, save);
         fprintf(save,"%c%c\n",obterLinhaColuna(state, 1, i, 'c'),obterLinhaColuna(state, 1, i, 'l'));
     }
 }

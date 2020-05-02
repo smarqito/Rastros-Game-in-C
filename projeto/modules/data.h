@@ -7,45 +7,111 @@
 #define RASTROS_DATA_H
 
 #include "../globals/globals.h"
+
+/**
+ * @def CASA_VAZIO
+ * @brief   Casa de um jogador quando está vazia:
+ *          É possível jogar
+ */
 #define CASA_VAZIO '.'
+
+/**
+ * @def CASA_BRANCA
+ * @brief   Casa do jogador atual
+ */
 #define CASA_BRANCA '*'
+
+/**
+ * @def CASA_PRETA
+ * @brief   Casa por onde os jogadores já passaram
+ */
 #define CASA_PRETA '#'
+
+/**
+ * @def CASA_JOGADOR1
+ * @brief   Casa do jogador 1
+ */
 #define CASA_JOGADOR1 '1'
+
+/**
+ * @def CASA_JOGADOR2
+ * @brief   Casa do jogador 2
+ */
 #define CASA_JOGADOR2 '2'
+
+/**
+ * @enum CASA Tipo de casas disponíveis (descritas acima)
+ */
 typedef enum {VAZIO, BRANCA, PRETA,JOGADOR1,JOGADOR2} CASA;
 
+/**
+ * @enum BOT Disponibilidade do bot: ativo ou desativo
+ */
 typedef enum {NO,YES} BOT;
 
+/**
+ * @typedef COORDENADA 
+ * @brief Struct para armazenar a coluna e a linha de uma coordenada
+ */
 typedef struct coordenada {
-    int linha, coluna;
+    int linha, //!< @var linha Linha da coordenada
+        coluna; //!< @var coluna Coluna da coordenada
 } COORDENADA;
 
+/**
+ * @typedef JOGADA 
+ * @brief Armazena a coordenada de 2 jogadores
+ */
 typedef struct jogada {
-    COORDENADA jogador1, jogador2;
+    COORDENADA jogador1, //!< @var jogador1 Coordenada do jogador 1
+               jogador2; //!< @var jogador2 Coordenada do jogador 2
 } JOGADA;
 
+/**
+ * @typedef JOGADAS
+ * @brief Vetor com 32 elementos do tipo JOGADA
+ */
 typedef JOGADA JOGADAS[32];
 
+/**
+ * @typedef ESTADO 
+ * @brief Parâmetros que definem o estado do programa
+ */
 typedef struct estado {
-    CASA tab[MAX_HOUSES][MAX_HOUSES];
-    COORDENADA ultimaJogada;
-    JOGADAS jogadas;
-    BOT bot;
-    int numJogadas, maxJogadas;
-    int numComandos, maxComandos;
-    int jogadorAtual;
-    int nivel;
+    CASA tab[MAX_HOUSES][MAX_HOUSES]; //!< @var tab Estado atual do tabuleiro
+    COORDENADA ultimaJogada; //!< @var ultimaJogada Coordenada da última jogada efetuada
+    JOGADAS jogadas; //!< @var jogadas Lista de jogadas efetuadas
+    BOT bot; //!< @var bot Indica se o bot está ativo (0 ou 1)
+    int numJogadas, //!< @var numJogadas Número de jogadas atual
+        maxJogadas; //!< @var maxJogadas Máximo jogadas efetuadas no jogo
+    int numComandos, //!< @var numComandos Número de comandos atual
+        maxComandos; //!< @var maxComandos Máximo de comandos utilizados
+    int jogadorAtual; //!< @var jogadorAtual Jogador que vai efetuar a próxima jogada
+    int nivel; //!< @var nivel Nível de dificuldade do bot
 } ESTADO;
 
+/**
+ * @typedef INPUT 
+ * @brief Armazena o comando escrito pelo utilizador e respetivos argumentos
+ */
 typedef struct in {
-    char *comando,*argumento;
+    char *comando, //!< @var comando String com o comando introduzido pelo utilizador
+         *argumento; //!< @var argumento String com o argumento (complementar ao comando utilizado, se aplicável)
 } INPUT;
 
+/**
+ * @typedef LISTA
+ * @brief Apontador para uma lista ligada
+ */
 typedef struct listas *LISTA;
 
+/**
+ * @typedef Nodo 
+ * @brief Listas ligadas
+ */
 typedef struct listas {
-    void *valor;
-    LISTA proxima;
+    void *valor; //!< @var valor Apontador do tipo void
+    LISTA proxima; //!< @var proxima Apontador para o próximo elemento da lista
 } Nodo;
 
 
@@ -112,6 +178,18 @@ CASA obterEstadoCasa(ESTADO *state, COORDENADA c);
 int obterNumeroJogadas (ESTADO *state);
 
 /**
+ * @brief Vai buscar o número máximo de jogadas
+ * 
+ * Função utilizada na mostraPos para manter a possibilidade de fazer vários pos
+ * sem perder a posição atual
+ * 
+ * @param state Apontador para o estado do programa
+ * 
+ * @return número máximo de jogadas (posições)
+ */
+int obterMaxJogadas (ESTADO *state);
+
+/**
  * @brief Conta o número de comandos.
  *
  * @param state Apontador para o estado do programa;
@@ -144,18 +222,6 @@ CASA converteChar (int c);
 int podeJogar(CASA casa);
 
 /**
- * @brief Vai buscar o número máximo de jogadas
- * 
- * Função utilizada na mostraPos para manter a possibilidade de fazer vários pos
- * sem perder a posição atual
- * 
- * @param state Apontador para o estado do programa
- * 
- * @return número máximo de jogadas (posições)
- */
-int obterMaxJogadas (ESTADO *state);
-
-/**
  * @brief Inicializa o input
  * 
  * @return Apontador para o input inicializado
@@ -182,6 +248,7 @@ void alteraEstadoBot(ESTADO *state);
  * @brief Altera o nível do bot.
  * 
  * @param state Apontador para o estado do jogo
+ * @param nivel Nível de dificuldade que quer para o bot
  */
 void alteraNivelBot(ESTADO *state, int nivel);
 
@@ -210,6 +277,15 @@ int lerEstadoBot(ESTADO *state);
  */
 char obterLinhaColuna (ESTADO *state, int jogador, int jogada, char tipo);
 
+/**
+ * @brief Vai buscar ao input o argumento ou o comando
+ * 
+ * @param input Apontador para a struct input
+ * @param escolha 1 - argumento
+ *                0 - comando
+ * 
+ * @return Apontador para string conforme escolha
+ */
 char *obterArgumentoComando (INPUT *input, int escolha );
 
 #endif //RASTROS_DATA_H

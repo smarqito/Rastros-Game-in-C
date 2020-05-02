@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_7e5d7e004b344f685f59d01929914aa0" kind="dir">
+    <compoundname>projeto</compoundname>
+    <innerdir refid="dir_62773cb669de775ed99caac67a9e25bf">projeto/cmake-build-debug</innerdir>
+    <innerdir refid="dir_9975e78fbfd2828f1d3aec52fc9d1efa">projeto/globals</innerdir>
+    <innerdir refid="dir_a492439b09004102196c42cc22b591a7">projeto/modules</innerdir>
+    <innerfile refid="main_8c">main.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="projeto/"/>
+  </compounddef>
+</doxygen>

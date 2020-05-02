@@ -59,12 +59,12 @@ int lerMovimentos (ESTADO *state) {
 
     for(maxComandos=obterMaxComandos(state), i=0; maxComandos>0; i++) {
         if(maxComandos > 1) {
-            digitosTerminal (i);
+            digitos (i,0);
             printf("%c%c ",obterLinhaColuna(state,1,i,'c'),obterLinhaColuna(state,1,i,'l'));
             printf("%c%c\n",obterLinhaColuna(state,2,i,'c'),obterLinhaColuna(state,2,i,'l'));
             maxComandos=maxComandos-2;
         } else {
-            digitosTerminal (i);
+            digitos (i,0);
             printf("%c%c",obterLinhaColuna(state,1,i,'c'),obterLinhaColuna(state,1,i,'l'));
                 putchar('\n');
             maxComandos--;

@@ -22,5 +22,10 @@
 #define SUBLINHADO_OFF "\033[24m"
 #define RESET "\033[0m"
 
+/**
+ * @brief Formata a bash com a cor indicada
+ * 
+ * @param cor Macro definido neste documento!
+ */
 void promptFormata(char cor[]);
 #endif //RASTROS_CORES_H

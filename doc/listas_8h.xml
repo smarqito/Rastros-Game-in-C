@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="listas_8h" kind="file" language="C++">
+    <compoundname>listas.h</compoundname>
+    <includes refid="globals_8h" local="yes">../../globals/globals.h</includes>
+    <includes refid="data_8h" local="yes">../data.h</includes>
+    <includedby refid="auxiliaresBot_8c" local="yes">bot/auxiliaresBot.c</includedby>
+    <includedby refid="listas_8c" local="yes">projeto/modules/listas/listas.c</includedby>
+    <includedby refid="modules_2listas_2main_8c" local="yes">projeto/modules/listas/main.c</includedby>
+    <includedby refid="logica_8c" local="yes">projeto/modules/logica/logica.c</includedby>
+    <incdepgraph>
+      <node id="222">
+        <label>../data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="220" relation="include">
+        </childnode>
+      </node>
+      <node id="220">
+        <label>../../globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="221" relation="include">
+        </childnode>
+      </node>
+      <node id="221">
+        <label>cores.h</label>
+        <link refid="cores_8h_source"/>
+      </node>
+      <node id="219">
+        <label>projeto/modules/listas/listas.h</label>
+        <link refid="listas_8h"/>
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="222" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="225">
+        <label>projeto/modules/logica/logica.c</label>
+        <link refid="logica_8c"/>
+      </node>
+      <node id="224">
+        <label>projeto/modules/listas/listas.c</label>
+        <link refid="listas_8c"/>
+      </node>
+      <node id="223">
+        <label>projeto/modules/listas/listas.h</label>
+        <link refid="listas_8h"/>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="225" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="listas_8h_1a993ad873bd38ff750e6eee82cb1ffd17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+        <definition>LISTA criarLista</definition>
+        <argsstring>()</argsstring>
+        <name>criarLista</name>
+        <briefdescription>
+<para>Cria um novo espaço em memória capaz de albergar uma lista. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>o apontador para a nova lista </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/listas/listas.h" line="17" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="10" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="listas_8h_1a3d274757fc80e99c6425b595021c64e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+        <definition>LISTA insereCabeca</definition>
+        <argsstring>(LISTA l, void *valor)</argsstring>
+        <name>insereCabeca</name>
+        <param>
+          <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>valor</declname>
+        </param>
+        <briefdescription>
+<para>Insere numa nova lista um valor do tipo void. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o início da lista </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para um espaço em memória (sem tipo específico)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Apontador para o novo inicio da lista ligada </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/listas/listas.h" line="27" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="18" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="listas_8h_1a3e2d97bdeb57af197b198771a27f0033" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* devolveCabeca</definition>
+        <argsstring>(LISTA l)</argsstring>
+        <name>devolveCabeca</name>
+        <param>
+          <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+<para>Vai buscar o apontador para o valor que se encontra na cabeça da lista. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o início da lista</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Apontador para o valor à cabeça </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/listas/listas.h" line="36" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="25" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="listas_8h_1affb39e37aef63ab00b6df8f9336f6673" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+        <definition>LISTA proximo</definition>
+        <argsstring>(LISTA l)</argsstring>
+        <name>proximo</name>
+        <param>
+          <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+<para>Vai buscar o próximo elemento da lista. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o início da lista</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Apontador para o Nodo seguinta da lista </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/listas/listas.h" line="45" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="32" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="listas_8h_1a8d03dacec1ccfd8144899f987d71d54d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+        <definition>LISTA removeCabeca</definition>
+        <argsstring>(LISTA l)</argsstring>
+        <name>removeCabeca</name>
+        <param>
+          <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+<para>Remove a cabeça da lista e liberta o seu espaço em memória. </para>        </briefdescription>
+        <detaileddescription>
+<para>Para além de retornar o apontador para o Nodo seguinte, liberta o espaço em memória ocupado pela cabeça através da função free. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o início da lista</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Apontador para o nodo seguinte </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/listas/listas.h" line="56" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="39" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="listas_8h_1a4395a8ad5bc1caa6c0a976bc47d1f3b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int listaEstaVazia</definition>
+        <argsstring>(LISTA l)</argsstring>
+        <name>listaEstaVazia</name>
+        <param>
+          <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+<para>Verifica se uma dada lista é vazia. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o início da lista</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 se a lista for vazia. 1 se tive algum elemento. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/listas/listas.h" line="65" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="47" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="listas_8h_1aa4b4c76fb024a402f5b370ea6222ef16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int lengthLista</definition>
+        <argsstring>(LISTA lista)</argsstring>
+        <name>lengthLista</name>
+        <param>
+          <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+          <declname>lista</declname>
+        </param>
+        <briefdescription>
+<para>Devolve o tamanho de uma lista ligada. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lista</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o inicio da lista</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>tamanho da lista </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/listas/listas.h" line="74" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="53" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Definição das funções da camada de listas do programa. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="6"><highlight class="preprocessor">#ifndef<sp/>RASTROS_LISTAS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RASTROS_LISTAS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../globals/globals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../data.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><ref refid="structlistas" kindref="compound">LISTA</ref><sp/><ref refid="listas_8h_1a993ad873bd38ff750e6eee82cb1ffd17" kindref="member">criarLista</ref><sp/>();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="structlistas" kindref="compound">LISTA</ref><sp/><ref refid="listas_8h_1a3d274757fc80e99c6425b595021c64e9" kindref="member">insereCabeca</ref><sp/>(<ref refid="structlistas" kindref="compound">LISTA</ref><sp/>l,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*valor);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="listas_8h_1a3e2d97bdeb57af197b198771a27f0033" kindref="member">devolveCabeca</ref><sp/>(<ref refid="structlistas" kindref="compound">LISTA</ref><sp/>l);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="structlistas" kindref="compound">LISTA</ref><sp/><ref refid="listas_8h_1affb39e37aef63ab00b6df8f9336f6673" kindref="member">proximo</ref><sp/>(<ref refid="structlistas" kindref="compound">LISTA</ref><sp/>l);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="structlistas" kindref="compound">LISTA</ref><sp/><ref refid="listas_8h_1a8d03dacec1ccfd8144899f987d71d54d" kindref="member">removeCabeca</ref><sp/>(<ref refid="structlistas" kindref="compound">LISTA</ref><sp/>l);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="listas_8h_1a4395a8ad5bc1caa6c0a976bc47d1f3b2" kindref="member">listaEstaVazia</ref><sp/>(<ref refid="structlistas" kindref="compound">LISTA</ref><sp/>l);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="listas_8h_1aa4b4c76fb024a402f5b370ea6222ef16" kindref="member">lengthLista</ref><sp/>(<ref refid="structlistas" kindref="compound">LISTA</ref><sp/>lista);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//RASTROS_DATA_H</highlight></codeline>
+    </programlisting>
+    <location file="projeto/modules/listas/listas.h"/>
+  </compounddef>
+</doxygen>

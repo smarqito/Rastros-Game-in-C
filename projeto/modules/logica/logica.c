@@ -128,9 +128,6 @@ int verificaFim (ESTADO *state) {
         return 0;
 }
 
-
-
-
 int converteDecimal (const char *jogada) {
     int x=0;
     x += (jogada[0]-'0') * 10;

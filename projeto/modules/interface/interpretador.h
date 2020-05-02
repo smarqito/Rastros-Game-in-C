@@ -8,6 +8,17 @@
 #include "../data.h"
 #include "../../globals/globals.h"
 
+/**
+ * @brief Entra em modo de 'jogar' até:
+ *        Um jogador ganhar.
+ *        O utilizador optar por voltar ao menú anterior.
+ * 
+ * @param e Apontador para o estado do programa
+ * @param input Apontador para a struct input
+ * 
+ * @return 0 sem erros
+ *         1 se o input não está correto
+ */
 int jogarRastros(ESTADO *e, INPUT *input);
 
 /** @brief Imprime os Comandos.
@@ -16,23 +27,15 @@ int jogarRastros(ESTADO *e, INPUT *input);
  */
 void imprimeComandos (ESTADO *state);
 
-/** @brief
+/** 
+ * @brief Dado um estado, um input e um comando vai executar a função adequada
  *
- * @param e
- * @param input
- * @param comando
+ * @param e Apontador para o estado do programa
+ * @param input Apontador para struct com input
+ * @param comando A ser executado
  * @return
  */
 int comandos (ESTADO *e, INPUT *input, int comando);
-
-/**
- * @brief Permite jogar rastros até:
- *        Um jogador ganhar.
- *        O utilizador optar por voltar ao menú anterior.
- * @param state Apontador para o estado do programa.
- * @return 1 ou 0, caso houver algum erro ou não, respetivamente;
- */
-int jogarRastros (ESTADO *state, INPUT *input);
 
 /**
  * @brief Principal interpretador de comandos do programa.

@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="interface_8h" kind="file" language="C++">
+    <compoundname>interface.h</compoundname>
+    <includes refid="data_8h" local="yes">../data.h</includes>
+    <includes refid="globals_8h" local="yes">../../globals/globals.h</includes>
+    <includedby refid="auxiliaresBot_8c" local="yes">bot/auxiliaresBot.c</includedby>
+    <includedby refid="ficheiros_8c" local="yes">projeto/modules/interface/ficheiros.c</includedby>
+    <includedby refid="interface_8c" local="yes">projeto/modules/interface/interface.c</includedby>
+    <includedby refid="interpretador_8c" local="yes">projeto/modules/interface/interpretador.c</includedby>
+    <includedby refid="logica_8c" local="yes">projeto/modules/logica/logica.c</includedby>
+    <incdepgraph>
+      <node id="179">
+        <label>projeto/modules/interface/interface.h</label>
+        <link refid="interface_8h"/>
+        <childnode refid="180" relation="include">
+        </childnode>
+        <childnode refid="181" relation="include">
+        </childnode>
+      </node>
+      <node id="180">
+        <label>../data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="181" relation="include">
+        </childnode>
+      </node>
+      <node id="181">
+        <label>../globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="182" relation="include">
+        </childnode>
+      </node>
+      <node id="182">
+        <label>cores.h</label>
+        <link refid="cores_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="185">
+        <label>projeto/modules/interface/interface.c</label>
+        <link refid="interface_8c"/>
+      </node>
+      <node id="183">
+        <label>projeto/modules/interface/interface.h</label>
+        <link refid="interface_8h"/>
+        <childnode refid="184" relation="include">
+        </childnode>
+        <childnode refid="185" relation="include">
+        </childnode>
+        <childnode refid="186" relation="include">
+        </childnode>
+        <childnode refid="187" relation="include">
+        </childnode>
+      </node>
+      <node id="184">
+        <label>projeto/modules/interface/ficheiros.c</label>
+        <link refid="ficheiros_8c"/>
+      </node>
+      <node id="186">
+        <label>projeto/modules/interface/interpretador.c</label>
+        <link refid="interpretador_8c"/>
+      </node>
+      <node id="187">
+        <label>projeto/modules/logica/logica.c</label>
+        <link refid="logica_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="interface_8h_1a455e9686a30c6129b2491068be7fde1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mostrarTabuleiro</definition>
+        <argsstring>(ESTADO *state)</argsstring>
+        <name>mostrarTabuleiro</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Mostra o tabuleiro. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imprime o tabuleiro em dois locais: (1) Na linha de comandos (2) Num ficheiro temporário (de texto);</para><para>Método:<orderedlist>
+<listitem><para>Declara-se um apontador do tipo FILE;</para></listitem><listitem><para>Abre-se o ficheiro (Através da função fopen);</para></listitem><listitem><para>Imprime-se o tabuleiro na linha de comandos (printf) e no ficheiro de texto (fprintf) (uma única passagem pela array tab); 3.1. Utiliza-se a função converteCasa para, tal como o nome indica, converter uma CASA para um char.</para></listitem><listitem><para>Fecha-se o ficheiro (fclose).</para></listitem></orderedlist>
+</para><para>A impressão na linha de comandos encontra-se formatada para uma melhor leitura humana, enquanto que a impressão em ficheiro está organizada para facilitar a leitura através de funções IO e criação de um novo ESTADO do programa. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/interface/interface.h" line="26" column="1" bodyfile="projeto/modules/interface/interface.c" bodystart="10" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_8h_1a546fdee8f229672ea536b3765cf439f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int jogar</definition>
+        <argsstring>(ESTADO *state, COORDENADA c)</argsstring>
+        <name>jogar</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1a5e3f28e43e57a17ac65133789ca1daef" kindref="member">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Efetua (se possível) uma jogada. Após verificar a condição (Função -&gt; verificaCasa) modifica o ESTADO CASA (Para BRANCA); Substitui no Tabuleiro o &apos;*&apos; por um &apos;#&apos; (Função -&gt; changeCardinal); Atualiza a última jogada;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordenada Atual; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 ou 0, caso a jogada seja possível ou não, respetivamente; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>&lt;Muda &apos;*&apos; e &apos;#&apos; </para>        </inbodydescription>
+        <location file="projeto/modules/interface/interface.h" line="39" column="1" bodyfile="projeto/modules/interface/interface.c" bodystart="42" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_8h_1a9b2c9e020d96d09af362e189163cb8fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int lerMovimentos</definition>
+        <argsstring>(ESTADO *e)</argsstring>
+        <name>lerMovimentos</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Lê movimentos. Função aplicada no comando movs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 caso seja possível efetuar este comando. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/interface/interface.h" line="48" column="1" bodyfile="projeto/modules/interface/interface.c" bodystart="56" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Definição das função da camada de interface do programa. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="6"><highlight class="preprocessor">#ifndef<sp/>RASTROS_INTERFACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RASTROS_INTERFACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../data.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../globals/globals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_8h_1a455e9686a30c6129b2491068be7fde1b" kindref="member">mostrarTabuleiro</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="interface_8h_1a546fdee8f229672ea536b3765cf439f8" kindref="member">jogar</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>c);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="interface_8h_1a9b2c9e020d96d09af362e189163cb8fc" kindref="member">lerMovimentos</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//RASTROS_INTERFACE_H</highlight></codeline>
+    </programlisting>
+    <location file="projeto/modules/interface/interface.h"/>
+  </compounddef>
+</doxygen>

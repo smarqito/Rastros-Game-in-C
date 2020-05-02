@@ -62,6 +62,7 @@ void atualizaJogadas (ESTADO *state, COORDENADA c);
 /**
  * @brief Divide um determinado input em comando e argumento.
  *
+ * @param resposta Apontador para o struct INPUT que vai receber a divisão
  * @param input Linha de texto inserida pelo utilizador.
  * @return 0 ou !0 caso funcione ou não, respetivamente;
  */
@@ -98,11 +99,11 @@ int verificaFim(ESTADO *state);
 /** 
  * @brief Converte dois char's para um dígito.
  *
- * Usada na 'lerJogo';
  * @param jogada Jogada;
+ * 
  * @return Retorna os respetivos char contidos na Jogada em decimal;
  */
-int converteDecimal (const char jogada[]);
+int converteDecimal (const char *jogada);
 
 /** 
  * @brief Remove caractéres extra.
@@ -147,8 +148,6 @@ void mostraPos(ESTADO *state, char *pos);
  * a partir coordenada da última jogada.
  * 
  * @param state Apontador para o estado do programa
- * @param cs Vetor unidimensional com 8 posições livres (máximo de jogadas possíveis).
- * Este vetor será preenchido com as coordenadas das jogadas possíveis
  * 
  * @return Número de jogadas possíveis
  * 

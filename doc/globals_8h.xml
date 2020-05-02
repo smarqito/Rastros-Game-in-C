@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="globals_8h" kind="file" language="C++">
+    <compoundname>globals.h</compoundname>
+    <includes refid="cores_8h" local="yes">cores.h</includes>
+    <includedby refid="data_8h" local="yes">projeto/modules/data.h</includedby>
+    <includedby refid="listas_8h" local="yes">projeto/modules/listas/listas.h</includedby>
+    <includedby refid="interface_8h" local="yes">projeto/modules/interface/interface.h</includedby>
+    <includedby refid="bot_8c" local="yes">bot/bot.c</includedby>
+    <includedby refid="globals_8c" local="yes">projeto/globals/globals.c</includedby>
+    <includedby refid="interpretador_8h" local="yes">projeto/modules/interface/interpretador.h</includedby>
+    <includedby refid="auxiliaresInterface_8c" local="yes">projeto/modules/interface/auxiliaresInterface.c</includedby>
+    <includedby refid="ficheiros_8c" local="yes">projeto/modules/interface/ficheiros.c</includedby>
+    <includedby refid="interpretador_8c" local="yes">projeto/modules/interface/interpretador.c</includedby>
+    <includedby refid="logica_8c" local="yes">projeto/modules/logica/logica.c</includedby>
+    <incdepgraph>
+      <node id="72">
+        <label>projeto/globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>cores.h</label>
+        <link refid="cores_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="84">
+        <label>projeto/modules/interface/interface.c</label>
+        <link refid="interface_8c"/>
+      </node>
+      <node id="85">
+        <label>projeto/modules/interface/interface.h</label>
+        <link refid="interface_8h"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>projeto/modules/data.c</label>
+        <link refid="data_8c"/>
+      </node>
+      <node id="75">
+        <label>projeto/modules/data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>bot/auxiliaresBot.h</label>
+        <link refid="auxiliaresBot_8h"/>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>projeto/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="91">
+        <label>projeto/globals/globals.c</label>
+        <link refid="globals_8c"/>
+      </node>
+      <node id="74">
+        <label>projeto/globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>projeto/modules/interface/ficheiros.c</label>
+        <link refid="ficheiros_8c"/>
+      </node>
+      <node id="86">
+        <label>projeto/modules/interface/ficheiros.h</label>
+        <link refid="ficheiros_8h"/>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>projeto/modules/interface/auxiliaresInterface.c</label>
+        <link refid="auxiliaresInterface_8c"/>
+      </node>
+      <node id="78">
+        <label>projeto/modules/interface/interpretador.c</label>
+        <link refid="interpretador_8c"/>
+      </node>
+      <node id="89">
+        <label>projeto/modules/interface/interpretador.h</label>
+        <link refid="interpretador_8h"/>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>projeto/modules/logica/logica.c</label>
+        <link refid="logica_8c"/>
+      </node>
+      <node id="82">
+        <label>projeto/modules/logica/logica.h</label>
+        <link refid="logica_8h"/>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>projeto/modules/listas/listas.c</label>
+        <link refid="listas_8c"/>
+      </node>
+      <node id="80">
+        <label>projeto/modules/listas/listas.h</label>
+        <link refid="listas_8h"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>bot/bot.c</label>
+        <link refid="bot_8c"/>
+      </node>
+      <node id="87">
+        <label>bot/bot.h</label>
+        <link refid="bot_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="globals_8h_1a6821bafc3c88dfb2e433a095df9940c6" prot="public" static="no">
+        <name>BUF_SIZE</name>
+        <initializer>1024</initializer>
+        <briefdescription>
+<para>Tamanho do buffering para o stdin. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/globals.h" line="13" column="9" bodyfile="projeto/globals/globals.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a67230316729bcbcc14cb2fdee1ed6a03" prot="public" static="no">
+        <name>MAX_HOUSES</name>
+        <initializer>8</initializer>
+        <briefdescription>
+<para>Número de linhas/colunas do tabuleiro (lin = col) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/globals.h" line="19" column="9" bodyfile="projeto/globals/globals.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a781fcc5c3342edecba86b7e2a0195c4c" prot="public" static="no">
+        <name>MAX_INSTR</name>
+        <initializer>13</initializer>
+        <briefdescription>
+<para>Número de comandos possíveis de utilizar no interpretador. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/globals.h" line="25" column="9" bodyfile="projeto/globals/globals.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="globals_8h_1a6d15a725180b81717f0ee4f10c534b6e" prot="public" static="no">
+        <name>LOCAL_GRAVAR_FICHEIROS</name>
+        <initializer>&quot;./projeto/jogos/&quot;</initializer>
+        <briefdescription>
+<para>Local utilizado para gravar os tabuleiros durante o programa Comandos ler e gr. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/globals.h" line="34" column="9" bodyfile="projeto/globals/globals.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Definição de macros utilizados no programa. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="6"><highlight class="preprocessor">#ifndef<sp/>RASTROS_GLOBALS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RASTROS_GLOBALS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="globals_8h_1a6821bafc3c88dfb2e433a095df9940c6" refkind="member"><highlight class="preprocessor">#define<sp/>BUF_SIZE<sp/>1024</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="globals_8h_1a67230316729bcbcc14cb2fdee1ed6a03" refkind="member"><highlight class="preprocessor">#define<sp/>MAX_HOUSES<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="globals_8h_1a781fcc5c3342edecba86b7e2a0195c4c" refkind="member"><highlight class="preprocessor">#define<sp/>MAX_INSTR<sp/>13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;cores.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="globals_8h_1a6d15a725180b81717f0ee4f10c534b6e" refkind="member"><highlight class="preprocessor">#define<sp/>LOCAL_GRAVAR_FICHEIROS<sp/>&quot;./projeto/jogos/&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//RASTROS_GLOBALS_H</highlight></codeline>
+    </programlisting>
+    <location file="projeto/globals/globals.h"/>
+  </compounddef>
+</doxygen>

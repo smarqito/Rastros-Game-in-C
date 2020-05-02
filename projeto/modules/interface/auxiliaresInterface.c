@@ -1,6 +1,7 @@
 /** @file */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "string.h"
 #include "../../globals/globals.h"
 
@@ -20,9 +21,10 @@ void pedeAjuda() {
     printf("%-23s sair do jogo.\n\n", "Q");
 }
 
-void digitosTerminal (int i){
-    if (i < 9) printf("0%d: ",i+1);
-    else printf ("%d: ", i+1);
+void digitos (int i, FILE *save){
+    if(!save) save = stdout; 
+    if (i+1 < 10) fprintf (save,"0%d: ", i+1);
+    else fprintf(save, "%d: ", i+1);
 }
 
 int instrucao (char *instr) {
@@ -59,7 +61,7 @@ int confirmaSaida () {
     char linha[BUF_SIZE], sair[2];
     int r=0;
     printf("Tem a certeza que pretende sair?\n");
-    printf("S -> Sair; N -> Voltar ao menu\n");
+    printf("'S': Sair \n 'N': Voltar ao menu\n");
 
     if(fgets(linha,BUF_SIZE,stdin) == NULL) r=2;
     else {

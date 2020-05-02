@@ -3,15 +3,16 @@
 #ifndef RASTROS_AUXILIARESINTERFACE_H
 #define RASTROS_AUXILIARESINTERFACE_H
 
-/** 
- * @brief Imprime um número de apenas 1 dígito em dois, acresentando um zero atrás.
+/** @brief  Imprime números com dois dígitos.
+ * Exemplo.: 1 = "01" ou 2 = "02" (Números com dois digitos ficam inalterados);
+ * Usada na função 'imprimirJogadas' e 'gravarJogo';
  *
- * Números de dois dígitos permancem inalterados.
- * Neste caso, imprime no terminal e não num ficheiro.
- *
- * @param i Número de jogadas a imprimir
+ * @param i Número da Jogada;
+ * @param save Tipo de output.
+ *        0 para stdout
+ *        string para ficheiro
  */
-void digitosTerminal (int i);
+void digitos (int i, FILE *save);
 
 /**
  * @brief Imprime a tabela de opções de comandos.
@@ -42,7 +43,6 @@ int confirmaSaida ();
 /**
  * @brief Congratula o vencedor do jogo!
  * 
- * @param state Apontador para o estado do programa
  * @param vencedor Número do jogador que venceu
  */
 void congratulaVencedor (int vencedor);

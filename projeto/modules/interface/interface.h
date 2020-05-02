@@ -42,7 +42,7 @@ int jogar (ESTADO *state, COORDENADA c);
 
 /** @brief Lê movimentos. Função aplicada no comando movs.
  *
- * @param state Apontador para o estado do programa.
+ * @param e Apontador para o estado do programa.
  * @return 0 caso seja possível efetuar este comando.
  */
 int lerMovimentos (ESTADO *e);
