@@ -102,46 +102,47 @@ ESTADO novoEstado (ESTADO state, void *c) {
 COORDENADA *treeSearch (ESTADO state, LISTA ll, int profundidade, int player) {
     COORDENADA *jogada=NULL, *otima=NULL, *temp = NULL;
     int jog;
-    if(profundidade && !verificaFim(&state)) {
-        while(ll) {
-            ESTADO tree = novoEstado(state, ll->valor); // estado do jogo na minha jogada seguinte
-            LISTA llSearch = coordenadasPossiveis(&tree);
-            COORDENADA *novo = ll->valor;
-            temp = treeSearch(tree, llSearch, profundidade-1, player*-1);
-            jog = obterJogador(&tree);
-            if ( player == 1 ) { // temp mais longe possivel
-                if (!temp) { // se o temp for nulo pode ser: cheguei ao fim da arvore; não tem jogadas; alguem chegou ao fim
-                    if(!otima) {
-                        otima = novo;
-                        jogada = novo;
-                    }
-                    else if( calculaDist(otima, jog) > calculaDist(novo, jog)) {
-                        otima = novo;
-                        jogada = novo;
-                    }
-                } else { // 
-                    if(otima && calculaDist(otima, jog) < calculaDist(temp, jog)) { //maximizar o temp (adversário)
-                        otima = temp;
-                        jogada = novo;
-                    }
-                    else if (!otima) {
-                        otima = temp;
-                        jogada = novo;
-                    }
+    // caso tenha chegado ao limite de profundidade ou alguém tenha ganho termina a pesquisa
+    if(profundidade && !verificaFim(&state) )
+    while(ll) {
+        ESTADO tree = novoEstado(state, ll->valor); // estado do jogo na minha jogada seguinte
+        LISTA llSearch = coordenadasPossiveis(&tree);
+        COORDENADA *novo = ll->valor;
+        temp = treeSearch(tree, llSearch, profundidade-1, player*-1);
+        jog = obterJogador(&tree);
+        if ( player == 1 ) { // temp mais longe possivel
+            if (!temp) { // se o temp for nulo pode ser: cheguei ao fim da arvore; não tem jogadas; alguem chegou ao fim
+                if(!otima) {
+                    otima = novo;
+                    jogada = novo;
                 }
-            } else if (player == -1) { // fica com a coordenada mais longe do destino
-                if(temp && otima && calculaDist(otima, jog) > calculaDist(temp, jog) ) {
+                else if( calculaDist(otima, jog) > calculaDist(novo, jog)) {
+                    otima = novo;
+                    jogada = novo;
+                }
+            } else { // 
+                if(otima && calculaDist(otima, jog) < calculaDist(temp, jog)) { //maximizar o temp (adversário)
                     otima = temp;
                     jogada = novo;
                 }
-                else if (temp && !otima) {
+                else if (!otima) {
                     otima = temp;
                     jogada = novo;
                 }
             }
-            ll = ll->proxima;
+        } else if (player == -1) { // fica com a coordenada mais longe do destino
+            if(temp && otima && calculaDist(otima, jog) > calculaDist(temp, jog) ) {
+                otima = temp;
+                jogada = novo;
+            }
+            else if (temp && !otima) {
+                otima = temp;
+                jogada = novo;
+            }
         }
+        ll = ll->proxima;
     }
+    
     return jogada;
 }
 
@@ -153,9 +154,9 @@ int jogaBot (ESTADO *state) {
     LISTA l = coordenadasPossiveis(state);
     COORDENADA *jogadaBot=NULL;
 
-    switch (state->nivel) { //!< Nível de dificuldade do bot
+    switch (obterNivelBot(state)) { //!< Nível de dificuldade do bot
         case 0:
-            jogadaBot = treeSearch(*state, l, 3, 1);
+            jogadaBot = treeSearch(*state, l, 7, 1);
             break;
         case 1:
             jogadaBot = distanciaJog(state,l);

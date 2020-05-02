@@ -20,10 +20,8 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
     int m,n,i, nJog;
     FILE *save;
     int r=0;
-    char dir[BUF_SIZE] = LOCAL_GRAVAR_FICHEIROS;
     removerLinha(nomeFicheiro);
-    strcat(dir,nomeFicheiro);
-    save = fopen(dir,"w+"); /*! <Abre o ficheiro para gravar */
+    save = fopen(nomeFicheiro,"w+"); /*! <Abre o ficheiro para gravar */
     if (save == NULL) r=1;
     else {
         for (m=MAX_HOUSES-1; m>=0;m--) {
@@ -44,8 +42,8 @@ int gravarJogo (ESTADO *state, char *nomeFicheiro) {
 }
 
 void numeros2Digitos (int i, FILE *save){
-    if (i+1 < 10) fprintf (save,"0%d:", i+1);
-    else fprintf(save, "%d:", i+1);
+    if (i+1 < 10) fprintf (save,"0%d: ", i+1);
+    else fprintf(save, "%d: ", i+1);
 }
 
 
@@ -53,12 +51,12 @@ void numeros2Digitos (int i, FILE *save){
 void imprimirJogadas (ESTADO *state, int i, FILE *save){
     if (i < obterNumeroJogadas(state)){
         numeros2Digitos(i, save);
-        fprintf(save," %c%c",obterLinhaColuna(state, 1, i, 'c'),obterLinhaColuna(state, 1, i, 'l'));
-        fprintf(save," %c%c\n", obterLinhaColuna(state, 2, i, 'c'),obterLinhaColuna(state, 2, i, 'l'));
+        fprintf(save,"%c%c ",obterLinhaColuna(state, 1, i, 'c'),obterLinhaColuna(state, 1, i, 'l'));
+        fprintf(save,"%c%c\n", obterLinhaColuna(state, 2, i, 'c'),obterLinhaColuna(state, 2, i, 'l'));
     }
     else if (i == obterNumeroJogadas(state) && obterJogador(state) == 2){
         numeros2Digitos (i, save);
-        fprintf(save," %c%c",obterLinhaColuna(state, 1, i, 'c'),obterLinhaColuna(state, 1, i, 'l'));
+        fprintf(save,"%c%c\n",obterLinhaColuna(state, 1, i, 'c'),obterLinhaColuna(state, 1, i, 'l'));
     }
 }
 
@@ -88,7 +86,6 @@ int lerJogada (ESTADO *state, char *cadaToken) {
 
 int lerJogo (ESTADO *state, char *nomeFicheiro) {
     FILE *ficheiro;
-    char dir[BUF_SIZE] = LOCAL_GRAVAR_FICHEIROS;
     int m,n,i=0;
     char *restoFicheiro = calloc (BUF_SIZE, sizeof(char));
     char c,*token="\n", *cadaToken;
@@ -98,8 +95,7 @@ int lerJogo (ESTADO *state, char *nomeFicheiro) {
     initPlayer(state);
 
     removerLinha(nomeFicheiro); //!< Remove o caracter '\n'
-    strcat(dir,nomeFicheiro);
-    ficheiro=fopen(dir,"r+");
+    ficheiro=fopen(nomeFicheiro,"r+");
 
     if (ficheiro == NULL) r = 1; //!< Se não for possível abrir o ficheiro, dá erro.
     else {

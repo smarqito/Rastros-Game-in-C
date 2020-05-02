@@ -28,6 +28,6 @@
 
 #include "cores.h"
 
-#define LOCAL_GRAVAR_FICHEIROS "./ficheirosGravados/"
+#define LOCAL_GRAVAR_FICHEIROS "./jogos/"
 
 #endif //RASTROS_GLOBALS_H

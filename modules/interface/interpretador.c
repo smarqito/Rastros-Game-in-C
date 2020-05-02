@@ -26,6 +26,7 @@ void imprimeComandos (ESTADO *state) {
 
 int comandos (ESTADO *e, INPUT *input, int comando) {
     int r=0;
+    char dir[BUF_SIZE] = LOCAL_GRAVAR_FICHEIROS;
     switch (comando)
     {
         case 1: //!< Opção "jogar"
@@ -34,14 +35,14 @@ int comandos (ESTADO *e, INPUT *input, int comando) {
             r=1;
             break;
         case 2: //!< Opção "gr nomeficheiro"
-            if(gravarJogo(e, obterArgumentoComando(input, 1)) == 0) {
+            if(gravarJogo(e, strcat(dir, obterArgumentoComando(input, 1))) == 0) {
                 printf(COR_VERMELHO NEGRITO_ON "Jogo gravado no ficheiro \"%s\".\n" RESET, obterArgumentoComando(input, 1));
             } else {
                 printf("Não foi possível gravar o estado do jogo no ficheiro \"%s\". Tente novamente\n",obterArgumentoComando(input, 1));
             }
             break;
         case 3: //!< Opção "ler nomeficheiro"
-            if(!(r = lerJogo(e,obterArgumentoComando(input, 1))))
+            if(!(r = lerJogo(e,strcat(dir, obterArgumentoComando(input, 1)))))
                 printf("O ficheiro "COR_VERDE_NEGRITO "%s" COR_AZUL " foi lido corretamente.\n\n",obterArgumentoComando(input, 1));//mostrarTabuleiro(e);
             else if(r==1) {
                 promptFormata(COR_VERMELHO_NEGRITO);

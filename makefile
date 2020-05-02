@@ -9,7 +9,7 @@ CC=gcc
 
 #Flags a usar
 
-CFLAGS=-Wall -Wextra -pedantic -O2 -g
+CFLAGS=-std=gnu11 -Wall -Wextra -pedantic-errors -Wformat -O -g
 INCLUDE=-I.
 
 #Diretorias dos módulos
