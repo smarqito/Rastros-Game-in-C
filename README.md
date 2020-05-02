@@ -5,6 +5,27 @@ Rastros game built in C
 Projeto desenvolvido no âmbito da unidade curricular Laboratórios de Informática II do curso de 
 Engenharia Informática da Universidade do Minho.
 
+## Instruções de utilização
+Na raiz do projeto, bastará correr o comando ```make``` em sistemas Unix. Este comando irá criar 2 executáveis:
+  - __rastros.exe__ (*root*)
+    - Programa principal para entrar no jogo
+  - __li2pl06g05_bot__ (*./bot/*)
+    - Programa extra para utilizar o bot no torneio
+
+### rastros.exe
+Comandos disponíveis:
+- ```jogar``` :: Permite entrar no modo de jogo.
+- ```gr nome_do_ficheiro``` :: gravar o estado atual do jogo num ficheiro.
+- ```ler nome_do_ficheiro``` :: ler o estado de um jogo a partir de um ficheiro.
+- ```movs``` ::  imprimir a lista de movimentos do jogo atual.
+- ```jog``` :: pedir ajuda ao bot para escolher a jogada atual.
+- ```pos numero_da_jogada``` :: visualizar uma posição anterior através do seu número.
+- ```novo``` :: iniciar um novo jogo. Perde o estado do jogo atual!
+- ```bot NIVEL``` :: ativar jogo contra o bot
+- ```ajuda``` :: mostra este menú.
+- ```autores``` :: ver autores.
+- ```Q``` :: sair do jogo.
+
 ## Etapas de desenvolvimento:
 - [x] Guião 1
 - [x] Guião 2
@@ -69,9 +90,10 @@ Em relação à impressão do tabuleiro, optou-se por desenvolver uma componente
 
 
 - [x] Guião 6
-- [ ] Guião 7
-- [ ] Guião 8
-
+- [X] Guião 7
+- [X] Guião 8
+- [X] Guião 9
+- [X] Guião 10
 
 ## Informação sobre os autores
 
