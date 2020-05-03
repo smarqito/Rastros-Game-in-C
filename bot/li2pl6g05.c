@@ -23,6 +23,7 @@ int main (int argc, char *argv[]) {
 
     if(argc == 3) {
         if( (r = lerJogo(state,sourceF)) ==0 ) {
+            alteraNivelBot(state, 5);
             if ((r=verificaFim(state))!=0) {
             printf(COR_VERDE_NEGRITO "O jogador %d já ganhou este jogo.\n",r);
             printf(COR_VERMELHO "Não foi efetuada nenhuma jogada!\n");

@@ -61,6 +61,13 @@ double calculaDist (COORDENADA *a, int numeroJog);
 COORDENADA *distanciaJog (ESTADO *state, LISTA coordPossiveis);
 
 /**
+ * @brief Devolve e melhor jogada
+ * @param ll Apontador para a lista ligada
+ * @param jog Jogador a efetuar jogada
+ * @return Um apontador para a melhor coordenada
+ */
+COORDENADA *besttLL (LISTA ll, int jog);
+/**
  * @brief Função para efetuar uma pesquisa ao longo de uma árvore
  *        até uma determinada profundidade
  * @param state Estado do programa

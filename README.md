@@ -14,6 +14,8 @@ Na raiz do projeto, bastará correr o comando ```make``` em sistemas Unix. Este 
   - __li2pl06g05_bot__ (*./bot/*)
     - Programa extra para utilizar o bot no torneio
 
+Por forma a apagar os ficheiros objeto e os executáveis, executar ```make clean```.
+
 ### rastros.exe
 Comandos disponíveis:
 - ```jogar``` :: Permite entrar no modo de jogo.
