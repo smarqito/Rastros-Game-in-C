@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="auxiliaresBot_8h" kind="file" language="C++">
+    <compoundname>auxiliaresBot.h</compoundname>
+    <includes refid="data_8h" local="yes">../projeto/modules/data.h</includes>
+    <includedby refid="auxiliaresBot_8c" local="yes">bot/auxiliaresBot.c</includedby>
+    <includedby refid="bot_8c" local="yes">bot/bot.c</includedby>
+    <includedby refid="interpretador_8c" local="yes">projeto/modules/interface/interpretador.c</includedby>
+    <includedby refid="logica_8c" local="yes">projeto/modules/logica/logica.c</includedby>
+    <incdepgraph>
+      <node id="15">
+        <label>../projeto/modules/data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>bot/auxiliaresBot.h</label>
+        <link refid="auxiliaresBot_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>../globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>cores.h</label>
+        <link refid="cores_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="18">
+        <label>bot/auxiliaresBot.h</label>
+        <link refid="auxiliaresBot_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>projeto/modules/interface/interpretador.c</label>
+        <link refid="interpretador_8c"/>
+      </node>
+      <node id="21">
+        <label>projeto/modules/logica/logica.c</label>
+        <link refid="logica_8c"/>
+      </node>
+      <node id="19">
+        <label>bot/bot.c</label>
+        <link refid="bot_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="auxiliaresBot_8h_1aa527132b71e1ce1526a2e7720c9f4a80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+        <definition>LISTA coordenadasPossiveis</definition>
+        <argsstring>(ESTADO *state)</argsstring>
+        <name>coordenadasPossiveis</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Calcula uma lista ligada de coordenadas possíveis a jogar a partir coordenada da última jogada. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Lista ligada com as possíveis coordenadas </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/auxiliaresBot.h" line="18" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="13" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresBot_8h_1af8f04b0ef8ba02106d2c69ee789ee7b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="data_8h_1a5e3f28e43e57a17ac65133789ca1daef" kindref="member">COORDENADA</ref> *</type>
+        <definition>COORDENADA* criaCoordenada</definition>
+        <argsstring>(COORDENADA c)</argsstring>
+        <name>criaCoordenada</name>
+        <param>
+          <type><ref refid="data_8h_1a5e3f28e43e57a17ac65133789ca1daef" kindref="member">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Cria um apontador do tipo void para uma coordenada. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Struct coordenada</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Apontador alocado com malloc para uma struct COORDENADA </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/auxiliaresBot.h" line="27" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="34" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresBot_8h_1a0e82aef635469a3a1b3aad06bb6b884f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="data_8h_1a5e3f28e43e57a17ac65133789ca1daef" kindref="member">COORDENADA</ref> *</type>
+        <definition>COORDENADA* botRandom</definition>
+        <argsstring>(LISTA coordPossiveis)</argsstring>
+        <name>botRandom</name>
+        <param>
+          <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+          <declname>coordPossiveis</declname>
+        </param>
+        <briefdescription>
+<para>Utiliza uma lista criada para selecionar uma jogada aleatória. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>coordPossiveis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o inicio da lista de coord possíveis</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>NULL se não houver jogadas possíveis uma COORDENADA se selecionou uma jogada </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/auxiliaresBot.h" line="37" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="43" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresBot_8h_1af8704372cebf640565365ef922e0dd2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double calculaDist</definition>
+        <argsstring>(COORDENADA *a, int numeroJog)</argsstring>
+        <name>calculaDist</name>
+        <param>
+          <type><ref refid="data_8h_1a5e3f28e43e57a17ac65133789ca1daef" kindref="member">COORDENADA</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numeroJog</declname>
+        </param>
+        <briefdescription>
+<para>Calcula a distância euclidiana entre a coordenada dada e o destino O destino pode ser a casa do Jogador 1, ou 2. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para uma coordenada da lista de coord possíveis </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numeroJog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int correspondente ao Jogador em questão</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Distância euclidiana resultante </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/auxiliaresBot.h" line="48" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="60" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresBot_8h_1a9e4f136c5c56efb735ef8f3cb8a144ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="data_8h_1a5e3f28e43e57a17ac65133789ca1daef" kindref="member">COORDENADA</ref> *</type>
+        <definition>COORDENADA* distanciaJog</definition>
+        <argsstring>(ESTADO *state, LISTA coordPossiveis)</argsstring>
+        <name>distanciaJog</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+          <declname>coordPossiveis</declname>
+        </param>
+        <briefdescription>
+<para>Escolhe a melhor Jogada dependendo da distancia euclidiana De acordo com o Jogador atual, vai escolher a jogada que fica mais perto do seu destino. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coordPossiveis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>coordPossiveis Apontador para o inicio da lista de coord possíveis</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 se não houver jogadas possíveis ~0 se selecionou uma jogada </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/auxiliaresBot.h" line="60" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="81" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresBot_8h_1afb4df45c5b94708b603e284258c48f24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="data_8h_1a5e3f28e43e57a17ac65133789ca1daef" kindref="member">COORDENADA</ref> *</type>
+        <definition>COORDENADA* treeSearch</definition>
+        <argsstring>(ESTADO state, LISTA ll, int profundidade, int player)</argsstring>
+        <name>treeSearch</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref></type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
+          <declname>ll</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>profundidade</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>player</declname>
+        </param>
+        <briefdescription>
+<para>Função para efetuar uma pesquisa ao longo de uma árvore até uma determinada profundidade. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Estado do programa </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ll</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para uma lista de possíveis coordenadas </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>profundidade</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>player</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>1 para maximizar resultado -1 para minimizar resultado</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Coordenada ótima </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/auxiliaresBot.h" line="73" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="102" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="auxiliaresBot_8h_1a6c63571fffc8e9339b256a65168bac1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int jogaBot</definition>
+        <argsstring>(ESTADO *state)</argsstring>
+        <name>jogaBot</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Efetua uma jogada construída pelo bot. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 sem erros 1 não foi possível jogar 2 não há jogadas possíveis </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>&lt; Nível de dificuldade do bot </para>        </inbodydescription>
+        <location file="bot/auxiliaresBot.h" line="84" column="1" bodyfile="bot/auxiliaresBot.c" bodystart="149" bodyend="179"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="5"><highlight class="preprocessor">#ifndef<sp/>_AUXILIARES_BOT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_AUXILIARES_BOT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../projeto/modules/data.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><ref refid="structlistas" kindref="compound">LISTA</ref><sp/><ref refid="auxiliaresBot_8h_1aa527132b71e1ce1526a2e7720c9f4a80" kindref="member">coordenadasPossiveis</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*<ref refid="auxiliaresBot_8h_1af8f04b0ef8ba02106d2c69ee789ee7b2" kindref="member">criaCoordenada</ref><sp/>(<ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>c);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><ref refid="structcoordenada" kindref="compound">COORDENADA</ref>*<sp/><ref refid="auxiliaresBot_8h_1a0e82aef635469a3a1b3aad06bb6b884f" kindref="member">botRandom</ref><sp/>(<ref refid="structlistas" kindref="compound">LISTA</ref><sp/>coordPossiveis);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="auxiliaresBot_8h_1af8704372cebf640565365ef922e0dd2a" kindref="member">calculaDist</ref><sp/>(<ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numeroJog);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*<ref refid="auxiliaresBot_8h_1a9e4f136c5c56efb735ef8f3cb8a144ea" kindref="member">distanciaJog</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/><ref refid="structlistas" kindref="compound">LISTA</ref><sp/>coordPossiveis);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*<ref refid="auxiliaresBot_8h_1afb4df45c5b94708b603e284258c48f24" kindref="member">treeSearch</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>state,<sp/><ref refid="structlistas" kindref="compound">LISTA</ref><sp/>ll,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>profundidade,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>player);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="auxiliaresBot_8h_1a6c63571fffc8e9339b256a65168bac1f" kindref="member">jogaBot</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="bot/auxiliaresBot.h"/>
+  </compounddef>
+</doxygen>

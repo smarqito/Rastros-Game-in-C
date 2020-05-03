@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="modules_2listas_2main_8c" kind="file" language="C++">
+    <compoundname>main.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="listas_8h" local="yes">listas.h</includes>
+    <incdepgraph>
+      <node id="106">
+        <label>../data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>projeto/modules/listas/main.c</label>
+        <link refid="modules_2listas_2main_8c"/>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>stdlib.h</label>
+      </node>
+      <node id="104">
+        <label>../../globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="105" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>string.h</label>
+      </node>
+      <node id="105">
+        <label>cores.h</label>
+        <link refid="cores_8h_source"/>
+      </node>
+      <node id="103">
+        <label>listas.h</label>
+        <link refid="listas_8h"/>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="modules_2listas_2main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/listas/main.c" line="6" column="1" bodyfile="projeto/modules/listas/main.c" bodystart="6" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="listas_8h" kindref="compound">listas.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><ref refid="structlistas" kindref="compound">LISTA</ref><sp/>L<sp/>=<sp/><ref refid="listas_8c_1a993ad873bd38ff750e6eee82cb1ffd17" kindref="member">criarLista</ref>();</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>linha[<ref refid="globals_8h_1a6821bafc3c88dfb2e433a095df9940c6" kindref="member">BUF_SIZE</ref>];</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Insira<sp/>várias<sp/>linhas,<sp/>acabando<sp/>com<sp/>CTRL-D:\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>control-D<sp/>é<sp/>a<sp/>tecla<sp/>CTRL<sp/>e<sp/>a<sp/>tecla<sp/>D<sp/>ao<sp/>mesmo<sp/>tempo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Em<sp/>windows<sp/>é<sp/>capaz<sp/>de<sp/>ser<sp/>CTRL-Z</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(fgets(linha,<sp/><ref refid="globals_8h_1a6821bafc3c88dfb2e433a095df9940c6" kindref="member">BUF_SIZE</ref>,<sp/>stdin)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>A<sp/>função<sp/>strdup<sp/>cria<sp/>uma<sp/>cópia<sp/>da<sp/>string<sp/>que<sp/>foi<sp/>lida</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L<sp/>=<sp/><ref refid="listas_8c_1a3d274757fc80e99c6425b595021c64e9" kindref="member">insereCabeca</ref>(L,<sp/>strdup(linha));</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n==============================\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>printf(<sp/><sp/></highlight><highlight class="stringliteral">&quot;=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PERCURSO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>printf(<sp/><sp/></highlight><highlight class="stringliteral">&quot;==============================\n\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>percorre<sp/>sem<sp/>remover<sp/>os<sp/>elementos<sp/>da<sp/>lista</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="structlistas" kindref="compound">LISTA</ref><sp/>T<sp/>=<sp/>L;<sp/>!<ref refid="listas_8c_1a4395a8ad5bc1caa6c0a976bc47d1f3b2" kindref="member">listaEstaVazia</ref>(T);<sp/>T<sp/>=<sp/><ref refid="listas_8c_1affb39e37aef63ab00b6df8f9336f6673" kindref="member">proximo</ref>(T))<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/><ref refid="listas_8c_1a3e2d97bdeb57af197b198771a27f0033" kindref="member">devolveCabeca</ref>(T);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,<sp/>str);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n==============================\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>printf(<sp/><sp/></highlight><highlight class="stringliteral">&quot;=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>REMOCAO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>printf(<sp/><sp/></highlight><highlight class="stringliteral">&quot;==============================\n\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>percorre<sp/>e<sp/>vai<sp/>removendo<sp/>a<sp/>cabeça</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(!<ref refid="listas_8c_1a4395a8ad5bc1caa6c0a976bc47d1f3b2" kindref="member">listaEstaVazia</ref>(L))<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/><ref refid="listas_8c_1a3e2d97bdeb57af197b198771a27f0033" kindref="member">devolveCabeca</ref>(L);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L<sp/>=<sp/><ref refid="listas_8c_1a8d03dacec1ccfd8144899f987d71d54d" kindref="member">removeCabeca</ref>(L);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,<sp/>str);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(str);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>putchar(</highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="projeto/modules/listas/main.c"/>
+  </compounddef>
+</doxygen>

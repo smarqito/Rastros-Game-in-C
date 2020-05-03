@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md_README" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>README</title>
+    <detaileddescription>
+<para><image type="html" name="rastros.jpg"></image>
+ <heading level="1">Rastros</heading>
+</para><para>Rastros game built in C</para><para>Projeto desenvolvido no âmbito da unidade curricular Laboratórios de Informática II do curso de Engenharia Informática da Universidade do Minho.</para><para><heading level="2">Etapas de desenvolvimento:</heading>
+</para><para><itemizedlist>
+<listitem><para>[x] Guião 1</para></listitem><listitem><para>[x] Guião 2</para></listitem><listitem><para>[x] Guião 3</para></listitem><listitem><para>[x] Guião 4</para></listitem><listitem><para>[x] Guião 5 <heading level="3">Relatório Guião 5</heading>
+</para></listitem></itemizedlist>
+</para><para>Tendo por base as orientações definidas pelos docentes, a realização do guião 5 consistiu nas seguintes fases: <heading level="4">1. Estrutura do projeto</heading>
+</para><para><itemizedlist>
+<listitem><para><bold>Camada de dados;</bold><itemizedlist>
+<listitem><para>Declarou-se o tipo <computeroutput>enum CASA</computeroutput> que serve para atribuir o estado _{ Vazio, Branca ou Preta }_ a cada <computeroutput>CASA</computeroutput> do tabuleiro.</para></listitem><listitem><para><computeroutput>struct COORDENADA</computeroutput> que contém a linha e coluna (representada numa matriz);</para></listitem><listitem><para><computeroutput>struct JOGADA</computeroutput> contem duas COORDENADAs. Representando o jogador1 e jogador2;</para></listitem><listitem><para><computeroutput>struct ESTADO</computeroutput> que contém:<itemizedlist>
+<listitem><para>o tabuleiro do jogo (array bidimensional de <computeroutput>CASA</computeroutput>);</para></listitem><listitem><para><computeroutput>COORDENADA</computeroutput> última jogada;</para></listitem><listitem><para><computeroutput>JOGADAS</computeroutput> array de JOGADA - é-lhe atribuido o histório de jogadas;</para></listitem><listitem><para><computeroutput>int</computeroutput> número de jogadas efetuadas até ao momento;</para></listitem><listitem><para><computeroutput>int</computeroutput> jogador que irá efetuar a jogada;</para></listitem><listitem><para><computeroutput>BOT</computeroutput> dados do tipo <computeroutput>enum { NO, YES } BOT</computeroutput> permite definir se está a jogar contra um BOT;</para></listitem><listitem><para><computeroutput>int</computeroutput> nível do jogo no caso de se encontrar a jogar contra BOT.</para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para></listitem><listitem><para><bold>Lógica do programa;</bold><itemizedlist>
+<listitem><para>Nesta camada, pode-se encontrar as funções que são utilizadas pelo interpretador:<itemizedlist>
+<listitem><para><computeroutput>int jogar (ESTADO *state, COORDENADA c)</computeroutput><itemizedlist>
+<listitem><para>Efetua uma jogada: atualiza o estado do programa utilizando a coordenada indicada.</para></listitem><listitem><para>Comando: coordenada ##</para></listitem></itemizedlist>
+</para></listitem><listitem><para><computeroutput>int gravarJogo (ESTADO *state, char *nomeFicheiro)</computeroutput><itemizedlist>
+<listitem><para>Grava o estado do jogo num determinado ficheiro nomeFicheiro.</para></listitem><listitem><para>Comando: <computeroutput>gr nome_do_ficheiro</computeroutput></para></listitem></itemizedlist>
+</para></listitem><listitem><para><computeroutput>int lerJogo (ESTADO *e, char *nomeFicheiro)</computeroutput><itemizedlist>
+<listitem><para>Lê o estado de um jogo a partir de um ficheiro nomeFicheiro.</para></listitem><listitem><para>Comando: <computeroutput>ler nome_do_ficheiro</computeroutput></para></listitem></itemizedlist>
+</para></listitem><listitem><para><computeroutput>int lerMovimentos (ESTADO *e)</computeroutput><itemizedlist>
+<listitem><para>Apresenta os movimentos do jogo.</para></listitem><listitem><para>Comando: <computeroutput>movs</computeroutput></para></listitem></itemizedlist>
+</para></listitem><listitem><para><computeroutput>void <ref refid="logica_8h_1a68440f84753fc80e440610bf528c9c70" kindref="member">mostraPos(ESTADO *state, char *pos)</ref></computeroutput><itemizedlist>
+<listitem><para>Imprime o tabuleiro numa determinada altura <emphasis>pos</emphasis> do jogo.</para></listitem><listitem><para>Comando: <computeroutput>pos posicao_desejada</computeroutput></para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para></listitem><listitem><para><bold>Camada de interface.</bold><itemizedlist>
+<listitem><para>Interpretador<itemizedlist>
+<listitem><para>Módulo que permite ao utilizador interagir com o programa através de comandos pré-definidos.</para></listitem><listitem><para>Os comandos possíveis encontram-se descritos no ponto anterior. <heading level="4">2. Desenvolvimento</heading>
+</para></listitem></itemizedlist>
+</para><para>Por forma a otimizar a relação do programador com o programa, começou-se por definir alguns <bold>macros</bold>. Para tal, criou-se um módulo designado <emphasis>globals</emphasis>. Posteriormente, criou-se uma pasta <emphasis>modules</emphasis>. Dentro desta, pode-se encontrar os <bold>módulos</bold> que trazem funcionalidade ao programa. Estes estão em conformidade com a estrutura do projeto apresentada, sendo os seguintes:</para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para><para>Interface;<itemizedlist>
+<listitem><para>Lógica;</para></listitem><listitem><para>Interpretador.</para></listitem></itemizedlist>
+</para><para>A maior dificuldade ocorreu durante esta fase inicial do projeto, em que se procurou definir a melhor hierarquia de ficheiros possível que permitisse criar módulos facilmente reutilizáveis e fácil de efetuar <emphasis>debugging</emphasis>. Para tal, utilizou-se conhecimento adquirido em artigos sobre esta temática. Quanto ao desenvolvimento do código, utilizando as orientações da equipa docente e o conhecimento adquirido nas aulas teóricas de Programação Imperativa, foi relativamente simples. Por forma a facilitar a impressão do tabuleiro e a deteção de fim de jogo, optou-se por alterar a tipo de dados <computeroutput>CASA</computeroutput>, acrescentando <computeroutput>JOGADOR1, JOGADOR2</computeroutput>. Através desta alteração, foi possível definir uma função que imprime o tabuleiro com o mínimo de código e fácil leitura humana - novamente com o objetivo de facilitar o <emphasis>debugging</emphasis>. Em relação à impressão do tabuleiro, optou-se por desenvolver uma componente gráfica que melhora a utilização do programa.</para><para><itemizedlist>
+<listitem><para>[x] Guião 6</para></listitem><listitem><para>[ ] Guião 7</para></listitem><listitem><para>[ ] Guião 8</para></listitem></itemizedlist>
+</para><para><heading level="2">Informação sobre os autores</heading>
+</para><para><heading level="4">Turno Prático</heading>
+</para><para>PL6 - Grupo 5</para><para><heading level="3">Autores:</heading>
+</para><para><itemizedlist>
+<listitem><para>**_62608_** <bold>Marco António Gonçalves de Sousa</bold></para></listitem><listitem><para>**_93271_** <bold>José Alberto Ferreira Malheiro</bold></para></listitem><listitem><para>**_93198_** <bold>Mariana Rocha Marques</bold> </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

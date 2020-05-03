@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="interface_8c" kind="file" language="C++">
+    <compoundname>interface.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes refid="interface_8h" local="yes">interface.h</includes>
+    <includes refid="logica_8h" local="yes">../logica/logica.h</includes>
+    <includes refid="auxiliaresInterface_8h" local="yes">auxiliaresInterface.h</includes>
+    <incdepgraph>
+      <node id="170">
+        <label>projeto/modules/interface/interface.c</label>
+        <link refid="interface_8c"/>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+      </node>
+      <node id="172">
+        <label>interface.h</label>
+        <link refid="interface_8h"/>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+      </node>
+      <node id="173">
+        <label>../data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="174" relation="include">
+        </childnode>
+      </node>
+      <node id="174">
+        <label>../globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="175" relation="include">
+        </childnode>
+      </node>
+      <node id="177">
+        <label>auxiliaresInterface.h</label>
+        <link refid="auxiliaresInterface_8h"/>
+      </node>
+      <node id="175">
+        <label>cores.h</label>
+        <link refid="cores_8h_source"/>
+      </node>
+      <node id="176">
+        <label>../logica/logica.h</label>
+        <link refid="logica_8h"/>
+        <childnode refid="173" relation="include">
+        </childnode>
+      </node>
+      <node id="171">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="interface_8c_1a455e9686a30c6129b2491068be7fde1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mostrarTabuleiro</definition>
+        <argsstring>(ESTADO *state)</argsstring>
+        <name>mostrarTabuleiro</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Mostra o tabuleiro. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imprime o tabuleiro em dois locais: (1) Na linha de comandos (2) Num ficheiro temporário (de texto);</para><para>Método:<orderedlist>
+<listitem><para>Declara-se um apontador do tipo FILE;</para></listitem><listitem><para>Abre-se o ficheiro (Através da função fopen);</para></listitem><listitem><para>Imprime-se o tabuleiro na linha de comandos (printf) e no ficheiro de texto (fprintf) (uma única passagem pela array tab); 3.1. Utiliza-se a função converteCasa para, tal como o nome indica, converter uma CASA para um char.</para></listitem><listitem><para>Fecha-se o ficheiro (fclose).</para></listitem></orderedlist>
+</para><para>A impressão na linha de comandos encontra-se formatada para uma melhor leitura humana, enquanto que a impressão em ficheiro está organizada para facilitar a leitura através de funções IO e criação de um novo ESTADO do programa. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/interface/interface.c" line="10" column="1" bodyfile="projeto/modules/interface/interface.c" bodystart="10" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_8c_1a546fdee8f229672ea536b3765cf439f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int jogar</definition>
+        <argsstring>(ESTADO *state, COORDENADA c)</argsstring>
+        <name>jogar</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1a5e3f28e43e57a17ac65133789ca1daef" kindref="member">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Efetua (se possível) uma jogada. Após verificar a condição (Função -&gt; verificaCasa) modifica o ESTADO CASA (Para BRANCA); Substitui no Tabuleiro o &apos;*&apos; por um &apos;#&apos; (Função -&gt; changeCardinal); Atualiza a última jogada;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordenada Atual; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 ou 0, caso a jogada seja possível ou não, respetivamente; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>&lt;Muda &apos;*&apos; e &apos;#&apos; </para>        </inbodydescription>
+        <location file="projeto/modules/interface/interface.c" line="42" column="1" bodyfile="projeto/modules/interface/interface.c" bodystart="42" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_8c_1a53fd363a3c721f2776018875018bfff6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int lerMovimentos</definition>
+        <argsstring>(ESTADO *state)</argsstring>
+        <name>lerMovimentos</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref> *</type>
+          <declname>e</declname>
+          <defname>state</defname>
+        </param>
+        <briefdescription>
+<para>Lê movimentos. Função aplicada no comando movs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 caso seja possível efetuar este comando. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/interface/interface.c" line="56" column="1" bodyfile="projeto/modules/interface/interface.c" bodystart="56" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="3"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="interface_8h" kindref="compound">interface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../logica/logica.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="auxiliaresInterface_8h" kindref="compound">auxiliaresInterface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_8c_1a455e9686a30c6129b2491068be7fde1b" kindref="member">mostrarTabuleiro</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state)<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,n;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(n=0;<sp/>n&lt;2;n++)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putchar(</highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>putchar(</highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=</highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">;i&lt;</highlight><highlight class="charliteral">&apos;i&apos;</highlight><highlight class="normal">;i++)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(COR_AZUL<sp/></highlight><highlight class="stringliteral">&quot;___<sp/>&quot;</highlight><highlight class="normal"><sp/>RESET);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(m=<ref refid="globals_8h_1a67230316729bcbcc14cb2fdee1ed6a03" kindref="member">MAX_HOUSES</ref>-1;<sp/>m&gt;=0;m--)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(COR__AZUL_NEGRITO<sp/></highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal"><sp/>COR_AZUL<sp/></highlight><highlight class="stringliteral">&quot;<sp/>|<sp/>&quot;</highlight><highlight class="normal">,m+1);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(n=0;n&lt;<ref refid="globals_8h_1a67230316729bcbcc14cb2fdee1ed6a03" kindref="member">MAX_HOUSES</ref>;n++)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>c;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.coluna<sp/>=<sp/>n;<sp/>c.linha<sp/>=<sp/>m;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%c&quot;</highlight><highlight class="normal"><sp/>COR_AZUL<sp/></highlight><highlight class="stringliteral">&quot;<sp/>|<sp/>&quot;</highlight><highlight class="normal">,<sp/><ref refid="logica_8c_1a19947fc319e925c3e3f1af8d51396a6a" kindref="member">converteCasa</ref>(<ref refid="data_8c_1a32a5d264a3e781d9def80147a2c0ebb1" kindref="member">obterEstadoCasa</ref>(state,c)));<sp/></highlight><highlight class="comment">//<sp/>imprime<sp/>a<sp/>casa<sp/>na<sp/>linha<sp/>de<sp/>comandos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(n=0;<sp/>n&lt;2;n++)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putchar(</highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putchar(</highlight><highlight class="charliteral">&apos;|&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=</highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">;i&lt;</highlight><highlight class="charliteral">&apos;i&apos;</highlight><highlight class="normal">;i++)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(COR_AZUL<sp/></highlight><highlight class="stringliteral">&quot;___|&quot;</highlight><highlight class="normal"><sp/>RESET<sp/>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(n=0;<sp/>n&lt;4;n++)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putchar(</highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=</highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">;i&lt;</highlight><highlight class="charliteral">&apos;i&apos;</highlight><highlight class="normal">;i++)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(COR__AZUL_NEGRITO<sp/></highlight><highlight class="stringliteral">&quot;%c<sp/><sp/><sp/>&quot;</highlight><highlight class="normal">,i);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>putchar(</highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="interface_8c_1a546fdee8f229672ea536b3765cf439f8" kindref="member">jogar</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>c){</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="logica_8c_1a9489ff516ef666f5bb97cff17cfe796d" kindref="member">verificaCasa</ref>(state,<sp/>c)){</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a4f8f2b1bd6e25fc55372bdb05b5b0b30" kindref="member">changeCardinal</ref>(state,c);<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a6632ba6b02d00ec7cf90295cbd1d78e8" kindref="member">atualizaJogadas</ref>(state,c);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a56acd038b99ea6870b1fe8b53d545bf1" kindref="member">atualizaMaxJogadas</ref>(state);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Não<sp/>é<sp/>possível<sp/>efetuar<sp/>essa<sp/>jogada!<sp/>Tente<sp/>Novamente.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="interface_8c_1a53fd363a3c721f2776018875018bfff6" kindref="member">lerMovimentos</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxComandos;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(maxComandos=<ref refid="data_8c_1a7951f1b826d62860bc29f2dbac8f93cd" kindref="member">obterMaxComandos</ref>(state),<sp/>i=0;<sp/>maxComandos&gt;0;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(maxComandos<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="auxiliaresInterface_8c_1a25d9f9891267cfcff6874bfa891beb8b" kindref="member">digitos</ref><sp/>(i,0);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%c%c<sp/>&quot;</highlight><highlight class="normal">,<ref refid="data_8c_1a11efafb96b6f104ceaf29070318d3e55" kindref="member">obterLinhaColuna</ref>(state,1,i,</highlight><highlight class="charliteral">&apos;c&apos;</highlight><highlight class="normal">),<ref refid="data_8c_1a11efafb96b6f104ceaf29070318d3e55" kindref="member">obterLinhaColuna</ref>(state,1,i,</highlight><highlight class="charliteral">&apos;l&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%c%c\n&quot;</highlight><highlight class="normal">,<ref refid="data_8c_1a11efafb96b6f104ceaf29070318d3e55" kindref="member">obterLinhaColuna</ref>(state,2,i,</highlight><highlight class="charliteral">&apos;c&apos;</highlight><highlight class="normal">),<ref refid="data_8c_1a11efafb96b6f104ceaf29070318d3e55" kindref="member">obterLinhaColuna</ref>(state,2,i,</highlight><highlight class="charliteral">&apos;l&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxComandos=maxComandos-2;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="auxiliaresInterface_8c_1a25d9f9891267cfcff6874bfa891beb8b" kindref="member">digitos</ref><sp/>(i,0);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%c%c&quot;</highlight><highlight class="normal">,<ref refid="data_8c_1a11efafb96b6f104ceaf29070318d3e55" kindref="member">obterLinhaColuna</ref>(state,1,i,</highlight><highlight class="charliteral">&apos;c&apos;</highlight><highlight class="normal">),<ref refid="data_8c_1a11efafb96b6f104ceaf29070318d3e55" kindref="member">obterLinhaColuna</ref>(state,1,i,</highlight><highlight class="charliteral">&apos;l&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putchar(</highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxComandos--;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="projeto/modules/interface/interface.c"/>
+  </compounddef>
+</doxygen>

@@ -1,7 +1,7 @@
 /cmake-build-debug/
 /.idea
-/latex/
-
+/projeto/latex/
+/projeto/html
 *.o
 *.exe
 

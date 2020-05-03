@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="ficheiros_8c" kind="file" language="C++">
+    <compoundname>ficheiros.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="ficheiros_8h" local="yes">ficheiros.h</includes>
+    <includes refid="logica_8h" local="yes">../logica/logica.h</includes>
+    <includes refid="interface_8h" local="yes">interface.h</includes>
+    <includes refid="globals_8h" local="yes">../../globals/globals.h</includes>
+    <includes refid="auxiliaresInterface_8h" local="yes">auxiliaresInterface.h</includes>
+    <incdepgraph>
+      <node id="158">
+        <label>interface.h</label>
+        <link refid="interface_8h"/>
+        <childnode refid="154" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+      </node>
+      <node id="154">
+        <label>../data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="155" relation="include">
+        </childnode>
+      </node>
+      <node id="153">
+        <label>bits/types/FILE.h</label>
+      </node>
+      <node id="150">
+        <label>stdlib.h</label>
+      </node>
+      <node id="155">
+        <label>../globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="156" relation="include">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>projeto/modules/interface/ficheiros.c</label>
+        <link refid="ficheiros_8c"/>
+        <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="150" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+      </node>
+      <node id="152">
+        <label>ficheiros.h</label>
+        <link refid="ficheiros_8h"/>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+      </node>
+      <node id="151">
+        <label>string.h</label>
+      </node>
+      <node id="159">
+        <label>auxiliaresInterface.h</label>
+        <link refid="auxiliaresInterface_8h"/>
+      </node>
+      <node id="156">
+        <label>cores.h</label>
+        <link refid="cores_8h_source"/>
+      </node>
+      <node id="157">
+        <label>../logica/logica.h</label>
+        <link refid="logica_8h"/>
+        <childnode refid="154" relation="include">
+        </childnode>
+      </node>
+      <node id="149">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="ficheiros_8c_1a574de0998a790467c430ce90c52800e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void removerLinha</definition>
+        <argsstring>(char *string)</argsstring>
+        <name>removerLinha</name>
+        <param>
+          <type>char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+<para>Remove o primeiro <linebreak/>
+ que encontra e termina a string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array que vai ser processada. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/interface/ficheiros.c" line="14" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="14" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="ficheiros_8c_1a294c697018601dcc114de13b0c0edcf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gravarJogo</definition>
+        <argsstring>(ESTADO *state, char *nomeFicheiro)</argsstring>
+        <name>gravarJogo</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nomeFicheiro</declname>
+        </param>
+        <briefdescription>
+<para>Imprime uma mensagem. Imprime uma mensagem para gravar ou ler o Jogo, caso o Jogador queira;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nomeFicheiro</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ficheiro onde se vai gravar o Jogo; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 sem erros 1 Não foi possível gravar o ficheiro </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>&lt;Abre o ficheiro para gravar</para><para>&lt; Imprime a casa no ficheiro de texto temporário</para><para>&lt;Fecha o ficheiro temporário </para>        </inbodydescription>
+        <location file="projeto/modules/interface/ficheiros.c" line="20" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="20" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="ficheiros_8c_1a300fe400f526c3773a18c80cf77ec047" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void imprimirJogadas</definition>
+        <argsstring>(ESTADO *state, int i, FILE *save)</argsstring>
+        <name>imprimirJogadas</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>FILE *</type>
+          <declname>save</declname>
+        </param>
+        <briefdescription>
+<para>Imprime as Jogadas efetuadas (abaixo do tabuleiro). Usada na função &apos;gravarJogo&apos;;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Número da Jogada; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>save</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ficheiro; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/interface/ficheiros.c" line="45" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="45" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="ficheiros_8c_1a6b366955e5475739723021222df288ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int lerJogada</definition>
+        <argsstring>(ESTADO *state, char *cadaToken)</argsstring>
+        <name>lerJogada</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>cadaToken</declname>
+        </param>
+        <briefdescription>
+<para>Lê uma linha do histórico de jogo do ficheiro e insere-o no estado. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cadaToken</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para a array lida no ficheiro</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 caso cada token tenha 8 ou 5 de length. 1 caso contrário. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/modules/interface/ficheiros.c" line="57" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="57" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="ficheiros_8c_1acab32ff540cb5b7a7fb1f35e059b7a50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int lerJogo</definition>
+        <argsstring>(ESTADO *state, char *nomeFicheiro)</argsstring>
+        <name>lerJogo</name>
+        <param>
+          <type><ref refid="data_8h_1a859d62f27ea4cc3e6db1a2bf2734d252" kindref="member">ESTADO</ref> *</type>
+          <declname>e</declname>
+          <defname>state</defname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nomeFicheiro</declname>
+        </param>
+        <briefdescription>
+<para>: Lê o jogo. </para>        </briefdescription>
+        <detaileddescription>
+<para>Acede ao ficheiro inserido pelo utilizador e atualiza o estado do jogo;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado do programa; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nomeFicheiro</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ficheiro Ficheiro do qual se está a ler o programa; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 sem erros 1 não foi possível alocar memória/ ficheiro não encontrado 2 ficheiro de origem mal construído </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>&lt; Faz reset do estado atual</para><para>&lt; Remove o caracter &apos;<linebreak/>
+&apos;</para><para>&lt; Se não for possível abrir o ficheiro, dá erro.</para><para>&lt; Inicia a construção do tabuleiro a partir da leitura do ficheiro</para><para>&lt; Começa a percorrer o resto do ficheiro (histórico de jogadas) </para>        </inbodydescription>
+        <location file="projeto/modules/interface/ficheiros.c" line="81" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="81" bodyend="127"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="3"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ficheiros_8h" kindref="compound">ficheiros.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../logica/logica.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="interface_8h" kindref="compound">interface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../globals/globals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="auxiliaresInterface_8h" kindref="compound">auxiliaresInterface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ficheiros_8c_1a574de0998a790467c430ce90c52800e1" kindref="member">removerLinha</ref><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">[i]<sp/>&amp;&amp;<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">[i]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;i++);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">[i]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">[i]=</highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ficheiros_8c_1a294c697018601dcc114de13b0c0edcf1" kindref="member">gravarJogo</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*nomeFicheiro)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,n,i,<sp/>nJog;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>FILE<sp/>*save;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r=0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ficheiros_8c_1a574de0998a790467c430ce90c52800e1" kindref="member">removerLinha</ref>(nomeFicheiro);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>save<sp/>=<sp/>fopen(nomeFicheiro,</highlight><highlight class="stringliteral">&quot;w+&quot;</highlight><highlight class="normal">);<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(save<sp/>==<sp/>NULL)<sp/>r=1;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(m=<ref refid="globals_8h_1a67230316729bcbcc14cb2fdee1ed6a03" kindref="member">MAX_HOUSES</ref>-1;<sp/>m&gt;=0;m--)<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(n=0;n&lt;<ref refid="globals_8h_1a67230316729bcbcc14cb2fdee1ed6a03" kindref="member">MAX_HOUSES</ref>;n++)<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(save,</highlight><highlight class="stringliteral">&quot;%c&quot;</highlight><highlight class="normal">,<sp/><ref refid="logica_8c_1a19947fc319e925c3e3f1af8d51396a6a" kindref="member">converteCasa</ref>(state-&gt;tab[m][n]));<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(save,</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(save,</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0,<sp/>nJog=<ref refid="data_8c_1a130b1b2c74cdd895c944ff860550a1a1" kindref="member">obterNumeroJogadas</ref><sp/>(state);<sp/>i<sp/>&lt;=<sp/>nJog;i++)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="ficheiros_8c_1a300fe400f526c3773a18c80cf77ec047" kindref="member">imprimirJogadas</ref>(state,i,<sp/>save);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fclose(save);<sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ficheiros_8c_1a300fe400f526c3773a18c80cf77ec047" kindref="member">imprimirJogadas</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/>FILE<sp/>*save){</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>&lt;<sp/><ref refid="data_8c_1a130b1b2c74cdd895c944ff860550a1a1" kindref="member">obterNumeroJogadas</ref>(state)){</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="auxiliaresInterface_8c_1a25d9f9891267cfcff6874bfa891beb8b" kindref="member">digitos</ref><sp/>(i,<sp/>save);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(save,</highlight><highlight class="stringliteral">&quot;%c%c<sp/>&quot;</highlight><highlight class="normal">,<ref refid="data_8c_1a11efafb96b6f104ceaf29070318d3e55" kindref="member">obterLinhaColuna</ref>(state,<sp/>1,<sp/>i,<sp/></highlight><highlight class="charliteral">&apos;c&apos;</highlight><highlight class="normal">),<ref refid="data_8c_1a11efafb96b6f104ceaf29070318d3e55" kindref="member">obterLinhaColuna</ref>(state,<sp/>1,<sp/>i,<sp/></highlight><highlight class="charliteral">&apos;l&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(save,</highlight><highlight class="stringliteral">&quot;%c%c\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="data_8c_1a11efafb96b6f104ceaf29070318d3e55" kindref="member">obterLinhaColuna</ref>(state,<sp/>2,<sp/>i,<sp/></highlight><highlight class="charliteral">&apos;c&apos;</highlight><highlight class="normal">),<ref refid="data_8c_1a11efafb96b6f104ceaf29070318d3e55" kindref="member">obterLinhaColuna</ref>(state,<sp/>2,<sp/>i,<sp/></highlight><highlight class="charliteral">&apos;l&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/><ref refid="data_8c_1a130b1b2c74cdd895c944ff860550a1a1" kindref="member">obterNumeroJogadas</ref>(state)<sp/>&amp;&amp;<sp/><ref refid="data_8c_1a34468b1df84ffb6f0e8b815bf6fb295c" kindref="member">obterJogador</ref>(state)<sp/>==<sp/>2){</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="auxiliaresInterface_8c_1a25d9f9891267cfcff6874bfa891beb8b" kindref="member">digitos</ref><sp/>(i,<sp/>save);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(save,</highlight><highlight class="stringliteral">&quot;%c%c\n&quot;</highlight><highlight class="normal">,<ref refid="data_8c_1a11efafb96b6f104ceaf29070318d3e55" kindref="member">obterLinhaColuna</ref>(state,<sp/>1,<sp/>i,<sp/></highlight><highlight class="charliteral">&apos;c&apos;</highlight><highlight class="normal">),<ref refid="data_8c_1a11efafb96b6f104ceaf29070318d3e55" kindref="member">obterLinhaColuna</ref>(state,<sp/>1,<sp/>i,<sp/></highlight><highlight class="charliteral">&apos;l&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ficheiros_8c_1a6b366955e5475739723021222df288ee" kindref="member">lerJogada</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*cadaToken)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r=0;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>numJogada[3],col1[2],col2[2],lin1[2],lin2[2];</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structjogada" kindref="compound">JOGADA</ref><sp/>jogad;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(sscanf(cadaToken,</highlight><highlight class="stringliteral">&quot;%s<sp/>%[a-h]%[1-8]<sp/>%[a-h]%[1-8]&quot;</highlight><highlight class="normal">,numJogada,col1,lin1,col2,lin2)<sp/>==<sp/>5)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a9621761b29f62c0deaaf7dc4287f31f8" kindref="member">atualizaJogadasEstatico</ref><sp/>(state,<sp/>atoi(numJogada)-1<sp/>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1af85d38bb07d158c69c08a75787b68c30" kindref="member">atualNumComandosEstatico</ref>(state,<sp/><ref refid="data_8c_1a414cdc29214160cdf6c925984ab467b4" kindref="member">numeroComandos</ref>(state)<sp/>+<sp/>2);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jogad.jogador1.coluna<sp/>=<sp/>*col1<sp/>-<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">;<sp/>jogad.jogador1.linha<sp/>=<sp/>*lin1<sp/>-<sp/></highlight><highlight class="charliteral">&apos;1&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jogad.jogador2.coluna<sp/>=<sp/>*col2<sp/>-<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">;<sp/>jogad.jogador2.linha<sp/>=<sp/>*lin2<sp/>-<sp/></highlight><highlight class="charliteral">&apos;1&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a404248a51c788ab1a9b9caf8d0723e26" kindref="member">atualizaCoordenadaJogada</ref>(state,&amp;jogad.jogador1,1);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a404248a51c788ab1a9b9caf8d0723e26" kindref="member">atualizaCoordenadaJogada</ref>(state,&amp;jogad.jogador2,2);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a9621761b29f62c0deaaf7dc4287f31f8" kindref="member">atualizaJogadasEstatico</ref><sp/>(state,<sp/><ref refid="data_8c_1a130b1b2c74cdd895c944ff860550a1a1" kindref="member">obterNumeroJogadas</ref>(state)+1);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sscanf(cadaToken,</highlight><highlight class="stringliteral">&quot;%s<sp/>%[a-h]%[1-8]&quot;</highlight><highlight class="normal">,<sp/>numJogada,col1,lin1)<sp/>==<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a9621761b29f62c0deaaf7dc4287f31f8" kindref="member">atualizaJogadasEstatico</ref><sp/>(state,<sp/>atoi(numJogada)-1<sp/>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1af85d38bb07d158c69c08a75787b68c30" kindref="member">atualNumComandosEstatico</ref>(state,<sp/><ref refid="data_8c_1a414cdc29214160cdf6c925984ab467b4" kindref="member">numeroComandos</ref>(state)<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jogad.jogador1.coluna<sp/>=<sp/>*col1<sp/>-<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">;<sp/>jogad.jogador1.linha<sp/>=<sp/>*lin1<sp/>-<sp/></highlight><highlight class="charliteral">&apos;1&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1a404248a51c788ab1a9b9caf8d0723e26" kindref="member">atualizaCoordenadaJogada</ref>(state,&amp;jogad.jogador1,1);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logica_8c_1ab39326be63a1a7abe509faf7d989377f" kindref="member">atualizaJogAtual</ref>(state,<sp/>1);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>r=2;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ficheiros_8c_1acab32ff540cb5b7a7fb1f35e059b7a50" kindref="member">lerJogo</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*nomeFicheiro)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>FILE<sp/>*ficheiro;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,n,i=0;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restoFicheiro<sp/>=<sp/>calloc<sp/>(<ref refid="globals_8h_1a6821bafc3c88dfb2e433a095df9940c6" kindref="member">BUF_SIZE</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c,*token=</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">,<sp/>*cadaToken;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r=0;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="data_8c_1aee198af5c1d2b76f8964cf06d821419f" kindref="member">initBoard</ref>(state);<sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="data_8c_1a57ed36a9ffdf53f810da96370453904f" kindref="member">initPlay</ref>(state);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="data_8c_1a3dbc5edeff7787174f06b796176a157b" kindref="member">initPlayer</ref>(state);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ficheiros_8c_1a574de0998a790467c430ce90c52800e1" kindref="member">removerLinha</ref>(nomeFicheiro);<sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>ficheiro=fopen(nomeFicheiro,</highlight><highlight class="stringliteral">&quot;r+&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ficheiro<sp/>==<sp/>NULL)<sp/>r<sp/>=<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(m=MAX_HOUSES-1;m&gt;=0;m--){<sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(n=0;n&lt;<ref refid="globals_8h_1a67230316729bcbcc14cb2fdee1ed6a03" kindref="member">MAX_HOUSES</ref>;n++){</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c=<ref refid="data_8c_1aef863e16c89e0dd61cb496d4782f9d5b" kindref="member">converteChar</ref>(fgetc(ficheiro));</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;tab[m][n]<sp/>=<sp/>c;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="data_8c_1af778cb6309ade305085b2f68f5a8532a" kindref="member">podeJogar</ref>(c))<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;ultimaJogada.linha<sp/>=<sp/>m;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;ultimaJogada.coluna<sp/>=<sp/>n;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fgetc(ficheiro);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>(c=fgetc(ficheiro))<sp/>!=<sp/>EOF<sp/>;<sp/>i++)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>restoFicheiro[i]<sp/>=<sp/>c;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cadaToken<sp/>=<sp/>strtok(restoFicheiro,token);<sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(cadaToken<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>!r)<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="logica_8c_1a50746387c4564bae4c3e92dc73b70ec9" kindref="member">removeCarateresExtra</ref>(cadaToken))<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/><ref refid="ficheiros_8c_1a6b366955e5475739723021222df288ee" kindref="member">lerJogada</ref>(state,<sp/>cadaToken);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cadaToken<sp/>=<sp/>strtok(NULL,token);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;maxJogadas=<ref refid="data_8c_1a130b1b2c74cdd895c944ff860550a1a1" kindref="member">obterNumeroJogadas</ref>(state);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state-&gt;maxComandos=<ref refid="data_8c_1a414cdc29214160cdf6c925984ab467b4" kindref="member">numeroComandos</ref>(state);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fclose(ficheiro);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(cadaToken);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>free(restoFicheiro);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="projeto/modules/interface/ficheiros.c"/>
+  </compounddef>
+</doxygen>

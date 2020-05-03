@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_60b7aa3d15560f6c574de9b25e2471e9" kind="dir">
+    <compoundname>projeto/modules/interface</compoundname>
+    <innerfile refid="auxiliaresInterface_8c">auxiliaresInterface.c</innerfile>
+    <innerfile refid="auxiliaresInterface_8h">auxiliaresInterface.h</innerfile>
+    <innerfile refid="ficheiros_8c">ficheiros.c</innerfile>
+    <innerfile refid="ficheiros_8h">ficheiros.h</innerfile>
+    <innerfile refid="interface_8c">interface.c</innerfile>
+    <innerfile refid="interface_8h">interface.h</innerfile>
+    <innerfile refid="interpretador_8c">interpretador.c</innerfile>
+    <innerfile refid="interpretador_8h">interpretador.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="projeto/modules/interface/"/>
+  </compounddef>
+</doxygen>

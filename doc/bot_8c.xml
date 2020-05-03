@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="bot_8c" kind="file" language="C++">
+    <compoundname>bot.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">time.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="data_8h" local="yes">../projeto/modules/data.h</includes>
+    <includes refid="ficheiros_8h" local="yes">../projeto/modules/interface/ficheiros.h</includes>
+    <includes refid="auxiliaresInterface_8h" local="yes">../projeto/modules/interface/auxiliaresInterface.h</includes>
+    <includes refid="auxiliaresBot_8h" local="yes">auxiliaresBot.h</includes>
+    <includes refid="globals_8h" local="yes">../projeto/globals/globals.h</includes>
+    <includes refid="logica_8h" local="yes">../projeto/modules/logica/logica.h</includes>
+    <includes refid="cores_8h" local="yes">../projeto/globals/cores.h</includes>
+    <incdepgraph>
+      <node id="27">
+        <label>../projeto/modules/data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>bits/types/FILE.h</label>
+      </node>
+      <node id="33">
+        <label>auxiliaresBot.h</label>
+        <link refid="auxiliaresBot_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>stdlib.h</label>
+      </node>
+      <node id="28">
+        <label>../globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>../projeto/modules/interface/ficheiros.h</label>
+        <link refid="ficheiros_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>string.h</label>
+      </node>
+      <node id="32">
+        <label>../projeto/modules/interface/auxiliaresInterface.h</label>
+        <link refid="auxiliaresInterface_8h"/>
+      </node>
+      <node id="29">
+        <label>cores.h</label>
+        <link refid="cores_8h_source"/>
+      </node>
+      <node id="25">
+        <label>time.h</label>
+      </node>
+      <node id="34">
+        <label>../projeto/modules/logica/logica.h</label>
+        <link refid="logica_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>bot/bot.c</label>
+        <link refid="bot_8c"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="bot_8c_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Programa principal para a utilização do bot (de forma externa ao programa principal) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Contador de número de argumentos recebidos na bash </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array multidimensional com as strings passadas na bash cada índice corresponde a um argumento</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 sem erros 1 Nome do ficheiro está errado 2 Não há jogadas. Alguém já ganhou. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bot/bot.c" line="17" column="1" bodyfile="bot/bot.c" bodystart="17" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="4"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../projeto/modules/data.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../projeto/modules/interface/ficheiros.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../projeto/modules/interface/auxiliaresInterface.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="auxiliaresBot_8h" kindref="compound">auxiliaresBot.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../projeto/globals/globals.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../projeto/modules/logica/logica.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../projeto/globals/cores.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="bot_8c_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r=0;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state<sp/>=<sp/><ref refid="data_8c_1af6f7c62a8176e2173a77bca34c7995f3" kindref="member">initState</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoordenada" kindref="compound">COORDENADA</ref><sp/>*ultJogada;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*sourceF<sp/>=<sp/>argv[1],<sp/>*destinF<sp/>=<sp/>argv[2];</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(argc<sp/>==<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>(r<sp/>=<sp/><ref refid="ficheiros_8c_1acab32ff540cb5b7a7fb1f35e059b7a50" kindref="member">lerJogo</ref>(state,sourceF))<sp/>==0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((r=<ref refid="logica_8c_1ad2929040a36c3d8da9e76686907b6079" kindref="member">verificaFim</ref>(state))!=0)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(COR_VERDE_NEGRITO<sp/></highlight><highlight class="stringliteral">&quot;O<sp/>jogador<sp/>%d<sp/>já<sp/>ganhou<sp/>este<sp/>jogo.\n&quot;</highlight><highlight class="normal">,r);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(COR_VERMELHO<sp/></highlight><highlight class="stringliteral">&quot;Não<sp/>foi<sp/>efetuada<sp/>nenhuma<sp/>jogada!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r=0;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((r<sp/>=<sp/><ref refid="auxiliaresBot_8h_1a6c63571fffc8e9339b256a65168bac1f" kindref="member">jogaBot</ref>(state))<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r=<ref refid="ficheiros_8c_1a294c697018601dcc114de13b0c0edcf1" kindref="member">gravarJogo</ref>(state,destinF);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ultJogada<sp/>=<sp/><ref refid="data_8c_1a53f2ccf4535f2db6c9b6c6e143d9f87d" kindref="member">obterUltimaJogada</ref>(state);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(COR_VERDE<sp/></highlight><highlight class="stringliteral">&quot;Efetuado<sp/>a<sp/>jogada<sp/>%c%c.\n&quot;</highlight><highlight class="normal">,<sp/>ultJogada-&gt;coluna+</highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">,<sp/>ultJogada-&gt;linha+</highlight><highlight class="charliteral">&apos;1&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Nível<sp/>da<sp/>jogada:<sp/>%d\n\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="data_8c_1a13f6b92d7542533b2f9bfede1bf63359" kindref="member">obterNivelBot</ref>(state));</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="logica_8c_1ad2929040a36c3d8da9e76686907b6079" kindref="member">verificaFim</ref>(state))<sp/><ref refid="auxiliaresInterface_8c_1aaed37cdd105692dba78f2e0da9671c11" kindref="member">congratulaVencedor</ref>(<ref refid="data_8c_1a34468b1df84ffb6f0e8b815bf6fb295c" kindref="member">obterJogador</ref>(state));</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(COR_CIANO</highlight><highlight class="stringliteral">&quot;Insira<sp/>o<sp/>comando<sp/>corretamente:\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(NEGRITO_ON<sp/></highlight><highlight class="stringliteral">&quot;jog<sp/>&quot;</highlight><highlight class="normal"><sp/>COR_VERDE_NEGRITO<sp/></highlight><highlight class="stringliteral">&quot;fichOrigem&quot;</highlight><highlight class="normal"><sp/>COR_VERMELHO_NEGRITO<sp/></highlight><highlight class="stringliteral">&quot;<sp/>destination&quot;</highlight><highlight class="normal"><sp/>RESET<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r=1;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r==1)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(COR_VERMELHO<sp/></highlight><highlight class="stringliteral">&quot;\nVerifique<sp/>se<sp/>o<sp/>nome<sp/>do<sp/>ficheiro<sp/>de<sp/>origem<sp/>está<sp/>correto!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r==2)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(COR_VERMELHO<sp/></highlight><highlight class="stringliteral">&quot;Não<sp/>há<sp/>jogadas<sp/>possíveis.<sp/>O<sp/>jogador<sp/>%d<sp/>já<sp/>ganhou!\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="logica_8c_1ad2929040a36c3d8da9e76686907b6079" kindref="member">verificaFim</ref>(state));</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="bot/bot.c"/>
+  </compounddef>
+</doxygen>
