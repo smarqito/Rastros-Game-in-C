@@ -1,5 +1,5 @@
 /** @file
- * @brief Atualmente este ficheiro não está a ser utilizado. Serve para referência futura e reorganização do código.
+ * @brief Header ficheiros.
  */
 
 #ifndef RASTROS_FICHEIROS_H

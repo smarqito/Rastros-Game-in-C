@@ -1,3 +1,0 @@
-/home/marco/CLionProjects/rastros/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/marco/CLionProjects/rastros/cmake-build-debug/CMakeFiles/rastros.dir
-/home/marco/CLionProjects/rastros/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -7,46 +7,46 @@
     <includedby refid="main_8c" local="yes">projeto/main.c</includedby>
     <includedby refid="interpretador_8c" local="yes">projeto/modules/interface/interpretador.c</includedby>
     <incdepgraph>
-      <node id="204">
+      <node id="211">
         <label>../data.h</label>
         <link refid="data_8h"/>
-        <childnode refid="205" relation="include">
+        <childnode refid="212" relation="include">
         </childnode>
       </node>
-      <node id="205">
+      <node id="212">
         <label>../globals/globals.h</label>
         <link refid="globals_8h"/>
-        <childnode refid="206" relation="include">
+        <childnode refid="213" relation="include">
         </childnode>
       </node>
-      <node id="203">
+      <node id="210">
         <label>projeto/modules/interface/interpretador.h</label>
         <link refid="interpretador_8h"/>
-        <childnode refid="204" relation="include">
+        <childnode refid="211" relation="include">
         </childnode>
-        <childnode refid="205" relation="include">
+        <childnode refid="212" relation="include">
         </childnode>
       </node>
-      <node id="206">
+      <node id="213">
         <label>cores.h</label>
-        <link refid="cores_8h_source"/>
+        <link refid="cores_8h"/>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="208">
+      <node id="215">
         <label>projeto/main.c</label>
         <link refid="main_8c"/>
       </node>
-      <node id="209">
+      <node id="216">
         <label>projeto/modules/interface/interpretador.c</label>
         <link refid="interpretador_8c"/>
       </node>
-      <node id="207">
+      <node id="214">
         <label>projeto/modules/interface/interpretador.h</label>
         <link refid="interpretador_8h"/>
-        <childnode refid="208" relation="include">
+        <childnode refid="215" relation="include">
         </childnode>
-        <childnode refid="209" relation="include">
+        <childnode refid="216" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -86,7 +86,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
 <para>&lt; imprime o numero de comandos utilizados</para><para>&lt; caso o input tenha 2 carateres lê a col e lin</para><para>&lt; caso o input tenha 1 carater, verifica se é um &apos;Q&apos;</para><para>&lt; Caso o jogo termine após o bot jogar! </para>        </inbodydescription>
-        <location file="projeto/modules/interface/interpretador.h" line="22" column="1" bodyfile="projeto/modules/interface/interpretador.c" bodystart="113" bodyend="147"/>
+        <location file="projeto/modules/interface/interpretador.h" line="22" column="1" bodyfile="projeto/modules/interface/interpretador.c" bodystart="115" bodyend="149"/>
       </memberdef>
       <memberdef kind="function" id="interpretador_8h_1a26549a64119f3a788e2ebdd85e9c0cb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -111,7 +111,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/modules/interface/interpretador.h" line="28" column="1" bodyfile="projeto/modules/interface/interpretador.c" bodystart="17" bodyend="24"/>
+        <location file="projeto/modules/interface/interpretador.h" line="28" column="1" bodyfile="projeto/modules/interface/interpretador.c" bodystart="19" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="interpretador_8h_1af06d5227d283e4920a1eaa5b3ff32bd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -159,7 +159,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
 <para>&lt; Opção &quot;jogar&quot;</para><para>&lt; Opção &quot;gr nomeficheiro&quot;</para><para>&lt; Opção &quot;ler nomeficheiro&quot;</para><para>&lt; Opção &quot;movs&quot;</para><para>&lt; Opção &quot;jog&quot;</para><para>&lt; Opção &quot;pos #pos#&quot;</para><para>&lt; Opção &quot;novo&quot; inicia um novo jogo</para><para>&lt; Opção &quot;ajuda&quot;</para><para>&lt; Opção &quot;help&quot;</para><para>&lt; Opção &quot;autores&quot;</para><para>&lt; Opção &quot;Q&quot; para sair </para>        </inbodydescription>
-        <location file="projeto/modules/interface/interpretador.h" line="38" column="1" bodyfile="projeto/modules/interface/interpretador.c" bodystart="27" bodyend="111"/>
+        <location file="projeto/modules/interface/interpretador.h" line="38" column="1" bodyfile="projeto/modules/interface/interpretador.c" bodystart="29" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="interpretador_8h_1a24da95ebeede4a540e37790ce8be359b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -185,7 +185,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/modules/interface/interpretador.h" line="47" column="1" bodyfile="projeto/modules/interface/interpretador.c" bodystart="151" bodyend="190"/>
+        <location file="projeto/modules/interface/interpretador.h" line="47" column="1" bodyfile="projeto/modules/interface/interpretador.c" bodystart="153" bodyend="192"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

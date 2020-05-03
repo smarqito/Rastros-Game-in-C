@@ -1,3 +1,5 @@
+@file
+
 ![Rastros Game](http://www.luduscience.com/images/rastros.jpg)
 # Rastros
 Rastros game built in C

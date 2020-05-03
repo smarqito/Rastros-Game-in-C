@@ -9,46 +9,58 @@
     <includedby refid="modules_2listas_2main_8c" local="yes">projeto/modules/listas/main.c</includedby>
     <includedby refid="logica_8c" local="yes">projeto/modules/logica/logica.c</includedby>
     <incdepgraph>
-      <node id="222">
+      <node id="229">
         <label>../data.h</label>
         <link refid="data_8h"/>
-        <childnode refid="220" relation="include">
+        <childnode refid="227" relation="include">
         </childnode>
       </node>
-      <node id="220">
+      <node id="227">
         <label>../../globals/globals.h</label>
         <link refid="globals_8h"/>
-        <childnode refid="221" relation="include">
+        <childnode refid="228" relation="include">
         </childnode>
       </node>
-      <node id="221">
+      <node id="228">
         <label>cores.h</label>
-        <link refid="cores_8h_source"/>
+        <link refid="cores_8h"/>
       </node>
-      <node id="219">
+      <node id="226">
         <label>projeto/modules/listas/listas.h</label>
         <link refid="listas_8h"/>
-        <childnode refid="220" relation="include">
+        <childnode refid="227" relation="include">
         </childnode>
-        <childnode refid="222" relation="include">
+        <childnode refid="229" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="225">
+      <node id="233">
+        <label>projeto/modules/listas/main.c</label>
+        <link refid="modules_2listas_2main_8c"/>
+      </node>
+      <node id="231">
+        <label>bot/auxiliaresBot.c</label>
+        <link refid="auxiliaresBot_8c"/>
+      </node>
+      <node id="234">
         <label>projeto/modules/logica/logica.c</label>
         <link refid="logica_8c"/>
       </node>
-      <node id="224">
+      <node id="232">
         <label>projeto/modules/listas/listas.c</label>
         <link refid="listas_8c"/>
       </node>
-      <node id="223">
+      <node id="230">
         <label>projeto/modules/listas/listas.h</label>
         <link refid="listas_8h"/>
-        <childnode refid="224" relation="include">
+        <childnode refid="231" relation="include">
         </childnode>
-        <childnode refid="225" relation="include">
+        <childnode refid="232" relation="include">
+        </childnode>
+        <childnode refid="233" relation="include">
+        </childnode>
+        <childnode refid="234" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -65,7 +77,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/modules/listas/listas.h" line="17" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="10" bodyend="16"/>
+        <location file="projeto/modules/listas/listas.h" line="17" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="11" bodyend="17"/>
       </memberdef>
       <memberdef kind="function" id="listas_8h_1a3d274757fc80e99c6425b595021c64e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
@@ -102,7 +114,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/modules/listas/listas.h" line="27" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="18" bodyend="23"/>
+        <location file="projeto/modules/listas/listas.h" line="27" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="19" bodyend="24"/>
       </memberdef>
       <memberdef kind="function" id="listas_8h_1a3e2d97bdeb57af197b198771a27f0033" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
@@ -128,7 +140,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/modules/listas/listas.h" line="36" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="25" bodyend="30"/>
+        <location file="projeto/modules/listas/listas.h" line="36" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="26" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="listas_8h_1affb39e37aef63ab00b6df8f9336f6673" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
@@ -154,7 +166,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/modules/listas/listas.h" line="45" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="32" bodyend="37"/>
+        <location file="projeto/modules/listas/listas.h" line="45" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="33" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="listas_8h_1a8d03dacec1ccfd8144899f987d71d54d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="data_8h_1a7b7a1bfe841b83b98b0587820237fcfe" kindref="member">LISTA</ref></type>
@@ -180,7 +192,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/modules/listas/listas.h" line="56" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="39" bodyend="45"/>
+        <location file="projeto/modules/listas/listas.h" line="56" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="40" bodyend="46"/>
       </memberdef>
       <memberdef kind="function" id="listas_8h_1a4395a8ad5bc1caa6c0a976bc47d1f3b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -206,7 +218,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/modules/listas/listas.h" line="65" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="47" bodyend="51"/>
+        <location file="projeto/modules/listas/listas.h" line="65" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="48" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="listas_8h_1aa4b4c76fb024a402f5b370ea6222ef16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -232,7 +244,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/modules/listas/listas.h" line="74" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="53" bodyend="58"/>
+        <location file="projeto/modules/listas/listas.h" line="74" column="1" bodyfile="projeto/modules/listas/listas.c" bodystart="54" bodyend="59"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

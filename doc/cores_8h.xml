@@ -6,40 +6,42 @@
     <includedby refid="li2pl6g05_8c" local="yes">bot/li2pl6g05.c</includedby>
     <includedby refid="cores_8c" local="yes">projeto/globals/cores.c</includedby>
     <invincdepgraph>
-      <node id="59">
+      <node id="60">
         <label>projeto/modules/interface/interface.c</label>
         <link refid="interface_8c"/>
       </node>
-      <node id="60">
+      <node id="61">
         <label>projeto/modules/interface/interface.h</label>
         <link refid="interface_8h"/>
-        <childnode refid="58" relation="include">
+        <childnode refid="51" relation="include">
         </childnode>
         <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
         </childnode>
         <childnode refid="53" relation="include">
         </childnode>
         <childnode refid="54" relation="include">
         </childnode>
       </node>
-      <node id="65">
+      <node id="66">
         <label>projeto/modules/data.c</label>
         <link refid="data_8c"/>
       </node>
-      <node id="50">
+      <node id="49">
         <label>projeto/modules/data.h</label>
         <link refid="data_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
         <childnode refid="51" relation="include">
         </childnode>
         <childnode refid="55" relation="include">
         </childnode>
-        <childnode refid="57" relation="include">
-        </childnode>
-        <childnode refid="60" relation="include">
-        </childnode>
-        <childnode refid="52" relation="include">
+        <childnode refid="58" relation="include">
         </childnode>
         <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
         </childnode>
         <childnode refid="62" relation="include">
         </childnode>
@@ -49,12 +51,24 @@
         </childnode>
         <childnode refid="65" relation="include">
         </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
         <childnode refid="54" relation="include">
         </childnode>
       </node>
+      <node id="57">
+        <label>projeto/modules/listas/main.c</label>
+        <link refid="modules_2listas_2main_8c"/>
+      </node>
       <node id="51">
+        <label>bot/auxiliaresBot.c</label>
+        <link refid="auxiliaresBot_8c"/>
+      </node>
+      <node id="50">
         <label>bot/auxiliaresBot.h</label>
         <link refid="auxiliaresBot_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
         <childnode refid="52" relation="include">
         </childnode>
         <childnode refid="53" relation="include">
@@ -66,57 +80,57 @@
         <label>bot/li2pl6g05.c</label>
         <link refid="li2pl6g05_8c"/>
       </node>
-      <node id="62">
+      <node id="63">
         <label>bot/li2pl6g05.h</label>
         <link refid="li2pl6g05_8h"/>
       </node>
-      <node id="63">
+      <node id="64">
         <label>projeto/main.c</label>
         <link refid="main_8c"/>
       </node>
-      <node id="66">
+      <node id="67">
         <label>projeto/globals/globals.c</label>
         <link refid="globals_8c"/>
       </node>
-      <node id="49">
+      <node id="48">
         <label>projeto/globals/globals.h</label>
         <link refid="globals_8h"/>
-        <childnode refid="50" relation="include">
+        <childnode refid="49" relation="include">
         </childnode>
         <childnode refid="55" relation="include">
         </childnode>
-        <childnode refid="60" relation="include">
+        <childnode refid="61" relation="include">
         </childnode>
         <childnode refid="52" relation="include">
         </childnode>
-        <childnode refid="66" relation="include">
-        </childnode>
-        <childnode refid="64" relation="include">
-        </childnode>
         <childnode refid="67" relation="include">
         </childnode>
-        <childnode refid="58" relation="include">
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
         </childnode>
         <childnode refid="53" relation="include">
         </childnode>
         <childnode refid="54" relation="include">
         </childnode>
       </node>
-      <node id="58">
+      <node id="59">
         <label>projeto/modules/interface/ficheiros.c</label>
         <link refid="ficheiros_8c"/>
       </node>
-      <node id="61">
+      <node id="62">
         <label>projeto/modules/interface/ficheiros.h</label>
         <link refid="ficheiros_8h"/>
         <childnode refid="52" relation="include">
         </childnode>
-        <childnode refid="58" relation="include">
+        <childnode refid="59" relation="include">
         </childnode>
         <childnode refid="53" relation="include">
         </childnode>
       </node>
-      <node id="67">
+      <node id="68">
         <label>projeto/modules/interface/auxiliaresInterface.c</label>
         <link refid="auxiliaresInterface_8c"/>
       </node>
@@ -124,34 +138,42 @@
         <label>projeto/modules/interface/interpretador.c</label>
         <link refid="interpretador_8c"/>
       </node>
-      <node id="64">
+      <node id="65">
         <label>projeto/modules/interface/interpretador.h</label>
         <link refid="interpretador_8h"/>
-        <childnode refid="63" relation="include">
+        <childnode refid="64" relation="include">
         </childnode>
         <childnode refid="53" relation="include">
         </childnode>
       </node>
-      <node id="48">
+      <node id="69">
+        <label>projeto/globals/cores.c</label>
+        <link refid="cores_8c"/>
+      </node>
+      <node id="47">
         <label>projeto/globals/cores.h</label>
         <link refid="cores_8h"/>
-        <childnode refid="49" relation="include">
+        <childnode refid="48" relation="include">
         </childnode>
         <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
         </childnode>
       </node>
       <node id="54">
         <label>projeto/modules/logica/logica.c</label>
         <link refid="logica_8c"/>
       </node>
-      <node id="57">
+      <node id="58">
         <label>projeto/modules/logica/logica.h</label>
         <link refid="logica_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
         <childnode refid="52" relation="include">
         </childnode>
-        <childnode refid="58" relation="include">
-        </childnode>
         <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
         </childnode>
         <childnode refid="53" relation="include">
         </childnode>
@@ -165,7 +187,11 @@
       <node id="55">
         <label>projeto/modules/listas/listas.h</label>
         <link refid="listas_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
         <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
         </childnode>
         <childnode refid="54" relation="include">
         </childnode>
@@ -176,177 +202,177 @@
         <name>COR_VERMELHO</name>
         <initializer>&quot;\033[0;31m&quot;</initializer>
         <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="projeto/globals/cores.h" line="8" column="9" bodyfile="projeto/globals/cores.h" bodystart="8" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="cores_8h_1a3fe74da85cc323e56f29f17247345bc8" prot="public" static="no">
-        <name>COR_VERMELHO_NEGRITO</name>
-        <initializer>&quot;\033[1;31m&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="projeto/globals/cores.h" line="9" column="9" bodyfile="projeto/globals/cores.h" bodystart="9" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="cores_8h_1a8be5044487b613553f34df00b9609f49" prot="public" static="no">
-        <name>COR_AMARELO</name>
-        <initializer>&quot;\033[0;33m&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="projeto/globals/cores.h" line="10" column="9" bodyfile="projeto/globals/cores.h" bodystart="10" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="cores_8h_1a4b0b17061bf541474987a04ba0f55196" prot="public" static="no">
-        <name>COR_AMARELO_NEGRITO</name>
-        <initializer>&quot;\033[1;33m&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="projeto/globals/cores.h" line="11" column="9" bodyfile="projeto/globals/cores.h" bodystart="11" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="cores_8h_1a9c12e0202321b096908beadd87f3ad2d" prot="public" static="no">
-        <name>COR_VERDE</name>
-        <initializer>&quot;\033[0;32m&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="projeto/globals/cores.h" line="12" column="9" bodyfile="projeto/globals/cores.h" bodystart="12" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="cores_8h_1a6d271c30396fda7fce32001afd990439" prot="public" static="no">
-        <name>COR_VERDE_NEGRITO</name>
-        <initializer>&quot;\033[1;32m&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
+<para>COR_VERMELHO. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="projeto/globals/cores.h" line="13" column="9" bodyfile="projeto/globals/cores.h" bodystart="13" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="cores_8h_1ade71171f769c91152ef71445e9d98bfc" prot="public" static="no">
-        <name>COR_AZUL</name>
-        <initializer>&quot;\033[0;34m&quot;</initializer>
+      <memberdef kind="define" id="cores_8h_1a3fe74da85cc323e56f29f17247345bc8" prot="public" static="no">
+        <name>COR_VERMELHO_NEGRITO</name>
+        <initializer>&quot;\033[1;31m&quot;</initializer>
         <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="projeto/globals/cores.h" line="14" column="9" bodyfile="projeto/globals/cores.h" bodystart="14" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="cores_8h_1ad700b0009613b1f8df4038ea21637bf3" prot="public" static="no">
-        <name>COR__AZUL_NEGRITO</name>
-        <initializer>&quot;\033[1;034m&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="projeto/globals/cores.h" line="15" column="9" bodyfile="projeto/globals/cores.h" bodystart="15" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="cores_8h_1a8ebeebd8f4de79103c42879fa70cdc80" prot="public" static="no">
-        <name>COR_CIANO</name>
-        <initializer>&quot;\033[0;36m&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="projeto/globals/cores.h" line="16" column="9" bodyfile="projeto/globals/cores.h" bodystart="16" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="cores_8h_1a7e9610264c5a1c41fd06530cc60b897d" prot="public" static="no">
-        <name>COR_CIANO_NEGRITO</name>
-        <initializer>&quot;\033[1;36m&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="projeto/globals/cores.h" line="17" column="9" bodyfile="projeto/globals/cores.h" bodystart="17" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="cores_8h_1a504315cdcfbe6e0bef2c481c0c092b15" prot="public" static="no">
-        <name>COR_ROXO</name>
-        <initializer>&quot;\033[0;35m&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="projeto/globals/cores.h" line="18" column="9" bodyfile="projeto/globals/cores.h" bodystart="18" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="cores_8h_1a78cf78e88a85481d0e3baedcbdc79b2a" prot="public" static="no">
-        <name>NEGRITO_ON</name>
-        <initializer>&quot;\033[1m&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
+<para>COR_VERMELHO_NEGRITO. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="projeto/globals/cores.h" line="19" column="9" bodyfile="projeto/globals/cores.h" bodystart="19" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="cores_8h_1a80a18d5ad252dcd584f82218890714d2" prot="public" static="no">
-        <name>NEGRITO_OFF</name>
-        <initializer>&quot;\033[22m&quot;</initializer>
+      <memberdef kind="define" id="cores_8h_1a8be5044487b613553f34df00b9609f49" prot="public" static="no">
+        <name>COR_AMARELO</name>
+        <initializer>&quot;\033[0;33m&quot;</initializer>
         <briefdescription>
-        </briefdescription>
+<para>COR_AMARELO. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/globals/cores.h" line="20" column="9" bodyfile="projeto/globals/cores.h" bodystart="20" bodyend="-1"/>
+        <location file="projeto/globals/cores.h" line="25" column="9" bodyfile="projeto/globals/cores.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cores_8h_1a4b0b17061bf541474987a04ba0f55196" prot="public" static="no">
+        <name>COR_AMARELO_NEGRITO</name>
+        <initializer>&quot;\033[1;33m&quot;</initializer>
+        <briefdescription>
+<para>COR_AMARELO_NEGRITO. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/cores.h" line="31" column="9" bodyfile="projeto/globals/cores.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cores_8h_1a9c12e0202321b096908beadd87f3ad2d" prot="public" static="no">
+        <name>COR_VERDE</name>
+        <initializer>&quot;\033[0;32m&quot;</initializer>
+        <briefdescription>
+<para>COR_VERDE. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/cores.h" line="37" column="9" bodyfile="projeto/globals/cores.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cores_8h_1a6d271c30396fda7fce32001afd990439" prot="public" static="no">
+        <name>COR_VERDE_NEGRITO</name>
+        <initializer>&quot;\033[1;32m&quot;</initializer>
+        <briefdescription>
+<para>COR_VERDE_NEGRITO. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/cores.h" line="43" column="9" bodyfile="projeto/globals/cores.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cores_8h_1ade71171f769c91152ef71445e9d98bfc" prot="public" static="no">
+        <name>COR_AZUL</name>
+        <initializer>&quot;\033[0;34m&quot;</initializer>
+        <briefdescription>
+<para>COR_AZUL. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/cores.h" line="49" column="9" bodyfile="projeto/globals/cores.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cores_8h_1ad700b0009613b1f8df4038ea21637bf3" prot="public" static="no">
+        <name>COR__AZUL_NEGRITO</name>
+        <initializer>&quot;\033[1;034m&quot;</initializer>
+        <briefdescription>
+<para>COR__AZUL_NEGRITO. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/cores.h" line="55" column="9" bodyfile="projeto/globals/cores.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cores_8h_1a8ebeebd8f4de79103c42879fa70cdc80" prot="public" static="no">
+        <name>COR_CIANO</name>
+        <initializer>&quot;\033[0;36m&quot;</initializer>
+        <briefdescription>
+<para>COR_CIANO. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/cores.h" line="61" column="9" bodyfile="projeto/globals/cores.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cores_8h_1a7e9610264c5a1c41fd06530cc60b897d" prot="public" static="no">
+        <name>COR_CIANO_NEGRITO</name>
+        <initializer>&quot;\033[1;36m&quot;</initializer>
+        <briefdescription>
+<para>COR_CIANO_NEGRITO. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/cores.h" line="67" column="9" bodyfile="projeto/globals/cores.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cores_8h_1a504315cdcfbe6e0bef2c481c0c092b15" prot="public" static="no">
+        <name>COR_ROXO</name>
+        <initializer>&quot;\033[0;35m&quot;</initializer>
+        <briefdescription>
+<para>COR_ROXO. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/cores.h" line="73" column="9" bodyfile="projeto/globals/cores.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cores_8h_1a78cf78e88a85481d0e3baedcbdc79b2a" prot="public" static="no">
+        <name>NEGRITO_ON</name>
+        <initializer>&quot;\033[1m&quot;</initializer>
+        <briefdescription>
+<para>NEGRITO_ON. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/cores.h" line="79" column="9" bodyfile="projeto/globals/cores.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="cores_8h_1a80a18d5ad252dcd584f82218890714d2" prot="public" static="no">
+        <name>NEGRITO_OFF</name>
+        <initializer>&quot;\033[22m&quot;</initializer>
+        <briefdescription>
+<para>NEGRITO_OFF. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="projeto/globals/cores.h" line="85" column="9" bodyfile="projeto/globals/cores.h" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="cores_8h_1af55cce539958d72b74690b14f3f393b1" prot="public" static="no">
         <name>SUBLINHADO_ON</name>
         <initializer>&quot;\033[4m&quot;</initializer>
         <briefdescription>
-        </briefdescription>
+<para>SUBLINHADO_ON. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/globals/cores.h" line="21" column="9" bodyfile="projeto/globals/cores.h" bodystart="21" bodyend="-1"/>
+        <location file="projeto/globals/cores.h" line="91" column="9" bodyfile="projeto/globals/cores.h" bodystart="91" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="cores_8h_1aa9d9cbdc5fc1eb533d94d2cf11a162b9" prot="public" static="no">
         <name>SUBLINHADO_OFF</name>
         <initializer>&quot;\033[24m&quot;</initializer>
         <briefdescription>
-        </briefdescription>
+<para>SUBLINHADO_OFF. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/globals/cores.h" line="22" column="9" bodyfile="projeto/globals/cores.h" bodystart="22" bodyend="-1"/>
+        <location file="projeto/globals/cores.h" line="97" column="9" bodyfile="projeto/globals/cores.h" bodystart="97" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="cores_8h_1ab702106cf3b3e96750b6845ded4e0299" prot="public" static="no">
         <name>RESET</name>
         <initializer>&quot;\033[0m&quot;</initializer>
         <briefdescription>
-        </briefdescription>
+<para>RESET. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/globals/cores.h" line="23" column="9" bodyfile="projeto/globals/cores.h" bodystart="23" bodyend="-1"/>
+        <location file="projeto/globals/cores.h" line="103" column="9" bodyfile="projeto/globals/cores.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -374,40 +400,52 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/globals/cores.h" line="30" column="1" bodyfile="projeto/globals/cores.c" bodystart="8" bodyend="10"/>
+        <location file="projeto/globals/cores.h" line="110" column="1" bodyfile="projeto/globals/cores.c" bodystart="9" bodyend="11"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Cores para a formatação. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>marco<sp/>on<sp/>3/22/20.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>RASTROS_CORES_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RASTROS_CORES_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COR_VERMELHO<sp/>&quot;\033[0;31m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COR_VERMELHO_NEGRITO<sp/>&quot;\033[1;31m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COR_AMARELO<sp/>&quot;\033[0;33m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COR_AMARELO_NEGRITO<sp/>&quot;\033[1;33m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COR_VERDE<sp/>&quot;\033[0;32m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COR_VERDE_NEGRITO<sp/>&quot;\033[1;32m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COR_AZUL<sp/>&quot;\033[0;34m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COR__AZUL_NEGRITO<sp/>&quot;\033[1;034m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COR_CIANO<sp/>&quot;\033[0;36m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COR_CIANO_NEGRITO<sp/>&quot;\033[1;36m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COR_ROXO<sp/>&quot;\033[0;35m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NEGRITO_ON<sp/>&quot;\033[1m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NEGRITO_OFF<sp/>&quot;\033[22m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SUBLINHADO_ON<sp/>&quot;\033[4m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SUBLINHADO_OFF<sp/>&quot;\033[24m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RESET<sp/>&quot;\033[0m&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>promptFormata(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>cor[]);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//RASTROS_CORES_H</highlight></codeline>
+<codeline lineno="1"></codeline>
+<codeline lineno="6"><highlight class="preprocessor">#ifndef<sp/>RASTROS_CORES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RASTROS_CORES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="cores_8h_1a3552292a94ed29cf28b15c8a447da431" refkind="member"><highlight class="preprocessor">#define<sp/>COR_VERMELHO<sp/>&quot;\033[0;31m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="cores_8h_1a3fe74da85cc323e56f29f17247345bc8" refkind="member"><highlight class="preprocessor">#define<sp/>COR_VERMELHO_NEGRITO<sp/>&quot;\033[1;31m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="cores_8h_1a8be5044487b613553f34df00b9609f49" refkind="member"><highlight class="preprocessor">#define<sp/>COR_AMARELO<sp/>&quot;\033[0;33m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="cores_8h_1a4b0b17061bf541474987a04ba0f55196" refkind="member"><highlight class="preprocessor">#define<sp/>COR_AMARELO_NEGRITO<sp/>&quot;\033[1;33m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="cores_8h_1a9c12e0202321b096908beadd87f3ad2d" refkind="member"><highlight class="preprocessor">#define<sp/>COR_VERDE<sp/>&quot;\033[0;32m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="cores_8h_1a6d271c30396fda7fce32001afd990439" refkind="member"><highlight class="preprocessor">#define<sp/>COR_VERDE_NEGRITO<sp/>&quot;\033[1;32m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="cores_8h_1ade71171f769c91152ef71445e9d98bfc" refkind="member"><highlight class="preprocessor">#define<sp/>COR_AZUL<sp/>&quot;\033[0;34m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="cores_8h_1ad700b0009613b1f8df4038ea21637bf3" refkind="member"><highlight class="preprocessor">#define<sp/>COR__AZUL_NEGRITO<sp/>&quot;\033[1;034m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="cores_8h_1a8ebeebd8f4de79103c42879fa70cdc80" refkind="member"><highlight class="preprocessor">#define<sp/>COR_CIANO<sp/>&quot;\033[0;36m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="cores_8h_1a7e9610264c5a1c41fd06530cc60b897d" refkind="member"><highlight class="preprocessor">#define<sp/>COR_CIANO_NEGRITO<sp/>&quot;\033[1;36m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="cores_8h_1a504315cdcfbe6e0bef2c481c0c092b15" refkind="member"><highlight class="preprocessor">#define<sp/>COR_ROXO<sp/>&quot;\033[0;35m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="cores_8h_1a78cf78e88a85481d0e3baedcbdc79b2a" refkind="member"><highlight class="preprocessor">#define<sp/>NEGRITO_ON<sp/>&quot;\033[1m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="cores_8h_1a80a18d5ad252dcd584f82218890714d2" refkind="member"><highlight class="preprocessor">#define<sp/>NEGRITO_OFF<sp/>&quot;\033[22m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="cores_8h_1af55cce539958d72b74690b14f3f393b1" refkind="member"><highlight class="preprocessor">#define<sp/>SUBLINHADO_ON<sp/>&quot;\033[4m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="cores_8h_1aa9d9cbdc5fc1eb533d94d2cf11a162b9" refkind="member"><highlight class="preprocessor">#define<sp/>SUBLINHADO_OFF<sp/>&quot;\033[24m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="cores_8h_1ab702106cf3b3e96750b6845ded4e0299" refkind="member"><highlight class="preprocessor">#define<sp/>RESET<sp/>&quot;\033[0m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cores_8h_1ab3cb6719a00f90e9733905292481b408" kindref="member">promptFormata</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>cor[]);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//RASTROS_CORES_H</highlight></codeline>
     </programlisting>
     <location file="projeto/globals/cores.h"/>
   </compounddef>

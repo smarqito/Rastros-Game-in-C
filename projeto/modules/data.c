@@ -1,4 +1,7 @@
-/** @file */
+/** 
+ * @file
+ * @brief Camada de dados
+ */
 #include <stdlib.h>
 #include <string.h>
 #include "data.h"

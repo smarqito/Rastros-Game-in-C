@@ -4,30 +4,30 @@
     <compoundname>globals.c</compoundname>
     <includes refid="globals_8h" local="yes">globals.h</includes>
     <incdepgraph>
-      <node id="68">
+      <node id="70">
         <label>projeto/globals/globals.c</label>
         <link refid="globals_8c"/>
-        <childnode refid="69" relation="include">
+        <childnode refid="71" relation="include">
         </childnode>
       </node>
-      <node id="69">
+      <node id="71">
         <label>globals.h</label>
         <link refid="globals_8h"/>
-        <childnode refid="70" relation="include">
+        <childnode refid="72" relation="include">
         </childnode>
       </node>
-      <node id="70">
+      <node id="72">
         <label>cores.h</label>
-        <link refid="cores_8h_source"/>
+        <link refid="cores_8h"/>
       </node>
     </incdepgraph>
     <briefdescription>
-    </briefdescription>
+<para>Nenhuma função para este ficheiro. Fica em branco para não tem warnings. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"></codeline>
-<codeline lineno="5"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="globals_8h" kindref="compound">globals.h</ref>&quot;</highlight></codeline>
+<codeline lineno="6"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="globals_8h" kindref="compound">globals.h</ref>&quot;</highlight></codeline>
     </programlisting>
     <location file="projeto/globals/globals.c"/>
   </compounddef>

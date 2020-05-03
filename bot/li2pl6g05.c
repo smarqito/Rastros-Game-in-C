@@ -1,5 +1,6 @@
 /**
  * @file
+ * @brief Programa extra para utilizar o bot fora do programa principal
  */
 #include <stdio.h>
 #include <stdlib.h>

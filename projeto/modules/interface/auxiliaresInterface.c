@@ -1,4 +1,6 @@
-/** @file */
+/** @file
+ * @brief Funções auxiliares para a camada interface
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -53,7 +55,7 @@ int instrucao (char *instr) {
 void verAutores() {
     printf("Marco António Sousa - a62608@alunos.uminho.pt\n");
     printf("José Malheiro - a93271@alunos.uminho.pt\n");
-    printf("Mariana Marques - a#####@alunos.uminho.pt\n");
+    printf("Mariana Marques - a93198@alunos.uminho.pt\n");
     putchar('\n');
 }
 

@@ -1,5 +1,6 @@
 /**
  * @file
+ * @brief Header main bot
  */
 
 #ifndef RASTROS_BOT_H

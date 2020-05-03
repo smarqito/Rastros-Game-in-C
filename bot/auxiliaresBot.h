@@ -1,5 +1,6 @@
 /**
  * @file
+ * @brief Header para as auxiliares
  */
 
 #ifndef _AUXILIARES_BOT_H
@@ -83,4 +84,12 @@ COORDENADA *treeSearch (ESTADO state, LISTA ll, int profundidade, int player);
  */
 int jogaBot (ESTADO *state);
 
+/**
+ * @brief Efetua uma jogada e retorna o estado alterado
+ * 
+ * @param state Estado
+ * @param c Void que contem uma coordenada
+ * @return Novo estado
+ */
+ESTADO novoEstado (ESTADO state, void *c);
 #endif

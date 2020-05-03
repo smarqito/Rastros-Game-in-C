@@ -1,4 +1,6 @@
-/** @file */
+/** @file
+ * @brief Funções para controlo de ficheiros
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

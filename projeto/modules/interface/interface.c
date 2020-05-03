@@ -1,4 +1,6 @@
-/** @file */
+/** @file 
+ * @brief Funções camada interface
+*/
 
 #include <stdio.h>
 #include "interface.h"

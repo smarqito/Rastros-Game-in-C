@@ -2,11 +2,12 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structlistas" kind="struct" language="C++" prot="public">
     <compoundname>listas</compoundname>
+    <includes refid="data_8h" local="no">data.h</includes>
     <briefdescription>
-    </briefdescription>
+<para>Listas ligadas. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="projeto/modules/data.h" line="112" column="1" bodyfile="projeto/modules/data.h" bodystart="112" bodyend="115"/>
+    <location file="projeto/modules/data.h" line="139" column="1" bodyfile="projeto/modules/data.h" bodystart="139" bodyend="142"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

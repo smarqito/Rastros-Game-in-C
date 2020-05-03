@@ -1,4 +1,6 @@
-/** @file */
+/** @file
+ * @brief Prompt de jogo
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -40,27 +40,41 @@
 #define CASA_JOGADOR2 '2'
 
 /**
- * @enum CASA Tipo de casas disponíveis (descritas acima)
+ * @typedef CASA
+ * @brief Tipo de casas disponíveis (descritas acima)
  */
-typedef enum {VAZIO, BRANCA, PRETA,JOGADOR1,JOGADOR2} CASA;
+typedef enum casa {
+    VAZIO, BRANCA, PRETA,JOGADOR1,JOGADOR2
+} CASA;
 
 /**
- * @enum BOT Disponibilidade do bot: ativo ou desativo
+ * @typedef BOT 
+ * Disponibilidade do bot: ativo ou desativo
  */
-typedef enum {NO,YES} BOT;
+
+typedef enum bot {
+    NO,YES
+} BOT;
 
 /**
- * @typedef COORDENADA 
+ * @struct coordenada
  * @brief Struct para armazenar a coluna e a linha de uma coordenada
  */
+/**
+ * @typedef COORDENADA
+ * @brief coordenada
+ */
 typedef struct coordenada {
-    int linha, //!< @var linha Linha da coordenada
-        coluna; //!< @var coluna Coluna da coordenada
+    int linha, //!< @var int linha
+        coluna; //!< @var int coluna
 } COORDENADA;
 
 /**
  * @typedef JOGADA 
  * @brief Armazena a coordenada de 2 jogadores
+ */
+/** @struct jogada
+ * @brief Jogada de 2 jogadores
  */
 typedef struct jogada {
     COORDENADA jogador1, //!< @var jogador1 Coordenada do jogador 1
@@ -77,6 +91,11 @@ typedef JOGADA JOGADAS[32];
  * @typedef ESTADO 
  * @brief Parâmetros que definem o estado do programa
  */
+
+/**
+ * @struct estado
+ * @brief Estado do jogo
+ */
 typedef struct estado {
     CASA tab[MAX_HOUSES][MAX_HOUSES]; //!< @var tab Estado atual do tabuleiro
     COORDENADA ultimaJogada; //!< @var ultimaJogada Coordenada da última jogada efetuada
@@ -91,6 +110,10 @@ typedef struct estado {
 } ESTADO;
 
 /**
+ * @struct in
+ * @brief Input do prompt
+ */
+/**
  * @typedef INPUT 
  * @brief Armazena o comando escrito pelo utilizador e respetivos argumentos
  */
@@ -102,6 +125,10 @@ typedef struct in {
 /**
  * @typedef LISTA
  * @brief Apontador para uma lista ligada
+ */
+/**
+ * @struct listas
+ * @brief Listas ligadas
  */
 typedef struct listas *LISTA;
 

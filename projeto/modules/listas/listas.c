@@ -1,5 +1,6 @@
 /**
  * @file
+ * @brief Funções para listas ligadas
  */
 
 #include <stdio.h>

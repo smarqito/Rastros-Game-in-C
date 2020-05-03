@@ -2,11 +2,12 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structjogada" kind="struct" language="C++" prot="public">
     <compoundname>jogada</compoundname>
+    <includes refid="data_8h" local="no">data.h</includes>
     <briefdescription>
-    </briefdescription>
+<para>Jogada de 2 jogadores. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="projeto/modules/data.h" line="65" column="1" bodyfile="projeto/modules/data.h" bodystart="65" bodyend="68"/>
+    <location file="projeto/modules/data.h" line="79" column="1" bodyfile="projeto/modules/data.h" bodystart="79" bodyend="82"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

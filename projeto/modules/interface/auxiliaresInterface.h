@@ -1,4 +1,6 @@
-/** @file */
+/** @file
+ * @brief Head file para auxiliares interface
+ */
 
 #ifndef RASTROS_AUXILIARESINTERFACE_H
 #define RASTROS_AUXILIARESINTERFACE_H

@@ -8,54 +8,54 @@
     <includedby refid="ficheiros_8c" local="yes">projeto/modules/interface/ficheiros.c</includedby>
     <includedby refid="interpretador_8c" local="yes">projeto/modules/interface/interpretador.c</includedby>
     <incdepgraph>
-      <node id="163">
+      <node id="169">
         <label>../data.h</label>
         <link refid="data_8h"/>
-        <childnode refid="164" relation="include">
+        <childnode refid="170" relation="include">
         </childnode>
-      </node>
-      <node id="162">
-        <label>bits/types/FILE.h</label>
-      </node>
-      <node id="164">
-        <label>../globals/globals.h</label>
-        <link refid="globals_8h"/>
-        <childnode refid="165" relation="include">
-        </childnode>
-      </node>
-      <node id="161">
-        <label>projeto/modules/interface/ficheiros.h</label>
-        <link refid="ficheiros_8h"/>
-        <childnode refid="162" relation="include">
-        </childnode>
-        <childnode refid="163" relation="include">
-        </childnode>
-      </node>
-      <node id="165">
-        <label>cores.h</label>
-        <link refid="cores_8h_source"/>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="167">
-        <label>bot/li2pl6g05.c</label>
-        <link refid="li2pl6g05_8c"/>
       </node>
       <node id="168">
-        <label>projeto/modules/interface/ficheiros.c</label>
-        <link refid="ficheiros_8c"/>
+        <label>bits/types/FILE.h</label>
       </node>
-      <node id="166">
+      <node id="170">
+        <label>../globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="171" relation="include">
+        </childnode>
+      </node>
+      <node id="167">
         <label>projeto/modules/interface/ficheiros.h</label>
         <link refid="ficheiros_8h"/>
-        <childnode refid="167" relation="include">
-        </childnode>
         <childnode refid="168" relation="include">
         </childnode>
         <childnode refid="169" relation="include">
         </childnode>
       </node>
-      <node id="169">
+      <node id="171">
+        <label>cores.h</label>
+        <link refid="cores_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="173">
+        <label>bot/li2pl6g05.c</label>
+        <link refid="li2pl6g05_8c"/>
+      </node>
+      <node id="174">
+        <label>projeto/modules/interface/ficheiros.c</label>
+        <link refid="ficheiros_8c"/>
+      </node>
+      <node id="172">
+        <label>projeto/modules/interface/ficheiros.h</label>
+        <link refid="ficheiros_8h"/>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+      </node>
+      <node id="175">
         <label>projeto/modules/interface/interpretador.c</label>
         <link refid="interpretador_8c"/>
       </node>
@@ -85,7 +85,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/modules/interface/ficheiros.h" line="16" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="14" bodyend="18"/>
+        <location file="projeto/modules/interface/ficheiros.h" line="16" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="16" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="ficheiros_8h_1a294c697018601dcc114de13b0c0edcf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -122,7 +122,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
 <para>&lt;Abre o ficheiro para gravar</para><para>&lt; Imprime a casa no ficheiro de texto temporário</para><para>&lt;Fecha o ficheiro temporário </para>        </inbodydescription>
-        <location file="projeto/modules/interface/ficheiros.h" line="26" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="20" bodyend="43"/>
+        <location file="projeto/modules/interface/ficheiros.h" line="26" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="22" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="ficheiros_8h_1a300fe400f526c3773a18c80cf77ec047" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -169,7 +169,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/modules/interface/ficheiros.h" line="35" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="45" bodyend="55"/>
+        <location file="projeto/modules/interface/ficheiros.h" line="35" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="47" bodyend="57"/>
       </memberdef>
       <memberdef kind="function" id="ficheiros_8h_1a6b366955e5475739723021222df288ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -206,7 +206,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/modules/interface/ficheiros.h" line="47" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="57" bodyend="79"/>
+        <location file="projeto/modules/interface/ficheiros.h" line="47" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="59" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="ficheiros_8h_1a7bf5772cf515688c18722aaf98f7210d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -244,11 +244,11 @@
         <inbodydescription>
 <para>&lt; Faz reset do estado atual</para><para>&lt; Remove o caracter &apos;<linebreak/>
 &apos;</para><para>&lt; Se não for possível abrir o ficheiro, dá erro.</para><para>&lt; Inicia a construção do tabuleiro a partir da leitura do ficheiro</para><para>&lt; Começa a percorrer o resto do ficheiro (histórico de jogadas) </para>        </inbodydescription>
-        <location file="projeto/modules/interface/ficheiros.h" line="60" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="81" bodyend="127"/>
+        <location file="projeto/modules/interface/ficheiros.h" line="60" column="1" bodyfile="projeto/modules/interface/ficheiros.c" bodystart="83" bodyend="129"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Atualmente este ficheiro não está a ser utilizado. Serve para referência futura e reorganização do código. </para>    </briefdescription>
+<para>Header ficheiros. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <programlisting>

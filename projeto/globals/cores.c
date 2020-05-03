@@ -1,6 +1,7 @@
-//
-// Created by marco on 3/22/20.
-//
+/**
+ * @file
+ * @brief Função para formatar o prompt
+ */
 
 #include "cores.h"
 #include <stdio.h>

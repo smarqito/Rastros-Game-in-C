@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Funções com a funcionalidade do bot
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

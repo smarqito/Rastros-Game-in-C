@@ -5,37 +5,37 @@
     <includes refid="data_8h" local="yes">modules/data.h</includes>
     <includes refid="interpretador_8h" local="yes">modules/interface/interpretador.h</includes>
     <incdepgraph>
-      <node id="94">
+      <node id="98">
         <label>modules/data.h</label>
         <link refid="data_8h"/>
-        <childnode refid="95" relation="include">
-        </childnode>
-      </node>
-      <node id="93">
-        <label>projeto/main.c</label>
-        <link refid="main_8c"/>
-        <childnode refid="94" relation="include">
-        </childnode>
-        <childnode refid="97" relation="include">
-        </childnode>
-      </node>
-      <node id="95">
-        <label>../globals/globals.h</label>
-        <link refid="globals_8h"/>
-        <childnode refid="96" relation="include">
+        <childnode refid="99" relation="include">
         </childnode>
       </node>
       <node id="97">
-        <label>modules/interface/interpretador.h</label>
-        <link refid="interpretador_8h"/>
-        <childnode refid="94" relation="include">
+        <label>projeto/main.c</label>
+        <link refid="main_8c"/>
+        <childnode refid="98" relation="include">
         </childnode>
-        <childnode refid="95" relation="include">
+        <childnode refid="101" relation="include">
         </childnode>
       </node>
-      <node id="96">
+      <node id="99">
+        <label>../globals/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="100" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>modules/interface/interpretador.h</label>
+        <link refid="interpretador_8h"/>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+      </node>
+      <node id="100">
         <label>cores.h</label>
-        <link refid="cores_8h_source"/>
+        <link refid="cores_8h"/>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -47,7 +47,7 @@
         <briefdescription>
 <para>Função de entrada no programa. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>0 se não houvve erros. </para></simplesect>
+<para>Função principal.</para><para><simplesect kind="return"><para>0 se não houvve erros. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>

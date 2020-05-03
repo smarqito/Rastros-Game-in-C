@@ -1,4 +1,6 @@
-/** @file */
+/** @file
+ * @brief Funções da camada de lógica
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

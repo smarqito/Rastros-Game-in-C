@@ -5,6 +5,7 @@
     <innerfile refid="listas_8c">listas.c</innerfile>
     <innerfile refid="listas_8h">listas.h</innerfile>
     <innerfile refid="modules_2listas_2main_8c">main.c</innerfile>
+    <innerfile refid="main_8h">main.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

@@ -28,27 +28,13 @@
     <member refid="auxiliaresBot_8h_1a9e4f136c5c56efb735ef8f3cb8a144ea" kind="function"><name>distanciaJog</name></member>
     <member refid="auxiliaresBot_8h_1afb4df45c5b94708b603e284258c48f24" kind="function"><name>treeSearch</name></member>
     <member refid="auxiliaresBot_8h_1a6c63571fffc8e9339b256a65168bac1f" kind="function"><name>jogaBot</name></member>
+    <member refid="auxiliaresBot_8h_1afff9547b4bdcdaf95a9edd167073fc63" kind="function"><name>novoEstado</name></member>
   </compound>
   <compound refid="li2pl6g05_8c" kind="file"><name>li2pl6g05.c</name>
     <member refid="li2pl6g05_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
   </compound>
   <compound refid="li2pl6g05_8h" kind="file"><name>li2pl6g05.h</name>
     <member refid="li2pl6g05_8h_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
-  </compound>
-  <compound refid="CMakeCCompilerId_8c" kind="file"><name>CMakeCCompilerId.c</name>
-    <member refid="CMakeCCompilerId_8c_1a81dee0709ded976b2e0319239f72d174" kind="define"><name>COMPILER_ID</name></member>
-    <member refid="CMakeCCompilerId_8c_1a2ae9b72bb13abaabfcf2ee0ba7d3fa1d" kind="define"><name>STRINGIFY_HELPER</name></member>
-    <member refid="CMakeCCompilerId_8c_1a43e1cad902b6477bec893cb6430bd6c8" kind="define"><name>STRINGIFY</name></member>
-    <member refid="CMakeCCompilerId_8c_1adbc5372f40838899018fadbc89bd588b" kind="define"><name>PLATFORM_ID</name></member>
-    <member refid="CMakeCCompilerId_8c_1aba35d0d200deaeb06aee95ca297acb28" kind="define"><name>ARCHITECTURE_ID</name></member>
-    <member refid="CMakeCCompilerId_8c_1ad1280362da42492bbc11aa78cbf776ad" kind="define"><name>DEC</name></member>
-    <member refid="CMakeCCompilerId_8c_1a46d5d95daa1bef867bd0179594310ed5" kind="define"><name>HEX</name></member>
-    <member refid="CMakeCCompilerId_8c_1a07f8e5783674099cd7f5110e22a78cdb" kind="define"><name>C_DIALECT</name></member>
-    <member refid="CMakeCCompilerId_8c_1a4b0efeb7a5d59313986b3a0390f050f6" kind="variable"><name>info_compiler</name></member>
-    <member refid="CMakeCCompilerId_8c_1a2321403dee54ee23f0c2fa849c60f7d4" kind="variable"><name>info_platform</name></member>
-    <member refid="CMakeCCompilerId_8c_1a59647e99d304ed33b15cb284c27ed391" kind="variable"><name>info_arch</name></member>
-    <member refid="CMakeCCompilerId_8c_1a1ce162bad2fe6966ac8b33cc19e120b8" kind="variable"><name>info_language_dialect_default</name></member>
-    <member refid="CMakeCCompilerId_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
   </compound>
   <compound refid="cores_8c" kind="file"><name>cores.c</name>
     <member refid="cores_8c_1ab3cb6719a00f90e9733905292481b408" kind="function"><name>promptFormata</name></member>
@@ -114,15 +100,17 @@
     <member refid="data_8h_1ab13fead0fbaac805ac69de8704e9db63" kind="define"><name>CASA_PRETA</name></member>
     <member refid="data_8h_1a474acfca96b7c6168ff2960036dad9c5" kind="define"><name>CASA_JOGADOR1</name></member>
     <member refid="data_8h_1a1d609589b3ab30de997d2662cacabea3" kind="define"><name>CASA_JOGADOR2</name></member>
-    <member refid="data_8h_1aba91601f16d4c485b2d9b8c429f27039" kind="enum"><name>CASA</name></member>
-    <member refid="data_8h_1aba91601f16d4c485b2d9b8c429f27039abc711f491a56ec7af7a688be508c5113" kind="enumvalue"><name>VAZIO</name></member>
-    <member refid="data_8h_1aba91601f16d4c485b2d9b8c429f27039ad24485fddec75419fd4a0cc9edda0ca5" kind="enumvalue"><name>BRANCA</name></member>
-    <member refid="data_8h_1aba91601f16d4c485b2d9b8c429f27039a007278eb3827d19891b47cdd3ac8846d" kind="enumvalue"><name>PRETA</name></member>
-    <member refid="data_8h_1aba91601f16d4c485b2d9b8c429f27039a7cb37ed1d85c781815ba3f34c5efe678" kind="enumvalue"><name>JOGADOR1</name></member>
-    <member refid="data_8h_1aba91601f16d4c485b2d9b8c429f27039ad46a7269193196b7864f5291643a5325" kind="enumvalue"><name>JOGADOR2</name></member>
-    <member refid="data_8h_1abc41fb0c628891499e27998edb38f8f9" kind="enum"><name>BOT</name></member>
-    <member refid="data_8h_1abc41fb0c628891499e27998edb38f8f9a0d077f5b932ce05e5b9f30c6087a2f31" kind="enumvalue"><name>NO</name></member>
-    <member refid="data_8h_1abc41fb0c628891499e27998edb38f8f9a99f136a862ba5c7d16967231c29f09d6" kind="enumvalue"><name>YES</name></member>
+    <member refid="data_8h_1a6752324b14fe3c3c8df0d973e5ae32ed" kind="enum"><name>casa</name></member>
+    <member refid="data_8h_1a6752324b14fe3c3c8df0d973e5ae32edabc711f491a56ec7af7a688be508c5113" kind="enumvalue"><name>VAZIO</name></member>
+    <member refid="data_8h_1a6752324b14fe3c3c8df0d973e5ae32edad24485fddec75419fd4a0cc9edda0ca5" kind="enumvalue"><name>BRANCA</name></member>
+    <member refid="data_8h_1a6752324b14fe3c3c8df0d973e5ae32eda007278eb3827d19891b47cdd3ac8846d" kind="enumvalue"><name>PRETA</name></member>
+    <member refid="data_8h_1a6752324b14fe3c3c8df0d973e5ae32eda7cb37ed1d85c781815ba3f34c5efe678" kind="enumvalue"><name>JOGADOR1</name></member>
+    <member refid="data_8h_1a6752324b14fe3c3c8df0d973e5ae32edad46a7269193196b7864f5291643a5325" kind="enumvalue"><name>JOGADOR2</name></member>
+    <member refid="data_8h_1aa892eed91b5baf33cae5e5a1f227c373" kind="enum"><name>bot</name></member>
+    <member refid="data_8h_1aa892eed91b5baf33cae5e5a1f227c373a0d077f5b932ce05e5b9f30c6087a2f31" kind="enumvalue"><name>NO</name></member>
+    <member refid="data_8h_1aa892eed91b5baf33cae5e5a1f227c373a99f136a862ba5c7d16967231c29f09d6" kind="enumvalue"><name>YES</name></member>
+    <member refid="data_8h_1aba91601f16d4c485b2d9b8c429f27039" kind="typedef"><name>CASA</name></member>
+    <member refid="data_8h_1abc41fb0c628891499e27998edb38f8f9" kind="typedef"><name>BOT</name></member>
     <member refid="data_8h_1a5e3f28e43e57a17ac65133789ca1daef" kind="typedef"><name>COORDENADA</name></member>
     <member refid="data_8h_1a2efe56b4514bda1d5724b279d417bc64" kind="typedef"><name>JOGADA</name></member>
     <member refid="data_8h_1a8be315308d96a2904c258c3c6b89e53c" kind="typedef"><name>JOGADAS</name></member>
@@ -221,6 +209,9 @@
     <member refid="listas_8h_1a4395a8ad5bc1caa6c0a976bc47d1f3b2" kind="function"><name>listaEstaVazia</name></member>
     <member refid="listas_8h_1aa4b4c76fb024a402f5b370ea6222ef16" kind="function"><name>lengthLista</name></member>
   </compound>
+  <compound refid="main_8h" kind="file"><name>main.h</name>
+    <member refid="main_8h_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
   <compound refid="logica_8c" kind="file"><name>logica.c</name>
     <member refid="logica_8c_1a4f8f2b1bd6e25fc55372bdb05b5b0b30" kind="function"><name>changeCardinal</name></member>
     <member refid="logica_8c_1a2e0eb56a3607ad2fb057ca268bf64c5c" kind="function"><name>verificaVizinhanca</name></member>
@@ -265,15 +256,7 @@
   </compound>
   <compound refid="md_README" kind="page"><name>md_README</name>
   </compound>
-  <compound refid="dir_237aeaf27450e064903edae88ca50e75" kind="dir"><name>projeto/cmake-build-debug/CMakeFiles/3.15.3</name>
-  </compound>
   <compound refid="dir_30f56cd85179c0aaeec6f92fdf9f3471" kind="dir"><name>bot</name>
-  </compound>
-  <compound refid="dir_62773cb669de775ed99caac67a9e25bf" kind="dir"><name>projeto/cmake-build-debug</name>
-  </compound>
-  <compound refid="dir_c3cb0ea21d9989db96d74569f14ccb13" kind="dir"><name>projeto/cmake-build-debug/CMakeFiles</name>
-  </compound>
-  <compound refid="dir_3a176b10b1ebe4136373324bac66ff8c" kind="dir"><name>projeto/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC</name>
   </compound>
   <compound refid="dir_9975e78fbfd2828f1d3aec52fc9d1efa" kind="dir"><name>projeto/globals</name>
   </compound>
