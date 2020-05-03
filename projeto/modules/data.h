@@ -278,6 +278,7 @@ int lerEstadoBot(ESTADO *state);
 char obterLinhaColuna (ESTADO *state, int jogador, int jogada, char tipo);
 
 /**
+<<<<<<< HEAD:projeto/modules/data.h
  * @brief Vai buscar ao input o argumento ou o comando
  * 
  * @param input Apontador para a struct input
@@ -285,6 +286,16 @@ char obterLinhaColuna (ESTADO *state, int jogador, int jogada, char tipo);
  *                0 - comando
  * 
  * @return Apontador para string conforme escolha
+=======
+ * @brief  Lê o argumento ou o comando do input
+ *
+ * @param input apontador para o input
+ * @param escolha Escolher entre ler o argumento ou o comando
+ *       <0 para argumento
+ *        0 para comando
+ *
+ * @return O argumento/comando desejado
+>>>>>>> master:modules/data.h
  */
 char *obterArgumentoComando (INPUT *input, int escolha );
 
