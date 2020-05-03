@@ -6,7 +6,7 @@
     <includedby refid="data_8h" local="yes">projeto/modules/data.h</includedby>
     <includedby refid="listas_8h" local="yes">projeto/modules/listas/listas.h</includedby>
     <includedby refid="interface_8h" local="yes">projeto/modules/interface/interface.h</includedby>
-    <includedby refid="bot_8c" local="yes">bot/bot.c</includedby>
+    <includedby refid="li2pl6g05_8c" local="yes">bot/li2pl6g05.c</includedby>
     <includedby refid="globals_8c" local="yes">projeto/globals/globals.c</includedby>
     <includedby refid="interpretador_8h" local="yes">projeto/modules/interface/interpretador.h</includedby>
     <includedby refid="auxiliaresInterface_8c" local="yes">projeto/modules/interface/auxiliaresInterface.c</includedby>
@@ -81,6 +81,14 @@
         </childnode>
         <childnode refid="79" relation="include">
         </childnode>
+      </node>
+      <node id="77">
+        <label>bot/li2pl6g05.c</label>
+        <link refid="li2pl6g05_8c"/>
+      </node>
+      <node id="87">
+        <label>bot/li2pl6g05.h</label>
+        <link refid="li2pl6g05_8h"/>
       </node>
       <node id="88">
         <label>projeto/main.c</label>
@@ -173,14 +181,6 @@
         </childnode>
         <childnode refid="79" relation="include">
         </childnode>
-      </node>
-      <node id="77">
-        <label>bot/bot.c</label>
-        <link refid="bot_8c"/>
-      </node>
-      <node id="87">
-        <label>bot/bot.h</label>
-        <link refid="bot_8h"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">

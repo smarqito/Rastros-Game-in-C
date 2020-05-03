@@ -29,11 +29,11 @@
     <member refid="auxiliaresBot_8h_1afb4df45c5b94708b603e284258c48f24" kind="function"><name>treeSearch</name></member>
     <member refid="auxiliaresBot_8h_1a6c63571fffc8e9339b256a65168bac1f" kind="function"><name>jogaBot</name></member>
   </compound>
-  <compound refid="bot_8c" kind="file"><name>bot.c</name>
-    <member refid="bot_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  <compound refid="li2pl6g05_8c" kind="file"><name>li2pl6g05.c</name>
+    <member refid="li2pl6g05_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
   </compound>
-  <compound refid="bot_8h" kind="file"><name>bot.h</name>
-    <member refid="bot_8h_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  <compound refid="li2pl6g05_8h" kind="file"><name>li2pl6g05.h</name>
+    <member refid="li2pl6g05_8h_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
   </compound>
   <compound refid="CMakeCCompilerId_8c" kind="file"><name>CMakeCCompilerId.c</name>
     <member refid="CMakeCCompilerId_8c_1a81dee0709ded976b2e0319239f72d174" kind="define"><name>COMPILER_ID</name></member>

@@ -4,7 +4,7 @@
     <compoundname>logica.h</compoundname>
     <includes refid="data_8h" local="yes">../data.h</includes>
     <includedby refid="auxiliaresBot_8c" local="yes">bot/auxiliaresBot.c</includedby>
-    <includedby refid="bot_8c" local="yes">bot/bot.c</includedby>
+    <includedby refid="li2pl6g05_8c" local="yes">bot/li2pl6g05.c</includedby>
     <includedby refid="ficheiros_8c" local="yes">projeto/modules/interface/ficheiros.c</includedby>
     <includedby refid="interface_8c" local="yes">projeto/modules/interface/interface.c</includedby>
     <includedby refid="interpretador_8c" local="yes">projeto/modules/interface/interpretador.c</includedby>
@@ -38,6 +38,10 @@
         <label>projeto/modules/interface/interface.c</label>
         <link refid="interface_8c"/>
       </node>
+      <node id="244">
+        <label>bot/li2pl6g05.c</label>
+        <link refid="li2pl6g05_8c"/>
+      </node>
       <node id="245">
         <label>projeto/modules/interface/ficheiros.c</label>
         <link refid="ficheiros_8c"/>
@@ -63,10 +67,6 @@
         </childnode>
         <childnode refid="248" relation="include">
         </childnode>
-      </node>
-      <node id="244">
-        <label>bot/bot.c</label>
-        <link refid="bot_8c"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="func">

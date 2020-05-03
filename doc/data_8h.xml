@@ -8,9 +8,9 @@
     <includedby refid="listas_8h" local="yes">projeto/modules/listas/listas.h</includedby>
     <includedby refid="logica_8h" local="yes">projeto/modules/logica/logica.h</includedby>
     <includedby refid="interface_8h" local="yes">projeto/modules/interface/interface.h</includedby>
-    <includedby refid="bot_8c" local="yes">bot/bot.c</includedby>
+    <includedby refid="li2pl6g05_8c" local="yes">bot/li2pl6g05.c</includedby>
     <includedby refid="ficheiros_8h" local="yes">projeto/modules/interface/ficheiros.h</includedby>
-    <includedby refid="bot_8h" local="yes">bot/bot.h</includedby>
+    <includedby refid="li2pl6g05_8h" local="yes">bot/li2pl6g05.h</includedby>
     <includedby refid="main_8c" local="yes">projeto/main.c</includedby>
     <includedby refid="interpretador_8h" local="yes">projeto/modules/interface/interpretador.h</includedby>
     <includedby refid="data_8c" local="yes">projeto/modules/data.c</includedby>
@@ -90,6 +90,14 @@
         <childnode refid="122" relation="include">
         </childnode>
       </node>
+      <node id="120">
+        <label>bot/li2pl6g05.c</label>
+        <link refid="li2pl6g05_8c"/>
+      </node>
+      <node id="130">
+        <label>bot/li2pl6g05.h</label>
+        <link refid="li2pl6g05_8h"/>
+      </node>
       <node id="131">
         <label>projeto/main.c</label>
         <link refid="main_8c"/>
@@ -149,14 +157,6 @@
         </childnode>
         <childnode refid="122" relation="include">
         </childnode>
-      </node>
-      <node id="120">
-        <label>bot/bot.c</label>
-        <link refid="bot_8c"/>
-      </node>
-      <node id="130">
-        <label>bot/bot.h</label>
-        <link refid="bot_8h"/>
       </node>
     </invincdepgraph>
     <innerclass refid="structcoordenada" prot="public">coordenada</innerclass>
@@ -922,7 +922,7 @@
         <briefdescription>
 <para>Vai buscar ao input o argumento ou o comando. </para>        </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
+<para>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:<ref refid="data_8h" kindref="compound">projeto/modules/data.h</ref> <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>input</parametername>
 </parameternamelist>
@@ -937,11 +937,27 @@
 <para>1 - argumento 0 - comando</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>Apontador para string conforme escolha </para></simplesect>
+<heading level="1">Apontador para string conforme escolha </heading>
+</para><para>Lê o argumento ou o comando do input</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>apontador para o input </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>escolha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Escolher entre ler o argumento ou o comando &lt;0 para argumento 0 para comando</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>O argumento/comando desejado <blockquote><para><blockquote><para><blockquote><para><blockquote><para><blockquote><para><blockquote><para><blockquote><para>master:<ref refid="data_8h" kindref="compound">modules/data.h</ref></para></blockquote></para></blockquote></para></blockquote></para></blockquote></para></blockquote></para></blockquote></para></blockquote></para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="projeto/modules/data.h" line="289" column="1" bodyfile="projeto/modules/data.c" bodystart="145" bodyend="147"/>
+        <location file="projeto/modules/data.h" line="300" column="1" bodyfile="projeto/modules/data.c" bodystart="145" bodyend="147"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1045,9 +1061,9 @@
 <codeline lineno="264"><highlight class="normal"></highlight></codeline>
 <codeline lineno="278"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="data_8h_1a11efafb96b6f104ceaf29070318d3e55" kindref="member">obterLinhaColuna</ref><sp/>(<ref refid="structestado" kindref="compound">ESTADO</ref><sp/>*state,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jogador,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structjogada" kindref="compound">jogada</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>tipo);</highlight></codeline>
 <codeline lineno="279"><highlight class="normal"></highlight></codeline>
-<codeline lineno="289"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="data_8h_1ad582ad4fea5dfdef9a63ed06ba03f694" kindref="member">obterArgumentoComando</ref><sp/>(<ref refid="structin" kindref="compound">INPUT</ref><sp/>*input,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>escolha<sp/>);</highlight></codeline>
-<codeline lineno="290"><highlight class="normal"></highlight></codeline>
-<codeline lineno="291"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//RASTROS_DATA_H</highlight></codeline>
+<codeline lineno="300"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="data_8h_1ad582ad4fea5dfdef9a63ed06ba03f694" kindref="member">obterArgumentoComando</ref><sp/>(<ref refid="structin" kindref="compound">INPUT</ref><sp/>*input,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>escolha<sp/>);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//RASTROS_DATA_H</highlight></codeline>
     </programlisting>
     <location file="projeto/modules/data.h"/>
   </compounddef>

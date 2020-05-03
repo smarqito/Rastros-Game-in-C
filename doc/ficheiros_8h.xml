@@ -4,7 +4,7 @@
     <compoundname>ficheiros.h</compoundname>
     <includes local="no">bits/types/FILE.h</includes>
     <includes refid="data_8h" local="yes">../data.h</includes>
-    <includedby refid="bot_8c" local="yes">bot/bot.c</includedby>
+    <includedby refid="li2pl6g05_8c" local="yes">bot/li2pl6g05.c</includedby>
     <includedby refid="ficheiros_8c" local="yes">projeto/modules/interface/ficheiros.c</includedby>
     <includedby refid="interpretador_8c" local="yes">projeto/modules/interface/interpretador.c</includedby>
     <incdepgraph>
@@ -37,6 +37,10 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="167">
+        <label>bot/li2pl6g05.c</label>
+        <link refid="li2pl6g05_8c"/>
+      </node>
       <node id="168">
         <label>projeto/modules/interface/ficheiros.c</label>
         <link refid="ficheiros_8c"/>
@@ -54,10 +58,6 @@
       <node id="169">
         <label>projeto/modules/interface/interpretador.c</label>
         <link refid="interpretador_8c"/>
-      </node>
-      <node id="167">
-        <label>bot/bot.c</label>
-        <link refid="bot_8c"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="func">

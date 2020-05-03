@@ -3,7 +3,7 @@
   <compounddef id="cores_8h" kind="file" language="C++">
     <compoundname>cores.h</compoundname>
     <includedby refid="globals_8h" local="yes">projeto/globals/globals.h</includedby>
-    <includedby refid="bot_8c" local="yes">bot/bot.c</includedby>
+    <includedby refid="li2pl6g05_8c" local="yes">bot/li2pl6g05.c</includedby>
     <includedby refid="cores_8c" local="yes">projeto/globals/cores.c</includedby>
     <invincdepgraph>
       <node id="59">
@@ -61,6 +61,14 @@
         </childnode>
         <childnode refid="54" relation="include">
         </childnode>
+      </node>
+      <node id="52">
+        <label>bot/li2pl6g05.c</label>
+        <link refid="li2pl6g05_8c"/>
+      </node>
+      <node id="62">
+        <label>bot/li2pl6g05.h</label>
+        <link refid="li2pl6g05_8h"/>
       </node>
       <node id="63">
         <label>projeto/main.c</label>
@@ -161,14 +169,6 @@
         </childnode>
         <childnode refid="54" relation="include">
         </childnode>
-      </node>
-      <node id="52">
-        <label>bot/bot.c</label>
-        <link refid="bot_8c"/>
-      </node>
-      <node id="62">
-        <label>bot/bot.h</label>
-        <link refid="bot_8h"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">

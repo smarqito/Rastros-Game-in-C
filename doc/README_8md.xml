@@ -14,6 +14,27 @@
 <codeline><highlight class="normal">Projeto<sp/>desenvolvido<sp/>no<sp/>âmbito<sp/>da<sp/>unidade<sp/>curricular<sp/>Laboratórios<sp/>de<sp/>Informática<sp/>II<sp/>do<sp/>curso<sp/>de<sp/></highlight></codeline>
 <codeline><highlight class="normal">Engenharia<sp/>Informática<sp/>da<sp/>Universidade<sp/>do<sp/>Minho.</highlight></codeline>
 <codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Instruções<sp/>de<sp/>utilização</highlight></codeline>
+<codeline><highlight class="normal">Na<sp/>raiz<sp/>do<sp/>projeto,<sp/>bastará<sp/>correr<sp/>o<sp/>comando<sp/>```make```<sp/>em<sp/>sistemas<sp/>Unix.<sp/>Este<sp/>comando<sp/>irá<sp/>criar<sp/>2<sp/>executáveis:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>__rastros.exe__<sp/>(*root*)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Programa<sp/>principal<sp/>para<sp/>entrar<sp/>no<sp/>jogo</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>__li2pl06g05_bot__<sp/>(*./bot/*)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Programa<sp/>extra<sp/>para<sp/>utilizar<sp/>o<sp/>bot<sp/>no<sp/>torneio</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>rastros.exe</highlight></codeline>
+<codeline><highlight class="normal">Comandos<sp/>disponíveis:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>```jogar```<sp/>::<sp/>Permite<sp/>entrar<sp/>no<sp/>modo<sp/>de<sp/>jogo.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>```gr<sp/>nome_do_ficheiro```<sp/>::<sp/>gravar<sp/>o<sp/>estado<sp/>atual<sp/>do<sp/>jogo<sp/>num<sp/>ficheiro.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>```ler<sp/>nome_do_ficheiro```<sp/>::<sp/>ler<sp/>o<sp/>estado<sp/>de<sp/>um<sp/>jogo<sp/>a<sp/>partir<sp/>de<sp/>um<sp/>ficheiro.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>```movs```<sp/>::<sp/><sp/>imprimir<sp/>a<sp/>lista<sp/>de<sp/>movimentos<sp/>do<sp/>jogo<sp/>atual.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>```jog```<sp/>::<sp/>pedir<sp/>ajuda<sp/>ao<sp/>bot<sp/>para<sp/>escolher<sp/>a<sp/>jogada<sp/>atual.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>```pos<sp/>numero_da_jogada```<sp/>::<sp/>visualizar<sp/>uma<sp/>posição<sp/>anterior<sp/>através<sp/>do<sp/>seu<sp/>número.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>```novo```<sp/>::<sp/>iniciar<sp/>um<sp/>novo<sp/>jogo.<sp/>Perde<sp/>o<sp/>estado<sp/>do<sp/>jogo<sp/>atual!</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>```bot<sp/>NIVEL```<sp/>::<sp/>ativar<sp/>jogo<sp/>contra<sp/>o<sp/>bot</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>```ajuda```<sp/>::<sp/>mostra<sp/>este<sp/>menú.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>```autores```<sp/>::<sp/>ver<sp/>autores.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>```Q```<sp/>::<sp/>sair<sp/>do<sp/>jogo.</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">##<sp/>Etapas<sp/>de<sp/>desenvolvimento:</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>[x]<sp/>Guião<sp/>1</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>[x]<sp/>Guião<sp/>2</highlight></codeline>
@@ -78,9 +99,10 @@
 <codeline></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">-<sp/>[x]<sp/>Guião<sp/>6</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>[<sp/>]<sp/>Guião<sp/>7</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>[<sp/>]<sp/>Guião<sp/>8</highlight></codeline>
-<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[X]<sp/>Guião<sp/>7</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[X]<sp/>Guião<sp/>8</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[X]<sp/>Guião<sp/>9</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[X]<sp/>Guião<sp/>10</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>Informação<sp/>sobre<sp/>os<sp/>autores</highlight></codeline>
 <codeline></codeline>

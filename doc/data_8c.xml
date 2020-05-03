@@ -576,7 +576,7 @@
         <briefdescription>
 <para>Vai buscar ao input o argumento ou o comando. </para>        </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
+<para>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:<ref refid="data_8h" kindref="compound">projeto/modules/data.h</ref> <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>input</parametername>
 </parameternamelist>
@@ -591,7 +591,23 @@
 <para>1 - argumento 0 - comando</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>Apontador para string conforme escolha </para></simplesect>
+<heading level="1">Apontador para string conforme escolha </heading>
+</para><para>Lê o argumento ou o comando do input</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>apontador para o input </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>escolha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Escolher entre ler o argumento ou o comando &lt;0 para argumento 0 para comando</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>O argumento/comando desejado <blockquote><para><blockquote><para><blockquote><para><blockquote><para><blockquote><para><blockquote><para><blockquote><para>master:<ref refid="data_8h" kindref="compound">modules/data.h</ref></para></blockquote></para></blockquote></para></blockquote></para></blockquote></para></blockquote></para></blockquote></para></blockquote></para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>

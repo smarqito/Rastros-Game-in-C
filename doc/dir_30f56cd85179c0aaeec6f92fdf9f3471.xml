@@ -4,8 +4,8 @@
     <compoundname>bot</compoundname>
     <innerfile refid="auxiliaresBot_8c">auxiliaresBot.c</innerfile>
     <innerfile refid="auxiliaresBot_8h">auxiliaresBot.h</innerfile>
-    <innerfile refid="bot_8c">bot.c</innerfile>
-    <innerfile refid="bot_8h">bot.h</innerfile>
+    <innerfile refid="li2pl6g05_8c">li2pl6g05.c</innerfile>
+    <innerfile refid="li2pl6g05_8h">li2pl6g05.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

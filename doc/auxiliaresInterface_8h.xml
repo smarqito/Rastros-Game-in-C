@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="auxiliaresInterface_8h" kind="file" language="C++">
     <compoundname>auxiliaresInterface.h</compoundname>
-    <includedby refid="bot_8c" local="yes">bot/bot.c</includedby>
+    <includedby refid="li2pl6g05_8c" local="yes">bot/li2pl6g05.c</includedby>
     <includedby refid="ficheiros_8c" local="yes">projeto/modules/interface/ficheiros.c</includedby>
     <includedby refid="interface_8c" local="yes">projeto/modules/interface/interface.c</includedby>
     <includedby refid="interpretador_8c" local="yes">projeto/modules/interface/interpretador.c</includedby>
@@ -11,6 +11,10 @@
       <node id="145">
         <label>projeto/modules/interface/interface.c</label>
         <link refid="interface_8c"/>
+      </node>
+      <node id="143">
+        <label>bot/li2pl6g05.c</label>
+        <link refid="li2pl6g05_8c"/>
       </node>
       <node id="144">
         <label>projeto/modules/interface/ficheiros.c</label>
@@ -37,10 +41,6 @@
       <node id="147">
         <label>projeto/modules/logica/logica.c</label>
         <link refid="logica_8c"/>
-      </node>
-      <node id="143">
-        <label>bot/bot.c</label>
-        <link refid="bot_8c"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="func">

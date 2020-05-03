@@ -6,7 +6,17 @@
     <detaileddescription>
 <para><image type="html" name="rastros.jpg"></image>
  <heading level="1">Rastros</heading>
-</para><para>Rastros game built in C</para><para>Projeto desenvolvido no âmbito da unidade curricular Laboratórios de Informática II do curso de Engenharia Informática da Universidade do Minho.</para><para><heading level="2">Etapas de desenvolvimento:</heading>
+</para><para>Rastros game built in C</para><para>Projeto desenvolvido no âmbito da unidade curricular Laboratórios de Informática II do curso de Engenharia Informática da Universidade do Minho.</para><para><heading level="2">Instruções de utilização</heading>
+</para><para>Na raiz do projeto, bastará correr o comando <computeroutput>make</computeroutput> em sistemas Unix. Este comando irá criar 2 executáveis:<itemizedlist>
+<listitem><para><bold>rastros.exe</bold> (<emphasis>root</emphasis>)<itemizedlist>
+<listitem><para>Programa principal para entrar no jogo</para></listitem></itemizedlist>
+</para></listitem><listitem><para><bold>li2pl06g05_bot</bold> (*./bot/*)<itemizedlist>
+<listitem><para>Programa extra para utilizar o bot no torneio</para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para><para><heading level="3">rastros.exe</heading>
+</para><para>Comandos disponíveis:<itemizedlist>
+<listitem><para><computeroutput>jogar</computeroutput> :: Permite entrar no modo de jogo.</para></listitem><listitem><para><computeroutput>gr nome_do_ficheiro</computeroutput> :: gravar o estado atual do jogo num ficheiro.</para></listitem><listitem><para><computeroutput>ler nome_do_ficheiro</computeroutput> :: ler o estado de um jogo a partir de um ficheiro.</para></listitem><listitem><para><computeroutput>movs</computeroutput> :: imprimir a lista de movimentos do jogo atual.</para></listitem><listitem><para><computeroutput>jog</computeroutput> :: pedir ajuda ao bot para escolher a jogada atual.</para></listitem><listitem><para><computeroutput>pos numero_da_jogada</computeroutput> :: visualizar uma posição anterior através do seu número.</para></listitem><listitem><para><computeroutput>novo</computeroutput> :: iniciar um novo jogo. Perde o estado do jogo atual!</para></listitem><listitem><para><computeroutput>bot NIVEL</computeroutput> :: ativar jogo contra o bot</para></listitem><listitem><para><computeroutput>ajuda</computeroutput> :: mostra este menú.</para></listitem><listitem><para><computeroutput>autores</computeroutput> :: ver autores.</para></listitem><listitem><para><computeroutput>Q</computeroutput> :: sair do jogo.</para></listitem></itemizedlist>
+</para><para><heading level="2">Etapas de desenvolvimento:</heading>
 </para><para><itemizedlist>
 <listitem><para>[x] Guião 1</para></listitem><listitem><para>[x] Guião 2</para></listitem><listitem><para>[x] Guião 3</para></listitem><listitem><para>[x] Guião 4</para></listitem><listitem><para>[x] Guião 5 <heading level="3">Relatório Guião 5</heading>
 </para></listitem></itemizedlist>
@@ -39,7 +49,7 @@
 </para><para>Interface;<itemizedlist>
 <listitem><para>Lógica;</para></listitem><listitem><para>Interpretador.</para></listitem></itemizedlist>
 </para><para>A maior dificuldade ocorreu durante esta fase inicial do projeto, em que se procurou definir a melhor hierarquia de ficheiros possível que permitisse criar módulos facilmente reutilizáveis e fácil de efetuar <emphasis>debugging</emphasis>. Para tal, utilizou-se conhecimento adquirido em artigos sobre esta temática. Quanto ao desenvolvimento do código, utilizando as orientações da equipa docente e o conhecimento adquirido nas aulas teóricas de Programação Imperativa, foi relativamente simples. Por forma a facilitar a impressão do tabuleiro e a deteção de fim de jogo, optou-se por alterar a tipo de dados <computeroutput>CASA</computeroutput>, acrescentando <computeroutput>JOGADOR1, JOGADOR2</computeroutput>. Através desta alteração, foi possível definir uma função que imprime o tabuleiro com o mínimo de código e fácil leitura humana - novamente com o objetivo de facilitar o <emphasis>debugging</emphasis>. Em relação à impressão do tabuleiro, optou-se por desenvolver uma componente gráfica que melhora a utilização do programa.</para><para><itemizedlist>
-<listitem><para>[x] Guião 6</para></listitem><listitem><para>[ ] Guião 7</para></listitem><listitem><para>[ ] Guião 8</para></listitem></itemizedlist>
+<listitem><para>[x] Guião 6</para></listitem><listitem><para>[X] Guião 7</para></listitem><listitem><para>[X] Guião 8</para></listitem><listitem><para>[X] Guião 9</para></listitem><listitem><para>[X] Guião 10</para></listitem></itemizedlist>
 </para><para><heading level="2">Informação sobre os autores</heading>
 </para><para><heading level="4">Turno Prático</heading>
 </para><para>PL6 - Grupo 5</para><para><heading level="3">Autores:</heading>

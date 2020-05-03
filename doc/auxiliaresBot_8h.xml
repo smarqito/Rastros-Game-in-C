@@ -4,7 +4,7 @@
     <compoundname>auxiliaresBot.h</compoundname>
     <includes refid="data_8h" local="yes">../projeto/modules/data.h</includes>
     <includedby refid="auxiliaresBot_8c" local="yes">bot/auxiliaresBot.c</includedby>
-    <includedby refid="bot_8c" local="yes">bot/bot.c</includedby>
+    <includedby refid="li2pl6g05_8c" local="yes">bot/li2pl6g05.c</includedby>
     <includedby refid="interpretador_8c" local="yes">projeto/modules/interface/interpretador.c</includedby>
     <includedby refid="logica_8c" local="yes">projeto/modules/logica/logica.c</includedby>
     <incdepgraph>
@@ -42,6 +42,10 @@
         <childnode refid="21" relation="include">
         </childnode>
       </node>
+      <node id="19">
+        <label>bot/li2pl6g05.c</label>
+        <link refid="li2pl6g05_8c"/>
+      </node>
       <node id="20">
         <label>projeto/modules/interface/interpretador.c</label>
         <link refid="interpretador_8c"/>
@@ -49,10 +53,6 @@
       <node id="21">
         <label>projeto/modules/logica/logica.c</label>
         <link refid="logica_8c"/>
-      </node>
-      <node id="19">
-        <label>bot/bot.c</label>
-        <link refid="bot_8c"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="func">
